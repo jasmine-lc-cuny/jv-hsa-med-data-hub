@@ -2,19 +2,28 @@
 
 Static HTML site prepared for Vercel deployment.
 
+## Project Root
+
+The deployable project root is:
+
+```text
+D:\codex\jv-diabetes-hub
+```
+
+Keep `index.html` in this folder. Vercel serves it as the homepage.
+
 ## Files
 
-- `index.html` - Vercel entry page copied from `jv-diabetes-hub-5-20-26.html`
-- `jv-diabetes-hub/` - organized project support folder with archive, notes, and setup documentation
-- `jv-diabetes-hub/archive/jv-diabetes-hub-5-20-26.html` - original dated export
-- `jv-diabetes-hub/setup/DEPLOYMENT-GUIDE.md` - full Porkbun, Vercel, GitHub, and PowerShell setup guide
+- `index.html` - Vercel entry page for the live site
+- `README.md` - this project note
+- `.gitignore` - ignores local Vercel metadata
 
 ## Deploy With Vercel CLI
 
 From this folder:
 
 ```powershell
-cd D:\codex
+cd D:\codex\jv-diabetes-hub
 vercel
 ```
 
@@ -31,7 +40,16 @@ No build command is required for this static HTML site.
 After GitHub is connected to Vercel, update the live site by editing `index.html`, then running:
 
 ```powershell
+cd D:\codex\jv-diabetes-hub
 git add index.html
 git commit -m "Update site"
 git push
+```
+
+## Setup Archive
+
+Archive, notes, screenshots, and setup documentation are stored outside the deploy repo at:
+
+```text
+D:\setup-jv-diabetes-hub
 ```
