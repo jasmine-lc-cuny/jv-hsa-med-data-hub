@@ -1,0 +1,41 @@
+  💡 To deploy every commit automatically,
+  connect a Git Repository (vercel.link/git (https://vercel.link/git)).
+PS D:\codex> vercel.cmd --prod
+
+  Set up "D:\codex"
+? Which team? jasmine-lc-cuny's projects
+? Link to existing project? yes
+> No existing projects found under jasmine-lc-cunys-projects. Creating new project.
+? Name? jv-hsa-med-data-hub
+? In which directory is your code located? ./
+  No framework detected. Default Project Settings:
+  Build Command: `npm run vercel-build` or `npm run build`
+  Development Command: None
+  Install Command: `yarn install`, `pnpm install`, `npm install`, or `bun install`
+  Output Directory: `public` if it exists, or `.`
+? Customize settings? no
+? Do you want to change additional project settings? no
+  Linked      jasmine-lc-cunys-projects/jv-hsa-med-data-hub
+  Inspect     https://vercel.com/jasmine-lc-cunys-projects/jv-hsa-med-data-hub/2j1fQzMP1WfhExTtLLK7G6SxhLey
+▲ Production  https://jv-hsa-med-data-jsvmlt6s8-jasmine-lc-cunys-projects.vercel.app
+▲ Aliased     https://jv-hsa-med-data-hub.vercel.app
+
+✓ Ready in 5s
+PS D:\codex> cd D:\codex
+PS D:\codex> git init
+Initialized empty Git repository in D:/codex/.git/
+PS D:\codex> git add index.html README.md
+warning: in the working copy of 'README.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'index.html', LF will be replaced by CRLF the next time Git touches it
+PS D:\codex> git commit -m "Initial deploy of diabetes hub"
+[master (root-commit) f961c22] Initial deploy of diabetes hub
+ 2 files changed, 9237 insertions(+)
+ create mode 100644 README.md
+ create mode 100644 index.html
+PS D:\codex> git branch -M main
+PS D:\codex> git remote add origin https://github.com/YOUR-USERNAME/jv-hsa-med-data-hub.git
+PS D:\codex> git push -u origin main
+info: please complete authentication in your browser...
+remote: Repository not found.
+fatal: repository 'https://github.com/YOUR-USERNAME/jv-hsa-med-data-hub.git/' not found
+PS D:\codex>
