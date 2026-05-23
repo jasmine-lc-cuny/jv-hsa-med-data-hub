@@ -2239,6 +2239,112 @@ footer p { color: var(--gold-cream) !important; }
   font-style: normal;
   font-weight: 800;
 }
+.tableau-lite-page {
+  background: #f7f8fb !important;
+  color: #1f2933;
+}
+.tableau-lite-shell {
+  max-width: 1480px;
+  margin: 0 auto;
+  padding: 1.25rem 1.5rem 2.5rem;
+}
+.tableau-lite-title {
+  color: #27c2c7 !important;
+  font-family: 'Nunito', Arial, sans-serif !important;
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  font-weight: 900;
+  margin: 1.25rem 0 1.4rem;
+}
+.tableau-lite-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 220px;
+  gap: 1rem;
+  align-items: start;
+}
+.tableau-main-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+.tableau-kpi {
+  grid-column: span 2;
+  min-height: 88px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  padding: 0.85rem 0.95rem;
+}
+.tableau-kpi span {
+  display: block;
+  color: #333;
+  font-weight: 800;
+  font-size: 0.8rem;
+  margin-bottom: 0.45rem;
+}
+.tableau-kpi strong {
+  color: #28c2c8;
+  display: block;
+  font-size: clamp(1.4rem, 2.5vw, 2.1rem);
+  line-height: 1;
+}
+.tableau-kpi em {
+  color: #36b24a;
+  display: block;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 0.72rem;
+  margin-top: 0.35rem;
+}
+.tableau-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  padding: 0.7rem;
+  min-height: 260px;
+}
+.tableau-card h3 {
+  color: #333 !important;
+  font-family: 'Nunito', Arial, sans-serif !important;
+  font-size: 0.95rem;
+  font-weight: 900;
+  margin: 0 0 0.65rem;
+}
+.tableau-card .chart-wrapper {
+  background: #fff !important;
+  height: 235px;
+}
+.tableau-wide-6 { grid-column: span 6; }
+.tableau-wide-4 { grid-column: span 4; }
+.tableau-wide-8 { grid-column: span 8; }
+#tableauDiabetesMap {
+  height: 235px;
+  border: 1px solid #e5e7eb;
+  background: #eef2f5;
+}
+.tableau-filter-panel {
+  background: #fff;
+  border-left: 1px solid #e5e7eb;
+  padding: 0.8rem;
+  position: sticky;
+  top: calc(var(--nav-h) + 1rem);
+}
+.tableau-filter-panel label {
+  display: block;
+  color: #333;
+  font-size: 0.78rem;
+  font-weight: 900;
+  margin: 0.7rem 0 0.25rem;
+}
+.tableau-filter-panel select {
+  width: 100%;
+  border: 1px solid #9ca3af;
+  background: #fff;
+  padding: 0.32rem 0.4rem;
+  font-size: 0.8rem;
+}
+@media (max-width: 1000px) {
+  .tableau-lite-grid { grid-template-columns: 1fr; }
+  .tableau-filter-panel { position: static; border-left: 0; }
+  .tableau-kpi, .tableau-wide-4, .tableau-wide-6, .tableau-wide-8 { grid-column: span 12; }
+}
 </style>
 <style id="dashboard-spacing-fix">
 /* Tighten all gaps on the dashboard page */
@@ -3531,6 +3637,7 @@ footer:empty { display: none !important; padding: 0 !important; margin: 0 !impor
 <ul class="nav-links">
 <li><a class="active" href="#" id="nav-home" onclick="showPage('home')">🏠 Home</a></li>
 <li><a href="#" id="nav-diabetes" onclick="showPage('diabetes')">📊 Dashboard</a></li>
+<li><a href="#" id="nav-tableau" onclick="showPage('tableau')">📈 Tableau View</a></li>
 <li><a href="#" id="nav-stories" onclick="showPage('stories')">Research Articles</a></li>
 <li><a href="#" id="nav-prdr" onclick="showPage('prdr')">Hispanics</a></li>
 <li><a href="#" id="nav-drugs" onclick="showPage('drugs')">💊 Rx Data</a></li>
@@ -3810,6 +3917,68 @@ footer:empty { display: none !important; padding: 0 !important; margin: 0 !impor
 </div>
 </div>
 </section>
+</main>
+</div>
+<div class="page tableau-lite-page" id="page-tableau" role="main">
+<main class="tableau-lite-shell">
+<p style="color:#4b5563;font-weight:800;margin:0;">JV Diabetes Hub / Tableau-style dashboard</p>
+<h1 class="tableau-lite-title">Diabetes SPARCS 2024 Dashboard</h1>
+<div class="tableau-lite-grid">
+<div class="tableau-main-grid">
+<div class="tableau-kpi"><span>Diabetes Discharges</span><strong id="tableauKpiDischarges">26,147</strong><em>SPARCS 2024</em></div>
+<div class="tableau-kpi"><span>Avg Length of Stay</span><strong id="tableauKpiLos">5.9</strong><em>days</em></div>
+<div class="tableau-kpi"><span>Total Costs</span><strong id="tableauKpiCosts">$809.6M</strong><em>inpatient costs</em></div>
+<div class="tableau-kpi"><span>ED Cases</span><strong id="tableauKpiEd">18,670</strong><em>71.4% ED share</em></div>
+<div class="tableau-kpi"><span>Highest Borough</span><strong id="tableauKpiBorough">Manhattan</strong><em>by selected metric</em></div>
+<div class="tableau-kpi"><span>Largest Group</span><strong id="tableauKpiRace">Hispanic</strong><em>race/ethnicity count</em></div>
+<div class="tableau-card tableau-wide-6">
+<h3>Diabetes Indicator by Borough</h3>
+<div id="tableauDiabetesMap"></div>
+</div>
+<div class="tableau-card tableau-wide-6">
+<h3 id="tableauTrendTitle">Age Group Trend</h3>
+<div class="chart-wrapper"><canvas id="tableauTrendChart"></canvas></div>
+</div>
+<div class="tableau-card tableau-wide-4">
+<h3>ED Cases by Borough</h3>
+<div class="chart-wrapper"><canvas id="tableauEdBarChart"></canvas></div>
+</div>
+<div class="tableau-card tableau-wide-4">
+<h3>Race / Ethnicity Share</h3>
+<div class="chart-wrapper"><canvas id="tableauRaceDonutChart"></canvas></div>
+</div>
+<div class="tableau-card tableau-wide-4">
+<h3>Costs vs Length of Stay</h3>
+<div class="chart-wrapper"><canvas id="tableauScatterChart"></canvas></div>
+</div>
+</div>
+<aside class="tableau-filter-panel">
+<label>Borough</label>
+<select id="tableauBoroughFilter" onchange="updateTableauLiteDashboard()">
+<option value="all">All</option>
+<option value="bronx">Bronx</option>
+<option value="brooklyn">Brooklyn</option>
+<option value="manhattan">Manhattan</option>
+<option value="queens">Queens</option>
+<option value="statenisland">Staten Island</option>
+</select>
+<label>Indicator</label>
+<select id="tableauIndicatorFilter" onchange="updateTableauLiteDashboard()">
+<option value="prevalence">Diabetes Inpatient Discharges</option>
+<option value="a1c">Average Length of Stay</option>
+<option value="amputation">Total Costs ($M)</option>
+<option value="dialysis">Emergency Department Cases</option>
+</select>
+<label>Year</label>
+<select id="tableauYearFilter" onchange="updateTableauLiteDashboard()">
+<option value="2024">2024</option>
+</select>
+<label>Data Source</label>
+<select>
+<option>SPARCS 2024</option>
+</select>
+</aside>
+</div>
 </main>
 </div>
 <div class="page" id="page-stories">
@@ -6842,6 +7011,131 @@ function selectDashboardBoroughFromMap(borough) {
 }
 window.selectDashboardBoroughFromMap = selectDashboardBoroughFromMap;
 
+const TABLEAU_CHARTS = {};
+let tableauLiteMap = null;
+let tableauLiteMapLayer = null;
+
+function initTableauLiteDashboard() {
+  if (!window.Chart) return;
+  updateTableauLiteDashboard();
+}
+
+function tableauFmt(ind, value) {
+  if (ind === 'amputation') return '$' + Number(value).toLocaleString(undefined, { maximumFractionDigits: 1 }) + 'M';
+  if (ind === 'a1c') return Number(value).toFixed(1) + ' days';
+  return Number(value).toLocaleString();
+}
+
+function initTableauLiteMap() {
+  const el = document.getElementById('tableauDiabetesMap');
+  if (!el || !window.L) {
+    if (el) el.innerHTML = '<div style="padding:1rem;color:#333;font-weight:800;">Map needs Leaflet/OpenStreetMap to load.</div>';
+    return false;
+  }
+  if (tableauLiteMap) return true;
+  tableauLiteMap = L.map(el, { scrollWheelZoom:false, zoomControl:true }).setView([40.7128, -73.95], 10);
+  tableauLiteMap.setMinZoom(9);
+  tableauLiteMap.setMaxZoom(13);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; OpenStreetMap contributors'
+  }).addTo(tableauLiteMap);
+  tableauLiteMapLayer = L.layerGroup().addTo(tableauLiteMap);
+  return true;
+}
+
+function updateTableauLiteMap(borough, year, ind) {
+  if (!initTableauLiteMap() || !tableauLiteMapLayer) return;
+  tableauLiteMapLayer.clearLayers();
+  const rows = getDashboardMapRows(ind, year);
+  const selectedRows = borough === 'all' ? rows : rows.filter(row => row.key === borough);
+  const values = rows.map(row => row.value);
+  const min = Math.min(...values);
+  const max = Math.max(...values);
+  const bounds = [];
+  selectedRows.forEach(row => {
+    const marker = L.circleMarker([row.lat, row.lng], {
+      radius: 11 + (max === min ? 8 : ((row.value - min) / (max - min)) * 20),
+      color:'#ffffff',
+      weight:2,
+      fillColor: mapMarkerColor(row.value, min, max),
+      fillOpacity:0.84
+    }).addTo(tableauLiteMapLayer);
+    marker.bindPopup('<strong>' + row.label + '</strong><br>' + indicatorLabel(ind) + ': <b>' + tableauFmt(ind, row.value) + '</b>');
+    bounds.push([row.lat, row.lng]);
+  });
+  if (bounds.length) tableauLiteMap.fitBounds(bounds, { padding:[90, 90], maxZoom:10 });
+  setTimeout(() => {
+    tableauLiteMap.invalidateSize();
+    if (bounds.length) tableauLiteMap.fitBounds(bounds, { padding:[90, 90], maxZoom:10 });
+  }, 160);
+}
+
+function makeOrUpdateTableauChart(id, config) {
+  const el = document.getElementById(id);
+  if (!el || !window.Chart) return;
+  if (TABLEAU_CHARTS[id]) TABLEAU_CHARTS[id].destroy();
+  TABLEAU_CHARTS[id] = new Chart(el, config);
+}
+
+function updateTableauLiteDashboard() {
+  const borough = document.getElementById('tableauBoroughFilter')?.value || 'all';
+  const ind = document.getElementById('tableauIndicatorFilter')?.value || 'prevalence';
+  const year = parseInt(document.getElementById('tableauYearFilter')?.value || '2024', 10);
+  if (!DB.stats || !DB.stats[borough] || !DB.stats[borough][year]) return;
+  const s = DB.stats[borough][year];
+  const labels = borough === 'all' ? BOROUGH_LABELS_ALL : [BOROUGH_DISPLAY[borough]];
+  const values = borough === 'all' ? DB[ind].all[year] : DB[ind][borough][year];
+  const allValues = DB[ind].all[year];
+  const topIndex = allValues.indexOf(Math.max(...allValues));
+  const raceData = DB.a1cRace[borough];
+  const topRace = RACE_LABELS.reduce((a,b) => (raceData[b] || 0) > (raceData[a] || 0) ? b : a, RACE_LABELS[0]);
+
+  document.getElementById('tableauKpiDischarges').textContent = s.prev;
+  document.getElementById('tableauKpiLos').textContent = String(s.a1c).replace(' days','');
+  document.getElementById('tableauKpiCosts').textContent = s.amp;
+  document.getElementById('tableauKpiEd').textContent = s.dial;
+  document.getElementById('tableauKpiBorough').textContent = BOROUGH_LABELS_ALL[topIndex];
+  document.getElementById('tableauKpiRace').textContent = topRace.replace(' Non-Hispanic','');
+  const trendTitle = document.getElementById('tableauTrendTitle');
+  if (trendTitle) trendTitle.textContent = indicatorLabel(ind) + ' by Age Group';
+
+  updateTableauLiteMap(borough, year, ind);
+
+  const trendValues = ind === 'a1c'
+    ? DB.losTrend[borough][year]
+    : ind === 'amputation'
+      ? DB.money[borough].costs.map(v => Math.round(v))
+      : ind === 'dialysis'
+        ? DB.trend[borough].prev.map(v => Math.round(v * 260))
+        : DB.trend[borough].prev;
+
+  makeOrUpdateTableauChart('tableauTrendChart', {
+    type:'line',
+    data:{ labels:['0-17','18-29','30-49','50-69','70+'], datasets:[{ data:trendValues, borderColor:'#5b1a91', backgroundColor:'rgba(91,26,145,0.16)', pointBackgroundColor:'#5b1a91', pointRadius:5, fill:true, tension:0.35 }] },
+    options:{ responsive:true, maintainAspectRatio:false, plugins:{legend:{display:false}}, scales:{x:{grid:{display:false}}, y:{beginAtZero:true, grid:{color:'#ececec'}}} }
+  });
+
+  makeOrUpdateTableauChart('tableauEdBarChart', {
+    type:'bar',
+    data:{ labels:BOROUGH_LABELS_ALL, datasets:[{ data:DB.dialysis.all[year], backgroundColor:['#ececec','#5d0099','#6413a6','#7e35b3','#9a5dc6'], borderRadius:3 }] },
+    options:{ responsive:true, maintainAspectRatio:false, plugins:{legend:{display:false}}, scales:{x:{grid:{display:false}}, y:{beginAtZero:true, grid:{color:'#ececec'}}} }
+  });
+
+  makeOrUpdateTableauChart('tableauRaceDonutChart', {
+    type:'doughnut',
+    data:{ labels:RACE_LABELS, datasets:[{ data:RACE_LABELS.map(r => raceData[r] || 0), backgroundColor:['#7d3c98','#b66fb2','#e1b6da','#8d4f8a'], borderWidth:2 }] },
+    options:{ responsive:true, maintainAspectRatio:false, cutout:'58%', plugins:{legend:{position:'bottom', labels:{boxWidth:12}}} }
+  });
+
+  makeOrUpdateTableauChart('tableauScatterChart', {
+    type:'scatter',
+    data:{ datasets:BOROUGH_LABELS_ALL.map((label, i) => ({ label, data:[{ x:DB.money.all.costs[i], y:DB.a1c.all[year][i], r:DB.prevalence.all[year][i] / 280 }], backgroundColor:FOREST_COLORS[i], pointRadius:10 + DB.prevalence.all[year][i] / 900 })) },
+    options:{ responsive:true, maintainAspectRatio:false, plugins:{legend:{position:'bottom', labels:{boxWidth:10}}}, scales:{x:{title:{display:true,text:'Total Costs ($M)'}, grid:{color:'#ececec'}}, y:{title:{display:true,text:'Avg LOS days'}, grid:{color:'#ececec'}}} }
+  });
+}
+window.updateTableauLiteDashboard = updateTableauLiteDashboard;
+
 
 // ── Offline chart fallback ──
 // If Chart.js from the internet does not load, this tiny SVG renderer keeps the dashboard charts visible.
@@ -7457,6 +7751,7 @@ function showPage(id) {
   targetPage.scrollIntoView({ block: 'start' });
   if (id==='diabetes'    && !CHARTS['boroughPrevalenceChart']) { initDiabetisCharts(); }
   if (id==='diabetes') { setTimeout(updateDashboard, 180); }
+  if (id==='tableau') { setTimeout(initTableauLiteDashboard, 180); }
   if (id==='nyc'         && !CHARTS['nycBoroughBar'])          { initNYCCharts(); }
   if (id==='projects'    && !CHARTS['payorChart'])             { initProjectsCharts(); }
   if (id==='drugs'       && !CHARTS['drugTop10Chart'])         { initDrugCharts(); }
