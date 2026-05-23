@@ -6782,6 +6782,8 @@ function initDashboardLeafletMap() {
   }
   if (dashboardLeafletMap) return true;
   dashboardLeafletMap = L.map(el, { scrollWheelZoom:false, zoomControl:true }).setView([40.7128, -73.95], 10);
+  dashboardLeafletMap.setMinZoom(9);
+  dashboardLeafletMap.setMaxZoom(13);
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '&copy; OpenStreetMap contributors'
@@ -6823,12 +6825,13 @@ function updateDashboardMap(borough, year, ind) {
     bounds.push([row.lat, row.lng]);
   });
 
-  if (borough === 'all' && bounds.length) {
-    dashboardLeafletMap.fitBounds(bounds, { padding:[28, 28], maxZoom:10 });
-  } else if (selectedRows[0]) {
-    dashboardLeafletMap.setView([selectedRows[0].lat, selectedRows[0].lng], selectedRows[0].zoom);
+  if (bounds.length) {
+    dashboardLeafletMap.fitBounds(bounds, { padding:[95, 95], maxZoom:10 });
   }
-  setTimeout(() => dashboardLeafletMap.invalidateSize(), 80);
+  setTimeout(() => {
+    dashboardLeafletMap.invalidateSize();
+    if (bounds.length) dashboardLeafletMap.fitBounds(bounds, { padding:[95, 95], maxZoom:10 });
+  }, 160);
 }
 
 function selectDashboardBoroughFromMap(borough) {
@@ -7453,6 +7456,7 @@ function showPage(id) {
   document.body.scrollTop = 0;
   targetPage.scrollIntoView({ block: 'start' });
   if (id==='diabetes'    && !CHARTS['boroughPrevalenceChart']) { initDiabetisCharts(); }
+  if (id==='diabetes') { setTimeout(updateDashboard, 180); }
   if (id==='nyc'         && !CHARTS['nycBoroughBar'])          { initNYCCharts(); }
   if (id==='projects'    && !CHARTS['payorChart'])             { initProjectsCharts(); }
   if (id==='drugs'       && !CHARTS['drugTop10Chart'])         { initDrugCharts(); }
