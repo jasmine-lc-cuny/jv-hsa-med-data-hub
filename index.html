@@ -2184,6 +2184,61 @@ footer p { color: var(--gold-cream) !important; }
   padding: 0.45rem 0.65rem;
   cursor: pointer;
 }
+.bronx-food-map-card {
+  grid-column: 1 / -1 !important;
+}
+#bronxFoodInsecurityMap {
+  height: 430px;
+  min-height: 340px;
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid rgba(42,26,64,0.28);
+  overflow: hidden;
+  background: #C8E3CE;
+}
+.bronx-food-map-legend {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.65rem;
+  margin-top: 0.85rem;
+  color: #2a1a40;
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+.bronx-food-map-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+.bronx-food-dot {
+  width: 0.9rem;
+  height: 0.9rem;
+  border-radius: 4px;
+  display: inline-block;
+  border: 2px solid rgba(42,26,64,0.32);
+}
+.bronx-food-map-note {
+  color: #2a1a40 !important;
+  font-size: 0.82rem !important;
+  margin: 0.8rem 0 0 !important;
+  line-height: 1.5 !important;
+}
+.bronx-food-popup {
+  font-family: 'Nunito', Arial, sans-serif;
+  color: #2a1a40;
+  min-width: 220px;
+}
+.bronx-food-popup strong {
+  display: block;
+  color: #2a1a40;
+  font-size: 0.98rem;
+  margin-bottom: 0.25rem;
+}
+.bronx-food-popup em {
+  color: #4C315F;
+  font-style: normal;
+  font-weight: 800;
+}
 </style>
 <style id="dashboard-spacing-fix">
 /* Tighten all gaps on the dashboard page */
@@ -4090,6 +4145,17 @@ footer:empty { display: none !important; padding: 0 !important; margin: 0 !impor
 <p style="font-size:0.9rem;font-weight:700;color:#FFF1C7 !important;margin:0;">
               🔍 <strong style="color:#C8960C;">Counterintuitive Finding:</strong> Patients with food insecurity living in food-SECURE neighborhoods had the HIGHEST odds of poor glycemic control (aOR 1.83) — even higher than those in food-insecure areas (aOR 1.72). Individual food need, not neighborhood food access, is the primary driver.
             </p>
+</div>
+<div class="chart-card bronx-food-map-card" style="margin-bottom:1.5rem;">
+<h3>🗺️ Bronx Food Insecurity Bivariate Map</h3>
+<div id="bronxFoodInsecurityMap" role="img" aria-label="Interactive Bronx map showing food insecurity and poor A1C control categories"></div>
+<div class="bronx-food-map-legend">
+<span><i class="bronx-food-dot" style="background:#8B1E5A;"></i> Food need + area insecurity (highest risk)</span>
+<span><i class="bronx-food-dot" style="background:#0B6B6F;"></i> Food need + area secure</span>
+<span><i class="bronx-food-dot" style="background:#1F5C9A;"></i> No food need + area insecurity</span>
+<span><i class="bronx-food-dot" style="background:#C8960C;"></i> Low on both dimensions</span>
+</div>
+<p class="bronx-food-map-note">Adapted for portfolio storytelling from Chambers et al. 2024, Fig. 1. Zone shapes are approximate Bronx reference areas built with Leaflet/OpenStreetMap; the popup text connects each area to the article’s bivariate food-need categories.</p>
 </div>
 <!-- Row 1: Race/ethnicity + Insurance -->
 <div class="dashboard-grid" style="margin-bottom:1.5rem;">
@@ -7393,6 +7459,7 @@ function showPage(id) {
   if (id==='stories'     && !CHARTS['pqiAmpBorough23'])        { initPQICharts(); }
   if (id==='stories'     && !CHARTS['foodRaceChart'])          { initFoodInsecurityCharts(); }
   if (id==='stories'     && !CHARTS['epiBorough1'])            { initEPICharts(); }
+  if (id==='researchStory4-food-insecurity-poor-a1c-control-in-the-br') { initFoodInsecurityCharts(); }
   if (id==='news'        && document.getElementById('newsGrid').style.display!=='block') { initNewsPage(); }
   if (id==='blog'        && document.getElementById('blogPosts').innerHTML==='')         { initBlogPage(); }
   if (id==='sparcs2024'  && !SPARCS_CHARTS['sparcs-borough-bar'])  { initSPARCS2024Charts(); }
@@ -7992,7 +8059,10 @@ function initEPICharts() {
 // Data from Tables 1, 2, 3 — Bronx, NY
 // ══════════════════════════════════════════════════
 function initFoodInsecurityCharts() {
-  if (CHARTS['foodRaceChart']) return;
+  if (CHARTS['foodRaceChart']) {
+    initBronxFoodInsecurityMap();
+    return;
+  }
   const FOOD_COLORS = ['#006064','#1F5C45','#6A1B9A','#C8960C','#4C315F','#0B4F5A'];
 
   // Race/ethnicity - % with poor A1C (Table 1)
@@ -8185,6 +8255,112 @@ function initFoodInsecurityCharts() {
     }]
   });
 
+  initBronxFoodInsecurityMap();
+}
+
+const BRONX_FOOD_ZONES = [
+  {
+    name:'Southwest Bronx',
+    community:'Crotona, Tremont, Morrisania',
+    uhf:'105 / 106 / 107',
+    category:'Food need + area insecurity',
+    interpretation:'Highest-risk pattern in the article: individual food need is present and the surrounding area is also food insecure.',
+    value:'aOR 1.72 for food need in food-insecure areas',
+    color:'#8B1E5A',
+    center:[40.835,-73.903],
+    polygon:[[40.795,-73.930],[40.817,-73.925],[40.845,-73.914],[40.863,-73.895],[40.855,-73.875],[40.825,-73.872],[40.805,-73.895]]
+  },
+  {
+    name:'Central Bronx',
+    community:'Fordham, Bronx Park, High Bridge',
+    uhf:'103 / 106',
+    category:'Food need + area secure',
+    interpretation:'The counterintuitive pattern: patients may report food need even where the wider area looks food secure.',
+    value:'aOR 1.83 for food need in food-secure areas',
+    color:'#0B6B6F',
+    center:[40.862,-73.889],
+    polygon:[[40.845,-73.914],[40.872,-73.912],[40.885,-73.887],[40.874,-73.857],[40.855,-73.875],[40.863,-73.895]]
+  },
+  {
+    name:'Northeast Bronx',
+    community:'Northeast Bronx',
+    uhf:'102',
+    category:'Low on both dimensions',
+    interpretation:'Lower-risk bivariate area in the article framing: lower self-reported food need and lower area-level food insecurity.',
+    value:'Reference / lower-risk area',
+    color:'#C8960C',
+    center:[40.880,-73.835],
+    polygon:[[40.872,-73.870],[40.895,-73.862],[40.904,-73.830],[40.891,-73.790],[40.858,-73.805],[40.852,-73.842]]
+  },
+  {
+    name:'East Bronx',
+    community:'Pelham, Throgs Neck',
+    uhf:'104',
+    category:'No food need + area insecurity',
+    interpretation:'Area-level food insecurity may be present even when the patient does not report individual food need.',
+    value:'aOR 1.17 for no food need in food-insecure areas',
+    color:'#1F5C9A',
+    center:[40.837,-73.830],
+    polygon:[[40.852,-73.842],[40.858,-73.805],[40.835,-73.780],[40.807,-73.795],[40.805,-73.840],[40.825,-73.872]]
+  },
+  {
+    name:'Kingsbridge / Riverdale',
+    community:'Northwest Bronx',
+    uhf:'101',
+    category:'Low on both dimensions',
+    interpretation:'Lower food-insecurity signal in the bivariate framing, useful as a comparison area inside the Bronx.',
+    value:'Reference / lower-risk area',
+    color:'#C8960C',
+    center:[40.884,-73.905],
+    polygon:[[40.863,-73.925],[40.900,-73.922],[40.914,-73.900],[40.902,-73.870],[40.872,-73.870],[40.872,-73.912]]
+  }
+];
+let bronxFoodInsecurityMap = null;
+let bronxFoodInsecurityLayer = null;
+
+function initBronxFoodInsecurityMap() {
+  const el = document.getElementById('bronxFoodInsecurityMap');
+  if (!el || !window.L) {
+    if (el) el.innerHTML = '<div style="padding:1rem;color:#2a1a40;font-weight:800;">Map needs Leaflet/OpenStreetMap to load. The article charts still work normally.</div>';
+    return;
+  }
+  if (!bronxFoodInsecurityMap) {
+    bronxFoodInsecurityMap = L.map(el, { scrollWheelZoom:false, zoomControl:true }).setView([40.848, -73.875], 11);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(bronxFoodInsecurityMap);
+    bronxFoodInsecurityLayer = L.layerGroup().addTo(bronxFoodInsecurityMap);
+  }
+  bronxFoodInsecurityLayer.clearLayers();
+  const bounds = [];
+  BRONX_FOOD_ZONES.forEach(zone => {
+    const polygon = L.polygon(zone.polygon, {
+      color:'#2a1a40',
+      weight:1.8,
+      opacity:0.9,
+      fillColor:zone.color,
+      fillOpacity:0.62
+    }).addTo(bronxFoodInsecurityLayer);
+    polygon.bindPopup(
+      '<div class="bronx-food-popup"><strong>' + zone.name + '</strong>' +
+      '<div>' + zone.community + '</div>' +
+      '<div><em>UHF / area:</em> ' + zone.uhf + '</div>' +
+      '<div><em>Category:</em> ' + zone.category + '</div>' +
+      '<div><em>Signal:</em> ' + zone.value + '</div>' +
+      '<p style="margin:0.45rem 0 0;">' + zone.interpretation + '</p></div>'
+    );
+    L.circleMarker(zone.center, {
+      radius:7,
+      color:'#fff1c7',
+      weight:2,
+      fillColor:zone.color,
+      fillOpacity:0.95
+    }).addTo(bronxFoodInsecurityLayer).bindTooltip(zone.name, {direction:'top'});
+    zone.polygon.forEach(point => bounds.push(point));
+  });
+  if (bounds.length) bronxFoodInsecurityMap.fitBounds(bounds, { padding:[22, 22] });
+  setTimeout(() => bronxFoodInsecurityMap.invalidateSize(), 120);
 }
 
 // ══════════════════════════════════════════════════
