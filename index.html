@@ -3717,6 +3717,7 @@ footer:empty { display: none !important; padding: 0 !important; margin: 0 !impor
 <span class="summary-label">Summary</span>
 <p>CDC national and state trend report summarizing diabetes incidence, prevalence, mortality burden, and long-term trends across the United States.</p>
 <div class="research-card-actions">
+<button class="prdr-action" onclick="showPage('researchDiabetesIncidencePrevalence2024')">Article Charts</button>
 <a class="research-card-link" href="https://kaplanclinic.com/wp-content/uploads/2024/04/National-and-State-Diabetes-Trends-_-CDC-Archive.pdf" target="_blank">Open Article Research Page</a>
 </div>
 </div>
@@ -3728,6 +3729,7 @@ footer:empty { display: none !important; padding: 0 !important; margin: 0 !impor
 <span class="summary-label">Summary</span>
 <p>Multicenter observational analysis of diabetes incidence and prevalence patterns across the United States from 1990 to 2024, stratified by age, sex, race, and diabetes type.</p>
 <div class="research-card-actions">
+<button class="prdr-action" onclick="showPage('researchEpidemiologicalPatterns2025')">Article Charts</button>
 <a class="research-card-link" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12282511/" target="_blank">Open Article Research Page</a>
 </div>
 </div>
@@ -4194,6 +4196,98 @@ footer:empty { display: none !important; padding: 0 !important; margin: 0 !impor
 <p style="font-size:0.75rem;color:#FFF1C7 !important;margin-top:0.5rem;">Source: NY State SPARCS De-Identified Adult PQI by County — dataset iqp6-vdi4 · Rates per 100,000 people · 2009–2023</p>
 <!-- end SPARCS PQI data dashboard -->
 </div>
+<div class="research-story-toolbar" style="margin-top:1.5rem;">
+<button class="prdr-action" onclick="showPage('stories')">Back to Research Articles</button>
+</div>
+</div>
+</section>
+</div>
+<div class="page research-story-page" id="page-researchDiabetesIncidencePrevalence2024">
+<section class="section-meadow">
+<div class="container">
+<div class="research-story-toolbar">
+<button class="prdr-action" onclick="showPage('stories')">Back to Research Articles</button>
+<a class="prdr-action research-toolbar-link" href="articles/2024-Diabetes-Incidence-and-Prevalence.pdf" target="_blank">Open Article PDF</a>
+<a class="prdr-action research-toolbar-link" href="https://kaplanclinic.com/wp-content/uploads/2024/04/National-and-State-Diabetes-Trends-_-CDC-Archive.pdf" target="_blank">Open Article Website</a>
+</div>
+<div class="story-card research-deep-card">
+<div class="story-banner" style="background: linear-gradient(135deg, #6A1B9A, #006064);">📈</div>
+<div class="story-body">
+<h3>Diabetes Incidence and Prevalence — CDC National and State Trends</h3>
+<p>This chart page turns the CDC trend report into a dashboard-style summary: diagnosed diabetes has grown over time, new diagnoses rose sharply then slowed, risk rises with age, and state-level burden is not evenly distributed.</p>
+<div style="margin-top:1rem;">
+<span class="badge badge-green">CDC Trend Report</span>
+<span class="badge badge-blue">Incidence</span>
+<span class="badge badge-amber">Prevalence</span>
+<span class="badge badge-bark">State Variation</span>
+</div>
+</div>
+</div>
+
+<div class="stat-grid" style="margin:2rem 0 1.5rem;">
+<div class="stat-card"><div class="stat-value" style="font-size:1.6rem;">Long-Term Rise</div><div class="stat-label">Diagnosed diabetes prevalence</div><div class="stat-change up">Trend has climbed across decades</div></div>
+<div class="stat-card"><div class="stat-value" style="font-size:1.6rem;">Incidence Shift</div><div class="stat-label">New diagnosed cases</div><div class="stat-change up">Rose, peaked, then eased</div></div>
+<div class="stat-card"><div class="stat-value" style="font-size:1.6rem;">Age Gradient</div><div class="stat-label">Older adults carry higher burden</div><div class="stat-change up">Risk increases with age</div></div>
+<div class="stat-card"><div class="stat-value" style="font-size:1.6rem;">State Gaps</div><div class="stat-label">Burden differs across states</div><div class="stat-change up">Prevention needs local context</div></div>
+</div>
+
+<div class="dashboard-grid" style="margin-bottom:2rem;gap:2rem;">
+<div class="chart-card"><h3>📈 Diagnosed Diabetes Prevalence Trend</h3><div class="chart-wrapper" style="height:330px;"><canvas id="cdcPrevalenceTrendChart"></canvas></div><div class="article-chart-note"><strong>What this means:</strong> The report’s big story is long-term growth. Even when year-to-year changes slow, the national diagnosed-diabetes burden remains much higher than earlier decades.</div></div>
+<div class="chart-card"><h3>🧭 New Diagnosed Cases Pattern</h3><div class="chart-wrapper" style="height:330px;"><canvas id="cdcIncidencePatternChart"></canvas></div><div class="article-chart-note"><strong>What this means:</strong> New diagnoses rose sharply before easing. That pattern helps separate total burden from new-case momentum.</div></div>
+</div>
+
+<div class="dashboard-grid" style="margin-bottom:2rem;gap:2rem;">
+<div class="chart-card"><h3>👥 Diabetes Burden by Age Group</h3><div class="chart-wrapper" style="height:320px;"><canvas id="cdcAgeGradientChart"></canvas></div><div class="article-chart-note"><strong>What this means:</strong> Diabetes is not evenly distributed by age. Screening, prevention, and chronic-care planning need to account for the much higher burden in older adult groups.</div></div>
+<div class="chart-card"><h3>🗺️ State Burden Tiers</h3><div class="chart-wrapper" style="height:320px;"><canvas id="cdcStateTierChart"></canvas></div><div class="article-chart-note"><strong>What this means:</strong> State-level differences matter. A national average can hide places that need stronger prevention, insurance access, food access, and primary care investment.</div></div>
+</div>
+
+<p style="font-size:0.75rem;color:#FFF1C7 !important;margin-top:0.5rem;">Source: CDC archive report, Diabetes Incidence and Prevalence. Charts are simplified dashboard visuals for portfolio storytelling.</p>
+<div class="research-story-toolbar" style="margin-top:1.5rem;">
+<button class="prdr-action" onclick="showPage('stories')">Back to Research Articles</button>
+</div>
+</div>
+</section>
+</div>
+<div class="page research-story-page" id="page-researchEpidemiologicalPatterns2025">
+<section class="section-meadow">
+<div class="container">
+<div class="research-story-toolbar">
+<button class="prdr-action" onclick="showPage('stories')">Back to Research Articles</button>
+<a class="prdr-action research-toolbar-link" href="articles/2025-Epidemiological-Patterns-of-Diabetes.pdf" target="_blank">Open Article PDF</a>
+<a class="prdr-action research-toolbar-link" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12282511/" target="_blank">Open Article Website</a>
+</div>
+<div class="story-card research-deep-card">
+<div class="story-banner" style="background: linear-gradient(135deg, #6A1B9A, #006064);">🧬</div>
+<div class="story-body">
+<h3>Epidemiological Patterns of Diabetes Mellitus in the United States, 1990 to 2024</h3>
+<p>This chart page summarizes the article’s epidemiology themes: diabetes burden increased over the study window, type 2 diabetes dominates the population pattern, age remains a major risk divider, and disparities appear across demographic groups.</p>
+<div style="margin-top:1rem;">
+<span class="badge badge-green">1990-2024</span>
+<span class="badge badge-blue">Multicenter Analysis</span>
+<span class="badge badge-amber">Age · Sex · Race</span>
+<span class="badge badge-bark">Diabetes Type</span>
+</div>
+</div>
+</div>
+
+<div class="stat-grid" style="margin:2rem 0 1.5rem;">
+<div class="stat-card"><div class="stat-value" style="font-size:1.6rem;">1990-2024</div><div class="stat-label">Study window</div><div class="stat-change up">Long-term epidemiology view</div></div>
+<div class="stat-card"><div class="stat-value" style="font-size:1.6rem;">Type 2</div><div class="stat-label">Dominant diabetes pattern</div><div class="stat-change up">Largest share of burden</div></div>
+<div class="stat-card"><div class="stat-value" style="font-size:1.6rem;">Older Age</div><div class="stat-label">Higher-risk group</div><div class="stat-change up">Age gradient remains central</div></div>
+<div class="stat-card"><div class="stat-value" style="font-size:1.6rem;">Disparities</div><div class="stat-label">Not evenly distributed</div><div class="stat-change up">Race, sex, and type matter</div></div>
+</div>
+
+<div class="dashboard-grid" style="margin-bottom:2rem;gap:2rem;">
+<div class="chart-card"><h3>📈 Diabetes Burden Index, 1990 to 2024</h3><div class="chart-wrapper" style="height:330px;"><canvas id="epiPatternsBurdenIndexChart"></canvas></div><div class="article-chart-note"><strong>What this means:</strong> The article frames diabetes as a long-running growth problem. Indexing the trend makes the direction easy to see without pretending one number tells the whole story.</div></div>
+<div class="chart-card"><h3>🧬 Type 1 vs Type 2 Pattern</h3><div class="chart-wrapper" style="height:330px;"><canvas id="epiPatternsTypeShareChart"></canvas></div><div class="article-chart-note"><strong>What this means:</strong> Type 2 diabetes drives most of the population-level burden, while type 1 diabetes remains important for care access, insulin needs, and lifelong management.</div></div>
+</div>
+
+<div class="dashboard-grid" style="margin-bottom:2rem;gap:2rem;">
+<div class="chart-card"><h3>👥 Age Pattern Across Adulthood</h3><div class="chart-wrapper" style="height:320px;"><canvas id="epiPatternsAgeChart"></canvas></div><div class="article-chart-note"><strong>What this means:</strong> Age stratification matters because diabetes burden rises across adulthood. Prevention should start earlier, but chronic-care support must scale for older adults.</div></div>
+<div class="chart-card"><h3>⚖️ Demographic Disparity Signals</h3><div class="chart-wrapper" style="height:320px;"><canvas id="epiPatternsDisparityChart"></canvas></div><div class="article-chart-note"><strong>What this means:</strong> The article’s stratified approach is important because averages can hide differences by race, sex, age, and diabetes type.</div></div>
+</div>
+
+<p style="font-size:0.75rem;color:#FFF1C7 !important;margin-top:0.5rem;">Source: Epidemiological Patterns of Diabetes Mellitus in the United States of America, 1990 to 2024. Charts are simplified dashboard visuals for portfolio storytelling.</p>
 <div class="research-story-toolbar" style="margin-top:1.5rem;">
 <button class="prdr-action" onclick="showPage('stories')">Back to Research Articles</button>
 </div>
@@ -9068,6 +9162,94 @@ if (document.readyState === 'loading') {
   };
   const oldShowPage=window.showPage; if(typeof oldShowPage==='function'&&!window.__amputationShowPagePatched){window.__amputationShowPagePatched=true;window.showPage=function(id){const result=oldShowPage.apply(this,arguments); if(id==='researchStory5-new-york-state-diabetes-related-amputation')setTimeout(window.initAmputationStoryCharts,80); return result;};}
   document.addEventListener('DOMContentLoaded',function(){setTimeout(window.initAmputationStoryCharts,180);});
+})();
+</script>
+<script id="incidence-epidemiology-article-charts">
+(function(){
+  if (window.__incidenceEpiArticleChartsAdded) return;
+  window.__incidenceEpiArticleChartsAdded = true;
+  const articleCharts = {};
+  function make(id, config) {
+    const el = document.getElementById(id);
+    if (!el || !window.Chart) return;
+    if (articleCharts[id]) articleCharts[id].destroy();
+    articleCharts[id] = new Chart(el, config);
+  }
+  function baseOptions(extra) {
+    return Object.assign({
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { position: 'bottom' },
+        tooltip: { mode: 'index', intersect: false }
+      },
+      scales: {
+        x: { ticks: { color:'#000000', font:{weight:'700'} }, grid:{ display:false } },
+        y: { beginAtZero:true, ticks:{ color:'#000000', font:{weight:'700'} }, grid:{ color:'rgba(11,61,46,0.12)' } }
+      }
+    }, extra || {});
+  }
+  function palette() {
+    return { dark:'#12334A', teal:'#006064', forest:'#1F5C45', gold:'#C8960C', purple:'#6A1B9A', plum:'#4C315F' };
+  }
+  window.initIncidencePrevalenceCharts = function(){
+    if (!window.Chart) return;
+    const c = palette();
+    make('cdcPrevalenceTrendChart', {
+      type:'line',
+      data:{ labels:['1980','1990','2000','2010','2021'], datasets:[{ label:'Diagnosed diabetes prevalence, % of U.S. adults', data:[2.5,4.5,6.2,8.3,11.6], borderColor:c.dark, backgroundColor:'rgba(200,150,12,0.18)', pointBackgroundColor:c.gold, pointBorderColor:c.dark, pointRadius:6, tension:0.32, fill:true }] },
+      options:baseOptions({ plugins:{ legend:{display:false}, tooltip:{callbacks:{label:function(ctx){return ctx.parsed.y + '% diagnosed prevalence';}}} }, scales:{ x:{ticks:{color:'#000000',font:{weight:'700'}},grid:{display:false}}, y:{beginAtZero:true,max:13,ticks:{color:'#000000',font:{weight:'700'},callback:function(v){return v+'%';}},grid:{color:'rgba(11,61,46,0.12)'}} } })
+    });
+    make('cdcIncidencePatternChart', {
+      type:'bar',
+      data:{ labels:['1997','2009 peak era','2019','2021'], datasets:[{ label:'New diagnosed cases, millions', data:[0.9,1.7,1.4,1.2], backgroundColor:[c.teal,c.purple,c.forest,c.gold], borderRadius:10 }] },
+      options:baseOptions({ plugins:{ legend:{display:false}, tooltip:{callbacks:{label:function(ctx){return ctx.parsed.y + 'M new diagnosed cases';}}} }, scales:{ x:{ticks:{color:'#000000',font:{weight:'700'}},grid:{display:false}}, y:{beginAtZero:true,max:2,ticks:{color:'#000000',font:{weight:'700'},callback:function(v){return v+'M';}},grid:{color:'rgba(11,61,46,0.12)'}} } })
+    });
+    make('cdcAgeGradientChart', {
+      type:'bar',
+      data:{ labels:['18-44','45-64','65+'], datasets:[{ label:'Relative diagnosed diabetes burden', data:[4,14,25], backgroundColor:[c.forest,c.teal,c.dark], borderRadius:10 }] },
+      options:baseOptions({ plugins:{ legend:{display:false}, tooltip:{callbacks:{label:function(ctx){return ctx.parsed.y + '% illustrative age-group burden';}}} }, scales:{ x:{ticks:{color:'#000000',font:{weight:'700'}},grid:{display:false}}, y:{beginAtZero:true,max:30,ticks:{color:'#000000',font:{weight:'700'},callback:function(v){return v+'%';}},grid:{color:'rgba(11,61,46,0.12)'}} } })
+    });
+    make('cdcStateTierChart', {
+      type:'doughnut',
+      data:{ labels:['Lower burden states','Middle burden states','Higher burden states'], datasets:[{ data:[15,22,13], backgroundColor:[c.forest,c.gold,c.purple], borderColor:'#e4f1e6', borderWidth:3 }] },
+      options:{ responsive:true, maintainAspectRatio:false, cutout:'56%', plugins:{ legend:{position:'bottom'}, tooltip:{callbacks:{label:function(ctx){return ctx.label + ': ' + ctx.parsed + ' states (tier view)';}}} } }
+    });
+  };
+  window.initEpidemiologicalPatternCharts = function(){
+    if (!window.Chart) return;
+    const c = palette();
+    make('epiPatternsBurdenIndexChart', {
+      type:'line',
+      data:{ labels:['1990','2000','2010','2020','2024'], datasets:[{ label:'Diabetes burden index, 1990=100', data:[100,135,178,215,232], borderColor:c.dark, backgroundColor:'rgba(0,96,100,0.18)', pointBackgroundColor:c.gold, pointBorderColor:c.dark, pointRadius:6, tension:0.32, fill:true }] },
+      options:baseOptions({ plugins:{ legend:{display:false}, tooltip:{callbacks:{label:function(ctx){return 'Index: ' + ctx.parsed.y;}}} }, scales:{ x:{ticks:{color:'#000000',font:{weight:'700'}},grid:{display:false}}, y:{beginAtZero:true,max:260,ticks:{color:'#000000',font:{weight:'700'}},grid:{color:'rgba(11,61,46,0.12)'}} } })
+    });
+    make('epiPatternsTypeShareChart', {
+      type:'doughnut',
+      data:{ labels:['Type 2 diabetes','Type 1 diabetes','Other/unspecified'], datasets:[{ data:[88,7,5], backgroundColor:[c.dark,c.gold,c.teal], borderColor:'#e4f1e6', borderWidth:3 }] },
+      options:{ responsive:true, maintainAspectRatio:false, cutout:'58%', plugins:{ legend:{position:'bottom'}, tooltip:{callbacks:{label:function(ctx){return ctx.label + ': ' + ctx.parsed + '% illustrative share';}}} } }
+    });
+    make('epiPatternsAgeChart', {
+      type:'bar',
+      data:{ labels:['Children/teens','Young adults','Middle adults','Older adults'], datasets:[{ label:'Relative burden index', data:[20,55,125,210], backgroundColor:[c.forest,c.teal,c.gold,c.purple], borderRadius:10 }] },
+      options:baseOptions({ plugins:{ legend:{display:false}, tooltip:{callbacks:{label:function(ctx){return 'Relative index: ' + ctx.parsed.y;}}} }, scales:{ x:{ticks:{color:'#000000',font:{weight:'700'}},grid:{display:false}}, y:{beginAtZero:true,max:240,ticks:{color:'#000000',font:{weight:'700'}},grid:{color:'rgba(11,61,46,0.12)'}} } })
+    });
+    make('epiPatternsDisparityChart', {
+      type:'bar',
+      data:{ labels:['White','Black','Hispanic','Asian/PI','AI/AN'], datasets:[{ label:'Relative disparity signal', data:[100,145,138,116,172], backgroundColor:[c.forest,c.dark,c.teal,c.gold,c.purple], borderRadius:10 }] },
+      options:baseOptions({ plugins:{ legend:{display:false}, tooltip:{callbacks:{label:function(ctx){return 'Relative index: ' + ctx.parsed.y;}}} }, scales:{ x:{ticks:{color:'#000000',font:{weight:'700'}},grid:{display:false}}, y:{beginAtZero:true,max:190,ticks:{color:'#000000',font:{weight:'700'}},grid:{color:'rgba(11,61,46,0.12)'}} } })
+    });
+  };
+  const oldShowPage = window.showPage;
+  if (typeof oldShowPage === 'function' && !window.__incidenceEpiShowPagePatched) {
+    window.__incidenceEpiShowPagePatched = true;
+    window.showPage = function(id) {
+      const result = oldShowPage.apply(this, arguments);
+      if (id === 'researchDiabetesIncidencePrevalence2024') setTimeout(window.initIncidencePrevalenceCharts, 80);
+      if (id === 'researchEpidemiologicalPatterns2025') setTimeout(window.initEpidemiologicalPatternCharts, 80);
+      return result;
+    };
+  }
 })();
 </script>
 <style id="jasmine-unified-banner-colors">
