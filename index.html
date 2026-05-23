@@ -8359,7 +8359,9 @@ function initBronxFoodInsecurityMap() {
     }).addTo(bronxFoodInsecurityLayer).bindTooltip(zone.name, {direction:'top'});
     zone.polygon.forEach(point => bounds.push(point));
   });
-  if (bounds.length) bronxFoodInsecurityMap.fitBounds(bounds, { padding:[22, 22] });
+  if (bounds.length) bronxFoodInsecurityMap.fitBounds(bounds, { padding:[90, 90], maxZoom:11 });
+  bronxFoodInsecurityMap.setMinZoom(10);
+  bronxFoodInsecurityMap.setMaxZoom(14);
   setTimeout(() => bronxFoodInsecurityMap.invalidateSize(), 120);
 }
 
