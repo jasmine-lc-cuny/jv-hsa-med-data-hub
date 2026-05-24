@@ -2223,6 +2223,9 @@ footer p { color: var(--gold-cream) !important; }
   line-height: 1.1;
   margin-top: 0.25rem;
 }
+.epi2025-detail-hidden {
+  display: none !important;
+}
 @media (max-width: 800px) {
   .epi2025-tab-row,
   .epi2025-highlight {
@@ -3937,7 +3940,7 @@ footer:empty { display: none !important; padding: 0 !important; margin: 0 !impor
 </div>
 </div>
 </div>
-<div class="dashboard-grid dashboard-grid-main" style="margin-top:1.4rem;">
+<div class="dashboard-grid dashboard-grid-main epi2025-detail-section" data-epi-detail="borough a1c" style="margin-top:1.4rem;">
 <div class="chart-card">
 <h3 style="background:#2a1a40; color:#F2C57C !important; padding:0.6rem 1rem; border-radius:8px; margin:-0.5rem -0.5rem 1rem -0.5rem;">🧪 A1C Blood Sugar Control by Borough</h3>
 <div class="chart-wrapper" style="height:330px;">
@@ -3945,52 +3948,52 @@ footer:empty { display: none !important; padding: 0 !important; margin: 0 !impor
 </div>
 </div>
 </div>
-<div class="chart-card" style="margin-top:1.4rem;">
+<div class="chart-card epi2025-detail-section" data-epi-detail="borough race age poverty" style="margin-top:1.4rem;">
 <h2 class="epi2025-section-title">Table 1 · Adult Diabetes Prevalence by Demographics</h2>
 <p class="epi2025-table-note">Community Health Survey 2022 estimates show diabetes prevalence by age, sex, race/ethnicity, neighborhood poverty, and borough. These are prevalence estimates, not hospital discharge counts.</p>
 <div class="dashboard-grid dashboard-grid-main" style="margin-top:1rem;">
-<div class="chart-card"><h3 class="epi2025-section-title">Age Group</h3><div class="chart-wrapper" style="height:300px;"><canvas id="epi2025T1Age"></canvas></div></div>
-<div class="chart-card"><h3 class="epi2025-section-title">Sex</h3><div class="chart-wrapper" style="height:300px;"><canvas id="epi2025T1Sex"></canvas></div></div>
-<div class="chart-card"><h3 class="epi2025-section-title">Race/Ethnicity</h3><div class="chart-wrapper" style="height:320px;"><canvas id="epi2025T1Race"></canvas></div></div>
-<div class="chart-card"><h3 class="epi2025-section-title">Neighborhood Poverty</h3><div class="chart-wrapper" style="height:320px;"><canvas id="epi2025T1Poverty"></canvas></div></div>
-<div class="chart-card chart-card-wide home-wide-chart"><h3 class="epi2025-section-title">Weighted Number of Adults with Diabetes</h3><div class="chart-wrapper" style="height:260px;"><canvas id="epi2025T1Weighted"></canvas></div></div>
+<div class="chart-card epi2025-topic-card" data-epi-card="age"><h3 class="epi2025-section-title">Age Group</h3><div class="chart-wrapper" style="height:300px;"><canvas id="epi2025T1Age"></canvas></div></div>
+<div class="chart-card epi2025-topic-card" data-epi-card="sex"><h3 class="epi2025-section-title">Sex</h3><div class="chart-wrapper" style="height:300px;"><canvas id="epi2025T1Sex"></canvas></div></div>
+<div class="chart-card epi2025-topic-card" data-epi-card="race"><h3 class="epi2025-section-title">Race/Ethnicity</h3><div class="chart-wrapper" style="height:320px;"><canvas id="epi2025T1Race"></canvas></div></div>
+<div class="chart-card epi2025-topic-card" data-epi-card="poverty"><h3 class="epi2025-section-title">Neighborhood Poverty</h3><div class="chart-wrapper" style="height:320px;"><canvas id="epi2025T1Poverty"></canvas></div></div>
+<div class="chart-card chart-card-wide home-wide-chart epi2025-topic-card" data-epi-card="borough"><h3 class="epi2025-section-title">Weighted Number of Adults with Diabetes</h3><div class="chart-wrapper" style="height:260px;"><canvas id="epi2025T1Weighted"></canvas></div></div>
 </div>
 </div>
-<div class="chart-card" style="margin-top:1.4rem;">
+<div class="chart-card epi2025-detail-section" data-epi-detail="borough" style="margin-top:1.4rem;">
 <h2 class="epi2025-section-title">Table 2 · Diabetes Prevalence by UHF 34 Neighborhood</h2>
 <p class="epi2025-table-note">Neighborhood estimates show where diabetes prevalence is highest inside boroughs. Southwest Queens, Pelham-Throgs Neck, East Harlem, East New York, and Flatbush appear among the highest-prevalence areas in the table.</p>
 <div class="dashboard-grid dashboard-grid-main" style="margin-top:1rem;">
 <div class="chart-card"><h3 class="epi2025-section-title">Top UHF 34 Neighborhoods</h3><div class="chart-wrapper" style="height:430px;"><canvas id="epi2025T2TopNeighborhoods"></canvas></div></div>
 </div>
 </div>
-<div class="chart-card" style="margin-top:1.4rem;">
+<div class="chart-card epi2025-detail-section" data-epi-detail="a1c age poverty borough" style="margin-top:1.4rem;">
 <h2 class="epi2025-section-title">Table 3 · Blood Sugar Control Among Adults with Diabetes Receiving Medical Care</h2>
 <p class="epi2025-table-note">The A1C Registry shows that 13.9% of NYC adults with diabetes receiving medical care had very high blood sugar, defined here as latest A1C greater than 9%.</p>
 <div class="dashboard-grid dashboard-grid-main" style="margin-top:1rem;">
-<div class="chart-card chart-card-wide home-wide-chart"><h3 class="epi2025-section-title">A1C Distribution by Age Group</h3><div class="chart-wrapper" style="height:290px;"><canvas id="epi2025T3A1CAge"></canvas></div></div>
-<div class="chart-card"><h3 class="epi2025-section-title">Very High A1C by Borough</h3><div class="chart-wrapper" style="height:300px;"><canvas id="epi2025T3PoorBorough"></canvas></div></div>
-<div class="chart-card"><h3 class="epi2025-section-title">Very High A1C by Poverty</h3><div class="chart-wrapper" style="height:300px;"><canvas id="epi2025T3PoorPoverty"></canvas></div></div>
+<div class="chart-card chart-card-wide home-wide-chart epi2025-topic-card" data-epi-card="a1c age"><h3 class="epi2025-section-title">A1C Distribution by Age Group</h3><div class="chart-wrapper" style="height:290px;"><canvas id="epi2025T3A1CAge"></canvas></div></div>
+<div class="chart-card epi2025-topic-card" data-epi-card="a1c borough"><h3 class="epi2025-section-title">Very High A1C by Borough</h3><div class="chart-wrapper" style="height:300px;"><canvas id="epi2025T3PoorBorough"></canvas></div></div>
+<div class="chart-card epi2025-topic-card" data-epi-card="a1c poverty"><h3 class="epi2025-section-title">Very High A1C by Poverty</h3><div class="chart-wrapper" style="height:300px;"><canvas id="epi2025T3PoorPoverty"></canvas></div></div>
 </div>
 </div>
-<div class="chart-card" style="margin-top:1.4rem;">
+<div class="chart-card epi2025-detail-section" data-epi-detail="a1c" style="margin-top:1.4rem;">
 <h2 class="epi2025-section-title">Table 4 · Very High A1C by UHF 42 Neighborhood</h2>
 <p class="epi2025-table-note">The highest percentages of very high A1C are concentrated in Bronx and Brooklyn neighborhoods, with Hunts Point-Mott Haven at 18.2%.</p>
 <div class="dashboard-grid dashboard-grid-main" style="margin-top:1rem;">
 <div class="chart-card"><h3 class="epi2025-section-title">Top 10 UHF 42 Neighborhoods</h3><div class="chart-wrapper" style="height:430px;"><canvas id="epi2025T4TopPoorA1C"></canvas></div></div>
 </div>
 </div>
-<div class="chart-card" style="margin-top:1.4rem;">
+<div class="chart-card epi2025-detail-section" data-epi-detail="amputation race age poverty borough" style="margin-top:1.4rem;">
 <h2 class="epi2025-section-title">Table 5 · Diabetes-Related Lower Extremity Amputations by Demographics</h2>
 <p class="epi2025-table-note">SPARCS 2022 shows 3,184 diabetes-related lower-extremity amputations among NYC adults. Rates are age-adjusted per 100,000 adults.</p>
 <div class="dashboard-grid dashboard-grid-main" style="margin-top:1rem;">
-<div class="chart-card"><h3 class="epi2025-section-title">LEA Rate by Age Group</h3><div class="chart-wrapper" style="height:300px;"><canvas id="epi2025T5LeaAge"></canvas></div></div>
-<div class="chart-card"><h3 class="epi2025-section-title">LEA Rate by Sex</h3><div class="chart-wrapper" style="height:300px;"><canvas id="epi2025T5LeaSex"></canvas></div></div>
-<div class="chart-card"><h3 class="epi2025-section-title">LEA Rate by Race/Ethnicity</h3><div class="chart-wrapper" style="height:320px;"><canvas id="epi2025T5LeaRace"></canvas></div></div>
-<div class="chart-card"><h3 class="epi2025-section-title">LEA Rate by Poverty</h3><div class="chart-wrapper" style="height:320px;"><canvas id="epi2025T5LeaPoverty"></canvas></div></div>
-<div class="chart-card chart-card-wide home-wide-chart"><h3 class="epi2025-section-title">LEA Count vs Rate by Borough</h3><div class="chart-wrapper" style="height:290px;"><canvas id="epi2025T5LeaBoroughCombo"></canvas></div></div>
+<div class="chart-card epi2025-topic-card" data-epi-card="amputation age"><h3 class="epi2025-section-title">LEA Rate by Age Group</h3><div class="chart-wrapper" style="height:300px;"><canvas id="epi2025T5LeaAge"></canvas></div></div>
+<div class="chart-card epi2025-topic-card" data-epi-card="amputation sex"><h3 class="epi2025-section-title">LEA Rate by Sex</h3><div class="chart-wrapper" style="height:300px;"><canvas id="epi2025T5LeaSex"></canvas></div></div>
+<div class="chart-card epi2025-topic-card" data-epi-card="amputation race"><h3 class="epi2025-section-title">LEA Rate by Race/Ethnicity</h3><div class="chart-wrapper" style="height:320px;"><canvas id="epi2025T5LeaRace"></canvas></div></div>
+<div class="chart-card epi2025-topic-card" data-epi-card="amputation poverty"><h3 class="epi2025-section-title">LEA Rate by Poverty</h3><div class="chart-wrapper" style="height:320px;"><canvas id="epi2025T5LeaPoverty"></canvas></div></div>
+<div class="chart-card chart-card-wide home-wide-chart epi2025-topic-card" data-epi-card="amputation borough"><h3 class="epi2025-section-title">LEA Count vs Rate by Borough</h3><div class="chart-wrapper" style="height:290px;"><canvas id="epi2025T5LeaBoroughCombo"></canvas></div></div>
 </div>
 </div>
-<div class="chart-card" style="margin-top:1.4rem;">
+<div class="chart-card epi2025-detail-section" data-epi-detail="amputation" style="margin-top:1.4rem;">
 <h2 class="epi2025-section-title">Table 6 · Diabetes-Related Amputations by UHF 42 Neighborhood</h2>
 <p class="epi2025-table-note">Neighborhood rates show severe complication burden in East Harlem, Hunts Point-Mott Haven, Crotona-Tremont, High Bridge-Morrisania, and Pelham-Throgs Neck.</p>
 <div class="dashboard-grid dashboard-grid-main" style="margin-top:1rem;">
@@ -8366,6 +8369,14 @@ function setEpi2025Topic(topic) {
   document.querySelectorAll('.epi2025-tab').forEach(btn => {
     btn.classList.toggle('active', btn.dataset.epiTab === topic);
   });
+  document.querySelectorAll('.epi2025-detail-section').forEach(section => {
+    const topics = (section.dataset.epiDetail || '').split(/\s+/);
+    section.classList.toggle('epi2025-detail-hidden', !topics.includes(topic));
+  });
+  document.querySelectorAll('.epi2025-topic-card').forEach(card => {
+    const topics = (card.dataset.epiCard || '').split(/\s+/);
+    card.classList.toggle('epi2025-detail-hidden', !topics.includes(topic));
+  });
   const title = document.getElementById('epi2025TopicTitle');
   const trendTitle = document.getElementById('epi2025TrendTitle');
   const value = document.getElementById('epi2025HighlightValue');
@@ -8437,6 +8448,11 @@ function setEpi2025Topic(topic) {
       }
     });
   }
+  setTimeout(() => {
+    Object.values(CHARTS).forEach(chart => {
+      if (chart && typeof chart.resize === 'function') chart.resize();
+    });
+  }, 80);
 }
 window.setEpi2025Topic = setEpi2025Topic;
 
