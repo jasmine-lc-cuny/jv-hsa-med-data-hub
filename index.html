@@ -3531,6 +3531,7 @@ footer:empty { display: none !important; padding: 0 !important; margin: 0 !impor
 <ul class="nav-links">
 <li><a class="active" href="#" id="nav-home" onclick="showPage('home')">🏠 Home</a></li>
 <li><a href="#" id="nav-diabetes" onclick="showPage('diabetes')">📊 Dashboard</a></li>
+<li><a href="#" id="nav-prevalence" onclick="showPage('prevalence')">📌 Prevalence</a></li>
 <li><a href="#" id="nav-stories" onclick="showPage('stories')">Research Articles</a></li>
 <li><a href="#" id="nav-prdr" onclick="showPage('prdr')">Hispanics</a></li>
 <li><a href="#" id="nav-drugs" onclick="showPage('drugs')">💊 Rx Data</a></li>
@@ -3811,6 +3812,77 @@ footer:empty { display: none !important; padding: 0 !important; margin: 0 !impor
 </div>
 </section>
 </main>
+</div>
+<!-- ════════════════════ PREVALENCE PAGE ════════════════════ -->
+<div class="page" id="page-prevalence" role="main">
+<section style="padding: 2rem 2rem 1.5rem; background: #0D3D4A !important; border-bottom: 2px solid rgba(242,197,124,0.3);">
+<div style="max-width:1200px; margin:0 auto; display:flex; align-items:center; gap:1.5rem; background: #0A2A2F !important;">
+<div style="display:flex; align-items:center; gap:1rem; flex:1;">
+<span style="font-size:2rem;">📌</span>
+<div>
+<h1 style="font-family:'Lora',serif; font-size:clamp(1.4rem,3vw,2rem); color:#F2C57C !important; font-weight:700; line-height:1.1; margin:0;">Prevalence vs Hospitalization Burden</h1>
+<p style="font-size:0.82rem; color:rgba(242,197,124,0.6); font-weight:700; letter-spacing:0.12em; text-transform:uppercase; margin:0.3rem 0 0;">SPARCS 2024 + Census Denominators</p>
+</div>
+</div>
+<div style="height:40px; width:1px; background:rgba(242,197,124,0.25);"></div>
+<div style="font-size:0.75rem; color:rgba(255,241,199,0.5); font-weight:600; text-align:right; line-height:1.6;">
+    Honest Data Framing<br/>Rate, Not Prevalence
+  </div>
+</div>
+</section>
+<section class="section-meadow" style="background:#0D3D4A !important; padding:2.5rem 2rem 3.5rem;">
+<div class="container" style="max-width:1200px;">
+<div class="chart-card" style="background:var(--bg-card) !important; border:var(--border-gold); margin-bottom:1.4rem;">
+<h2 style="background:#2a1a40; color:#F2C57C !important; padding:0.65rem 1rem; border-radius:8px; margin:0 0 1rem; font-family:var(--font-display);">What This Page Can and Cannot Say</h2>
+<p style="color:#140023; line-height:1.75; margin-bottom:0.75rem;"><strong>SPARCS cannot measure true diabetes prevalence.</strong> Prevalence means the share of all people in a place who have diabetes. SPARCS is a hospital discharge dataset, so it counts hospital stays, not unique residents, and it does not include everyone living with diabetes outside the hospital.</p>
+<p style="color:#140023; line-height:1.75; margin:0;">This page uses a related measure: <strong>diabetes hospitalization rate per 100,000 residents</strong>. That rate helps compare hospital burden across boroughs, but it should be described as a utilization or burden measure, not as diabetes prevalence.</p>
+</div>
+<div class="stat-grid" style="margin-bottom:1.4rem;">
+<div class="stat-card"><div class="stat-value">26,147</div><div class="stat-label">SPARCS diabetes inpatient discharges</div><div class="stat-change up">NYC borough total, 2024</div></div>
+<div class="stat-card"><div class="stat-value">8.8M</div><div class="stat-label">2020 Census residents used as denominator</div><div class="stat-change up">Five NYC boroughs</div></div>
+<div class="stat-card"><div class="stat-value">295.4</div><div class="stat-label">Hospitalization rate per 100,000 residents</div><div class="stat-change up">NYC borough aggregate</div></div>
+<div class="stat-card"><div class="stat-value">Not prevalence</div><div class="stat-label">Correct wording for this metric</div><div class="stat-change up">Hospitalization burden</div></div>
+</div>
+<div class="dashboard-grid dashboard-grid-main">
+<div class="chart-card">
+<h3 style="background:#2a1a40; color:#F2C57C !important; padding:0.6rem 1rem; border-radius:8px; margin:-0.5rem -0.5rem 1rem -0.5rem;">🏥 Diabetes Hospitalization Rate per 100,000 Residents</h3>
+<div class="chart-wrapper">
+<canvas id="prevalenceRateChart"></canvas>
+</div>
+</div>
+<div class="chart-card">
+<h3 style="background:#2a1a40; color:#F2C57C !important; padding:0.6rem 1rem; border-radius:8px; margin:-0.5rem -0.5rem 1rem -0.5rem;">📊 Discharges Compared with Population Size</h3>
+<div class="chart-wrapper">
+<canvas id="prevalenceCountVsRateChart"></canvas>
+</div>
+</div>
+</div>
+<div class="chart-card" style="margin-top:1.4rem;">
+<h2 style="font-family:var(--font-display); font-size:1.3rem; margin-bottom:1rem; background:#2a1a40; color:#F2C57C !important; padding:0.6rem 1rem; border-radius:8px; margin:-0.5rem -0.5rem 1rem -0.5rem;">📋 Borough Rate Table</h2>
+<div style="overflow-x:auto;">
+<table class="data-table">
+<thead>
+<tr>
+<th>Borough</th>
+<th>2024 SPARCS Diabetes Discharges</th>
+<th>2020 Census Population</th>
+<th>Rate per 100,000 Residents</th>
+<th>How to Read It</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>🌆 Manhattan</td><td>7,891</td><td>1,694,251</td><td>465.8</td><td>Highest hospitalization burden in this SPARCS view.</td></tr>
+<tr><td>🏙️ Bronx</td><td>5,466</td><td>1,472,654</td><td>371.2</td><td>High rate after adjusting discharge counts by population size.</td></tr>
+<tr><td>🌳 Staten Island</td><td>1,496</td><td>495,747</td><td>301.8</td><td>Smaller count, but the population denominator is also smaller.</td></tr>
+<tr><td>🏘️ Brooklyn</td><td>6,303</td><td>2,736,074</td><td>230.4</td><td>Large discharge count spread across the largest borough population.</td></tr>
+<tr><td>🌏 Queens</td><td>4,991</td><td>2,405,464</td><td>207.5</td><td>Lowest hospitalization rate in this comparison.</td></tr>
+</tbody>
+</table>
+</div>
+<p style="color:#140023; line-height:1.65; margin-top:1rem; font-size:0.92rem;"><strong>Source note:</strong> Discharges come from the 2024 SPARCS diabetes inpatient extract used in this project. Population denominators use 2020 Census borough counts. This rate is useful for comparing hospitalization burden, but it is not a diabetes prevalence estimate.</p>
+</div>
+</div>
+</section>
 </div>
 <div class="page" id="page-stories">
 <section style="padding: 2rem 2rem 1.5rem; background: #0D3D4A !important; border-bottom: 2px solid rgba(242,197,124,0.3);">
@@ -6742,6 +6814,13 @@ const RACE_LABELS = ['Black Non-Hispanic','Hispanic','White Non-Hispanic','Other
 
 // chart instance registry so we can update without re-creating
 const CHARTS = {};
+const PREVALENCE_ROWS = [
+  { borough:'Manhattan', discharges:7891, population:1694251, rate:465.8 },
+  { borough:'Bronx', discharges:5466, population:1472654, rate:371.2 },
+  { borough:'Staten Island', discharges:1496, population:495747, rate:301.8 },
+  { borough:'Brooklyn', discharges:6303, population:2736074, rate:230.4 },
+  { borough:'Queens', discharges:4991, population:2405464, rate:207.5 }
+];
 const DASHBOARD_BOROUGH_MAP = {
   bronx: { label:'The Bronx', shortLabel:'Bronx', lat:40.8448, lng:-73.8648, zoom:11 },
   brooklyn: { label:'Brooklyn', shortLabel:'Brooklyn', lat:40.6782, lng:-73.9442, zoom:11 },
@@ -7349,6 +7428,102 @@ function updateBarChart(canvasId, labels, data, datasetLabel, colors, indexAxis,
   });
 }
 
+function initPrevalenceCharts() {
+  const rateCanvas = document.getElementById('prevalenceRateChart');
+  const countCanvas = document.getElementById('prevalenceCountVsRateChart');
+  if (!rateCanvas || !countCanvas || typeof Chart === 'undefined') return;
+
+  const labels = PREVALENCE_ROWS.map(row => row.borough);
+  const rates = PREVALENCE_ROWS.map(row => row.rate);
+  const discharges = PREVALENCE_ROWS.map(row => row.discharges);
+  const populationMillions = PREVALENCE_ROWS.map(row => +(row.population / 1000000).toFixed(2));
+
+  if (CHARTS.prevalenceRateChart) CHARTS.prevalenceRateChart.destroy();
+  CHARTS.prevalenceRateChart = new Chart(rateCanvas, {
+    type: 'bar',
+    data: {
+      labels,
+      datasets: [{
+        label: 'Hospitalization rate per 100,000 residents',
+        data: rates,
+        backgroundColor: ['#C8960C','#0B4F5A','#4C315F','#12334A','#006064'],
+        borderRadius: 8
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      animation: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: { callbacks: { label: ctx => ctx.parsed.y.toFixed(1) + ' discharges per 100K residents' } }
+      },
+      scales: {
+        y: {
+          beginAtZero: true,
+          grid: { display: false },
+          ticks: { color: '#000000', callback: value => value + ' per 100K' }
+        },
+        x: { grid: { display: false }, ticks: { color: '#006064', font: { weight: '700' } } }
+      }
+    }
+  });
+
+  if (CHARTS.prevalenceCountVsRateChart) CHARTS.prevalenceCountVsRateChart.destroy();
+  CHARTS.prevalenceCountVsRateChart = new Chart(countCanvas, {
+    type: 'bar',
+    data: {
+      labels,
+      datasets: [
+        {
+          label: 'SPARCS diabetes discharges',
+          data: discharges,
+          backgroundColor: '#0B4F5A',
+          borderRadius: 8,
+          yAxisID: 'y'
+        },
+        {
+          label: 'Population in millions',
+          data: populationMillions,
+          backgroundColor: '#C8960C',
+          borderRadius: 8,
+          yAxisID: 'y1'
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      animation: false,
+      plugins: {
+        legend: { labels: { color: '#000000', font: { weight: '700' } } },
+        tooltip: {
+          callbacks: {
+            label: ctx => ctx.dataset.yAxisID === 'y1'
+              ? ctx.dataset.label + ': ' + ctx.parsed.y.toFixed(2) + 'M residents'
+              : ctx.dataset.label + ': ' + ctx.parsed.y.toLocaleString()
+          }
+        }
+      },
+      scales: {
+        y: {
+          beginAtZero: true,
+          position: 'left',
+          grid: { display: false },
+          ticks: { color: '#000000', callback: value => Number(value).toLocaleString() }
+        },
+        y1: {
+          beginAtZero: true,
+          position: 'right',
+          grid: { display: false },
+          ticks: { color: '#000000', callback: value => value + 'M' }
+        },
+        x: { grid: { display: false }, ticks: { color: '#006064', font: { weight: '700' } } }
+      }
+    }
+  });
+}
+
 function updateLineChart(canvasId, labels, data, datasetLabel) {
   var canvas = document.getElementById(canvasId);
   if (!canvas) return;
@@ -7457,6 +7632,7 @@ function showPage(id) {
   targetPage.scrollIntoView({ block: 'start' });
   if (id==='diabetes'    && !CHARTS['boroughPrevalenceChart']) { initDiabetisCharts(); }
   if (id==='diabetes') { setTimeout(updateDashboard, 180); }
+  if (id==='prevalence') { setTimeout(initPrevalenceCharts, 80); }
   if (id==='nyc'         && !CHARTS['nycBoroughBar'])          { initNYCCharts(); }
   if (id==='projects'    && !CHARTS['payorChart'])             { initProjectsCharts(); }
   if (id==='drugs'       && !CHARTS['drugTop10Chart'])         { initDrugCharts(); }
