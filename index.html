@@ -2160,15 +2160,6 @@ footer p { color: var(--gold-cream) !important; }
   margin: 0.7rem 0 0 !important;
   line-height: 1.5 !important;
 }
-#epi2025Map {
-  height: 390px;
-  min-height: 340px;
-  width: 100%;
-  border-radius: 10px;
-  border: 1px solid rgba(42,26,64,0.28);
-  overflow: hidden;
-  background: #C8E3CE;
-}
 .epi2025-uhf-map {
   height: 420px;
   min-height: 360px;
@@ -2191,75 +2182,6 @@ footer p { color: var(--gold-cream) !important; }
   line-height: 1.65 !important;
   font-size: 0.92rem !important;
   margin: 0.75rem 0 0 !important;
-}
-.epi2025-image-map {
-  width: 100%;
-  min-height: 360px;
-  position: relative;
-  overflow: hidden;
-  border-radius: 10px;
-  background: #050505;
-}
-.epi2025-map-image {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-.epi2025-map-marker {
-  position: absolute;
-  transform: translate(-50%, -50%);
-  border-radius: 999px;
-  border: 2.5px solid #2a1a40;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.35);
-  cursor: help;
-}
-.epi2025-map-marker::after {
-  content: attr(data-label);
-  position: absolute;
-  left: calc(100% + 5px);
-  top: 50%;
-  transform: translateY(-50%);
-  color: #FFF1C7;
-  background: rgba(42,26,64,0.88);
-  border: 1px solid rgba(242,197,124,0.55);
-  border-radius: 6px;
-  padding: 2px 5px;
-  font-size: 0.68rem;
-  font-weight: 900;
-  white-space: nowrap;
-  pointer-events: none;
-}
-.epi2025-map-marker:hover,
-.epi2025-map-marker:focus {
-  outline: 3px solid #F2C57C;
-  z-index: 5;
-}
-.epi2025-map-marker:hover .epi2025-marker-popup,
-.epi2025-map-marker:focus .epi2025-marker-popup {
-  display: block;
-}
-.epi2025-marker-popup {
-  display: none;
-  position: absolute;
-  left: 50%;
-  bottom: calc(100% + 10px);
-  transform: translateX(-50%);
-  min-width: 190px;
-  background: #FFF1C7;
-  color: #140023;
-  border: 2px solid #2a1a40;
-  border-radius: 8px;
-  padding: 0.55rem;
-  font-size: 0.78rem;
-  line-height: 1.35;
-  font-weight: 800;
-  box-shadow: 0 8px 18px rgba(0,0,0,0.35);
-}
-.epi2025-map-tip {
-  color: #140023;
-  font-size: 0.82rem;
-  font-weight: 800;
-  margin-top: 0.5rem;
 }
 .epi2025-tab-row {
   display: grid;
@@ -4016,16 +3938,6 @@ footer:empty { display: none !important; padding: 0 !important; margin: 0 !impor
 </div>
 </div>
 <div class="dashboard-grid dashboard-grid-main" style="margin-top:1.4rem;">
-<div class="chart-card dashboard-map-card">
-<h3 style="background:#2a1a40; color:#F2C57C !important; padding:0.6rem 1rem; border-radius:8px; margin:-0.5rem -0.5rem 1rem -0.5rem;">🗺️ NYC Diabetes Prevalence Map — 2022</h3>
-<div id="epi2025Map" role="img" aria-label="Interactive New York City map showing diabetes prevalence by borough"></div>
-<div class="dashboard-map-legend">
-<span><i class="dashboard-map-dot" style="background:#F85C70;"></i> Higher prevalence</span>
-<span><i class="dashboard-map-dot" style="background:#F2B84B;"></i> Middle prevalence</span>
-<span><i class="dashboard-map-dot" style="background:#2ED47A;"></i> Lower prevalence</span>
-</div>
-<p class="dashboard-map-note">Click a borough marker to update the topic chart to borough prevalence. Values are from NYC DOHMH Epi Data Brief No. 146.</p>
-</div>
 <div class="chart-card">
 <h3 style="background:#2a1a40; color:#F2C57C !important; padding:0.6rem 1rem; border-radius:8px; margin:-0.5rem -0.5rem 1rem -0.5rem;">🧪 A1C Blood Sugar Control by Borough</h3>
 <div class="chart-wrapper" style="height:330px;">
@@ -4049,7 +3961,6 @@ footer:empty { display: none !important; padding: 0 !important; margin: 0 !impor
 <p class="epi2025-table-note">Neighborhood estimates show where diabetes prevalence is highest inside boroughs. Southwest Queens, Pelham-Throgs Neck, East Harlem, East New York, and Flatbush appear among the highest-prevalence areas in the table.</p>
 <div class="dashboard-grid dashboard-grid-main" style="margin-top:1rem;">
 <div class="chart-card"><h3 class="epi2025-section-title">Top UHF 34 Neighborhoods</h3><div class="chart-wrapper" style="height:430px;"><canvas id="epi2025T2TopNeighborhoods"></canvas></div></div>
-<div class="chart-card dashboard-map-card"><h3 class="epi2025-section-title">UHF 34 Neighborhood Prevalence Map</h3><div id="epi2025UhfPrevalenceMap" class="epi2025-uhf-map" role="img" aria-label="Approximate UHF 34 neighborhood map of diabetes prevalence"></div><p class="dashboard-map-note">Markers are approximate UHF neighborhood reference points for portfolio storytelling. Click markers for prevalence, weighted count, and confidence interval.</p></div>
 </div>
 </div>
 <div class="chart-card" style="margin-top:1.4rem;">
@@ -4066,7 +3977,6 @@ footer:empty { display: none !important; padding: 0 !important; margin: 0 !impor
 <p class="epi2025-table-note">The highest percentages of very high A1C are concentrated in Bronx and Brooklyn neighborhoods, with Hunts Point-Mott Haven at 18.2%.</p>
 <div class="dashboard-grid dashboard-grid-main" style="margin-top:1rem;">
 <div class="chart-card"><h3 class="epi2025-section-title">Top 10 UHF 42 Neighborhoods</h3><div class="chart-wrapper" style="height:430px;"><canvas id="epi2025T4TopPoorA1C"></canvas></div></div>
-<div class="chart-card dashboard-map-card"><h3 class="epi2025-section-title">Very High A1C Neighborhood Map</h3><div id="epi2025PoorA1CMap" class="epi2025-uhf-map" role="img" aria-label="Approximate UHF 42 neighborhood map of very high A1C"></div><p class="dashboard-map-note">Markers show UHF 42 neighborhoods with the highest percent of adults with diabetes whose latest A1C was greater than 9%.</p></div>
 </div>
 </div>
 <div class="chart-card" style="margin-top:1.4rem;">
@@ -4085,7 +3995,6 @@ footer:empty { display: none !important; padding: 0 !important; margin: 0 !impor
 <p class="epi2025-table-note">Neighborhood rates show severe complication burden in East Harlem, Hunts Point-Mott Haven, Crotona-Tremont, High Bridge-Morrisania, and Pelham-Throgs Neck.</p>
 <div class="dashboard-grid dashboard-grid-main" style="margin-top:1rem;">
 <div class="chart-card"><h3 class="epi2025-section-title">Highest LEA Neighborhood Rates</h3><div class="chart-wrapper" style="height:430px;"><canvas id="epi2025T6TopLea"></canvas></div></div>
-<div class="chart-card dashboard-map-card"><h3 class="epi2025-section-title">LEA Neighborhood Rate Map</h3><div id="epi2025LeaMap" class="epi2025-uhf-map" role="img" aria-label="Approximate UHF 42 neighborhood map of diabetes-related amputation rates"></div><p class="dashboard-map-note">Markers show high-rate UHF 42 neighborhoods from Table 6. Values are rates per 100,000 adults.</p></div>
 </div>
 </div>
 <div class="chart-card" style="margin-top:1.4rem;">
@@ -8531,53 +8440,6 @@ function setEpi2025Topic(topic) {
 }
 window.setEpi2025Topic = setEpi2025Topic;
 
-function epi2025ProjectPoint(row) {
-  const minLng = -74.26;
-  const maxLng = -73.68;
-  const minLat = 40.48;
-  const maxLat = 40.93;
-  const x = ((row.lng - minLng) / (maxLng - minLng)) * 100;
-  const y = (1 - ((row.lat - minLat) / (maxLat - minLat))) * 100;
-  return { x, y };
-}
-
-function epi2025ImageMapHtml(rows, valueKey, label, suffix, mode) {
-  const values = rows.map(row => row[valueKey]);
-  const min = Math.min(...values);
-  const max = Math.max(...values);
-  const markers = rows.map((row, index) => {
-    const point = epi2025ProjectPoint(row);
-    const value = row[valueKey];
-    const color = mapMarkerColor(value, min, max);
-    const radius = 7 + (max === min ? 8 : ((value - min) / (max - min)) * 14);
-    const name = row.label || row.name;
-    const count = row.count ? `Count: ${row.count.toLocaleString()}` : '';
-    const ci = row.ci ? `95% CI: ${row.ci}` : '';
-    return `
-      <button class="epi2025-map-marker" type="button" aria-label="${name}: ${value}${suffix}" data-label="${mode === 'borough' ? name : index + 1}" style="left:${point.x.toFixed(2)}%; top:${point.y.toFixed(2)}%; width:${(radius * 1.8).toFixed(1)}px; height:${(radius * 1.8).toFixed(1)}px; background:${color};">
-        <span class="epi2025-marker-popup"><strong>${name}</strong><br>${row.borough || 'NYC'}<br>${label}: ${value}${suffix}${count ? '<br>' + count : ''}${ci ? '<br>' + ci : ''}</span>
-      </button>`;
-  }).join('');
-  const legendRows = rows.slice().sort((a,b) => b[valueKey] - a[valueKey]).slice(0, mode === 'borough' ? 5 : 8)
-    .map((row, index) => `<div><strong>${index + 1}. ${row.label || row.name}</strong> ${row[valueKey]}${suffix}</div>`).join('');
-  return `
-    <div class="epi2025-image-map" aria-label="New York City data image map">
-      <img class="epi2025-map-image" src="assets/nyc-council-districts-map.png" alt="New York City council district map">
-      ${markers}
-    </div>
-    <div class="epi2025-map-tip">${legendRows}</div>`;
-}
-
-function epi2025RenderSvgMap(elementId, rows, valueKey, label, suffix, mode) {
-  const el = document.getElementById(elementId);
-  if (!el) return;
-  el.innerHTML = epi2025ImageMapHtml(rows, valueKey, label, suffix, mode);
-}
-
-function updateEpi2025Map() {
-  epi2025RenderSvgMap('epi2025Map', EPI2025_MAP_ROWS, 'prevalence', 'Adult diabetes prevalence', '%', 'borough');
-}
-
 const EPI2025_UHF34 = [
   {name:'Southwest Queens', borough:'Queens', count:56000, value:22.7, ci:'15.6-31.8', lat:40.685, lng:-73.835},
   {name:'Pelham - Throgs Neck', borough:'Bronx', count:44000, value:18.3, ci:'13.0-25.2', lat:40.842, lng:-73.828},
@@ -8720,12 +8582,6 @@ function initEpi2025DeepDiveCharts() {
   epi2025MakeBar('epi2025T6TopLea', topLea.map(r=>r.name), topLea.map(r=>r.value), 'LEA rate per 100K', 125, '#560000', 'y');
 }
 
-function initEpi2025DeepDiveMaps() {
-  epi2025RenderSvgMap('epi2025UhfPrevalenceMap', EPI2025_UHF34, 'value', 'Diabetes prevalence', '%', 'neighborhood');
-  epi2025RenderSvgMap('epi2025PoorA1CMap', EPI2025_UHF42_A1C, 'value', 'A1C >9%', '%', 'neighborhood');
-  epi2025RenderSvgMap('epi2025LeaMap', EPI2025_UHF42_LEA, 'value', 'LEA rate', ' per 100K', 'neighborhood');
-}
-
 function initEpi2025Page() {
   setEpi2025Topic('borough');
   const a1cCanvas = document.getElementById('epi2025A1CChart');
@@ -8753,9 +8609,7 @@ function initEpi2025Page() {
       }
     });
   }
-  updateEpi2025Map();
   initEpi2025DeepDiveCharts();
-  initEpi2025DeepDiveMaps();
 }
 
 // Data from Tables 1, 2, 3 — Bronx, NY
