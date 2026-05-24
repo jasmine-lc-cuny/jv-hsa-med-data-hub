@@ -2169,6 +2169,29 @@ footer p { color: var(--gold-cream) !important; }
   overflow: hidden;
   background: #C8E3CE;
 }
+.epi2025-uhf-map {
+  height: 420px;
+  min-height: 360px;
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid rgba(42,26,64,0.28);
+  overflow: hidden;
+  background: #C8E3CE;
+}
+.epi2025-section-title {
+  background: #2a1a40;
+  color: #F2C57C !important;
+  padding: 0.7rem 1rem;
+  border-radius: 8px;
+  margin: -0.5rem -0.5rem 1rem -0.5rem;
+  font-family: var(--font-display);
+}
+.epi2025-table-note {
+  color: #140023 !important;
+  line-height: 1.65 !important;
+  font-size: 0.92rem !important;
+  margin: 0.75rem 0 0 !important;
+}
 .epi2025-tab-row {
   display: grid;
   grid-template-columns: repeat(6, minmax(0, 1fr));
@@ -3938,6 +3961,74 @@ footer:empty { display: none !important; padding: 0 !important; margin: 0 !impor
 <h3 style="background:#2a1a40; color:#F2C57C !important; padding:0.6rem 1rem; border-radius:8px; margin:-0.5rem -0.5rem 1rem -0.5rem;">🧪 A1C Blood Sugar Control by Borough</h3>
 <div class="chart-wrapper" style="height:330px;">
 <canvas id="epi2025A1CChart"></canvas>
+</div>
+</div>
+</div>
+<div class="chart-card" style="margin-top:1.4rem;">
+<h2 class="epi2025-section-title">Table 1 · Adult Diabetes Prevalence by Demographics</h2>
+<p class="epi2025-table-note">Community Health Survey 2022 estimates show diabetes prevalence by age, sex, race/ethnicity, neighborhood poverty, and borough. These are prevalence estimates, not hospital discharge counts.</p>
+<div class="dashboard-grid dashboard-grid-main" style="margin-top:1rem;">
+<div class="chart-card"><h3 class="epi2025-section-title">Age Group</h3><div class="chart-wrapper" style="height:300px;"><canvas id="epi2025T1Age"></canvas></div></div>
+<div class="chart-card"><h3 class="epi2025-section-title">Sex</h3><div class="chart-wrapper" style="height:300px;"><canvas id="epi2025T1Sex"></canvas></div></div>
+<div class="chart-card"><h3 class="epi2025-section-title">Race/Ethnicity</h3><div class="chart-wrapper" style="height:320px;"><canvas id="epi2025T1Race"></canvas></div></div>
+<div class="chart-card"><h3 class="epi2025-section-title">Neighborhood Poverty</h3><div class="chart-wrapper" style="height:320px;"><canvas id="epi2025T1Poverty"></canvas></div></div>
+<div class="chart-card chart-card-wide home-wide-chart"><h3 class="epi2025-section-title">Weighted Number of Adults with Diabetes</h3><div class="chart-wrapper" style="height:260px;"><canvas id="epi2025T1Weighted"></canvas></div></div>
+</div>
+</div>
+<div class="chart-card" style="margin-top:1.4rem;">
+<h2 class="epi2025-section-title">Table 2 · Diabetes Prevalence by UHF 34 Neighborhood</h2>
+<p class="epi2025-table-note">Neighborhood estimates show where diabetes prevalence is highest inside boroughs. Southwest Queens, Pelham-Throgs Neck, East Harlem, East New York, and Flatbush appear among the highest-prevalence areas in the table.</p>
+<div class="dashboard-grid dashboard-grid-main" style="margin-top:1rem;">
+<div class="chart-card"><h3 class="epi2025-section-title">Top UHF 34 Neighborhoods</h3><div class="chart-wrapper" style="height:430px;"><canvas id="epi2025T2TopNeighborhoods"></canvas></div></div>
+<div class="chart-card dashboard-map-card"><h3 class="epi2025-section-title">UHF 34 Neighborhood Prevalence Map</h3><div id="epi2025UhfPrevalenceMap" class="epi2025-uhf-map" role="img" aria-label="Approximate UHF 34 neighborhood map of diabetes prevalence"></div><p class="dashboard-map-note">Markers are approximate UHF neighborhood reference points for portfolio storytelling. Click markers for prevalence, weighted count, and confidence interval.</p></div>
+</div>
+</div>
+<div class="chart-card" style="margin-top:1.4rem;">
+<h2 class="epi2025-section-title">Table 3 · Blood Sugar Control Among Adults with Diabetes Receiving Medical Care</h2>
+<p class="epi2025-table-note">The A1C Registry shows that 13.9% of NYC adults with diabetes receiving medical care had very high blood sugar, defined here as latest A1C greater than 9%.</p>
+<div class="dashboard-grid dashboard-grid-main" style="margin-top:1rem;">
+<div class="chart-card chart-card-wide home-wide-chart"><h3 class="epi2025-section-title">A1C Distribution by Age Group</h3><div class="chart-wrapper" style="height:290px;"><canvas id="epi2025T3A1CAge"></canvas></div></div>
+<div class="chart-card"><h3 class="epi2025-section-title">Very High A1C by Borough</h3><div class="chart-wrapper" style="height:300px;"><canvas id="epi2025T3PoorBorough"></canvas></div></div>
+<div class="chart-card"><h3 class="epi2025-section-title">Very High A1C by Poverty</h3><div class="chart-wrapper" style="height:300px;"><canvas id="epi2025T3PoorPoverty"></canvas></div></div>
+</div>
+</div>
+<div class="chart-card" style="margin-top:1.4rem;">
+<h2 class="epi2025-section-title">Table 4 · Very High A1C by UHF 42 Neighborhood</h2>
+<p class="epi2025-table-note">The highest percentages of very high A1C are concentrated in Bronx and Brooklyn neighborhoods, with Hunts Point-Mott Haven at 18.2%.</p>
+<div class="dashboard-grid dashboard-grid-main" style="margin-top:1rem;">
+<div class="chart-card"><h3 class="epi2025-section-title">Top 10 UHF 42 Neighborhoods</h3><div class="chart-wrapper" style="height:430px;"><canvas id="epi2025T4TopPoorA1C"></canvas></div></div>
+<div class="chart-card dashboard-map-card"><h3 class="epi2025-section-title">Very High A1C Neighborhood Map</h3><div id="epi2025PoorA1CMap" class="epi2025-uhf-map" role="img" aria-label="Approximate UHF 42 neighborhood map of very high A1C"></div><p class="dashboard-map-note">Markers show UHF 42 neighborhoods with the highest percent of adults with diabetes whose latest A1C was greater than 9%.</p></div>
+</div>
+</div>
+<div class="chart-card" style="margin-top:1.4rem;">
+<h2 class="epi2025-section-title">Table 5 · Diabetes-Related Lower Extremity Amputations by Demographics</h2>
+<p class="epi2025-table-note">SPARCS 2022 shows 3,184 diabetes-related lower-extremity amputations among NYC adults. Rates are age-adjusted per 100,000 adults.</p>
+<div class="dashboard-grid dashboard-grid-main" style="margin-top:1rem;">
+<div class="chart-card"><h3 class="epi2025-section-title">LEA Rate by Age Group</h3><div class="chart-wrapper" style="height:300px;"><canvas id="epi2025T5LeaAge"></canvas></div></div>
+<div class="chart-card"><h3 class="epi2025-section-title">LEA Rate by Sex</h3><div class="chart-wrapper" style="height:300px;"><canvas id="epi2025T5LeaSex"></canvas></div></div>
+<div class="chart-card"><h3 class="epi2025-section-title">LEA Rate by Race/Ethnicity</h3><div class="chart-wrapper" style="height:320px;"><canvas id="epi2025T5LeaRace"></canvas></div></div>
+<div class="chart-card"><h3 class="epi2025-section-title">LEA Rate by Poverty</h3><div class="chart-wrapper" style="height:320px;"><canvas id="epi2025T5LeaPoverty"></canvas></div></div>
+<div class="chart-card chart-card-wide home-wide-chart"><h3 class="epi2025-section-title">LEA Count vs Rate by Borough</h3><div class="chart-wrapper" style="height:290px;"><canvas id="epi2025T5LeaBoroughCombo"></canvas></div></div>
+</div>
+</div>
+<div class="chart-card" style="margin-top:1.4rem;">
+<h2 class="epi2025-section-title">Table 6 · Diabetes-Related Amputations by UHF 42 Neighborhood</h2>
+<p class="epi2025-table-note">Neighborhood rates show severe complication burden in East Harlem, Hunts Point-Mott Haven, Crotona-Tremont, High Bridge-Morrisania, and Pelham-Throgs Neck.</p>
+<div class="dashboard-grid dashboard-grid-main" style="margin-top:1rem;">
+<div class="chart-card"><h3 class="epi2025-section-title">Highest LEA Neighborhood Rates</h3><div class="chart-wrapper" style="height:430px;"><canvas id="epi2025T6TopLea"></canvas></div></div>
+<div class="chart-card dashboard-map-card"><h3 class="epi2025-section-title">LEA Neighborhood Rate Map</h3><div id="epi2025LeaMap" class="epi2025-uhf-map" role="img" aria-label="Approximate UHF 42 neighborhood map of diabetes-related amputation rates"></div><p class="dashboard-map-note">Markers show high-rate UHF 42 neighborhoods from Table 6. Values are rates per 100,000 adults.</p></div>
+</div>
+</div>
+<div class="chart-card" style="margin-top:1.4rem;">
+<h2 class="epi2025-section-title">Definitions and Implications</h2>
+<div class="dashboard-grid dashboard-grid-main">
+<div>
+<p class="epi2025-table-note"><strong>Diabetes:</strong> Includes adults who self-reported diagnosed diabetes, were recorded in hospitalization claims with diabetes diagnosis codes, or had a history of two or more A1C tests greater than 6.5%, regardless of diabetes type.</p>
+<p class="epi2025-table-note"><strong>A1C:</strong> A1C reflects average blood sugar over roughly three months. In this brief, A1C greater than 8% is not meeting blood sugar goals, and A1C greater than 9% is considered very high.</p>
+</div>
+<div>
+<p class="epi2025-table-note"><strong>Diabetes-related lower extremity amputation:</strong> Hospitalizations with both a diabetes-related diagnosis and a non-traumatic lower limb amputation procedure code.</p>
+<p class="epi2025-table-note"><strong>Policy implication:</strong> The brief connects diabetes inequities to structural and social drivers of health, including poverty, racism, housing instability, nutrition access, and the built environment.</p>
 </div>
 </div>
 </div>
@@ -8423,6 +8514,192 @@ function updateEpi2025Map() {
   }, 180);
 }
 
+const EPI2025_UHF34 = [
+  {name:'Southwest Queens', borough:'Queens', count:56000, value:22.7, ci:'15.6-31.8', lat:40.685, lng:-73.835},
+  {name:'Pelham - Throgs Neck', borough:'Bronx', count:44000, value:18.3, ci:'13.0-25.2', lat:40.842, lng:-73.828},
+  {name:'East Harlem', borough:'Manhattan', count:16000, value:17.3, ci:'11.7-24.8', lat:40.795, lng:-73.936},
+  {name:'East New York', borough:'Brooklyn', count:26000, value:17.1, ci:'11.9-24.0', lat:40.666, lng:-73.882},
+  {name:'Flatbush', borough:'Brooklyn', count:43000, value:16.4, ci:'11.1-23.5', lat:40.641, lng:-73.959},
+  {name:'South Bronx', borough:'Bronx', count:62000, value:15.6, ci:'11.7-20.5', lat:40.817, lng:-73.912},
+  {name:'Bedford Stuyvesant - Crown Heights', borough:'Brooklyn', count:39000, value:15.4, ci:'10.7-21.7', lat:40.675, lng:-73.932},
+  {name:'Northeast Bronx', borough:'Bronx', count:26000, value:14.9, ci:'9.3-23.0', lat:40.875, lng:-73.852},
+  {name:'Jamaica', borough:'Queens', count:39000, value:14.8, ci:'10.3-20.8', lat:40.702, lng:-73.789},
+  {name:'Coney Island', borough:'Brooklyn', count:40000, value:13.8, ci:'9.6-19.6', lat:40.583, lng:-73.965},
+  {name:'Rockaway', borough:'Queens', count:14000, value:13.3, ci:'8.8-19.4', lat:40.59, lng:-73.80},
+  {name:'Washington Heights', borough:'Manhattan', count:30000, value:12.9, ci:'7.5-21.4', lat:40.84, lng:-73.94},
+  {name:'Sunset Park', borough:'Brooklyn', count:11000, value:12.5, ci:'6.3-23.4', lat:40.645, lng:-74.012},
+  {name:'Fordham - Bronx Park', borough:'Bronx', count:21000, value:12.1, ci:'8.5-16.9', lat:40.861, lng:-73.891},
+  {name:'Kingsbridge', borough:'Bronx', count:10000, value:11.2, ci:'5.9-20.1', lat:40.881, lng:-73.905},
+  {name:'Southeast Queens', borough:'Queens', count:21000, value:10.6, ci:'6.2-17.6', lat:40.678, lng:-73.741},
+  {name:'West Queens', borough:'Queens', count:36000, value:9.9, ci:'6.6-14.6', lat:40.745, lng:-73.89},
+  {name:'Flushing', borough:'Queens', count:27000, value:9.9, ci:'6.0-15.8', lat:40.765, lng:-73.83},
+  {name:'Williamsburg - Bushwick', borough:'Brooklyn', count:14000, value:9.7, ci:'5.4-16.9', lat:40.704, lng:-73.93},
+  {name:'Borough Park', borough:'Brooklyn', count:23000, value:9.6, ci:'5.6-15.9', lat:40.633, lng:-73.996},
+  {name:'Central Harlem', borough:'Manhattan', count:12000, value:9.7, ci:'5.3-17.0', lat:40.811, lng:-73.946},
+  {name:'Northern Staten Island', borough:'Staten Island', count:17000, value:9.6, ci:'5.3-16.8', lat:40.631, lng:-74.093},
+  {name:'Long Island City, Astoria', borough:'Queens', count:14000, value:9.0, ci:'4.7-16.5', lat:40.755, lng:-73.925},
+  {name:'Bayside Little Neck-Fresh Meadows', borough:'Queens', count:15000, value:8.5, ci:'5.3-13.4', lat:40.746, lng:-73.78},
+  {name:'Southern Staten Island', borough:'Staten Island', count:21000, value:8.5, ci:'5.7-12.5', lat:40.55, lng:-74.18},
+  {name:'Canarsie', borough:'Brooklyn', count:15000, value:8.4, ci:'5.1-13.6', lat:40.637, lng:-73.90},
+  {name:'Bensonhurst', borough:'Brooklyn', count:15000, value:8.3, ci:'4.7-14.5', lat:40.611, lng:-73.995},
+  {name:'Ridgewood', borough:'Queens', count:19000, value:8.0, ci:'4.4-14.1', lat:40.71, lng:-73.90},
+  {name:'Union Square-Lower Manhattan', borough:'Manhattan', count:17000, value:7.7, ci:'4.2-13.7', lat:40.725, lng:-73.995},
+  {name:'Upper West Side', borough:'Manhattan', count:13000, value:6.0, ci:'2.6-13.1', lat:40.787, lng:-73.975},
+  {name:'Chelsea-Village', borough:'Manhattan', count:13000, value:6.0, ci:'3.4-10.4', lat:40.742, lng:-74.0},
+  {name:'Downtown - Heights - Park Slope', borough:'Brooklyn', count:10000, value:5.7, ci:'3.2-10.0', lat:40.684, lng:-73.99},
+  {name:'Greenpoint', borough:'Brooklyn', count:3000, value:4.4, ci:'1.8-10.7', lat:40.73, lng:-73.954},
+  {name:'Upper East Side-Gramercy', borough:'Manhattan', count:13000, value:3.7, ci:'2.0-6.9', lat:40.768, lng:-73.959}
+];
+const EPI2025_UHF42_A1C = [
+  {name:'Hunts Point - Mott Haven', borough:'Bronx', count:2244, denom:12316, value:18.2, lat:40.812, lng:-73.908},
+  {name:'Fordham - Bronx Park', borough:'Bronx', count:3392, denom:19530, value:17.4, lat:40.861, lng:-73.891},
+  {name:'High Bridge - Morrisania', borough:'Bronx', count:3395, denom:19591, value:17.3, lat:40.834, lng:-73.917},
+  {name:'Crotona - Tremont', borough:'Bronx', count:3271, denom:19002, value:17.2, lat:40.842, lng:-73.887},
+  {name:'East New York', borough:'Brooklyn', count:2989, denom:17511, value:17.1, lat:40.666, lng:-73.882},
+  {name:'East Flatbush - Flatbush', borough:'Brooklyn', count:4368, denom:25473, value:17.1, lat:40.645, lng:-73.94},
+  {name:'Bedford Stuyvesant - Crown Heights', borough:'Brooklyn', count:4036, denom:23860, value:16.9, lat:40.675, lng:-73.932},
+  {name:'Williamsburg - Bushwick', borough:'Brooklyn', count:2250, denom:13906, value:16.2, lat:40.704, lng:-73.93},
+  {name:'Central Harlem - Morningside Heights', borough:'Manhattan', count:1988, denom:12286, value:16.2, lat:40.811, lng:-73.946},
+  {name:'East Harlem', borough:'Manhattan', count:1700, denom:10540, value:16.1, lat:40.795, lng:-73.936},
+  {name:'Rockaway', borough:'Queens', count:1430, denom:8906, value:16.1, lat:40.59, lng:-73.80},
+  {name:'Pelham - Throgs Neck', borough:'Bronx', count:4134, denom:26575, value:15.6, lat:40.842, lng:-73.828},
+  {name:'Washington Heights - Inwood', borough:'Manhattan', count:3367, denom:21748, value:15.5, lat:40.84, lng:-73.94},
+  {name:'Jamaica', borough:'Queens', count:5511, denom:36159, value:15.2, lat:40.702, lng:-73.789},
+  {name:'Northeast Bronx', borough:'Bronx', count:2523, denom:16708, value:15.1, lat:40.875, lng:-73.852}
+];
+const EPI2025_UHF42_LEA = [
+  {name:'East Harlem', borough:'Manhattan', count:108, value:115.5, lat:40.795, lng:-73.936},
+  {name:'Hunts Point - Mott Haven', borough:'Bronx', count:101, value:100.5, lat:40.812, lng:-73.908},
+  {name:'Crotona - Tremont', borough:'Bronx', count:129, value:86.8, lat:40.842, lng:-73.887},
+  {name:'High Bridge - Morrisania', borough:'Bronx', count:123, value:77.5, lat:40.834, lng:-73.917},
+  {name:'Pelham - Throgs Neck', borough:'Bronx', count:180, value:73.5, lat:40.842, lng:-73.828},
+  {name:'Williamsburg - Bushwick', borough:'Brooklyn', count:96, value:64.4, lat:40.704, lng:-73.93},
+  {name:'Northeast Bronx', borough:'Bronx', count:115, value:62.1, lat:40.875, lng:-73.852},
+  {name:'Fordham - Bronx Park', borough:'Bronx', count:116, value:61.4, lat:40.861, lng:-73.891},
+  {name:'Bedford Stuyvesant - Crown Heights', borough:'Brooklyn', count:159, value:61.2, lat:40.675, lng:-73.932},
+  {name:'Rockaway', borough:'Queens', count:68, value:58.2, lat:40.59, lng:-73.80},
+  {name:'Port Richmond', borough:'Staten Island', count:31, value:56.5, lat:40.633, lng:-74.136},
+  {name:'Central Harlem - Morningside Heights', borough:'Manhattan', count:73, value:52.9, lat:40.811, lng:-73.946},
+  {name:'Jamaica', borough:'Queens', count:153, value:50.8, lat:40.702, lng:-73.789},
+  {name:'Southwest Queens', borough:'Queens', count:109, value:44.1, lat:40.685, lng:-73.835},
+  {name:'Southeast Queens', borough:'Queens', count:97, value:44.1, lat:40.678, lng:-73.741}
+];
+let epi2025UhfPrevalenceMap = null;
+let epi2025PoorA1CMap = null;
+let epi2025LeaMap = null;
+
+function epi2025MakeBar(id, labels, values, label, max, colors, axis) {
+  const el = document.getElementById(id);
+  if (!el || !window.Chart) return;
+  if (CHARTS[id]) CHARTS[id].destroy();
+  CHARTS[id] = new Chart(el, {
+    type:'bar',
+    data:{ labels, datasets:[{ label, data:values, backgroundColor:colors || FOREST_COLORS, borderRadius:8 }] },
+    options:{
+      responsive:true, maintainAspectRatio:false, animation:false, indexAxis:axis || 'x',
+      plugins:{ legend:{display:false}, tooltip:{callbacks:{label:ctx => label + ': ' + (axis === 'y' ? ctx.parsed.x : ctx.parsed.y).toLocaleString()}} },
+      scales:{
+        x: axis === 'y' ? {beginAtZero:true,max,ticks:{color:'#000000',font:{weight:'700'}},grid:{display:false}} : {ticks:{color:'#000000',font:{weight:'700'}},grid:{display:false}},
+        y: axis === 'y' ? {ticks:{color:'#000000',font:{weight:'700'}},grid:{display:false}} : {beginAtZero:true,max,ticks:{color:'#000000',font:{weight:'700'}},grid:{display:false}}
+      }
+    }
+  });
+}
+
+function epi2025MakeStacked(id, labels, datasets) {
+  const el = document.getElementById(id);
+  if (!el || !window.Chart) return;
+  if (CHARTS[id]) CHARTS[id].destroy();
+  CHARTS[id] = new Chart(el, {
+    type:'bar',
+    data:{ labels, datasets },
+    options:{
+      responsive:true, maintainAspectRatio:false, animation:false,
+      plugins:{ legend:{position:'bottom',labels:{boxWidth:12,color:'#000000',font:{size:11,weight:'700'}}} },
+      scales:{ x:{stacked:true,ticks:{color:'#000000',font:{weight:'700'}},grid:{display:false}}, y:{stacked:true,max:100,ticks:{color:'#000000',font:{weight:'700'},callback:v=>v+'%'},grid:{display:false}} }
+    }
+  });
+}
+
+function epi2025InitPointMap(mapVarName, elementId, rows, valueKey, label, suffix) {
+  const el = document.getElementById(elementId);
+  if (!el || !window.L) {
+    if (el) el.innerHTML = '<div style="padding:1rem;color:#2a1a40;font-weight:800;">Map needs Leaflet/OpenStreetMap to load. Charts still work normally.</div>';
+    return null;
+  }
+  let map = window[mapVarName];
+  if (!map) {
+    map = L.map(el, { scrollWheelZoom:false, zoomControl:true }).setView([40.7128, -73.95], 10);
+    map.setMinZoom(9);
+    map.setMaxZoom(13);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom:19, attribution:'&copy; OpenStreetMap contributors' }).addTo(map);
+    window[mapVarName] = map;
+  }
+  if (map.__epiLayer) map.__epiLayer.clearLayers();
+  map.__epiLayer = L.layerGroup().addTo(map);
+  const values = rows.map(row => row[valueKey]);
+  const min = Math.min(...values);
+  const max = Math.max(...values);
+  const bounds = [];
+  rows.forEach(row => {
+    const val = row[valueKey];
+    const radius = 8 + (max === min ? 8 : ((val - min) / (max - min)) * 15);
+    const marker = L.circleMarker([row.lat, row.lng], {
+      radius, color:'#2a1a40', weight:2, fillColor:mapMarkerColor(val, min, max), fillOpacity:0.82
+    }).addTo(map.__epiLayer);
+    marker.bindPopup('<div class="dashboard-map-popup"><strong>' + row.name + '</strong><div>' + row.borough + '</div><div>' + label + ': <b>' + val + suffix + '</b></div>' + (row.count ? '<div>Count: <b>' + row.count.toLocaleString() + '</b></div>' : '') + (row.ci ? '<div>95% CI: <b>' + row.ci + '</b></div>' : '') + '</div>');
+    bounds.push([row.lat, row.lng]);
+  });
+  if (bounds.length) map.fitBounds(bounds, { padding:[80,80], maxZoom:10 });
+  setTimeout(() => { map.invalidateSize(); if (bounds.length) map.fitBounds(bounds, { padding:[80,80], maxZoom:10 }); }, 180);
+  return map;
+}
+
+function initEpi2025DeepDiveCharts() {
+  if (!window.Chart) return;
+  epi2025MakeBar('epi2025T1Age', ['18-44','45-64','65+'], [3.4,16.7,26.3], 'Prevalence %', 32, ['#6A1B9A','#C8960C','#006064']);
+  epi2025MakeBar('epi2025T1Sex', ['Female','Male'], [10.0,12.8], 'Prevalence %', 16, ['#006064','#12334A']);
+  epi2025MakeBar('epi2025T1Race', ['White','Black','Latino','Asian/PI','Other'], [7.0,13.6,14.0,13.4,10.2], 'Prevalence %', 18, ['#C8960C','#12334A','#006064','#6A1B9A','#4C315F'], 'y');
+  epi2025MakeBar('epi2025T1Poverty', ['Low','Medium','High','Very high'], [7.8,12.3,12.3,14.6], 'Prevalence %', 18, ['#0B4F5A','#C8960C','#4C315F','#006064']);
+  epi2025MakeBar('epi2025T1Weighted', ['18-44','45-64','65+','Female','Male','White','Black','Latino','Asian/PI','Bronx','Brooklyn','Manhattan','Queens','Staten Island'], [113000,352000,329000,384000,409000,177000,206000,251000,136000,162000,240000,113000,241000,38000], 'Weighted adults with diabetes', undefined, FOREST_COLORS.concat(FOREST_COLORS), 'y');
+  const topUhf = EPI2025_UHF34.slice().sort((a,b)=>b.value-a.value).slice(0,12).reverse();
+  epi2025MakeBar('epi2025T2TopNeighborhoods', topUhf.map(r=>r.name), topUhf.map(r=>r.value), 'Prevalence %', 25, '#006064', 'y');
+  epi2025MakeStacked('epi2025T3A1CAge', ['18-44','45-64','65+'], [
+    {label:'<7.0% controlled', data:[41.2,44.6,54.8], backgroundColor:'#12334A'},
+    {label:'7.0-7.9%', data:[20.2,24.5,25.0], backgroundColor:'#0B4F5A'},
+    {label:'8.0-9.0%', data:[13.1,13.3,11.0], backgroundColor:'#C8960C'},
+    {label:'>9.0% very high', data:[25.5,17.6,9.1], backgroundColor:'#560000'}
+  ]);
+  epi2025MakeBar('epi2025T3PoorBorough', ['Bronx','Brooklyn','Manhattan','Queens','Staten Island'], [16.5,14.4,13.1,13.0,10.4], 'A1C >9% %', 20, ['#560000','#006064','#12334A','#0B4F5A','#4C315F']);
+  epi2025MakeBar('epi2025T3PoorPoverty', ['Low','Medium','High','Very high'], [10.6,14.0,14.7,16.7], 'A1C >9% %', 20, ['#0B4F5A','#C8960C','#4C315F','#560000']);
+  const topA1c = EPI2025_UHF42_A1C.slice(0,10).reverse();
+  epi2025MakeBar('epi2025T4TopPoorA1C', topA1c.map(r=>r.name), topA1c.map(r=>r.value), 'A1C >9% %', 20, '#560000', 'y');
+  epi2025MakeBar('epi2025T5LeaAge', ['18-44','45-64','65+'], [6.9,78.2,98.0], 'LEA rate per 100K', 110, ['#6A1B9A','#C8960C','#560000']);
+  epi2025MakeBar('epi2025T5LeaSex', ['Female','Male'], [21.0,70.5], 'LEA rate per 100K', 80, ['#006064','#560000']);
+  epi2025MakeBar('epi2025T5LeaRace', ['White','Black','Latino','Asian/PI'], [24.2,63.3,52.7,10.3], 'LEA rate per 100K', 75, ['#C8960C','#12334A','#006064','#6A1B9A']);
+  epi2025MakeBar('epi2025T5LeaPoverty', ['Low','Medium','High','Very high'], [27.1,38.3,50.4,81.8], 'LEA rate per 100K', 95, ['#0B4F5A','#C8960C','#4C315F','#560000']);
+  const comboEl = document.getElementById('epi2025T5LeaBoroughCombo');
+  if (comboEl) {
+    if (CHARTS.epi2025T5LeaBoroughCombo) CHARTS.epi2025T5LeaBoroughCombo.destroy();
+    CHARTS.epi2025T5LeaBoroughCombo = new Chart(comboEl, {
+      type:'bar',
+      data:{ labels:['Bronx','Brooklyn','Manhattan','Queens','Staten Island'], datasets:[
+        {label:'LEA count', data:[830,870,519,790,175], backgroundColor:'#006064', yAxisID:'y', borderRadius:8},
+        {label:'LEA rate per 100K', data:[74.5,40.7,36.3,36.9,38.5], backgroundColor:'#C8960C', yAxisID:'y1', borderRadius:8}
+      ]},
+      options:{responsive:true,maintainAspectRatio:false,animation:false,plugins:{legend:{position:'bottom'}},scales:{y:{beginAtZero:true,position:'left',grid:{display:false}},y1:{beginAtZero:true,position:'right',grid:{display:false}},x:{grid:{display:false}}}}
+    });
+  }
+  const topLea = EPI2025_UHF42_LEA.slice(0,12).reverse();
+  epi2025MakeBar('epi2025T6TopLea', topLea.map(r=>r.name), topLea.map(r=>r.value), 'LEA rate per 100K', 125, '#560000', 'y');
+}
+
+function initEpi2025DeepDiveMaps() {
+  epi2025UhfPrevalenceMap = epi2025InitPointMap('epi2025UhfPrevalenceMap', 'epi2025UhfPrevalenceMap', EPI2025_UHF34, 'value', 'Diabetes prevalence', '%');
+  epi2025PoorA1CMap = epi2025InitPointMap('epi2025PoorA1CMap', 'epi2025PoorA1CMap', EPI2025_UHF42_A1C, 'value', 'A1C >9%', '%');
+  epi2025LeaMap = epi2025InitPointMap('epi2025LeaMap', 'epi2025LeaMap', EPI2025_UHF42_LEA, 'value', 'LEA rate', ' per 100K');
+}
+
 function initEpi2025Page() {
   setEpi2025Topic('borough');
   const a1cCanvas = document.getElementById('epi2025A1CChart');
@@ -8451,6 +8728,8 @@ function initEpi2025Page() {
     });
   }
   updateEpi2025Map();
+  initEpi2025DeepDiveCharts();
+  initEpi2025DeepDiveMaps();
 }
 
 // Data from Tables 1, 2, 3 — Bronx, NY
