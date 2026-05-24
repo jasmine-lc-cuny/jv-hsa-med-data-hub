@@ -2192,14 +2192,68 @@ footer p { color: var(--gold-cream) !important; }
   font-size: 0.92rem !important;
   margin: 0.75rem 0 0 !important;
 }
-.epi2025-svg-map {
+.epi2025-image-map {
   width: 100%;
-  height: 100%;
-  display: block;
-  background: #dcefe1;
+  min-height: 360px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #050505;
 }
-.epi2025-svg-map text {
-  font-family: 'Nunito', Arial, sans-serif;
+.epi2025-map-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.epi2025-map-marker {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  border-radius: 999px;
+  border: 2.5px solid #2a1a40;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.35);
+  cursor: help;
+}
+.epi2025-map-marker::after {
+  content: attr(data-label);
+  position: absolute;
+  left: calc(100% + 5px);
+  top: 50%;
+  transform: translateY(-50%);
+  color: #FFF1C7;
+  background: rgba(42,26,64,0.88);
+  border: 1px solid rgba(242,197,124,0.55);
+  border-radius: 6px;
+  padding: 2px 5px;
+  font-size: 0.68rem;
+  font-weight: 900;
+  white-space: nowrap;
+  pointer-events: none;
+}
+.epi2025-map-marker:hover,
+.epi2025-map-marker:focus {
+  outline: 3px solid #F2C57C;
+  z-index: 5;
+}
+.epi2025-map-marker:hover .epi2025-marker-popup,
+.epi2025-map-marker:focus .epi2025-marker-popup {
+  display: block;
+}
+.epi2025-marker-popup {
+  display: none;
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 10px);
+  transform: translateX(-50%);
+  min-width: 190px;
+  background: #FFF1C7;
+  color: #140023;
+  border: 2px solid #2a1a40;
+  border-radius: 8px;
+  padding: 0.55rem;
+  font-size: 0.78rem;
+  line-height: 1.35;
+  font-weight: 800;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.35);
 }
 .epi2025-map-tip {
   color: #140023;
@@ -8482,12 +8536,12 @@ function epi2025ProjectPoint(row) {
   const maxLng = -73.68;
   const minLat = 40.48;
   const maxLat = 40.93;
-  const x = 40 + ((row.lng - minLng) / (maxLng - minLng)) * 720;
-  const y = 520 - ((row.lat - minLat) / (maxLat - minLat)) * 460;
+  const x = ((row.lng - minLng) / (maxLng - minLng)) * 100;
+  const y = (1 - ((row.lat - minLat) / (maxLat - minLat))) * 100;
   return { x, y };
 }
 
-function epi2025SvgMapHtml(rows, valueKey, label, suffix, mode) {
+function epi2025ImageMapHtml(rows, valueKey, label, suffix, mode) {
   const values = rows.map(row => row[valueKey]);
   const min = Math.min(...values);
   const max = Math.max(...values);
@@ -8500,37 +8554,24 @@ function epi2025SvgMapHtml(rows, valueKey, label, suffix, mode) {
     const count = row.count ? `Count: ${row.count.toLocaleString()}` : '';
     const ci = row.ci ? `95% CI: ${row.ci}` : '';
     return `
-      <g class="epi-marker" tabindex="0" role="img" aria-label="${name}: ${value}${suffix}">
-        <circle cx="${point.x.toFixed(1)}" cy="${point.y.toFixed(1)}" r="${radius.toFixed(1)}" fill="${color}" stroke="#2a1a40" stroke-width="2.5" opacity="0.88"></circle>
-        <text x="${(point.x + radius + 5).toFixed(1)}" y="${(point.y + 4).toFixed(1)}" font-size="${mode === 'borough' ? 14 : 10}" font-weight="900" fill="#140023">${mode === 'borough' ? name : index + 1}</text>
-        <title>${name}\n${row.borough || 'NYC'}\n${label}: ${value}${suffix}${count ? '\n' + count : ''}${ci ? '\n' + ci : ''}</title>
-      </g>`;
+      <button class="epi2025-map-marker" type="button" aria-label="${name}: ${value}${suffix}" data-label="${mode === 'borough' ? name : index + 1}" style="left:${point.x.toFixed(2)}%; top:${point.y.toFixed(2)}%; width:${(radius * 1.8).toFixed(1)}px; height:${(radius * 1.8).toFixed(1)}px; background:${color};">
+        <span class="epi2025-marker-popup"><strong>${name}</strong><br>${row.borough || 'NYC'}<br>${label}: ${value}${suffix}${count ? '<br>' + count : ''}${ci ? '<br>' + ci : ''}</span>
+      </button>`;
   }).join('');
   const legendRows = rows.slice().sort((a,b) => b[valueKey] - a[valueKey]).slice(0, mode === 'borough' ? 5 : 8)
     .map((row, index) => `<div><strong>${index + 1}. ${row.label || row.name}</strong> ${row[valueKey]}${suffix}</div>`).join('');
   return `
-    <svg class="epi2025-svg-map" viewBox="0 0 820 560" preserveAspectRatio="xMidYMid meet" aria-label="New York City data map">
-      <rect width="820" height="560" fill="#dcefe1"></rect>
-      <path d="M40 0 H820 V560 H0 V0 H40 Z" fill="#c7e5ee" opacity="0.52"></path>
-      <path d="M450 20 L520 38 L560 90 L545 155 L495 172 L448 140 L415 85 Z" fill="#caa06e" stroke="#2a1a40" stroke-width="2" opacity="0.82"></path>
-      <path d="M375 55 L410 75 L400 255 L350 410 L313 390 L332 255 L350 150 Z" fill="#b98873" stroke="#2a1a40" stroke-width="2" opacity="0.82"></path>
-      <path d="M420 225 L530 175 L690 210 L750 310 L685 425 L540 415 L445 350 Z" fill="#9fc5b3" stroke="#2a1a40" stroke-width="2" opacity="0.82"></path>
-      <path d="M300 340 L445 310 L535 430 L455 520 L275 495 L220 420 Z" fill="#b8a5cf" stroke="#2a1a40" stroke-width="2" opacity="0.82"></path>
-      <path d="M80 365 L210 340 L280 430 L240 530 L85 505 L35 430 Z" fill="#c99aa8" stroke="#2a1a40" stroke-width="2" opacity="0.82"></path>
-      <text x="470" y="105" fill="#140023" font-size="18" font-weight="900">Bronx</text>
-      <text x="322" y="235" fill="#140023" font-size="18" font-weight="900">Manhattan</text>
-      <text x="405" y="430" fill="#140023" font-size="18" font-weight="900">Brooklyn</text>
-      <text x="610" y="315" fill="#140023" font-size="18" font-weight="900">Queens</text>
-      <text x="82" y="455" fill="#140023" font-size="18" font-weight="900">Staten Island</text>
+    <div class="epi2025-image-map" aria-label="New York City data image map">
+      <img class="epi2025-map-image" src="assets/nyc-council-districts-map.png" alt="New York City council district map">
       ${markers}
-    </svg>
+    </div>
     <div class="epi2025-map-tip">${legendRows}</div>`;
 }
 
 function epi2025RenderSvgMap(elementId, rows, valueKey, label, suffix, mode) {
   const el = document.getElementById(elementId);
   if (!el) return;
-  el.innerHTML = epi2025SvgMapHtml(rows, valueKey, label, suffix, mode);
+  el.innerHTML = epi2025ImageMapHtml(rows, valueKey, label, suffix, mode);
 }
 
 function updateEpi2025Map() {
