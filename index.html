@@ -2160,6 +2160,61 @@ footer p { color: var(--gold-cream) !important; }
   margin: 0.7rem 0 0 !important;
   line-height: 1.5 !important;
 }
+#epi2025Map {
+  height: 390px;
+  min-height: 340px;
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid rgba(42,26,64,0.28);
+  overflow: hidden;
+  background: #C8E3CE;
+}
+.epi2025-tab-row {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 0.5rem;
+  margin: 1rem 0 1.25rem;
+}
+.epi2025-tab {
+  border: 0;
+  background: #B85F1F;
+  color: #FFF1C7;
+  border-radius: 0;
+  padding: 0.8rem 0.5rem;
+  font-weight: 900;
+  cursor: pointer;
+}
+.epi2025-tab.active {
+  background: #E3EBD7;
+  color: #140023;
+}
+.epi2025-highlight {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+.epi2025-mini-card {
+  background: rgba(42,26,64,0.92);
+  color: #FFF1C7;
+  border: 1.5px solid rgba(242,197,124,0.45);
+  border-radius: 10px;
+  padding: 1rem;
+}
+.epi2025-mini-card strong {
+  display: block;
+  color: #F2C57C;
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  line-height: 1.1;
+  margin-top: 0.25rem;
+}
+@media (max-width: 800px) {
+  .epi2025-tab-row,
+  .epi2025-highlight {
+    grid-template-columns: 1fr 1fr;
+  }
+}
 .leaflet-popup-content-wrapper {
   border-radius: 10px;
 }
@@ -3531,6 +3586,7 @@ footer:empty { display: none !important; padding: 0 !important; margin: 0 !impor
 <ul class="nav-links">
 <li><a class="active" href="#" id="nav-home" onclick="showPage('home')">🏠 Home</a></li>
 <li><a href="#" id="nav-diabetes" onclick="showPage('diabetes')">📊 Dashboard</a></li>
+<li><a href="#" id="nav-epi2025" onclick="showPage('epi2025')">EPI 2025</a></li>
 <li><a href="#" id="nav-stories" onclick="showPage('stories')">Research Articles</a></li>
 <li><a href="#" id="nav-prdr" onclick="showPage('prdr')">Hispanics</a></li>
 <li><a href="#" id="nav-drugs" onclick="showPage('drugs')">💊 Rx Data</a></li>
@@ -3811,6 +3867,100 @@ footer:empty { display: none !important; padding: 0 !important; margin: 0 !impor
 </div>
 </section>
 </main>
+</div>
+<!-- ════════════════════ EPI 2025 PAGE ════════════════════ -->
+<div class="page" id="page-epi2025" role="main">
+<section style="padding: 2rem 2rem 1.5rem; background: #0D3D4A !important; border-bottom: 2px solid rgba(242,197,124,0.3);">
+<div style="max-width:1200px; margin:0 auto; display:flex; align-items:center; gap:1.5rem; background: #0A2A2F !important;">
+<div style="display:flex; align-items:center; gap:1rem; flex:1;">
+<span style="font-size:2rem;">📈</span>
+<div>
+<h1 style="font-family:'Lora',serif; font-size:clamp(1.4rem,3vw,2rem); color:#F2C57C !important; font-weight:700; line-height:1.1; margin:0;">EPI 2025: NYC Diabetes Inequities</h1>
+<p style="font-size:0.82rem; color:rgba(242,197,124,0.6); font-weight:700; letter-spacing:0.12em; text-transform:uppercase; margin:0.3rem 0 0;">Diabetes Prevalence, A1C Control, and Amputations</p>
+</div>
+</div>
+<div style="height:40px; width:1px; background:rgba(242,197,124,0.25);"></div>
+<div style="font-size:0.75rem; color:rgba(255,241,199,0.5); font-weight:600; text-align:right; line-height:1.6;">
+    NYC DOHMH<br/>Epi Data Brief No. 146
+  </div>
+</div>
+</section>
+<section class="section-meadow" style="background:#0D3D4A !important; padding:2.5rem 2rem 3.5rem;">
+<div class="container" style="max-width:1200px;">
+<div class="chart-card" style="background:var(--bg-card) !important; border:var(--border-gold); margin-bottom:1.4rem;">
+<h2 style="background:#2a1a40; color:#F2C57C !important; padding:0.65rem 1rem; border-radius:8px; margin:0 0 1rem; font-family:var(--font-display);">Diabetes Prevalence Among New York City Adults</h2>
+<p style="color:#140023; line-height:1.75; margin-bottom:0.75rem;">This page summarizes NYC DOHMH's 2025 Epi Data Brief on diabetes and health inequities. In 2022, more than 794,000 New York City adults had diabetes, representing 11.3% of adults citywide.</p>
+<p style="color:#140023; line-height:1.75; margin:0;">The strongest pattern is inequality: the Bronx had the highest borough prevalence, Latino and Black New Yorkers had nearly double the prevalence of white New Yorkers, and very high poverty neighborhoods had the highest amputation burden.</p>
+</div>
+<div class="epi2025-tab-row" role="tablist" aria-label="EPI 2025 chart categories">
+<button class="epi2025-tab active" type="button" data-epi-tab="borough" onclick="setEpi2025Topic('borough')">NYC Boroughs</button>
+<button class="epi2025-tab" type="button" data-epi-tab="race" onclick="setEpi2025Topic('race')">Race/Ethnicity</button>
+<button class="epi2025-tab" type="button" data-epi-tab="age" onclick="setEpi2025Topic('age')">Age</button>
+<button class="epi2025-tab" type="button" data-epi-tab="poverty" onclick="setEpi2025Topic('poverty')">Poverty</button>
+<button class="epi2025-tab" type="button" data-epi-tab="a1c" onclick="setEpi2025Topic('a1c')">A1C Control</button>
+<button class="epi2025-tab" type="button" data-epi-tab="amputation" onclick="setEpi2025Topic('amputation')">Amputations</button>
+</div>
+<div class="epi2025-highlight">
+<div class="epi2025-mini-card">NYC Adults with Diabetes<strong>794K+</strong><span>11.3% of adults in 2022</span></div>
+<div class="epi2025-mini-card">Highest Borough Prevalence<strong>15.1%</strong><span>Bronx adults</span></div>
+<div class="epi2025-mini-card">Highest Amputation Rate<strong>74.5</strong><span>Bronx, per 100,000 people</span></div>
+</div>
+<div class="dashboard-grid dashboard-grid-main">
+<div class="chart-card">
+<h3 id="epi2025TopicTitle" style="background:#2a1a40; color:#F2C57C !important; padding:0.6rem 1rem; border-radius:8px; margin:-0.5rem -0.5rem 1rem -0.5rem;">🏙️ Diabetes Prevalence by Borough — 2022</h3>
+<div class="chart-wrapper" style="height:330px;">
+<canvas id="epi2025TopicChart"></canvas>
+</div>
+</div>
+<div class="chart-card">
+<h3 id="epi2025TrendTitle" style="background:#2a1a40; color:#F2C57C !important; padding:0.6rem 1rem; border-radius:8px; margin:-0.5rem -0.5rem 1rem -0.5rem;">Topic Highlight</h3>
+<div style="text-align:center; padding:0.4rem 0 0.9rem;">
+<div id="epi2025HighlightValue" style="font-family:var(--font-display); font-size:2.3rem; color:#2a1a40; font-weight:900;">15.1%</div>
+<div id="epi2025HighlightText" style="color:#140023; font-weight:800;">Bronx had the highest borough prevalence.</div>
+</div>
+<div class="chart-wrapper" style="height:230px;">
+<canvas id="epi2025RankChart"></canvas>
+</div>
+</div>
+</div>
+<div class="dashboard-grid dashboard-grid-main" style="margin-top:1.4rem;">
+<div class="chart-card dashboard-map-card">
+<h3 style="background:#2a1a40; color:#F2C57C !important; padding:0.6rem 1rem; border-radius:8px; margin:-0.5rem -0.5rem 1rem -0.5rem;">🗺️ NYC Diabetes Prevalence Map — 2022</h3>
+<div id="epi2025Map" role="img" aria-label="Interactive New York City map showing diabetes prevalence by borough"></div>
+<div class="dashboard-map-legend">
+<span><i class="dashboard-map-dot" style="background:#F85C70;"></i> Higher prevalence</span>
+<span><i class="dashboard-map-dot" style="background:#F2B84B;"></i> Middle prevalence</span>
+<span><i class="dashboard-map-dot" style="background:#2ED47A;"></i> Lower prevalence</span>
+</div>
+<p class="dashboard-map-note">Click a borough marker to update the topic chart to borough prevalence. Values are from NYC DOHMH Epi Data Brief No. 146.</p>
+</div>
+<div class="chart-card">
+<h3 style="background:#2a1a40; color:#F2C57C !important; padding:0.6rem 1rem; border-radius:8px; margin:-0.5rem -0.5rem 1rem -0.5rem;">🧪 A1C Blood Sugar Control by Borough</h3>
+<div class="chart-wrapper" style="height:330px;">
+<canvas id="epi2025A1CChart"></canvas>
+</div>
+</div>
+</div>
+<div class="chart-card" style="margin-top:1.4rem;">
+<h2 style="font-family:var(--font-display); font-size:1.3rem; margin-bottom:1rem; background:#2a1a40; color:#F2C57C !important; padding:0.6rem 1rem; border-radius:8px; margin:-0.5rem -0.5rem 1rem -0.5rem;">📋 EPI 2025 Summary Table</h2>
+<div style="overflow-x:auto;">
+<table class="data-table">
+<thead>
+<tr><th>Measure</th><th>Highest Group</th><th>Value</th><th>Public Health Meaning</th></tr>
+</thead>
+<tbody>
+<tr><td>Diabetes prevalence by borough</td><td>Bronx</td><td>15.1%</td><td>The Bronx carries the highest borough-level adult diabetes burden.</td></tr>
+<tr><td>Diabetes prevalence by race/ethnicity</td><td>Latino adults</td><td>14.0%</td><td>Latino and Black adults have nearly double the prevalence of white adults.</td></tr>
+<tr><td>Diabetes prevalence by age</td><td>Adults 65+</td><td>26.3%</td><td>Older adults carry the highest prevalence and need strong chronic-care support.</td></tr>
+<tr><td>Diabetes prevalence by neighborhood poverty</td><td>Very high poverty neighborhoods</td><td>14.6%</td><td>Diabetes burden rises where economic hardship is greatest.</td></tr>
+<tr><td>Lower-extremity amputation rate</td><td>Bronx</td><td>74.5 per 100,000</td><td>Complications show the cost of unequal prevention and diabetes control.</td></tr>
+</tbody>
+</table>
+</div>
+<p style="color:#140023; line-height:1.65; margin-top:1rem; font-size:0.92rem;"><strong>Source:</strong> NYC Department of Health and Mental Hygiene, Epi Data Brief No. 146, May 2025. Data shown from Community Health Survey 2022, NYC A1C Registry 2022, and SPARCS 2022 as reported in the brief.</p>
+</div>
+</div>
+</section>
 </div>
 <div class="page" id="page-stories">
 <section style="padding: 2rem 2rem 1.5rem; background: #0D3D4A !important; border-bottom: 2px solid rgba(242,197,124,0.3);">
@@ -7457,6 +7607,7 @@ function showPage(id) {
   targetPage.scrollIntoView({ block: 'start' });
   if (id==='diabetes'    && !CHARTS['boroughPrevalenceChart']) { initDiabetisCharts(); }
   if (id==='diabetes') { setTimeout(updateDashboard, 180); }
+  if (id==='epi2025') { setTimeout(initEpi2025Page, 90); }
   if (id==='nyc'         && !CHARTS['nycBoroughBar'])          { initNYCCharts(); }
   if (id==='projects'    && !CHARTS['payorChart'])             { initProjectsCharts(); }
   if (id==='drugs'       && !CHARTS['drugTop10Chart'])         { initDrugCharts(); }
@@ -8058,6 +8209,248 @@ function initEPICharts() {
     data:{ labels:['Male','Female'], datasets:[{ label:'Rate per 100,000', data:[70.5,21.0], backgroundColor:['#12334A','#006064'], borderRadius:8, barThickness:60 }] },
     options: rateOpts()
   });
+}
+
+// EPI 2025 public page — NYC diabetes prevalence and inequities
+const EPI2025_TOPICS = {
+  borough: {
+    title: '🏙️ Diabetes Prevalence by Borough — 2022',
+    label: 'Diabetes prevalence %',
+    suffix: '%',
+    max: 18,
+    labels: ['Bronx','Brooklyn','Manhattan','Queens','Staten Island'],
+    values: [15.1,11.6,7.9,11.7,9.0],
+    colors: ['#006064','#12334A','#C8960C','#0B4F5A','#4C315F'],
+    highlightValue: '15.1%',
+    highlightText: 'Bronx had the highest borough prevalence.'
+  },
+  race: {
+    title: '🧬 Diabetes Prevalence by Race/Ethnicity — 2022',
+    label: 'Diabetes prevalence %',
+    suffix: '%',
+    max: 18,
+    labels: ['Latino','Black','Asian/PI','Other','White'],
+    values: [14.0,13.6,13.4,10.2,7.0],
+    colors: ['#006064','#12334A','#6A1B9A','#4C315F','#C8960C'],
+    highlightValue: '14.0%',
+    highlightText: 'Latino adults had the highest prevalence in the brief.'
+  },
+  age: {
+    title: '📅 Diabetes Prevalence by Age Group — 2022',
+    label: 'Diabetes prevalence %',
+    suffix: '%',
+    max: 32,
+    labels: ['18-44','45-64','65+'],
+    values: [3.4,16.7,26.3],
+    colors: ['#6A1B9A','#C8960C','#006064'],
+    highlightValue: '26.3%',
+    highlightText: 'Adults 65 and older had the highest prevalence.'
+  },
+  poverty: {
+    title: '💰 Diabetes Prevalence by Neighborhood Poverty — 2022',
+    label: 'Diabetes prevalence %',
+    suffix: '%',
+    max: 18,
+    labels: ['Low poverty','Medium poverty','High poverty','Very high poverty'],
+    values: [7.8,12.3,12.3,14.6],
+    colors: ['#0B4F5A','#C8960C','#4C315F','#006064'],
+    highlightValue: '14.6%',
+    highlightText: 'Very high poverty neighborhoods had the highest prevalence.'
+  },
+  a1c: {
+    title: '🧪 Poor A1C Control by Borough — 2022',
+    label: 'A1C >9% among patients %',
+    suffix: '%',
+    max: 20,
+    labels: ['Bronx','Brooklyn','Manhattan','Queens','Staten Island'],
+    values: [16.5,14.4,13.1,13.0,10.4],
+    colors: ['#560000','#006064','#12334A','#0B4F5A','#4C315F'],
+    highlightValue: '16.5%',
+    highlightText: 'Bronx had the highest share of poor A1C control.'
+  },
+  amputation: {
+    title: '🦵 Diabetes-Related Amputation Rate — 2022',
+    label: 'Rate per 100,000 people',
+    suffix: ' per 100K',
+    max: 90,
+    labels: ['Bronx','Brooklyn','Manhattan','Queens','Staten Island'],
+    values: [74.5,40.7,36.3,36.9,38.5],
+    colors: ['#560000','#006064','#12334A','#0B4F5A','#4C315F'],
+    highlightValue: '74.5',
+    highlightText: 'Bronx had the highest lower-extremity amputation rate.'
+  }
+};
+const EPI2025_MAP_ROWS = [
+  { key:'bronx', label:'Bronx', prevalence:15.1, lat:40.8448, lng:-73.8648 },
+  { key:'brooklyn', label:'Brooklyn', prevalence:11.6, lat:40.6782, lng:-73.9442 },
+  { key:'manhattan', label:'Manhattan', prevalence:7.9, lat:40.7831, lng:-73.9712 },
+  { key:'queens', label:'Queens', prevalence:11.7, lat:40.7282, lng:-73.7949 },
+  { key:'statenisland', label:'Staten Island', prevalence:9.0, lat:40.5795, lng:-74.1502 }
+];
+let epi2025Map = null;
+let epi2025MapLayer = null;
+
+function epi2025ValueFormat(topic, value) {
+  if (topic === 'amputation') return value.toFixed(1) + ' per 100K';
+  return value.toFixed(1) + '%';
+}
+
+function setEpi2025Topic(topic) {
+  const data = EPI2025_TOPICS[topic] || EPI2025_TOPICS.borough;
+  document.querySelectorAll('.epi2025-tab').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.epiTab === topic);
+  });
+  const title = document.getElementById('epi2025TopicTitle');
+  const trendTitle = document.getElementById('epi2025TrendTitle');
+  const value = document.getElementById('epi2025HighlightValue');
+  const text = document.getElementById('epi2025HighlightText');
+  if (title) title.textContent = data.title;
+  if (trendTitle) trendTitle.textContent = 'Topic Highlight — ' + data.label;
+  if (value) value.textContent = data.highlightValue;
+  if (text) text.textContent = data.highlightText;
+
+  const topicCanvas = document.getElementById('epi2025TopicChart');
+  if (topicCanvas && window.Chart) {
+    if (CHARTS.epi2025TopicChart) CHARTS.epi2025TopicChart.destroy();
+    CHARTS.epi2025TopicChart = new Chart(topicCanvas, {
+      type: 'bar',
+      data: {
+        labels: data.labels,
+        datasets: [{ label: data.label, data: data.values, backgroundColor: data.colors, borderRadius: 8 }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        animation: false,
+        indexAxis: data.labels.length > 4 ? 'y' : 'x',
+        plugins: {
+          legend: { display:false },
+          tooltip: { callbacks: { label: ctx => data.label + ': ' + epi2025ValueFormat(topic, data.labels.length > 4 ? ctx.parsed.x : ctx.parsed.y) } }
+        },
+        scales: {
+          x: data.labels.length > 4
+            ? { beginAtZero:true, max:data.max, ticks:{color:'#000000',font:{weight:'700'},callback:v => epi2025ValueFormat(topic, Number(v))}, grid:{display:false} }
+            : { ticks:{color:'#000000',font:{weight:'700'}}, grid:{display:false} },
+          y: data.labels.length > 4
+            ? { ticks:{color:'#000000',font:{weight:'700'}}, grid:{display:false} }
+            : { beginAtZero:true, max:data.max, ticks:{color:'#000000',font:{weight:'700'},callback:v => epi2025ValueFormat(topic, Number(v))}, grid:{display:false} }
+        }
+      }
+    });
+  }
+
+  const rankCanvas = document.getElementById('epi2025RankChart');
+  if (rankCanvas && window.Chart) {
+    const ranked = data.labels.map((label, i) => ({ label, value:data.values[i], color:data.colors[i] })).sort((a, b) => b.value - a.value);
+    if (CHARTS.epi2025RankChart) CHARTS.epi2025RankChart.destroy();
+    CHARTS.epi2025RankChart = new Chart(rankCanvas, {
+      type: 'line',
+      data: {
+        labels: ranked.map(row => row.label),
+        datasets: [{
+          label: data.label,
+          data: ranked.map(row => row.value),
+          borderColor: '#B85F1F',
+          backgroundColor: 'rgba(242,197,124,0.58)',
+          pointBackgroundColor: '#FFF1C7',
+          pointBorderColor: '#2a1a40',
+          pointRadius: 5,
+          tension: 0.3,
+          fill: true
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        animation: false,
+        plugins: { legend:{display:false} },
+        scales: {
+          y: { beginAtZero:true, max:data.max, ticks:{color:'#000000',font:{weight:'700'},callback:v => epi2025ValueFormat(topic, Number(v))}, grid:{display:false} },
+          x: { ticks:{color:'#000000',font:{weight:'700'}}, grid:{display:false} }
+        }
+      }
+    });
+  }
+}
+window.setEpi2025Topic = setEpi2025Topic;
+
+function initEpi2025Map() {
+  const el = document.getElementById('epi2025Map');
+  if (!el || !window.L) {
+    if (el) el.innerHTML = '<div style="padding:1rem;color:#2a1a40;font-weight:800;">Map needs Leaflet/OpenStreetMap to load. Charts still work normally.</div>';
+    return false;
+  }
+  if (epi2025Map) return true;
+  epi2025Map = L.map(el, { scrollWheelZoom:false, zoomControl:true }).setView([40.7128, -73.95], 10);
+  epi2025Map.setMinZoom(9);
+  epi2025Map.setMaxZoom(13);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; OpenStreetMap contributors'
+  }).addTo(epi2025Map);
+  epi2025MapLayer = L.layerGroup().addTo(epi2025Map);
+  return true;
+}
+
+function updateEpi2025Map() {
+  if (!initEpi2025Map() || !epi2025MapLayer) return;
+  epi2025MapLayer.clearLayers();
+  const values = EPI2025_MAP_ROWS.map(row => row.prevalence);
+  const min = Math.min(...values);
+  const max = Math.max(...values);
+  const bounds = [];
+  EPI2025_MAP_ROWS.forEach(row => {
+    const color = mapMarkerColor(row.prevalence, min, max);
+    const radius = 13 + ((row.prevalence - min) / (max - min)) * 17;
+    const marker = L.circleMarker([row.lat, row.lng], {
+      radius,
+      color:'#2a1a40',
+      weight:2,
+      fillColor:color,
+      fillOpacity:0.84
+    }).addTo(epi2025MapLayer);
+    marker.bindPopup(
+      '<div class="dashboard-map-popup"><strong>' + row.label + '</strong>' +
+      '<div>Adult diabetes prevalence: <b>' + row.prevalence.toFixed(1) + '%</b></div>' +
+      '<button type="button" onclick="setEpi2025Topic(\'borough\')">View borough chart</button></div>'
+    );
+    bounds.push([row.lat, row.lng]);
+  });
+  if (bounds.length) epi2025Map.fitBounds(bounds, { padding:[95, 95], maxZoom:10 });
+  setTimeout(() => {
+    epi2025Map.invalidateSize();
+    if (bounds.length) epi2025Map.fitBounds(bounds, { padding:[95, 95], maxZoom:10 });
+  }, 180);
+}
+
+function initEpi2025Page() {
+  setEpi2025Topic('borough');
+  const a1cCanvas = document.getElementById('epi2025A1CChart');
+  if (a1cCanvas && window.Chart && !CHARTS.epi2025A1CChart) {
+    CHARTS.epi2025A1CChart = new Chart(a1cCanvas, {
+      type:'bar',
+      data:{
+        labels:['Bronx','Brooklyn','Manhattan','Queens','Staten Island'],
+        datasets:[
+          { label:'<7.0% controlled', data:[47.1,49.5,51.7,49.2,54.8], backgroundColor:'#12334A' },
+          { label:'7.0-7.9%', data:[23.8,23.9,23.7,25.6,24.2], backgroundColor:'#0B4F5A' },
+          { label:'8.0-9.0%', data:[12.6,12.2,11.6,12.2,10.7], backgroundColor:'#C8960C' },
+          { label:'>9.0% poor control', data:[16.5,14.4,13.1,13.0,10.4], backgroundColor:'#560000' }
+        ]
+      },
+      options:{
+        responsive:true,
+        maintainAspectRatio:false,
+        animation:false,
+        plugins:{ legend:{ position:'bottom', labels:{boxWidth:12,color:'#000000',font:{size:11,weight:'700'}} } },
+        scales:{
+          x:{ stacked:true, ticks:{color:'#000000',font:{weight:'700'}}, grid:{display:false} },
+          y:{ stacked:true, max:100, ticks:{color:'#000000',font:{weight:'700'},callback:v=>v+'%'}, grid:{display:false} }
+        }
+      }
+    });
+  }
+  updateEpi2025Map();
 }
 
 // Data from Tables 1, 2, 3 — Bronx, NY
