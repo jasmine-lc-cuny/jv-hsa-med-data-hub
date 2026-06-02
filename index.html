@@ -7,7 +7,7 @@
 <title>JV Diabetes Public Health Analytics Hub</title>
 <meta content="A focused portfolio dedicated to diabetes analytics — exploring prevalence, A1C control, amputations, dialysis, hospital patterns, and neighborhood disparities across New York State and New York City." name="description"/>
 <meta content="JV Diabetes Public Health Analytics Hub" property="og:title"/>
-<meta content="Forest-themed public health analytics portfolio by Jasmine V." property="og:description"/>
+<meta content="Teal-purple public health analytics portfolio by Jasmine V." property="og:description"/>
 
 <!-- =========================================================
 ✅ GOOGLE FONTS
@@ -61,7 +61,7 @@ responsive behavior, and page-specific polish.
     /* ── JV DIABETES HUB — MASTER PALETTE ── */
     --bg-main:       #0a2a2f;   /* deep teal — page backgrounds      */
     --bg-section:    #0D3D4A;   /* slightly lighter teal — sections   */
-    --bg-card:       #C49A6C;   /* warm soft bark — card fill         */
+    --bg-card:       #C49A6C;   /* warm tan — card fill               */
     --bg-purple:     #2a1a40;   /* purple — titles, buttons, alt sections */
     --bg-teal-alt:   #0d3d4a;   /* darker teal — PRDR/research pages  */
 
@@ -82,18 +82,18 @@ responsive behavior, and page-specific polish.
     --nav-h: 68px;
 
     /* Legacy aliases so nothing breaks */
-    --forest-pine:    var(--bg-main);
-    --deep-moss:      var(--bg-section);
-    --sage-leaf:      var(--bg-section);
-    --fog-white:      var(--bg-main);
-    --light-woodgrain:var(--bg-card);
-    --stone-gray:     #3a2a1a;
-    --sky-blue-mist:  var(--gold);
-    --sunlit-amber:   var(--gold);
-    --soft-bark:      var(--gold);
-    --warm-cedar:     var(--bg-card);
-    --shadow-forest:  var(--shadow);
-    --shadow-meadow:  var(--shadow-sm);
+    --deep-teal:    var(--bg-main);
+    --section-teal:      var(--bg-section);
+    --teal-accent:      var(--bg-section);
+    --page-bg:      var(--bg-main);
+    --tan-card:var(--bg-card);
+    --dark-border:     #3a2a1a;
+    --gold-accent:  var(--gold);
+    --gold-highlight:   var(--gold);
+    --gold-border:      var(--gold);
+    --tan-heading:     var(--bg-card);
+    --shadow-strong:  var(--shadow);
+    --shadow-soft:  var(--shadow-sm);
   }
 
   [data-theme="dark"] {
@@ -107,8 +107,8 @@ responsive behavior, and page-specific polish.
 
   body {
     font-family: var(--font-body);
-    background: var(--fog-white);
-    color: var(--forest-pine);
+    background: var(--page-bg);
+    color: var(--deep-teal);
     transition: background 0.3s, color 0.3s;
     overflow-x: hidden;
   }
@@ -117,7 +117,7 @@ responsive behavior, and page-specific polish.
   nav {
     position: fixed; top: 0; left: 0; right: 0;
     height: var(--nav-h);
-    background: linear-gradient(135deg, var(--forest-pine) 0%, var(--deep-moss) 100%);
+    background: linear-gradient(135deg, var(--deep-teal) 0%, var(--section-teal) 100%);
     display: flex; align-items: center; justify-content: space-between;
     padding: 0 1rem;
     gap: 3rem;
@@ -139,7 +139,7 @@ responsive behavior, and page-specific polish.
     white-space: nowrap;
   }
 
-  .nav-brand .leaf-icon { font-size: 1.5rem; }
+  .nav-brand .hub-icon { font-size: 1.5rem; }
 
   .nav-links {
     display: flex; align-items: center; gap: 0.25rem;
@@ -167,8 +167,8 @@ responsive behavior, and page-specific polish.
   }
 
   .nav-links a.active {
-    background: var(--sky-blue-mist);
-    color: var(--forest-pine);
+    background: var(--gold-accent);
+    color: var(--deep-teal);
   }
 
   .nav-right { display: flex; align-items: center; gap: 10px; }
@@ -193,7 +193,7 @@ responsive behavior, and page-specific polish.
 
   /* ── HERO ── */
   .hero {
-    background: linear-gradient(160deg, var(--deep-moss) 0%, var(--sage-leaf) 100%);
+    background: linear-gradient(160deg, var(--section-teal) 0%, var(--teal-accent) 100%);
     padding: 80px 2rem 100px;
     text-align: center;
     position: relative;
@@ -222,7 +222,7 @@ responsive behavior, and page-specific polish.
     position: relative;
   }
 
-  .hero h1 span { color: var(--sunlit-amber); }
+  .hero h1 span { color: var(--gold-highlight); }
 
   .hero p {
     color: rgba(255,255,255,0.82);
@@ -249,8 +249,8 @@ responsive behavior, and page-specific polish.
   }
 
   .btn-primary {
-    background: var(--sunlit-amber);
-    color: var(--forest-pine);
+    background: var(--gold-highlight);
+    color: var(--deep-teal);
   }
   .btn-primary:hover { background: #e6b565; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.2); }
 
@@ -262,10 +262,10 @@ responsive behavior, and page-specific polish.
   .btn-secondary:hover { background: rgba(255,255,255,0.25); transform: translateY(-2px); }
 
   .btn-outline {
-    background: var(--deep-moss);
+    background: var(--section-teal);
     color: white;
   }
-  .btn-outline:hover { background: var(--forest-pine); transform: translateY(-2px); }
+  .btn-outline:hover { background: var(--deep-teal); transform: translateY(-2px); }
 
   /* ── QUICK LINKS ── */
   .quick-links {
@@ -279,39 +279,39 @@ responsive behavior, and page-specific polish.
 
   .quick-card {
     background: #B3D4BB;
-    border: 1.5px solid var(--stone-gray);
+    border: 1.5px solid var(--dark-border);
     border-radius: 14px;
     padding: 1.4rem 1rem;
     text-align: center;
     cursor: pointer;
     transition: all 0.2s;
-    box-shadow: var(--shadow-meadow);
+    box-shadow: var(--shadow-soft);
   }
 
   .quick-card:hover {
-    border-color: var(--sage-leaf);
-    box-shadow: var(--shadow-forest);
+    border-color: var(--teal-accent);
+    box-shadow: var(--shadow-strong);
     transform: translateY(-3px);
   }
 
   .quick-card .icon { font-size: 2rem; margin-bottom: 0.5rem; }
-  .quick-card h3 { font-size: 0.9rem; font-weight: 700; color: var(--forest-pine); }
+  .quick-card h3 { font-size: 0.9rem; font-weight: 700; color: var(--deep-teal); }
   .quick-card p { font-size: 0.78rem; color: #666; margin-top: 4px; }
 
   /* ── SECTION STYLES ── */
-  .section-forest {
-    background: linear-gradient(135deg, var(--forest-pine), var(--deep-moss));
+  .section-dark {
+    background: linear-gradient(135deg, var(--deep-teal), var(--section-teal));
     color: white;
     padding: 4rem 2rem;
   }
 
-  .section-woodland {
-    background: var(--light-woodgrain);
+  .section-tan {
+    background: var(--tan-card);
     padding: 4rem 2rem;
   }
 
-  .section-meadow {
-    background: var(--fog-white);
+  .section-panel {
+    background: var(--page-bg);
     padding: 4rem 2rem;
   }
 
@@ -337,26 +337,26 @@ responsive behavior, and page-specific polish.
     gap: 3rem;
   }
 
-  .nature-card {
-    background: var(--fog-white);
-    border: 1.5px solid var(--stone-gray);
+  .info-card {
+    background: var(--page-bg);
+    border: 1.5px solid var(--dark-border);
     border-radius: 14px;
     padding: 1.8rem;
-    box-shadow: var(--shadow-meadow);
+    box-shadow: var(--shadow-soft);
     transition: all 0.2s;
   }
 
-  .nature-card:hover { box-shadow: var(--shadow-forest); transform: translateY(-2px); }
-  .nature-card .card-icon { font-size: 2rem; margin-bottom: 1rem; }
-  .nature-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--forest-pine); }
-  .nature-card p { font-size: 0.88rem; color: #555; line-height: 1.65; }
+  .info-card:hover { box-shadow: var(--shadow-strong); transform: translateY(-2px); }
+  .info-card .card-icon { font-size: 2rem; margin-bottom: 1rem; }
+  .info-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--deep-teal); }
+  .info-card p { font-size: 0.88rem; color: #555; line-height: 1.65; }
 
-  .wooden-panel {
-    background: linear-gradient(135deg, var(--light-woodgrain), #d4c4a0);
-    border: 1.5px solid var(--soft-bark);
+  .content-panel {
+    background: linear-gradient(135deg, var(--tan-card), #d4c4a0);
+    border: 1.5px solid var(--gold-border);
     border-radius: 14px;
     padding: 1.8rem;
-    box-shadow: var(--shadow-meadow);
+    box-shadow: var(--shadow-soft);
   }
 
   /* ── BADGE PILLS ── */
@@ -372,7 +372,7 @@ responsive behavior, and page-specific polish.
   .badge-green { background: #d4edda; color: #155724; }
   .badge-blue { background: #cce5ff; color: #004085; }
   .badge-amber { background: #fff3cd; color: #856404; }
-  .badge-bark { background: #f0e0cc; color: var(--deep-moss); }
+  .badge-accent { background: #f0e0cc; color: var(--section-teal); }
 
   /* ── DASHBOARD / CHARTS ── */
   .dashboard-grid {
@@ -383,16 +383,16 @@ responsive behavior, and page-specific polish.
 
   .chart-card {
     background: #E8D5B0;
-    border: 1.5px solid var(--stone-gray);
+    border: 1.5px solid var(--dark-border);
     border-radius: 14px;
     padding: 1.5rem;
-    box-shadow: var(--shadow-meadow);
+    box-shadow: var(--shadow-soft);
   }
 
   .chart-card h3 {
     font-size: 0.95rem;
     font-weight: 800;
-    color: var(--forest-pine);
+    color: var(--deep-teal);
     margin-bottom: 1rem;
     display: flex; align-items: center; gap: 8px;
   }
@@ -404,28 +404,28 @@ responsive behavior, and page-specific polish.
     display: flex; flex-wrap: wrap; gap: 1rem;
     align-items: center;
     background: #C8960C;
-    border: 1.5px solid var(--stone-gray);
+    border: 1.5px solid var(--dark-border);
     border-radius: 12px;
     padding: 1rem 1.5rem;
     margin-bottom: 1.5rem;
-    box-shadow: var(--shadow-meadow);
+    box-shadow: var(--shadow-soft);
   }
 
-  .filter-bar label { font-size: 0.82rem; font-weight: 700; color: var(--forest-pine); }
+  .filter-bar label { font-size: 0.82rem; font-weight: 700; color: var(--deep-teal); }
 
   .filter-bar select {
-    border: 1.5px solid var(--stone-gray);
+    border: 1.5px solid var(--dark-border);
     border-radius: 8px;
     padding: 6px 12px;
     font-family: var(--font-body);
     font-size: 0.85rem;
-    color: var(--forest-pine);
-    background: var(--fog-white);
+    color: var(--deep-teal);
+    background: var(--page-bg);
     cursor: pointer;
     outline: none;
   }
 
-  .filter-bar select:focus { border-color: var(--sage-leaf); }
+  .filter-bar select:focus { border-color: var(--teal-accent); }
 
   /* ── STAT CARDS ── */
   .stat-grid {
@@ -437,10 +437,10 @@ responsive behavior, and page-specific polish.
 
   .stat-card {
     background: #E8D5B0;
-    border: 1.5px solid var(--stone-gray);
+    border: 1.5px solid var(--dark-border);
     border-radius: 12px;
     padding: 1.2rem 1.5rem;
-    box-shadow: var(--shadow-meadow);
+    box-shadow: var(--shadow-soft);
     text-align: center;
   }
 
@@ -448,7 +448,7 @@ responsive behavior, and page-specific polish.
     font-family: var(--font-display);
     font-size: 2rem;
     font-weight: 600;
-    color: var(--deep-moss);
+    color: var(--section-teal);
   }
 
   .stat-card .stat-label { font-size: 0.8rem; color: #666; margin-top: 4px; font-weight: 600; }
@@ -459,7 +459,7 @@ responsive behavior, and page-specific polish.
   /* ── BOROUGH MAP PLACEHOLDER ── */
   .borough-map {
     background: #E8D5B0;
-    border: 2px dashed var(--sage-leaf);
+    border: 2px dashed var(--teal-accent);
     border-radius: 14px;
     height: 320px;
     display: flex;
@@ -467,7 +467,7 @@ responsive behavior, and page-specific polish.
     justify-content: center;
     flex-direction: column;
     gap: 1rem;
-    color: var(--deep-moss);
+    color: var(--section-teal);
   }
 
   .borough-map .map-icon { font-size: 3rem; }
@@ -481,11 +481,11 @@ responsive behavior, and page-specific polish.
     background: #C8E3CE;
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: var(--shadow-meadow);
+    box-shadow: var(--shadow-soft);
   }
 
   .data-table th {
-    background: var(--deep-moss);
+    background: var(--section-teal);
     color: white;
     padding: 12px 16px;
     text-align: left;
@@ -496,16 +496,16 @@ responsive behavior, and page-specific polish.
 
   .data-table td {
     padding: 10px 16px;
-    border-bottom: 1px solid var(--stone-gray);
-    color: var(--forest-pine);
+    border-bottom: 1px solid var(--dark-border);
+    color: var(--deep-teal);
   }
 
   .data-table tr:last-child td { border-bottom: none; }
-  .data-table tr:hover td { background: var(--fog-white); }
+  .data-table tr:hover td { background: var(--page-bg); }
 
   /* ── ABOUT PAGE ── */
   .about-hero {
-    background: linear-gradient(160deg, var(--deep-moss) 0%, var(--sage-leaf) 100%);
+    background: linear-gradient(160deg, var(--section-teal) 0%, var(--teal-accent) 100%);
     padding: 60px 2rem;
     text-align: center;
     color: white;
@@ -514,7 +514,7 @@ responsive behavior, and page-specific polish.
   .about-avatar {
     width: 120px; height: 120px;
     border-radius: 50%;
-    background: linear-gradient(135deg, var(--sunlit-amber), var(--soft-bark));
+    background: linear-gradient(135deg, var(--gold-highlight), var(--gold-border));
     display: flex; align-items: center; justify-content: center;
     font-size: 3.5rem;
     margin: 0 auto 1.5rem;
@@ -527,9 +527,9 @@ responsive behavior, and page-specific polish.
   }
 
   .skill-pill {
-    background: var(--fog-white);
-    border: 1.5px solid var(--sage-leaf);
-    color: var(--deep-moss);
+    background: var(--page-bg);
+    border: 1.5px solid var(--teal-accent);
+    color: var(--section-teal);
     padding: 6px 16px;
     border-radius: 20px;
     font-size: 0.85rem;
@@ -541,12 +541,12 @@ responsive behavior, and page-specific polish.
     background: #E8D5B0;
     border-radius: 14px;
     overflow: hidden;
-    box-shadow: var(--shadow-meadow);
+    box-shadow: var(--shadow-soft);
     transition: all 0.2s;
-    border: 1.5px solid var(--stone-gray);
+    border: 1.5px solid var(--dark-border);
   }
 
-  .story-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-forest); }
+  .story-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-strong); }
 
   .story-banner {
     height: 120px;
@@ -555,38 +555,38 @@ responsive behavior, and page-specific polish.
   }
 
   .story-body { padding: 1.4rem; }
-  .story-body h3 { font-size: 1rem; font-weight: 800; margin-bottom: 0.5rem; color: var(--forest-pine); }
+  .story-body h3 { font-size: 1rem; font-weight: 800; margin-bottom: 0.5rem; color: var(--deep-teal); }
   .story-body p { font-size: 0.85rem; color: #555; line-height: 1.6; }
 
   /* ── TOOLS PAGE ── */
   .tool-card {
     background: #B3D4BB;
-    border: 1.5px solid var(--stone-gray);
+    border: 1.5px solid var(--dark-border);
     border-radius: 14px;
     padding: 2rem;
     text-align: center;
-    box-shadow: var(--shadow-meadow);
+    box-shadow: var(--shadow-soft);
     cursor: pointer;
     transition: all 0.2s;
   }
 
-  .tool-card:hover { border-color: var(--sage-leaf); box-shadow: var(--shadow-forest); transform: translateY(-2px); }
+  .tool-card:hover { border-color: var(--teal-accent); box-shadow: var(--shadow-strong); transform: translateY(-2px); }
   .tool-card .tool-icon { font-size: 2.8rem; margin-bottom: 1rem; }
-  .tool-card h3 { font-weight: 800; color: var(--forest-pine); margin-bottom: 0.5rem; }
+  .tool-card h3 { font-weight: 800; color: var(--deep-teal); margin-bottom: 0.5rem; }
   .tool-card p { font-size: 0.85rem; color: #666; line-height: 1.6; }
 
   /* ── REFERENCE PAGE ── */
   .ref-item {
     background: #E8D5B0;
-    border-left: 4px solid var(--sage-leaf);
+    border-left: 4px solid var(--teal-accent);
     border-radius: 0 10px 10px 0;
     padding: 1.2rem 1.5rem;
     margin-bottom: 1rem;
-    box-shadow: var(--shadow-meadow);
+    box-shadow: var(--shadow-soft);
   }
 
-  .ref-item h4 { font-weight: 700; color: var(--forest-pine); margin-bottom: 4px; }
-  .ref-item a { font-size: 0.85rem; color: var(--deep-moss); word-break: break-all; }
+  .ref-item h4 { font-weight: 700; color: var(--deep-teal); margin-bottom: 4px; }
+  .ref-item a { font-size: 0.85rem; color: var(--section-teal); word-break: break-all; }
   .ref-item p { font-size: 0.83rem; color: #666; margin-top: 4px; }
 
   /* ── AGE TABS ── */
@@ -639,7 +639,7 @@ responsive behavior, and page-specific polish.
 
 
   footer {
-    background: var(--forest-pine);
+    background: var(--deep-teal);
     color: rgba(255,255,255,0.75);
     text-align: center;
     padding: 2.5rem 2rem;
@@ -653,20 +653,20 @@ responsive behavior, and page-specific polish.
     margin-bottom: 0.5rem;
   }
 
-  footer a { color: var(--sky-blue-mist); text-decoration: none; }
+  footer a { color: var(--gold-accent); text-decoration: none; }
   footer a:hover { text-decoration: underline; }
 
   /* ── LOADING SPINNER ── */
   .loader {
     display: flex; align-items: center; gap: 10px;
-    color: var(--deep-moss); font-size: 0.9rem; font-weight: 600;
+    color: var(--section-teal); font-size: 0.9rem; font-weight: 600;
     padding: 1.5rem;
   }
 
-  .leaf-loader {
+  .hub-loader {
     width: 24px; height: 24px;
-    border: 3px solid var(--stone-gray);
-    border-top-color: var(--deep-moss);
+    border: 3px solid var(--dark-border);
+    border-top-color: var(--section-teal);
     border-radius: 50%;
     animation: spin 0.8s linear infinite;
   }
@@ -691,9 +691,9 @@ responsive behavior, and page-specific polish.
   .page.active { animation: fadeIn 0.35s ease; }
 
   /* ── DIVIDER ── */
-  .forest-divider {
+  .theme-divider {
     text-align: center;
-    color: var(--sage-leaf);
+    color: var(--teal-accent);
     font-size: 1.2rem;
     letter-spacing: 12px;
     margin: 1rem 0;
@@ -714,7 +714,7 @@ responsive behavior, and page-specific polish.
 
   /* ── 2026 polish pass: better navigation, accessibility, and dashboard spacing ── */
   a:focus-visible, button:focus-visible, select:focus-visible {
-    outline: 3px solid var(--sunlit-amber);
+    outline: 3px solid var(--gold-highlight);
     outline-offset: 3px;
   }
 
@@ -722,8 +722,8 @@ responsive behavior, and page-specific polish.
     position: absolute;
     left: 1rem;
     top: -60px;
-    background: var(--sunlit-amber);
-    color: var(--forest-night);
+    background: var(--gold-highlight);
+    color: var(--deep-night);
     padding: 10px 14px;
     border-radius: 8px;
     font-weight: 800;
@@ -744,16 +744,16 @@ responsive behavior, and page-specific polish.
 
   .summary-tile {
     background: #B3D4BB;
-    border: 1.5px solid var(--stone-gray);
+    border: 1.5px solid var(--dark-border);
     border-radius: 18px;
     padding: 1.25rem;
-    box-shadow: var(--shadow-forest);
+    box-shadow: var(--shadow-strong);
   }
   .summary-tile strong {
     display: block;
     font-family: var(--font-display);
     font-size: 1.35rem;
-    color: var(--deep-moss);
+    color: var(--section-teal);
     margin-bottom: 0.2rem;
   }
   .summary-tile span {
@@ -765,15 +765,15 @@ responsive behavior, and page-specific polish.
 
   .insight-callout {
     background: linear-gradient(135deg, #fff8e8, #eef8ef);
-    border-left: 6px solid var(--sunlit-amber);
+    border-left: 6px solid var(--gold-highlight);
     border-radius: 0 16px 16px 0;
     padding: 1.1rem 1.3rem;
     margin: 1.25rem 0 2rem;
-    box-shadow: var(--shadow-meadow);
+    box-shadow: var(--shadow-soft);
   }
   .insight-callout h3 {
     font-family: var(--font-display);
-    color: var(--forest-pine);
+    color: var(--deep-teal);
     margin-bottom: 0.4rem;
     font-size: 1.05rem;
   }
@@ -788,7 +788,7 @@ responsive behavior, and page-specific polish.
     border: 1px solid rgba(31, 92, 69, 0.18);
     border-radius: 12px;
     padding: 0.9rem 1rem;
-    color: var(--forest-pine);
+    color: var(--deep-teal);
     font-size: 0.84rem;
     line-height: 1.55;
     margin: 1rem 0;
@@ -802,7 +802,7 @@ responsive behavior, and page-specific polish.
   [data-theme="dark"] .stat-card,
   [data-theme="dark"] .story-card,
   [data-theme="dark"] .tool-card,
-  [data-theme="dark"] .nature-card,
+  [data-theme="dark"] .info-card,
   [data-theme="dark"] .filter-bar,
   [data-theme="dark"] .summary-tile,
   [data-theme="dark"] .data-table,
@@ -812,7 +812,7 @@ responsive behavior, and page-specific polish.
     border-color: #2A6B4A;
   }
   [data-theme="dark"] p,
-  [data-theme="dark"] .nature-card p,
+  [data-theme="dark"] .info-card p,
   [data-theme="dark"] .story-body p,
   [data-theme="dark"] .tool-card p,
   [data-theme="dark"] .stat-card .stat-label,
@@ -828,7 +828,7 @@ responsive behavior, and page-specific polish.
 
   @media (max-width: 980px) {
     .hero { padding: 60px 1.25rem 80px; }
-    .section-meadow, .section-woodland, .section-forest { padding-left: 1.25rem; padding-right: 1.25rem; }
+    .section-panel, .section-tan, .section-dark { padding-left: 1.25rem; padding-right: 1.25rem; }
   }
 
   @media (max-width: 700px) {
@@ -839,7 +839,7 @@ responsive behavior, and page-specific polish.
     .filter-bar > div { width: 100%; }
     .filter-bar select { width: 100%; }
     .about-hero { padding-top: 50px; }
-    .section-meadow .container[style*="grid-template-columns"] { display: block !important; }
+    .section-panel .container[style*="grid-template-columns"] { display: block !important; }
   }
 
   /* ── Hispanic Diabetes Evidence Portal ── */
@@ -886,15 +886,15 @@ responsive behavior, and page-specific polish.
   .prdr-subnav button {
     border: 1.5px solid rgba(31,92,69,0.25);
     background: #E8DCC2;
-    color: var(--forest-pine);
+    color: var(--deep-teal);
     border-radius: 999px;
     padding: 10px 16px;
     font-weight: 800;
     cursor: pointer;
-    box-shadow: var(--shadow-meadow);
+    box-shadow: var(--shadow-soft);
   }
   .prdr-subnav button:hover {
-    background: var(--sunlit-amber);
+    background: var(--gold-highlight);
     transform: translateY(-1px);
   }
   .prdr-kpi-grid {
@@ -908,14 +908,14 @@ responsive behavior, and page-specific polish.
     border: 1.5px solid rgba(31,92,69,0.20);
     border-radius: 18px;
     padding: 1.15rem;
-    box-shadow: var(--shadow-meadow);
+    box-shadow: var(--shadow-soft);
     text-align: center;
   }
   .prdr-kpi strong {
     display: block;
     font-family: var(--font-display);
     font-size: 2rem;
-    color: var(--deep-moss);
+    color: var(--section-teal);
     margin-bottom: 0.25rem;
   }
   .prdr-kpi span {
@@ -934,7 +934,7 @@ responsive behavior, and page-specific polish.
     border: 1.5px solid rgba(31,92,69,0.25);
     border-radius: 22px;
     padding: 1.5rem;
-    box-shadow: var(--shadow-forest);
+    box-shadow: var(--shadow-strong);
     min-height: 230px;
     display: flex;
     flex-direction: column;
@@ -946,7 +946,7 @@ responsive behavior, and page-specific polish.
   }
   .prdr-portal-card h3 {
     font-family: var(--font-display);
-    color: var(--forest-pine);
+    color: var(--deep-teal);
     margin-bottom: 0.5rem;
   }
   .prdr-portal-card p {
@@ -958,7 +958,7 @@ responsive behavior, and page-specific polish.
   .prdr-action {
     margin-top: 1rem;
     border: 0;
-    background: var(--deep-moss);
+    background: var(--section-teal);
     color: white;
     border-radius: 12px;
     padding: 11px 16px;
@@ -967,20 +967,20 @@ responsive behavior, and page-specific polish.
   }
   .prdr-portal-card button:hover,
   .prdr-action:hover {
-    background: var(--forest-pine);
+    background: var(--deep-teal);
     transform: translateY(-2px);
   }
   .prdr-story-panel {
     background: #E8DCC2;
-    border-left: 7px solid var(--deep-moss);
+    border-left: 7px solid var(--section-teal);
     border-radius: 0 18px 18px 0;
     padding: 1.25rem 1.5rem;
     margin: 1rem 0 1.5rem;
-    box-shadow: var(--shadow-meadow);
+    box-shadow: var(--shadow-soft);
   }
   .prdr-story-panel h3 {
     font-family: var(--font-display);
-    color: var(--forest-pine);
+    color: var(--deep-teal);
     margin-bottom: 0.5rem;
   }
   .prdr-story-panel p {
@@ -993,11 +993,11 @@ responsive behavior, and page-specific polish.
     border: 1.5px solid rgba(31,92,69,0.22);
     border-radius: 16px;
     padding: 1.1rem 1.25rem;
-    box-shadow: var(--shadow-meadow);
+    box-shadow: var(--shadow-soft);
   }
   .prdr-source-card h3 {
     font-family: var(--font-display);
-    color: var(--forest-pine);
+    color: var(--deep-teal);
     margin-bottom: 0.45rem;
   }
   .prdr-source-card p {
@@ -1034,7 +1034,7 @@ responsive behavior, and page-specific polish.
   }
   .prdr-intro-card h2 {
     font-family: var(--font-display);
-    color: var(--forest-pine);
+    color: var(--deep-teal);
     font-size: clamp(1.35rem, 2.4vw, 2rem);
     margin-bottom: 0.65rem;
   }
@@ -1076,12 +1076,12 @@ responsive behavior, and page-specific polish.
 
   .evidence-note {
     background: linear-gradient(135deg, rgba(255,255,255,0.84), rgba(232,213,176,0.72));
-    border-left: 6px solid var(--sunlit-amber);
+    border-left: 6px solid var(--gold-highlight);
     border-radius: 0 16px 16px 0;
     padding: 1rem 1.2rem;
     margin: 1.1rem 0 1.5rem;
-    box-shadow: var(--shadow-meadow);
-    color: var(--forest-pine);
+    box-shadow: var(--shadow-soft);
+    color: var(--deep-teal);
     font-size: 0.9rem;
     line-height: 1.65;
   }
@@ -1097,7 +1097,7 @@ responsive behavior, and page-specific polish.
     line-height: 1.6;
     color: #35513b;
   }
-  .chart-meaning strong { color: var(--forest-pine); }
+  .chart-meaning strong { color: var(--deep-teal); }
 
   .hope-panel {
     background: linear-gradient(135deg, #0B3D2E, #1F5C45 56%, #1F5C45);
@@ -1119,7 +1119,7 @@ responsive behavior, and page-specific polish.
   }
   .hope-panel h2 {
     font-family: var(--font-display);
-    color: var(--sunlit-amber);
+    color: var(--gold-highlight);
     margin-bottom: 0.65rem;
     font-size: clamp(1.35rem, 2.4vw, 2rem);
   }
@@ -1130,7 +1130,7 @@ responsive behavior, and page-specific polish.
     border-radius: 999px;
     padding: 0.75rem 1.05rem;
     background: rgba(242,197,124,0.95);
-    color: var(--forest-pine);
+    color: var(--deep-teal);
     font-weight: 800;
     cursor: pointer;
   }
@@ -1153,7 +1153,7 @@ responsive behavior, and page-specific polish.
     padding: 0.25rem 0.55rem;
     border-radius: 999px;
     background: rgba(31,92,69,0.12);
-    color: var(--forest-pine);
+    color: var(--deep-teal);
     font-weight: 900;
     font-size: 0.75rem;
   }
@@ -1174,7 +1174,7 @@ responsive behavior, and page-specific polish.
 /* ── Hispanic Article Deep Dive Polish ── */
 .article-hero-card {
   background: linear-gradient(135deg, #fff7e8 0%, #f2ddbd 45%, #d8b077 100%);
-  border: 2px solid var(--soft-bark);
+  border: 2px solid var(--gold-border);
   border-radius: 22px;
   padding: 1.5rem;
   box-shadow: 0 10px 28px rgba(11,61,46,0.18);
@@ -1182,7 +1182,7 @@ responsive behavior, and page-specific polish.
 }
 .article-hero-card h2 {
   font-family: var(--font-display);
-  color: var(--forest-pine);
+  color: var(--deep-teal);
   font-size: clamp(1.25rem, 3vw, 2rem);
   margin-bottom: 0.5rem;
 }
@@ -1200,7 +1200,7 @@ responsive behavior, and page-specific polish.
 }
 .article-meta-tile strong {
   display: block;
-  color: var(--deep-moss);
+  color: var(--section-teal);
   font-size: 0.78rem;
   text-transform: uppercase;
   letter-spacing: 0.04em;
@@ -1208,15 +1208,15 @@ responsive behavior, and page-specific polish.
 }
 .article-section-card {
   background: #E8D5B0;
-  border: 1.5px solid var(--stone-gray);
+  border: 1.5px solid var(--dark-border);
   border-radius: 18px;
   padding: 1.35rem;
-  box-shadow: var(--shadow-meadow);
+  box-shadow: var(--shadow-soft);
   margin-bottom: 1.3rem;
 }
 .article-section-card h3 {
   font-family: var(--font-display);
-  color: var(--forest-pine);
+  color: var(--deep-teal);
   margin-bottom: 0.55rem;
 }
 .article-section-card p, .article-section-card li {
@@ -1230,11 +1230,11 @@ responsive behavior, and page-specific polish.
 }
 .article-callout {
   background: linear-gradient(135deg, #fff8e8, #eef8ef);
-  border-left: 6px solid var(--sunlit-amber);
+  border-left: 6px solid var(--gold-highlight);
   border-radius: 0 16px 16px 0;
   padding: 1rem 1.15rem;
   margin: 1rem 0;
-  color: var(--forest-pine);
+  color: var(--deep-teal);
   font-weight: 700;
   line-height: 1.65;
 }
@@ -1275,7 +1275,7 @@ responsive behavior, and page-specific polish.
   margin-top: 1rem;
 }
 .article-link-row a, .article-link-row button {
-  background: var(--deep-moss);
+  background: var(--section-teal);
   color: white;
   text-decoration: none;
   border: none;
@@ -1286,7 +1286,7 @@ responsive behavior, and page-specific polish.
   font-family: var(--font-body);
 }
 .article-link-row a:hover, .article-link-row button:hover {
-  background: var(--forest-pine);
+  background: var(--deep-teal);
   transform: translateY(-1px);
 }
 
@@ -1379,7 +1379,7 @@ responsive behavior, and page-specific polish.
    ========================================================= */
 
 /* ---------- TOOLS PAGE: match the 6-card style screenshot ---------- */
-#page-tools .section-meadow {
+#page-tools .section-panel {
   background: #0D3D4A !important;
   padding-top: 3rem !important;
 }
@@ -1466,8 +1466,8 @@ responsive behavior, and page-specific polish.
 }
 
 /* ---------- REFERENCE + BLOG: purple bar headings like screenshot ---------- */
-#page-reference .section-meadow,
-#page-blog .section-meadow {
+#page-reference .section-panel,
+#page-blog .section-panel {
   background: #0D3D4A !important;
 }
 
@@ -1505,7 +1505,7 @@ responsive behavior, and page-specific polish.
 #page-reference .ref-item,
 #page-blog .chart-card,
 #page-blog .filter-bar,
-#page-blog .nature-card,
+#page-blog .info-card,
 #page-blog [class*="post"]:not(option):not(#postCount):not(#blogPost) {
   background: #C49A6C !important;
   border: 1.5px solid rgba(242,197,124,0.58) !important;
@@ -1516,7 +1516,7 @@ responsive behavior, and page-specific polish.
 
 #page-reference .ref-item p,
 #page-blog .chart-card p,
-#page-blog .nature-card p {
+#page-blog .info-card p {
   color: rgba(43,23,64,0.78) !important;
 }
 
@@ -1585,20 +1585,20 @@ responsive behavior, and page-specific polish.
   font-weight: 800 !important;
 }
 
-#page-about .section-meadow {
+#page-about .section-panel {
   background: #0D3D4A !important;
   padding-top: 3rem !important;
 }
 
-#page-about .section-meadow .container > div:first-child {
+#page-about .section-panel .container > div:first-child {
   display: grid !important;
   grid-template-columns: repeat(2, minmax(280px, 1fr)) !important;
   gap: 2rem !important;
 }
 
-#page-about .section-meadow .container > div:first-child > div,
-#page-about .section-meadow .container > div:nth-child(2),
-#page-about .wooden-panel {
+#page-about .section-panel .container > div:first-child > div,
+#page-about .section-panel .container > div:nth-child(2),
+#page-about .content-panel {
   background: #C49A6C !important;
   border: 1.5px solid rgba(242,197,124,0.58) !important;
   border-radius: 16px !important;
@@ -1607,7 +1607,7 @@ responsive behavior, and page-specific polish.
 }
 
 #page-about h2,
-#page-about .wooden-panel h3 {
+#page-about .content-panel h3 {
   color: #2a1a40 !important;
   font-family: 'Lora', Georgia, serif !important;
   font-weight: 800 !important;
@@ -1626,7 +1626,7 @@ responsive behavior, and page-specific polish.
 
 @media (max-width: 900px) {
   #page-tools .cards-grid,
-  #page-about .section-meadow .container > div:first-child,
+  #page-about .section-panel .container > div:first-child,
   #page-about > section:first-of-type > div {
     grid-template-columns: 1fr !important;
   }
@@ -1874,7 +1874,7 @@ responsive behavior, and page-specific polish.
 /* ╔══════════════════════════════════════════════════════════╗
    ║  JV DIABETES HUB — MASTER THEME                         ║
    ║  Clean slate. No gradients. No patches. No glow.        ║
-   ║  bg: deep teal  |  cards: warm bark  |  accent: gold    ║
+   ║  bg: deep teal  |  cards: warm tan   |  accent: gold    ║
    ╚══════════════════════════════════════════════════════════╝ */
 
 /* ── BODY & PAGE ── */
@@ -1891,7 +1891,7 @@ nav {
   box-shadow: 0 2px 10px rgba(0,0,0,0.5) !important;
 }
 .nav-brand { color: var(--gold-heading) !important; }
-.nav-brand .leaf-icon { color: var(--gold) !important; }
+.nav-brand .hub-icon { color: var(--gold) !important; }
 .nav-links a {
   color: var(--gold-cream) !important;
   background: transparent !important;
@@ -1912,16 +1912,16 @@ nav {
 }
 
 /* ── SECTIONS — flat solid, no gradients ── */
-.section-forest,
-.section-meadow,
-.section-woodland,
+.section-dark,
+.section-panel,
+.section-tan,
 .hero,
 [id^="page-"] section {
   background: var(--bg-section) !important;
   background-image: none !important;
 }
 /* Purple alternate sections */
-.section-woodland {
+.section-tan {
   background: var(--bg-purple) !important;
 }
 /* Hero slightly darker */
@@ -1943,14 +1943,14 @@ nav {
 }
 .section-sub { color: var(--gold-cream) !important; }
 
-/* ── ALL CARDS — warm bark, gold border, subtle shadow ── */
+/* ── ALL CARDS — warm tan, gold border, subtle shadow ── */
 .chart-card,
 .stat-card,
 .story-card,
 .tool-card,
 .quick-card,
-.nature-card,
-.wooden-panel,
+.info-card,
+.content-panel,
 .filter-bar,
 .mini-note,
 .dashboard-slicer-card,
@@ -1970,9 +1970,9 @@ nav {
 [class*="card"]::before,
 [class*="card"]::after,
 .dashboard-slicer-card::before,
-.wooden-panel::before,
-.nature-card::before,
-.nature-card::after {
+.content-panel::before,
+.info-card::before,
+.info-card::after {
   display: none !important;
   background: none !important;
 }
@@ -1980,8 +1980,8 @@ nav {
 /* ── CARD TEXT ── */
 .chart-card h3, .chart-card h2,
 .stat-card .stat-label,
-.story-body h3, .nature-card h3,
-.wooden-panel h3,
+.story-body h3, .info-card h3,
+.content-panel h3,
 .prdr-kpi strong,
 .dashboard-slicer-card .section-title {
   color: var(--bg-purple) !important;
@@ -2078,9 +2078,9 @@ footer p { color: var(--gold-cream) !important; }
 [id^="page-prdr"] {
   background: var(--bg-teal-alt) !important;
 }
-[id^="page-prdr"] .section-forest,
-[id^="page-prdr"] .section-meadow,
-[id^="page-prdr"] .section-woodland {
+[id^="page-prdr"] .section-dark,
+[id^="page-prdr"] .section-panel,
+[id^="page-prdr"] .section-tan {
   background: var(--bg-teal-alt) !important;
 }
 [id^="page-prdr"] h1,
@@ -2098,7 +2098,7 @@ footer p { color: var(--gold-cream) !important; }
 .research-story-page {
   background: var(--bg-teal-alt) !important;
 }
-.research-story-page .section-forest,
+.research-story-page .section-dark,
 .research-story-page section {
   background: var(--bg-teal-alt) !important;
 }
@@ -2116,19 +2116,19 @@ footer p { color: var(--gold-cream) !important; }
 [style*="color: #666"] {
   color: var(--text-black) !important;
 }
-[style*="color:var(--forest-pine)"],
-[style*="color: var(--forest-pine)"],
-[style*="color:var(--deep-moss)"],
-[style*="color: var(--deep-moss)"] {
+[style*="color:var(--deep-teal)"],
+[style*="color: var(--deep-teal)"],
+[style*="color:var(--section-teal)"],
+[style*="color: var(--section-teal)"] {
   color: var(--bg-purple) !important;
 }
 
 /* ── WOODEN PANEL (Key Focus Areas) ── */
-.wooden-panel {
+.content-panel {
   background: var(--bg-card) !important;
 }
-.wooden-panel h3 { color: var(--bg-purple) !important; }
-.wooden-panel li { color: var(--text-black) !important; }
+.content-panel h3 { color: var(--bg-purple) !important; }
+.content-panel li { color: var(--text-black) !important; }
 
 /* ── DASHBOARD SLICER CARD title ── */
 .dashboard-slicer-card .section-title { color: var(--gold-heading) !important; }
@@ -2436,14 +2436,14 @@ footer p { color: var(--gold-cream) !important; }
 </style>
 <style id="dashboard-spacing-fix">
 /* Tighten all gaps on the dashboard page */
-#page-diabetes .section-woodland {
+#page-diabetes .section-tan {
   padding-top: 0.75rem !important;
   padding-bottom: 0.75rem !important;
 }
-#page-diabetes .section-meadow {
+#page-diabetes .section-panel {
   padding-top: 0.75rem !important;
 }
-#page-diabetes .section-forest {
+#page-diabetes .section-dark {
   padding-bottom: 0.75rem !important;
 }
 #page-diabetes .dashboard-slicer-card {
@@ -2477,7 +2477,7 @@ footer p { color: var(--gold-cream) !important; }
 
 <style id="research-page-rectangle-card-fix">
 /* ── Research Articles page cleanup ──
-   Removes the extra warm-bark layer look around the cards and turns
+   Removes the extra warm-tan layer look around the cards and turns
    the research cards into wide rectangular story rows. */
 #page-stories {
   background: #0D3D4A !important;
@@ -2490,7 +2490,7 @@ footer p { color: var(--gold-cream) !important; }
   background: #0D3D4A !important;
 }
 
-#page-stories .section-meadow {
+#page-stories .section-panel {
   background: #0D3D4A !important;
   background-image: none !important;
   padding: 2.5rem 2rem 3.5rem !important;
@@ -2658,7 +2658,7 @@ footer p { color: var(--gold-cream) !important; }
     padding-top: 1rem !important;
   }
 
-  .research-story-page .section-meadow {
+  .research-story-page .section-panel {
     padding-top: 2rem !important;
   }
 </style>
@@ -2730,7 +2730,7 @@ footer p { color: var(--gold-cream) !important; }
     display: inline-flex !important;
     align-items: center !important;
     gap: 6px !important;
-    background: var(--deep-moss) !important;
+    background: var(--section-teal) !important;
     color: white !important;
     padding: 10px 18px !important;
     border-radius: 8px !important;
@@ -2773,7 +2773,7 @@ footer p { color: var(--gold-cream) !important; }
 #page-prdr {
   background: #0a2a2f !important;
 }
-#page-prdr .section-meadow {
+#page-prdr .section-panel {
   background: #0a2a2f !important;
   background-image: none !important;
   padding: 2.5rem 2rem 3.5rem !important;
@@ -2871,16 +2871,16 @@ footer p { color: var(--gold-cream) !important; }
 }
 
 /* Hispanic article chart pages match the Research Article Charts deep-dive layout */
-#page-prdrType1Article > section.section-forest,
-#page-prdrSDOHArticle > section.section-forest,
-#page-prdrGrowingEpidemicArticle > section.section-forest,
-#page-prdrCGMAdoptionArticle > section.section-forest {
+#page-prdrType1Article > section.section-dark,
+#page-prdrSDOHArticle > section.section-dark,
+#page-prdrGrowingEpidemicArticle > section.section-dark,
+#page-prdrCGMAdoptionArticle > section.section-dark {
   display: none !important;
 }
-#page-prdrType1Article .section-meadow,
-#page-prdrSDOHArticle .section-meadow,
-#page-prdrGrowingEpidemicArticle .section-meadow,
-#page-prdrCGMAdoptionArticle .section-meadow {
+#page-prdrType1Article .section-panel,
+#page-prdrSDOHArticle .section-panel,
+#page-prdrGrowingEpidemicArticle .section-panel,
+#page-prdrCGMAdoptionArticle .section-panel {
   background: #0d3d4a !important;
   padding-top: 7rem !important;
 }
@@ -3659,7 +3659,7 @@ footer:empty { display: none !important; padding: 0 !important; margin: 0 !impor
 
 <style id="sparcs-reference-heading-and-keyfinding-polish">
   /* SPARCS 2024: match the purple/gold reference-card heading style */
-  #page-sparcs2024 .section-meadow {
+  #page-sparcs2024 .section-panel {
     background: #0d3d4a !important;
   }
 
@@ -4074,7 +4074,7 @@ loading a new HTML file.
 ========================================================= -->
 <nav>
 <a class="nav-brand" href="#" onclick="showPage('home')">
-<span class="leaf-icon">🌲</span>
+<span class="hub-icon">🌲</span>
 <span>JV Diabetes Hub</span>
 </a>
 <ul class="nav-links">
@@ -4181,7 +4181,7 @@ Landing page that introduces the portfolio project
 </section>
 <div class="container"></div>
 <!-- Why This Hub — moved first -->
-<section class="section-meadow">
+<section class="section-panel">
 <div class="container" style="display:grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center;">
 <div class="chart-card" style="padding: 2rem;">
 <h2 class="section-title" style="color: var(--bg-purple) !important; text-align: center; padding-right: 1.8rem;">🌲 Why This Hub?</h2>
@@ -4195,8 +4195,8 @@ Landing page that introduces the portfolio project
 <button class="btn btn-outline" onclick="showPage('about')" style="background: var(--bg-purple) !important; color: #F2C57C !important; border: 1.5px solid var(--gold);">Learn About This Project 🌿</button>
 </div>
 </div>
-<div class="wooden-panel">
-<h3 style="font-family: var(--font-display); font-size: 1.6rem; font-weight: 800; margin-bottom:1rem; color: var(--deep-moss); text-align: center;">🌱 Key Focus Areas</h3>
+<div class="content-panel">
+<h3 style="font-family: var(--font-display); font-size: 1.6rem; font-weight: 800; margin-bottom:1rem; color: var(--section-teal); text-align: center;">🌱 Key Focus Areas</h3>
 <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px;">
 <li>🩸 Diabetes Prevalence by Race/Ethnicity</li>
 <li>🧪 A1C Control (&gt;9% as poor control indicator)</li>
@@ -4233,7 +4233,7 @@ Interactive SPARCS summary with filters, KPIs, map, and charts
 </div>
 </section>
 <!-- ── DASHBOARD CONTENT ── -->
-<section class="section-meadow" style="background:#0D3D4A !important; padding:2rem;">
+<section class="section-panel" style="background:#0D3D4A !important; padding:2rem;">
 <div class="container dashboard-shell">
 <div class="dashboard-intro-card">
 <h2>SPARCS 2024 Diabetes Inpatient Dashboard</h2>
@@ -4407,7 +4407,7 @@ NYC A1C Registry 2022<br/>JAMA / Healio 2025
 </div>
 </div>
 </section>
-<section class="section-meadow" style="background:#0D3D4A !important; padding:2rem;">
+<section class="section-panel" style="background:#0D3D4A !important; padding:2rem;">
 <div class="a1c-shell">
 <div class="a1c-intro-card">
 <h2>A1C Blood Sugar Control Across New York City</h2>
@@ -4533,7 +4533,7 @@ NYC A1C Registry 2022<br/>JAMA / Healio 2025
   </div>
 </div>
 </section>
-<section class="section-meadow" style="background:#0D3D4A !important; padding:2.5rem 2rem 3.5rem;">
+<section class="section-panel" style="background:#0D3D4A !important; padding:2.5rem 2rem 3.5rem;">
 <div class="container" style="max-width:1200px;">
 <div class="chart-card" style="background:var(--bg-card) !important; border:var(--border-gold); margin-bottom:1.4rem;">
 <h2 style="background:#2a1a40; color:#F2C57C !important; padding:0.65rem 1rem; border-radius:8px; margin:0 0 1rem; font-family:var(--font-display);">Diabetes Prevalence Among New York City Adults</h2>
@@ -4722,7 +4722,7 @@ Cards for article summaries and links to article chart pages
   </div>
 </div>
 </section>
-<section class="section-meadow">
+<section class="section-panel">
 <div class="container">
 <div class="cards-grid">
 <div class="story-card research-landing-card">
@@ -4842,7 +4842,7 @@ Reusable story layout that displays evidence and charts for
 one selected research article.
 ========================================================= -->
 <div class="page research-story-page" id="page-researchStory1-renal-disease-in-type-2-diabetes-magnitude">
-<section class="section-meadow">
+<section class="section-panel">
 <div class="container">
 <div class="research-story-toolbar">
 <button class="prdr-action" onclick="showPage('stories')">Back to Research Articles</button>
@@ -4882,7 +4882,7 @@ Shows key findings from the selected article
 </div>
 </section>
 </div><div class="page research-story-page" id="page-researchStory2-diabetes-health-inequities-among-nyc-adult">
-<section class="section-meadow">
+<section class="section-panel">
 <div class="container">
 <div class="research-story-toolbar">
 <button class="prdr-action" onclick="showPage('stories')">Back to Research Articles</button>
@@ -4994,7 +4994,7 @@ Shows key findings from the selected article
 </section>
 </div>
 <div class="page research-story-page" id="page-researchStory4-food-insecurity-poor-a1c-control-in-the-br">
-<section class="section-meadow">
+<section class="section-panel">
 <div class="container">
 <div class="research-story-toolbar">
 <button class="prdr-action" onclick="showPage('stories')">Back to Research Articles</button>
@@ -5100,7 +5100,7 @@ Shows key findings from the selected article
 </div>
 </div></section>
 </div><div class="page research-story-page" id="page-researchStory5-new-york-state-diabetes-related-amputation">
-<section class="section-meadow">
+<section class="section-panel">
 <div class="container">
 <div class="research-story-toolbar">
 <button class="prdr-action" onclick="showPage('stories')">Back to Research Articles</button>
@@ -5166,7 +5166,7 @@ Chart.js visualizations based on the selected article
 </div>
 </section>
 </div><div class="page research-story-page" id="page-researchSparcsComplicationsAmputations">
-<section class="section-meadow">
+<section class="section-panel">
 <div class="container">
 <div class="research-story-toolbar">
 <button class="prdr-action" onclick="showPage('stories')">Back to Research Articles</button>
@@ -5238,7 +5238,7 @@ Chart.js visualizations based on the selected article
 </section>
 </div>
 <div class="page research-story-page" id="page-researchDiabetesIncidencePrevalence2024">
-<section class="section-meadow">
+<section class="section-panel">
 <div class="container">
 <div class="research-story-toolbar">
 <button class="prdr-action" onclick="showPage('stories')">Back to Research Articles</button>
@@ -5274,7 +5274,7 @@ Chart.js visualizations based on the selected article
 </section>
 </div>
 <div class="page research-story-page" id="page-researchEpidemiologicalPatterns2025">
-<section class="section-meadow">
+<section class="section-panel">
 <div class="container">
 <div class="research-story-toolbar">
 <button class="prdr-action" onclick="showPage('stories')">Back to Research Articles</button>
@@ -5316,13 +5316,13 @@ Hispanic Diabetes: Data, Culture, and Care.
 Research, Charts & Evidence section.
 ========================================================= -->
 <div class="page" id="page-prdr">
-<section class="section-forest hispanics-research-header" style="background: #0D3D4A !important;">
+<section class="section-dark hispanics-research-header" style="background: #0D3D4A !important;">
 <div class="container" style="background: #0A2A2F !important;">
 <h1 class="section-title" style="color:white;">Hispanic Diabetes: Data, Culture, and Care</h1>
 <p class="section-sub">Research-backed charts and evidence about diabetes patterns, care access, social determinants, and prevention across Hispanic and Latino communities.</p>
 </div>
 </section>
-<section class="section-meadow prdr-home-like-article-charts">
+<section class="section-panel prdr-home-like-article-charts">
   <div class="container">
     <div class="prdr-main-article-card">
       <div class="prdr-main-card-body">
@@ -5558,8 +5558,8 @@ Research, Charts & Evidence section.
 </section>
 </div>
 <div class="page" id="page-prdrHispIncidence2022Article">
-<section class="section-forest"><div class="container"><h1 class="section-title" style="color:white;">2022 Hispanic Diabetes Incidence</h1><p class="section-sub">Who develops diabetes over time, and why subgroup context matters.</p></div></section>
-<section class="section-meadow"><div class="container">
+<section class="section-dark"><div class="container"><h1 class="section-title" style="color:white;">2022 Hispanic Diabetes Incidence</h1><p class="section-sub">Who develops diabetes over time, and why subgroup context matters.</p></div></section>
+<section class="section-panel"><div class="container">
 <div class="article-link-row"><button onclick="showPage('prdr')">Back to Hispanics</button><a href="articles/Hispanics page/2022-Diabete-Incidence-Among-Hispanic.pdf" target="_self">Open Article PDF</a><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9210863/" target="_self">Open Article Website</a></div>
 <div class="article-hero-card"><h2>Diabetes Incidence Among Hispanic Adults</h2><p><strong>Population health research, 2022</strong></p><p>This dashboard-style page summarizes new diabetes risk, subgroup context, prevention timing, and the need to avoid treating all Hispanic communities as one identical group.</p><div class="article-meta-grid"><div class="article-meta-tile"><strong>Journal</strong>Peer-reviewed public health source, 2022</div><div class="article-meta-tile"><strong>Study Design</strong>Population-based incidence analysis</div><div class="article-meta-tile"><strong>Participants</strong>Hispanic and Latino adult populations</div><div class="article-meta-tile"><strong>Locations</strong>United States / Hispanic and Latino community focus</div></div></div>
 <div class="article-section-card"><h3>Summary</h3><p>This article focuses on who develops diabetes over time among Hispanic and Latino adults. It supports the larger dashboard story by showing that diabetes risk is not the same for every subgroup and that prevention should happen before diagnosis whenever possible.</p></div>
@@ -5568,8 +5568,8 @@ Research, Charts & Evidence section.
 </div></section>
 </div>
 <div class="page" id="page-prdrSDOHImpact2023Article">
-<section class="section-forest"><div class="container"><h1 class="section-title" style="color:white;">2023 Social Determinants and Diabetes</h1><p class="section-sub">How daily living conditions shape diabetes risk.</p></div></section>
-<section class="section-meadow"><div class="container">
+<section class="section-dark"><div class="container"><h1 class="section-title" style="color:white;">2023 Social Determinants and Diabetes</h1><p class="section-sub">How daily living conditions shape diabetes risk.</p></div></section>
+<section class="section-panel"><div class="container">
 <div class="article-link-row"><button onclick="showPage('prdr')">Back to Hispanics</button><a href="articles/Hispanics page/2023-The-impact-of-social-determinants.pdf" target="_self">Open Article PDF</a><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9817265/" target="_self">Open Article Website</a></div>
 <div class="article-hero-card"><h2>The Impact of Social Determinants on Hispanic Diabetes Risk</h2><p><strong>Social determinants research, 2023</strong></p><p>This chart page turns the article into an evidence map of neighborhood, health care, food, stress, and resource barriers.</p><div class="article-meta-grid"><div class="article-meta-tile"><strong>Journal</strong>Peer-reviewed public health source, 2023</div><div class="article-meta-tile"><strong>Study Design</strong>Social determinants review / population health analysis</div><div class="article-meta-tile"><strong>Participants</strong>Hispanic and Latino communities affected by diabetes risk</div><div class="article-meta-tile"><strong>Locations</strong>United States / community and neighborhood context</div></div></div>
 <div class="article-section-card"><h3>Summary</h3><p>This article connects diabetes risk to daily living conditions. It shows that diabetes prevention depends on more than individual choices because food access, neighborhood safety, money, stress, and care access shape what people can realistically do.</p></div>
@@ -5578,8 +5578,8 @@ Research, Charts & Evidence section.
 </div></section>
 </div>
 <div class="page" id="page-prdrMedicareDisparities2024Article">
-<section class="section-forest"><div class="container"><h1 class="section-title" style="color:white;">2024 Medicare Diabetes Disparities</h1><p class="section-sub">Equity signals in chronic disease care.</p></div></section>
-<section class="section-meadow"><div class="container">
+<section class="section-dark"><div class="container"><h1 class="section-title" style="color:white;">2024 Medicare Diabetes Disparities</h1><p class="section-sub">Equity signals in chronic disease care.</p></div></section>
+<section class="section-panel"><div class="container">
 <div class="article-link-row"><button onclick="showPage('prdr')">Back to Hispanics</button><a href="articles/Hispanics page/2024-Diabetes-Disparities-in-Medicare.pdf" target="_self">Open Article PDF</a><a href="https://www.cms.gov/about-cms/agency-information/omh/downloads/data-snapshots-diabetes.pdf" target="_self">Open Article Website</a></div>
 <div class="article-hero-card"><h2>Diabetes Disparities in Medicare</h2><p><strong>CMS Office of Minority Health, 2024</strong></p><p>This chart page highlights equity themes: access, prevention, screening, chronic care, and differences across Medicare populations.</p><div class="article-meta-grid"><div class="article-meta-tile"><strong>Journal</strong>CMS data snapshot / federal health equity report</div><div class="article-meta-tile"><strong>Study Design</strong>Administrative data summary</div><div class="article-meta-tile"><strong>Participants</strong>Medicare populations with diabetes</div><div class="article-meta-tile"><strong>Locations</strong>United States</div></div></div>
 <div class="article-section-card"><h3>Summary</h3><p>This report shows that diabetes outcomes and care experiences are not equal across Medicare groups. It supports the need for fair screening, medication access, chronic disease management, and follow-up care.</p></div>
@@ -5588,8 +5588,8 @@ Research, Charts & Evidence section.
 </div></section>
 </div>
 <div class="page" id="page-prdrMortalityTrends2024Article">
-<section class="section-forest"><div class="container"><h1 class="section-title" style="color:white;">2024 Diabetes Mortality Trends</h1><p class="section-sub">Population patterns across places and communities.</p></div></section>
-<section class="section-meadow"><div class="container">
+<section class="section-dark"><div class="container"><h1 class="section-title" style="color:white;">2024 Diabetes Mortality Trends</h1><p class="section-sub">Population patterns across places and communities.</p></div></section>
+<section class="section-panel"><div class="container">
 <div class="article-link-row"><button onclick="showPage('prdr')">Back to Hispanics</button><a href="articles/Hispanics page/2024-Diabetes-mortality-trends-multi-country.pdf" target="_self">Open Article PDF</a><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10859152/" target="_self">Open Article Website</a></div>
 <div class="article-hero-card"><h2>Diabetes Mortality Trends in a Multi-Country Analysis</h2><p><strong>Global epidemiology research, 2024</strong></p><p>This chart page shows the article’s mortality themes: diabetes deaths vary by place, time, risk exposure, and health-system context.</p><div class="article-meta-grid"><div class="article-meta-tile"><strong>Journal</strong>Peer-reviewed epidemiology source, 2024</div><div class="article-meta-tile"><strong>Study Design</strong>Multi-country mortality trend analysis</div><div class="article-meta-tile"><strong>Participants</strong>Population-level mortality data</div><div class="article-meta-tile"><strong>Locations</strong>Multiple countries / international comparison</div></div></div>
 <div class="article-section-card"><h3>Summary</h3><p>This article places diabetes mortality in a wider population-health context. It shows that diabetes deaths are shaped by prevention, complications, care access, and health system differences.</p></div>
@@ -5598,8 +5598,8 @@ Research, Charts & Evidence section.
 </div></section>
 </div>
 <div class="page" id="page-prdrTextMessaging2025Article">
-<section class="section-forest"><div class="container"><h1 class="section-title" style="color:white;">2025 Text Messaging Intervention</h1><p class="section-sub">Digital support designed for Hispanic diabetes care.</p></div></section>
-<section class="section-meadow"><div class="container">
+<section class="section-dark"><div class="container"><h1 class="section-title" style="color:white;">2025 Text Messaging Intervention</h1><p class="section-sub">Digital support designed for Hispanic diabetes care.</p></div></section>
+<section class="section-panel"><div class="container">
 <div class="article-link-row"><button onclick="showPage('prdr')">Back to Hispanics</button><a href="articles/Hispanics page/2025-Adapting-a-Text-Messaging-Intervention.pdf" target="_self">Open Article PDF</a><a href="https://humanfactors.jmir.org/2025/1/e66668/" target="_self">Open Article Website</a></div>
 <div class="article-hero-card"><h2>Adapting a Text Messaging Intervention for Hispanic Diabetes Support</h2><p><strong>Digital health intervention research, 2025</strong></p><p>This chart page summarizes intervention design themes: clear language, cultural fit, reminders, trust, and practical self-management support.</p><div class="article-meta-grid"><div class="article-meta-tile"><strong>Journal</strong>JMIR Human Factors, 2025</div><div class="article-meta-tile"><strong>Study Design</strong>Digital health adaptation / user-centered intervention work</div><div class="article-meta-tile"><strong>Participants</strong>Hispanic adults and community-informed diabetes support users</div><div class="article-meta-tile"><strong>Locations</strong>United States / Hispanic community focus</div></div></div>
 <div class="article-section-card"><h3>Summary</h3><p>This article explains how text messaging can support diabetes self-management when the messages are clear, culturally aware, and practical. It shows that digital tools need to fit people’s language, trust, and daily routines.</p></div>
@@ -5608,8 +5608,8 @@ Research, Charts & Evidence section.
 </div></section>
 </div>
 <div class="page" id="page-prdrHypertension2025Article">
-<section class="section-forest"><div class="container"><h1 class="section-title" style="color:white;">2025 Diabetes and Hypertension</h1><p class="section-sub">The overlap between blood sugar and blood pressure risk.</p></div></section>
-<section class="section-meadow"><div class="container">
+<section class="section-dark"><div class="container"><h1 class="section-title" style="color:white;">2025 Diabetes and Hypertension</h1><p class="section-sub">The overlap between blood sugar and blood pressure risk.</p></div></section>
+<section class="section-panel"><div class="container">
 <div class="article-link-row"><button onclick="showPage('prdr')">Back to Hispanics</button><a href="articles/Hispanics page/2025-Diabetesand-Hypertension-Hispanic.pdf" target="_self">Open Article PDF</a><a href="https://jamanetwork.com/journals/jama-health-forum/fullarticle/2831836" target="_self">Open Article Website</a></div>
 <div class="article-hero-card"><h2>Diabetes and Hypertension Among Hispanic Adults</h2><p><strong>JAMA Health Forum, 2025</strong></p><p>This chart page frames diabetes and hypertension as connected chronic disease risks that need coordinated prevention and care.</p><div class="article-meta-grid"><div class="article-meta-tile"><strong>Journal</strong>JAMA Health Forum, 2025</div><div class="article-meta-tile"><strong>Study Design</strong>Population health analysis / chronic disease disparities study</div><div class="article-meta-tile"><strong>Participants</strong>Adults with diabetes and hypertension risk</div><div class="article-meta-tile"><strong>Locations</strong>United States</div></div></div>
 <div class="article-section-card"><h3>Summary</h3><p>This article connects diabetes and high blood pressure as overlapping chronic disease risks. It supports a care model where blood sugar, blood pressure, heart health, kidney health, medication access, and primary care are managed together.</p></div>
@@ -5618,8 +5618,8 @@ Research, Charts & Evidence section.
 </div></section>
 </div>
 <div class="page" id="page-prdrNeighborhood2025Article">
-<section class="section-forest"><div class="container"><h1 class="section-title" style="color:white;">2025 Neighborhood Environment</h1><p class="section-sub">How place can shape diabetes risk.</p></div></section>
-<section class="section-meadow"><div class="container">
+<section class="section-dark"><div class="container"><h1 class="section-title" style="color:white;">2025 Neighborhood Environment</h1><p class="section-sub">How place can shape diabetes risk.</p></div></section>
+<section class="section-panel"><div class="container">
 <div class="article-link-row"><button onclick="showPage('prdr')">Back to Hispanics</button><a href="articles/Hispanics page/2025-Neighborhood-environment-and-incident.pdf" target="_self">Open Article PDF</a><a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0329282" target="_self">Open Article Website</a></div>
 <div class="article-hero-card"><h2>Neighborhood Environment and Incident Diabetes</h2><p><strong>PLOS ONE, 2025</strong></p><p>This chart page maps neighborhood conditions that can shape diabetes risk: food access, walking space, safety, resources, and care access.</p><div class="article-meta-grid"><div class="article-meta-tile"><strong>Journal</strong>PLOS ONE, 2025</div><div class="article-meta-tile"><strong>Study Design</strong>Neighborhood environment and incident diabetes analysis</div><div class="article-meta-tile"><strong>Participants</strong>Adults followed for diabetes risk in community settings</div><div class="article-meta-tile"><strong>Locations</strong>Community / neighborhood environment focus</div></div></div>
 <div class="article-section-card"><h3>Summary</h3><p>This article shows that where people live can affect diabetes risk. Neighborhood food access, walkability, safety, resources, and nearby care can make prevention easier or harder.</p></div>
@@ -5628,8 +5628,8 @@ Research, Charts & Evidence section.
 </div></section>
 </div>
 <div class="page" id="page-prdrHispDiabetes2026Article">
-<section class="section-forest"><div class="container"><h1 class="section-title" style="color:white;">2026 Diabetes and Hispanic/Latino Americans</h1><p class="section-sub">Plain-language public health overview.</p></div></section>
-<section class="section-meadow"><div class="container">
+<section class="section-dark"><div class="container"><h1 class="section-title" style="color:white;">2026 Diabetes and Hispanic/Latino Americans</h1><p class="section-sub">Plain-language public health overview.</p></div></section>
+<section class="section-panel"><div class="container">
 <div class="article-link-row"><button onclick="showPage('prdr')">Back to Hispanics</button><a href="articles/Hispanics page/2026-Diabetes-and-Hispanic-Latino-Americans.pdf" target="_self">Open Article PDF</a><a href="https://minorityhealth.hhs.gov/diabetes-and-hispaniclatino-americans" target="_self">Open Article Website</a></div>
 <div class="article-hero-card"><h2>Diabetes and Hispanic/Latino Americans</h2><p><strong>Office of Minority Health, 2026</strong></p><p>This chart page turns the public health overview into a clear map of risk, prevention, access, complications, and health equity.</p><div class="article-meta-grid"><div class="article-meta-tile"><strong>Journal</strong>Federal public health overview</div><div class="article-meta-tile"><strong>Study Design</strong>Public health fact sheet / data summary</div><div class="article-meta-tile"><strong>Participants</strong>Hispanic and Latino Americans</div><div class="article-meta-tile"><strong>Locations</strong>United States</div></div></div>
 <div class="article-section-card"><h3>Summary</h3><p>This public health overview explains diabetes burden, risk factors, and disparities affecting Hispanic and Latino Americans. It is useful for plain-language education and for showing why prevention and care access matter.</p></div>
@@ -5638,8 +5638,8 @@ Research, Charts & Evidence section.
 </div></section>
 </div>
 <div class="page" id="page-prdrHispObesity2026Article">
-<section class="section-forest"><div class="container"><h1 class="section-title" style="color:white;">2026 Obesity and Hispanic/Latino Americans</h1><p class="section-sub">Metabolic risk and prevention context.</p></div></section>
-<section class="section-meadow"><div class="container">
+<section class="section-dark"><div class="container"><h1 class="section-title" style="color:white;">2026 Obesity and Hispanic/Latino Americans</h1><p class="section-sub">Metabolic risk and prevention context.</p></div></section>
+<section class="section-panel"><div class="container">
 <div class="article-link-row"><button onclick="showPage('prdr')">Back to Hispanics</button><a href="articles/Hispanics page/2026-Obesity-and-Hispanic-Latino-Americans.pdf" target="_self">Open Article PDF</a><a href="https://minorityhealth.hhs.gov/obesity-and-hispaniclatino-americans" target="_self">Open Article Website</a></div>
 <div class="article-hero-card"><h2>Obesity and Hispanic/Latino Americans</h2><p><strong>Office of Minority Health, 2026</strong></p><p>This chart page connects obesity, diabetes risk, prevention, community resources, and chronic disease equity.</p><div class="article-meta-grid"><div class="article-meta-tile"><strong>Journal</strong>Federal public health overview</div><div class="article-meta-tile"><strong>Study Design</strong>Public health fact sheet / data summary</div><div class="article-meta-tile"><strong>Participants</strong>Hispanic and Latino Americans</div><div class="article-meta-tile"><strong>Locations</strong>United States</div></div></div>
 <div class="article-section-card"><h3>Summary</h3><p>This overview adds obesity context to the diabetes story. It shows how metabolic risk is connected to food access, physical activity, stress, prevention, and community health supports.</p></div>
@@ -5648,8 +5648,8 @@ Research, Charts & Evidence section.
 </div></section>
 </div>
 <div class="page" id="page-prdrSDOHPart2Article">
-<section class="section-forest"><div class="container"><h1 class="section-title" style="color:white;">2026 Social Determinants, Part 2</h1><p class="section-sub">How grouped social barriers affect diabetes prevention.</p></div></section>
-<section class="section-meadow"><div class="container">
+<section class="section-dark"><div class="container"><h1 class="section-title" style="color:white;">2026 Social Determinants, Part 2</h1><p class="section-sub">How grouped social barriers affect diabetes prevention.</p></div></section>
+<section class="section-panel"><div class="container">
 <div class="article-link-row"><button onclick="showPage('prdr')">Back to Hispanics</button><a href="articles/Hispanics page/2026-Profiles-of-Social-Determinants-pt2.pdf" target="_self">Open Article PDF</a><a href="https://diabetesjournals.org/care/article-abstract/49/5/861/164640/Profiles-of-Social-Determinants-of-Health-and" target="_self">Open Article Website</a></div>
 <div class="article-hero-card"><h2>Profiles of Social Determinants, Part 2</h2><p><strong>Diabetes Care, 2026</strong></p><p>This chart page continues the social determinants story, focusing on clustered adversity, prevention needs, and practical support points.</p><div class="article-meta-grid"><div class="article-meta-tile"><strong>Journal</strong>Diabetes Care, 2026</div><div class="article-meta-tile"><strong>Study Design</strong>Population-based cohort study with social profile analysis</div><div class="article-meta-tile"><strong>Participants</strong>Hispanic and Latino adults in HCHS/SOL</div><div class="article-meta-tile"><strong>Locations</strong>Bronx, Chicago, Miami, and San Diego HCHS/SOL communities</div></div></div>
 <div class="article-section-card"><h3>Summary</h3><p>This page continues the social determinants evidence story by showing how several social barriers can cluster together and shape diabetes risk over time. It supports prevention that includes health care, food resources, language access, family support, and referrals.</p></div>
@@ -5658,13 +5658,13 @@ Research, Charts & Evidence section.
 </div></section>
 </div>
 <div class="page" id="page-prdrLibrary">
-<section class="section-forest" style="padding: 44px 2rem 54px;">
+<section class="section-dark" style="padding: 44px 2rem 54px;">
 <div class="container">
 <h1 class="section-title" style="color:white;">📚 Hispanic Diabetes Source Library</h1>
 <p class="section-sub">A clean source shelf for the Hispanic diabetes evidence used in this section.</p>
 </div>
 </section>
-<section class="section-meadow">
+<section class="section-panel">
 <div class="container">
 <div class="prdr-subnav">
 <button onclick="showPage('prdr')">Back to Hispanics</button>
@@ -5674,13 +5674,13 @@ Research, Charts & Evidence section.
 </section>
 </div>
 <div class="page" id="page-prdrType1Article">
-<section class="section-forest" style="padding: 44px 2rem 54px;">
+<section class="section-dark" style="padding: 44px 2rem 54px;">
 <div class="container">
 <h1 class="section-title" style="color:white;">📄 Article Deep Dive</h1>
 <p class="section-sub">Type 1 diabetes prevalence evidence from the Hispanic Community Health Study/Study of Latinos.</p>
 </div>
 </section>
-<section class="section-meadow">
+<section class="section-panel">
 <div class="container">
 <div class="prdr-subnav">
 <button onclick="showPage('prdr')">Back to Hispanics</button>
@@ -5746,13 +5746,13 @@ Research, Charts & Evidence section.
 </section>
 </div>
 <div class="page" id="page-prdrSDOHArticle">
-<section class="section-forest" style="padding: 44px 2rem 54px;">
+<section class="section-dark" style="padding: 44px 2rem 54px;">
 <div class="container">
 <h1 class="section-title" style="color:white;">📄 Article Deep Dive</h1>
 <p class="section-sub">Social determinants, adversity profiles, and diabetes status change in HCHS/SOL from 2008 to 2024.</p>
 </div>
 </section>
-<section class="section-meadow">
+<section class="section-panel">
 <div class="container">
 <div class="prdr-subnav">
 <button onclick="showPage('prdr')">Back to Hispanics</button>
@@ -5933,13 +5933,13 @@ Research, Charts & Evidence section.
 </section>
 </div>
 <div class="page" id="page-prdrGrowingEpidemicArticle">
-<section class="section-forest" style="padding: 44px 2rem 54px;">
+<section class="section-dark" style="padding: 44px 2rem 54px;">
 <div class="container">
 <h1 class="section-title" style="color:white;">📄 Article Deep Dive</h1>
 <p class="section-sub">A review article explaining why type 2 diabetes is rising among Hispanic adults in the United States.</p>
 </div>
 </section>
-<section class="section-meadow">
+<section class="section-panel">
 <div class="container">
 <div class="prdr-subnav">
 <button onclick="showPage('prdr')">Back to Hispanics</button>
@@ -5980,7 +5980,7 @@ Research, Charts & Evidence section.
 <div class="concept-diagram-shell">
 <svg aria-label="Conceptual model of type 2 diabetes risk showing genes, socioeconomic factors, environmental factors, and metabolic factors leading to diabetes" class="concept-diagram-svg" role="img" viewbox="0 0 1200 760">
 <defs>
-<marker id="forestArrowSmall" markerheight="18" markerunits="userSpaceOnUse" markerwidth="18" orient="auto" refx="16" refy="9">
+<marker id="hubArrowSmall" markerheight="18" markerunits="userSpaceOnUse" markerwidth="18" orient="auto" refx="16" refy="9">
 <path d="M0,0 L18,9 L0,18 z" fill="#5F9B73"></path>
 </marker>
 </defs>
@@ -6003,10 +6003,10 @@ Research, Charts & Evidence section.
 <text fill="#3B2800" font-size="19" text-anchor="middle" x="942" y="666">dyslipidemia</text>
 <circle cx="600" cy="380" fill="#8E6B49" r="95"></circle>
 <text fill="#FFF1C7" font-size="50" font-weight="700" text-anchor="middle" x="600" y="397">Diabetes</text>
-<line marker-end="url(#forestArrowSmall)" stroke="#5F9B73" stroke-linecap="round" stroke-width="10" x1="425" x2="535" y1="195" y2="300"></line>
-<line marker-end="url(#forestArrowSmall)" stroke="#5F9B73" stroke-linecap="round" stroke-width="10" x1="775" x2="665" y1="195" y2="300"></line>
-<line marker-end="url(#forestArrowSmall)" stroke="#5F9B73" stroke-linecap="round" stroke-width="10" x1="445" x2="535" y1="535" y2="460"></line>
-<line marker-end="url(#forestArrowSmall)" stroke="#5F9B73" stroke-linecap="round" stroke-width="10" x1="755" x2="665" y1="535" y2="460"></line>
+<line marker-end="url(#hubArrowSmall)" stroke="#5F9B73" stroke-linecap="round" stroke-width="10" x1="425" x2="535" y1="195" y2="300"></line>
+<line marker-end="url(#hubArrowSmall)" stroke="#5F9B73" stroke-linecap="round" stroke-width="10" x1="775" x2="665" y1="195" y2="300"></line>
+<line marker-end="url(#hubArrowSmall)" stroke="#5F9B73" stroke-linecap="round" stroke-width="10" x1="445" x2="535" y1="535" y2="460"></line>
+<line marker-end="url(#hubArrowSmall)" stroke="#5F9B73" stroke-linecap="round" stroke-width="10" x1="755" x2="665" y1="535" y2="460"></line>
 </svg>
 </div>
 <div class="article-chart-note"><strong>What this means:</strong> This recreated figure shows that type 2 diabetes does not come from one single cause. Genetic risk, social conditions, environmental exposures, and metabolic changes work together, which supports the article’s core message that diabetes is shaped by systems, not just individual behavior.</div>
@@ -6036,13 +6036,13 @@ Research, Charts & Evidence section.
 </section>
 </div>
 <div class="page" id="page-prdrCGMAdoptionArticle">
-<section class="section-forest" style="padding: 44px 2rem 54px;">
+<section class="section-dark" style="padding: 44px 2rem 54px;">
 <div class="container">
 <h1 class="section-title" style="color:white;">📄 Article Deep Dive</h1>
 <p class="section-sub">Technology access, trust, language, cost, and real-world CGM use among Hispanic adults with insulin-treated type 2 diabetes.</p>
 </div>
 </section>
-<section class="section-meadow">
+<section class="section-panel">
 <div class="container">
 <div class="prdr-subnav">
 <button onclick="showPage('prdr')">Back to Hispanics</button>
@@ -6131,7 +6131,7 @@ Interactive Tools: reusable analytics utilities section
   </div>
 </div>
 </section>
-<section class="section-meadow">
+<section class="section-panel">
 <div class="container">
 <div class="cards-grid">
 <div class="tool-card">
@@ -6161,7 +6161,7 @@ Interactive Tools: reusable analytics utilities section
 <div class="tool-card">
 <div class="tool-icon">📈</div>
 <h3>Chart Template Builder</h3>
-<p>Generate forest-themed Chart.js charts for any diabetes indicator. Choose chart type, color palette, and export as PNG or embed-ready JavaScript.</p>
+<p>Generate teal-purple Chart.js charts for any diabetes indicator. Choose chart type, color palette, and export as PNG or embed-ready JavaScript.</p>
 <a class="btn btn-outline" href="https://quickchart.io/" style="margin-top:1rem;display:inline-block;text-decoration:none;" target="_self">Launch Tool 🌿</a>
 </div>
 <div class="tool-card">
@@ -6195,9 +6195,9 @@ Reference & Data Sources: datasets, definitions, and methods
   </div>
 </div>
 </section>
-<section class="section-meadow">
+<section class="section-panel">
 <div class="container">
-<h2 style="font-family:var(--font-display); font-size:1.3rem; margin-bottom:1.5rem; color:var(--forest-pine);">🌐 Primary Data Sources</h2>
+<h2 style="font-family:var(--font-display); font-size:1.3rem; margin-bottom:1.5rem; color:var(--deep-teal);">🌐 Primary Data Sources</h2>
 <div class="ref-item">
 <h4>NYC Environment &amp; Health Data Portal (EHDP)</h4>
 <a href="https://github.com/nychealth/EHDP-data/tree/production/indicators" target="_blank">github.com/nychealth/EHDP-data</a>
@@ -6208,17 +6208,17 @@ Reference & Data Sources: datasets, definitions, and methods
 <a href="https://a816-dohbesp.nyc.gov/IndicatorPublic/data-explorer/chronic-disease/?id=2465#display=summary" target="_blank">a816-dohbesp.nyc.gov/IndicatorPublic/data-explorer/chronic-disease/?id=2465</a>
 <p>Direct link to the NYC Environment &amp; Health Data Portal chronic disease explorer, pre-loaded with all four diabetes indicators: Adults with Diabetes, A1C &gt; 9% (very high blood sugar), Lower Extremity Amputations (diabetes-related), and Dialysis Patients (diabetes-related). Includes maps, trend charts, borough and neighborhood breakdowns, and correlation views by poverty level.</p>
 </div>
-<h2 style="font-family:var(--font-display);font-size:1.2rem;margin:2rem 0 1rem;color:var(--forest-pine);">🏥 2024 SPARCS Data — Diabetes · NYC 5 Boroughs · By Age Group</h2>
+<h2 style="font-family:var(--font-display);font-size:1.2rem;margin:2rem 0 1rem;color:var(--deep-teal);">🏥 2024 SPARCS Data — Diabetes · NYC 5 Boroughs · By Age Group</h2>
 <div class="ref-item" style="padding:1.2rem 1.5rem;">
 <p style="font-size:0.85rem;color:#555;margin-bottom:1rem;">Hospital inpatient discharges filtered to diabetes CCSR diagnoses, NYC hospital counties, discharge year 2024. Each link opens directly in NY State Open Data pre-filtered to that age group.</p>
 <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:1rem;">
 <span class="badge badge-green">Diabetes Without Complication</span>
 <span class="badge badge-blue">Diabetes With Complication</span>
 <span class="badge badge-amber">Prediabetes</span>
-<span class="badge badge-bark">Maternal Diabetes</span>
+<span class="badge badge-accent">Maternal Diabetes</span>
 <span class="badge badge-green">NYC 5 Boroughs · sf4k-39ay</span>
 </div>
-<div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;padding:10px 0;border-bottom:1px solid var(--stone-gray);">
+<div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;padding:10px 0;border-bottom:1px solid var(--dark-border);">
 <div style="display:flex;align-items:center;gap:10px;">
 <span style="font-size:1.2rem;">👶</span>
 <div>
@@ -6229,7 +6229,7 @@ Reference & Data Sources: datasets, definitions, and methods
             Open Dataset ↗
           </a>
 </div>
-<div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;padding:10px 0;border-bottom:1px solid var(--stone-gray);">
+<div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;padding:10px 0;border-bottom:1px solid var(--dark-border);">
 <div style="display:flex;align-items:center;gap:10px;">
 <span style="font-size:1.2rem;">🧑</span>
 <div>
@@ -6240,7 +6240,7 @@ Reference & Data Sources: datasets, definitions, and methods
             Open Dataset ↗
           </a>
 </div>
-<div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;padding:10px 0;border-bottom:1px solid var(--stone-gray);">
+<div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;padding:10px 0;border-bottom:1px solid var(--dark-border);">
 <div style="display:flex;align-items:center;gap:10px;">
 <span style="font-size:1.2rem;">🧍</span>
 <div>
@@ -6251,18 +6251,18 @@ Reference & Data Sources: datasets, definitions, and methods
             Open Dataset ↗
           </a>
 </div>
-<div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;padding:10px 0;border-bottom:1px solid var(--stone-gray);">
+<div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;padding:10px 0;border-bottom:1px solid var(--dark-border);">
 <div style="display:flex;align-items:center;gap:10px;">
 <span style="font-size:1.2rem;">🧓</span>
 <div>
-<span class="badge badge-bark" style="font-size:0.82rem;">50 to 69 — Middle-Older Adult</span>
+<span class="badge badge-accent" style="font-size:0.82rem;">50 to 69 — Middle-Older Adult</span>
 </div>
 </div>
 <a href="https://health.data.ny.gov/Health/Hospital-Inpatient-Discharges-SPARCS-De-Identified/sf4k-39ay/explore/query/SELECT%0A%20%20%60health_service_area%60%2C%0A%20%20%60hospital_county%60%2C%0A%20%20%60operating_certificate_number%60%2C%0A%20%20%60permanent_facility_id%60%2C%0A%20%20%60facility_name%60%2C%0A%20%20%60age_group%60%2C%0A%20%20%60zip_code%60%2C%0A%20%20%60gender%60%2C%0A%20%20%60race%60%2C%0A%20%20%60ethnicity%60%2C%0A%20%20%60length_of_stay%60%2C%0A%20%20%60type_of_admission%60%2C%0A%20%20%60patient_disposition%60%2C%0A%20%20%60discharge_year%60%2C%0A%20%20%60ccsr_diagnosis_code%60%2C%0A%20%20%60ccsr_diagnosis_description%60%2C%0A%20%20%60ccsr_procedure_code%60%2C%0A%20%20%60ccsr_procedure_description%60%2C%0A%20%20%60apr_drg_code%60%2C%0A%20%20%60apr_drg_description%60%2C%0A%20%20%60apr_mdc_code%60%2C%0A%20%20%60apr_mdc_description%60%2C%0A%20%20%60apr_severity_of_illness_code%60%2C%0A%20%20%60apr_severity_of_illness%60%2C%0A%20%20%60apr_risk_of_mortality%60%2C%0A%20%20%60apr_medical_surgical%60%2C%0A%20%20%60payment_typology_1%60%2C%0A%20%20%60payment_typology_2%60%2C%0A%20%20%60payment_typology_3%60%2C%0A%20%20%60birth_weight%60%2C%0A%20%20%60emergency_department_indicator%60%2C%0A%20%20%60total_charges%60%2C%0A%20%20%60total_costs%60%0AWHERE%0A%20%20caseless_one_of%28%0A%20%20%20%20%60ccsr_diagnosis_description%60%2C%0A%20%20%20%20%22DIABETES%20MELLITUS%20WITHOUT%20COMPLICATION%22%2C%0A%20%20%20%20%22DIABETES%20MELLITUS%20WITH%20COMPLICATION%22%2C%0A%20%20%20%20%22PREDIABETES%22%2C%0A%20%20%20%20%22DIABETES%20OR%20ABNORMAL%20GLUCOSE%20TOLERANCE%20COMPLICATING%20PREGNANCY%3B%20CHILDBIRTH%3B%20OR%20THE%20PUERPERIUM%22%0A%20%20%29%0A%20%20AND%20caseless_one_of%28%0A%20%20%20%20%60hospital_county%60%2C%0A%20%20%20%20%22New%20York%22%2C%0A%20%20%20%20%22Kings%22%2C%0A%20%20%20%20%22Queens%22%2C%0A%20%20%20%20%22Richmond%22%2C%0A%20%20%20%20%22Bronx%22%0A%20%20%29%0A%20%20AND%20caseless_one_of%28%60age_group%60%2C%20%2250-69%22%29/page/filter" class="sparcs-open-dataset-button" style="display:inline-flex;align-items:center;gap:6px;background:#0B4F5A !important;color:#FFF1C7 !important;padding:6px 14px;border-radius:8px;font-size:0.82rem;font-weight:700;text-decoration:none;font-family:var(--font-body);" target="_self">
             Open Dataset ↗
           </a>
 </div>
-<div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;padding:10px 0;border-bottom:1px solid var(--stone-gray);">
+<div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;padding:10px 0;border-bottom:1px solid var(--dark-border);">
 <div style="display:flex;align-items:center;gap:10px;">
 <span style="font-size:1.2rem;">👴</span>
 <div>
@@ -6274,17 +6274,17 @@ Reference & Data Sources: datasets, definitions, and methods
           </a>
 </div>
 </div>
-<h2 style="font-family:var(--font-display);font-size:1.2rem;margin:2rem 0 1rem;color:var(--forest-pine);">🏥 2023 SPARCS Data — Diabetes · NYC 5 Boroughs · By Age Group</h2>
+<h2 style="font-family:var(--font-display);font-size:1.2rem;margin:2rem 0 1rem;color:var(--deep-teal);">🏥 2023 SPARCS Data — Diabetes · NYC 5 Boroughs · By Age Group</h2>
 <div class="ref-item" style="padding:1.2rem 1.5rem;">
 <p style="font-size:0.85rem;color:#555;margin-bottom:1rem;">Same four diabetes CCSR categories, NYC boroughs, discharge year 2023. Note: 2023 uses 3-digit zip and <code>hospital_service_area</code> field — Manhattan coded as "Manhattan" (vs "New York" in 2024).</p>
 <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:1rem;">
 <span class="badge badge-green">Diabetes Without Complication</span>
 <span class="badge badge-blue">Diabetes With Complication</span>
 <span class="badge badge-amber">Prediabetes</span>
-<span class="badge badge-bark">Maternal Diabetes</span>
+<span class="badge badge-accent">Maternal Diabetes</span>
 <span class="badge badge-amber">NYC 5 Boroughs · 46xm-urtu · 3-digit zip</span>
 </div>
-<div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;padding:10px 0;border-bottom:1px solid var(--stone-gray);">
+<div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;padding:10px 0;border-bottom:1px solid var(--dark-border);">
 <div style="display:flex;align-items:center;gap:10px;">
 <span style="font-size:1.2rem;">👶</span>
 <div>
@@ -6295,7 +6295,7 @@ Reference & Data Sources: datasets, definitions, and methods
             Open Dataset ↗
           </a>
 </div>
-<div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;padding:10px 0;border-bottom:1px solid var(--stone-gray);">
+<div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;padding:10px 0;border-bottom:1px solid var(--dark-border);">
 <div style="display:flex;align-items:center;gap:10px;">
 <span style="font-size:1.2rem;">🧑</span>
 <div>
@@ -6306,7 +6306,7 @@ Reference & Data Sources: datasets, definitions, and methods
             Open Dataset ↗
           </a>
 </div>
-<div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;padding:10px 0;border-bottom:1px solid var(--stone-gray);">
+<div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;padding:10px 0;border-bottom:1px solid var(--dark-border);">
 <div style="display:flex;align-items:center;gap:10px;">
 <span style="font-size:1.2rem;">🧍</span>
 <div>
@@ -6317,18 +6317,18 @@ Reference & Data Sources: datasets, definitions, and methods
             Open Dataset ↗
           </a>
 </div>
-<div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;padding:10px 0;border-bottom:1px solid var(--stone-gray);">
+<div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;padding:10px 0;border-bottom:1px solid var(--dark-border);">
 <div style="display:flex;align-items:center;gap:10px;">
 <span style="font-size:1.2rem;">🧓</span>
 <div>
-<span class="badge badge-bark" style="font-size:0.82rem;">50 to 69 — Middle-Older Adult</span>
+<span class="badge badge-accent" style="font-size:0.82rem;">50 to 69 — Middle-Older Adult</span>
 </div>
 </div>
 <a href="https://health.data.ny.gov/Health/Hospital-Inpatient-Discharges-SPARCS-De-Identified/46xm-urtu/explore/query/SELECT%0A%20%20%60hospital_service_area%60%2C%0A%20%20%60hospital_county%60%2C%0A%20%20%60operating_certificate_number%60%2C%0A%20%20%60permanent_facility_id%60%2C%0A%20%20%60facility_name%60%2C%0A%20%20%60age_group%60%2C%0A%20%20%60zip_code_3_digits%60%2C%0A%20%20%60gender%60%2C%0A%20%20%60race%60%2C%0A%20%20%60ethnicity%60%2C%0A%20%20%60length_of_stay%60%2C%0A%20%20%60type_of_admission%60%2C%0A%20%20%60patient_disposition%60%2C%0A%20%20%60discharge_year%60%2C%0A%20%20%60ccsr_diagnosis_code%60%2C%0A%20%20%60ccsr_diagnosis_description%60%2C%0A%20%20%60ccsr_procedure_code%60%2C%0A%20%20%60ccsr_procedure_description%60%2C%0A%20%20%60apr_drg_code%60%2C%0A%20%20%60apr_drg_description%60%2C%0A%20%20%60apr_mdc_code%60%2C%0A%20%20%60apr_mdc_description%60%2C%0A%20%20%60apr_severity_of_illness_code%60%2C%0A%20%20%60apr_severity_of_illness%60%2C%0A%20%20%60apr_risk_of_mortality%60%2C%0A%20%20%60apr_medical_surgical%60%2C%0A%20%20%60payment_typology_1%60%2C%0A%20%20%60payment_typology_2%60%2C%0A%20%20%60payment_typology_3%60%2C%0A%20%20%60birth_weight%60%2C%0A%20%20%60emergency_department_indicator%60%2C%0A%20%20%60total_charges%60%2C%0A%20%20%60total_costs%60%0AWHERE%0A%20%20caseless_one_of%28%0A%20%20%20%20%60ccsr_diagnosis_description%60%2C%0A%20%20%20%20%22Diabetes%20mellitus%20without%20complication%22%2C%0A%20%20%20%20%22Diabetes%20mellitus%20with%20complication%22%2C%0A%20%20%20%20%22Diabetes%20or%20abnormal%20glucose%20tolerance%20complicating%20pregnancy%3B%20childbirth%3B%20or%20the%20puerperium%22%2C%0A%20%20%20%20%22Prediabetes%22%0A%20%20%29%0A%20%20AND%20caseless_one_of%28%0A%20%20%20%20%60hospital_county%60%2C%0A%20%20%20%20%22Bronx%22%2C%0A%20%20%20%20%22Manhattan%22%2C%0A%20%20%20%20%22Kings%22%2C%0A%20%20%20%20%22Richmond%22%2C%0A%20%20%20%20%22Queens%22%0A%20%20%29%0A%20%20AND%20caseless_one_of%28%60age_group%60%2C%20%2250%20to%2069%22%29/page/filter" class="sparcs-open-dataset-button" style="display:inline-flex;align-items:center;gap:6px;background:#0B4F5A !important;color:#FFF1C7 !important;padding:6px 14px;border-radius:8px;font-size:0.82rem;font-weight:700;text-decoration:none;font-family:var(--font-body);" target="_self">
             Open Dataset ↗
           </a>
 </div>
-<div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;padding:10px 0;border-bottom:1px solid var(--stone-gray);">
+<div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;padding:10px 0;border-bottom:1px solid var(--dark-border);">
 <div style="display:flex;align-items:center;gap:10px;">
 <span style="font-size:1.2rem;">👴</span>
 <div>
@@ -6355,14 +6355,14 @@ Reference & Data Sources: datasets, definitions, and methods
 <a href="https://qualityindicators.ahrq.gov/Downloads/Modules/V2023/AHRQ_QI_Indicators_List.pdf" target="_blank">qualityindicators.ahrq.gov — AHRQ QI Indicators List (PDF)</a>
 <p>Agency for Healthcare Research and Quality (AHRQ) standardized quality measures used with SPARCS and other hospital discharge data. Covers four indicator modules: Prevention Quality Indicators (PQI), Inpatient Quality Indicators (IQI), Patient Safety Indicators (PSI), and Pediatric Quality Indicators (PDI). Published October 2023, AHRQ Pub. No. 24-0007.</p>
 <div style="margin-top:0.75rem;">
-<p style="font-size:0.82rem; font-weight:700; color:var(--forest-pine); margin-bottom:0.4rem;">🩸 Diabetes-Relevant Indicators:</p>
+<p style="font-size:0.82rem; font-weight:700; color:var(--deep-teal); margin-bottom:0.4rem;">🩸 Diabetes-Relevant Indicators:</p>
 <div style="display:flex; flex-wrap:wrap; gap:6px;">
 <span class="badge badge-green">PQI 01 — Diabetes Short-Term Complications</span>
 <span class="badge badge-green">PQI 03 — Diabetes Long-Term Complications</span>
 <span class="badge badge-blue">PQI 14 — Uncontrolled Diabetes Admission Rate</span>
 <span class="badge badge-blue">PQI 16 — Lower-Extremity Amputation (Diabetes)</span>
 <span class="badge badge-amber">PQI 93 — Prevention Quality Diabetes Composite</span>
-<span class="badge badge-bark">PDI 15 — Pediatric Diabetes Short-Term Complications</span>
+<span class="badge badge-accent">PDI 15 — Pediatric Diabetes Short-Term Complications</span>
 </div>
 </div>
 </div>
@@ -6380,32 +6380,32 @@ Reference & Data Sources: datasets, definitions, and methods
 <span class="badge badge-blue">PDI 15 — Pediatric Diabetes Short-Term Complications</span>
 <span class="badge badge-green">All 5 NYC Counties</span>
 <span class="badge badge-amber">Risk-Adjusted Rates</span>
-<span class="badge badge-bark">Beginning 2009</span>
+<span class="badge badge-accent">Beginning 2009</span>
 </div>
 </div>
-<h2 style="font-family:var(--font-display); font-size:1.3rem; margin: 2rem 0 1.5rem; color:var(--forest-pine);">📖 Key Definitions</h2>
+<h2 style="font-family:var(--font-display); font-size:1.3rem; margin: 2rem 0 1.5rem; color:var(--deep-teal);">📖 Key Definitions</h2>
 <div class="cards-grid">
-<div class="wooden-panel">
-<h3 style="color:var(--warm-cedar); margin-bottom:0.75rem;">A1C (HbA1c)</h3>
+<div class="content-panel">
+<h3 style="color:var(--tan-heading); margin-bottom:0.75rem;">A1C (HbA1c)</h3>
 <p style="font-size:0.88rem; line-height:1.65;">A blood test measuring average blood glucose over the prior 2 to 3 months. A1C greater than 9% indicates poor glycemic control and is associated with significantly higher risk of diabetes complications.</p>
 </div>
-<div class="wooden-panel">
-<h3 style="color:var(--warm-cedar); margin-bottom:0.75rem;">Diabetes Prevalence</h3>
+<div class="content-panel">
+<h3 style="color:var(--tan-heading); margin-bottom:0.75rem;">Diabetes Prevalence</h3>
 <p style="font-size:0.88rem; line-height:1.65;">The percentage of the adult population (age 18 and older) who report being told by a healthcare provider that they have diabetes. Measured via NYC Community Health Survey.</p>
 </div>
-<div class="wooden-panel">
-<h3 style="color:var(--warm-cedar); margin-bottom:0.75rem;">SPARCS</h3>
+<div class="content-panel">
+<h3 style="color:var(--tan-heading); margin-bottom:0.75rem;">SPARCS</h3>
 <p style="font-size:0.88rem; line-height:1.65;">Statewide Planning and Research Cooperative System. Collects patient-level detail on every hospital inpatient discharge in New York State, including diagnosis, procedure, cost, and payment information. This hub uses the 2024 de-identified dataset filtered to Endocrine diagnoses (dataset ID: sf4k-39ay) for diabetes hospitalization analysis.</p>
 </div>
-<div class="wooden-panel">
-<h3 style="color:var(--warm-cedar); margin-bottom:0.75rem;">EHDP</h3>
+<div class="content-panel">
+<h3 style="color:var(--tan-heading); margin-bottom:0.75rem;">EHDP</h3>
 <p style="font-size:0.88rem; line-height:1.65;">Environment and Health Data Portal, maintained by NYC DOHMH. Provides hundreds of indicators on how environmental and social conditions shape health outcomes across NYC neighborhoods.</p>
 </div>
 </div>
 </div>
 </section>
 <!-- ── RESEARCH LITERATURE ── -->
-<h2 style="font-family:var(--font-display);font-size:1.2rem;margin:2rem 0 1rem;color:var(--forest-pine);">📚 Research Literature — Peer-Reviewed Sources</h2>
+<h2 style="font-family:var(--font-display);font-size:1.2rem;margin:2rem 0 1rem;color:var(--deep-teal);">📚 Research Literature — Peer-Reviewed Sources</h2>
 <div class="ref-item">
 <h4>The Prevalence of Type 1 Diabetes in Hispanic/Latino Populations</h4>
 <a href="https://journals.lww.com/epidem/fulltext/2020/01000/the_prevalence_of_type_1_diabetes_in.25.aspx" target="_blank">journals.lww.com — Epidemiology Journal · 2020</a>
@@ -6458,11 +6458,11 @@ Jasmine Vasquez. About the Creator.
   </div>
 </div>
 </section>
-<section class="section-meadow">
+<section class="section-panel">
 <div class="container">
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
 <div>
-<h2 style="font-family:var(--font-display); font-size:1.4rem; margin-bottom:1rem; color:var(--forest-pine);">🌿 Bio &amp; Mission</h2>
+<h2 style="font-family:var(--font-display); font-size:1.4rem; margin-bottom:1rem; color:var(--deep-teal);">🌿 Bio &amp; Mission</h2>
 <p style="font-size:0.95rem; line-height:1.8; color:#444;">
             I'm a returning adult student at Lehman College pursuing dual degrees in Health Services Administration and Business Administration with a focus on Human Resource Management. My career goal is data analytics, with a focus on healthcare data — cleaning, analyzing, and visualizing information that can drive real public health decisions.
           </p>
@@ -6470,11 +6470,11 @@ Jasmine Vasquez. About the Creator.
             This portfolio focuses on diabetes because it is one of the most prevalent and preventable chronic conditions disproportionately affecting New York City's most vulnerable communities. I built this hub to bridge the gap between raw government data and accessible, actionable insight.
           </p>
 <p style="font-size:0.95rem; line-height:1.8; color:#444; margin-top:1rem;">
-            The forest theme reflects my belief that good data work should feel grounding — calm, clear, and rooted in something real.
+            The teal-purple theme reflects my belief that good data work should feel focused, clear, and grounded in evidence.
           </p>
 </div>
 <div>
-<h2 style="font-family:var(--font-display); font-size:1.4rem; margin-bottom:1rem; color:var(--forest-pine);">🛠️ Skills &amp; Tools</h2>
+<h2 style="font-family:var(--font-display); font-size:1.4rem; margin-bottom:1rem; color:var(--deep-teal);">🛠️ Skills &amp; Tools</h2>
 <div class="skills-list">
 <span class="skill-pill">Excel</span>
 <span class="skill-pill">Tableau</span>
@@ -6491,8 +6491,8 @@ Jasmine Vasquez. About the Creator.
 <span class="skill-pill">Epidemiology</span>
 <span class="skill-pill">Managed Care</span>
 </div>
-<div class="wooden-panel" style="margin-top:1.5rem;">
-<h3 style="color:var(--warm-cedar); margin-bottom:0.75rem; font-family:var(--font-display);">📚 Coursework Highlights</h3>
+<div class="content-panel" style="margin-top:1.5rem;">
+<h3 style="color:var(--tan-heading); margin-bottom:0.75rem; font-family:var(--font-display);">📚 Coursework Highlights</h3>
 <ul style="list-style:none; display:flex; flex-direction:column; gap:8px; font-size:0.88rem;">
 <li>📊 HSA 312 — Managed Health Care</li>
 <li>🏥 HSA 267 — Management of Healthcare Organizations</li>
@@ -6504,12 +6504,12 @@ Jasmine Vasquez. About the Creator.
 </div>
 </div>
 <div style="margin-top:2rem; text-align:center;">
-<h2 style="font-family:var(--font-display); font-size:1.3rem; margin-bottom:1rem; color:var(--forest-pine);">📬 Contact</h2>
+<h2 style="font-family:var(--font-display); font-size:1.3rem; margin-bottom:1rem; color:var(--deep-teal);">📬 Contact</h2>
 <p style="color:#555; margin-bottom:1rem;">Open to internship and entry-level data analyst opportunities in healthcare.</p>
 <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
 <button class="btn btn-outline">🔗 LinkedIn</button>
 <button class="btn btn-primary">📧 Email</button>
-<button class="btn btn-secondary" style="color:var(--forest-pine); background:var(--stone-gray); border:none;">📄 Resume</button>
+<button class="btn btn-secondary" style="color:var(--deep-teal); background:var(--dark-border); border:none;">📄 Resume</button>
 </div>
 </div>
 </div>
@@ -6536,7 +6536,7 @@ Prescription drug data section
   </div>
 </div>
 </section>
-<section class="section-meadow">
+<section class="section-panel">
 <div class="container rx-shell">
 <div class="rx-intro-card">
 <h2>Diabetes Prescription Drug Utilization</h2>
@@ -6605,7 +6605,7 @@ Prescription drug data section
 </div>
 <!-- Loading indicator -->
 <div class="loader" id="drugLoader" style="justify-content:center;padding:2rem;">
-<div class="leaf-loader"></div>
+<div class="hub-loader"></div>
 <span>Fetching live data from NY State Open Data API...</span>
 </div>
 <!-- Drug table -->
@@ -6637,7 +6637,7 @@ Prescription drug data section
 </div>
 <!-- API error fallback -->
 <div id="drugFallback" style="display:none;">
-<div class="nature-card" style="border-left:4px solid var(--sunlit-amber);text-align:center;padding:2rem;">
+<div class="info-card" style="border-left:4px solid var(--gold-highlight);text-align:center;padding:2rem;">
 <div style="font-size:2rem;margin-bottom:1rem;">⚠️</div>
 <h3>Using Cached Data</h3>
 <p>The live API requires authentication (SODA3). Showing 2022 dataset snapshot. To enable live fetching, add your NY State Open Data app token.</p>
@@ -6668,21 +6668,21 @@ Diabetes News & Breakthroughs: latest diabetes updates section
   </div>
 </div>
 </section>
-<section class="section-meadow">
+<section class="section-panel">
 <div class="container">
 <!-- Loading -->
 <div class="loader" id="newsLoader" style="justify-content:center;padding:2rem;">
-<div class="leaf-loader"></div>
+<div class="hub-loader"></div>
 <span>Fetching latest diabetes news...</span>
 </div>
 <!-- News grid - populated by JS -->
 <div id="newsGrid" style="display:none;">
 <!-- GLP-1 Featured Story -->
-<div class="nature-card" style="border-left:4px solid var(--sunlit-amber);margin-bottom:1.5rem;">
+<div class="info-card" style="border-left:4px solid var(--gold-highlight);margin-bottom:1.5rem;">
 <div style="display:flex;align-items:flex-start;gap:1rem;flex-wrap:wrap;">
 <div style="flex:1;min-width:250px;">
 <span class="badge badge-amber" style="margin-bottom:0.5rem;">🔥 Featured</span>
-<h3 style="font-family:var(--font-display);font-size:1.2rem;margin-bottom:0.75rem;color:var(--forest-pine);">
+<h3 style="font-family:var(--font-display);font-size:1.2rem;margin-bottom:0.75rem;color:var(--deep-teal);">
                 GLP-1 Revolution: Semaglutide &amp; Tirzepatide Transform Diabetes Care
               </h3>
 <p style="font-size:0.9rem;line-height:1.75;color:#444;">
@@ -6795,7 +6795,7 @@ Evidence-based diabetes resources section
   </div>
 </div>
 </section>
-<section class="section-meadow">
+<section class="section-panel">
 <div class="container">
 <!-- Medication Classes -->
 <h2 class="recommended-section-title">💊 Recommended Medication Classes</h2>
@@ -6938,7 +6938,7 @@ Community Blog & Forum: personal notes and shared learning
   </div>
 </div>
 </section>
-<section class="section-meadow">
+<section class="section-panel">
 <div class="container">
 <!-- New Post -->
 <div class="chart-card" style="margin-bottom:2rem;">
@@ -7001,7 +7001,7 @@ Community Blog & Forum: personal notes and shared learning
   </div>
 </div>
 </section>
-<section class="section-meadow">
+<section class="section-panel">
 <div class="container">
 <div class="sparcs-intro-card">
 <h2>SPARCS 2024 Diabetes Hospitalization Dashboard</h2>
@@ -7015,16 +7015,16 @@ Community Blog & Forum: personal notes and shared learning
 <button class="age-tab" id="tab-30-49" onclick="switchAge('30-49')"><span class="age-emoji">🧍</span><span class="age-text">30–49 Adult</span></button>
 <button class="age-tab" id="tab-50-69" onclick="switchAge('50-69')"><span class="age-emoji">🧓</span><span class="age-text">50–69 Middle-Older</span></button>
 <button class="age-tab" id="tab-70+" onclick="switchAge('70+')"><span class="age-emoji">👴</span><span class="age-text">70+ Elderly</span></button>
-<a href="https://health.data.ny.gov/Health/Hospital-Inpatient-Discharges-SPARCS-De-Identified/sf4k-39ay/explore/query/SELECT%0A%20%20%60health_service_area%60%2C%0A%20%20%60hospital_county%60%2C%0A%20%20%60operating_certificate_number%60%2C%0A%20%20%60permanent_facility_id%60%2C%0A%20%20%60facility_name%60%2C%0A%20%20%60age_group%60%2C%0A%20%20%60zip_code%60%2C%0A%20%20%60gender%60%2C%0A%20%20%60race%60%2C%0A%20%20%60ethnicity%60%2C%0A%20%20%60length_of_stay%60%2C%0A%20%20%60type_of_admission%60%2C%0A%20%20%60patient_disposition%60%2C%0A%20%20%60discharge_year%60%2C%0A%20%20%60ccsr_diagnosis_code%60%2C%0A%20%20%60ccsr_diagnosis_description%60%2C%0A%20%20%60ccsr_procedure_code%60%2C%0A%20%20%60ccsr_procedure_description%60%2C%0A%20%20%60apr_drg_code%60%2C%0A%20%20%60apr_drg_description%60%2C%0A%20%20%60apr_mdc_code%60%2C%0A%20%20%60apr_mdc_description%60%2C%0A%20%20%60apr_severity_of_illness_code%60%2C%0A%20%20%60apr_severity_of_illness%60%2C%0A%20%20%60apr_risk_of_mortality%60%2C%0A%20%20%60apr_medical_surgical%60%2C%0A%20%20%60payment_typology_1%60%2C%0A%20%20%60payment_typology_2%60%2C%0A%20%20%60payment_typology_3%60%2C%0A%20%20%60birth_weight%60%2C%0A%20%20%60emergency_department_indicator%60%2C%0A%20%20%60total_charges%60%2C%0A%20%20%60total_costs%60%0AWHERE%0A%20%20caseless_one_of%28%0A%20%20%20%20%60ccsr_diagnosis_description%60%2C%0A%20%20%20%20%22DIABETES%20MELLITUS%20WITHOUT%20COMPLICATION%22%2C%0A%20%20%20%20%22DIABETES%20MELLITUS%20WITH%20COMPLICATION%22%2C%0A%20%20%20%20%22PREDIABETES%22%2C%0A%20%20%20%20%22DIABETES%20OR%20ABNORMAL%20GLUCOSE%20TOLERANCE%20COMPLICATING%20PREGNANCY%3B%20CHILDBIRTH%3B%20OR%20THE%20PUERPERIUM%22%0A%20%20%29%0A%20%20AND%20caseless_one_of%28%0A%20%20%20%20%60hospital_county%60%2C%0A%20%20%20%20%22New%20York%22%2C%0A%20%20%20%20%22Kings%22%2C%0A%20%20%20%20%22Queens%22%2C%0A%20%20%20%20%22Richmond%22%2C%0A%20%20%20%20%22Bronx%22%0A%20%20%29%0A%20%20AND%20caseless_one_of%28%60age_group%60%2C%20%220-17%22%29/page/filter" id="sparcsOpenLink" style="margin-left:auto;display:inline-flex;align-items:center;gap:6px;background:var(--deep-moss);color:white;padding:7px 16px;border-radius:8px;font-size:0.82rem;font-weight:700;text-decoration:none;" target="_self">
+<a href="https://health.data.ny.gov/Health/Hospital-Inpatient-Discharges-SPARCS-De-Identified/sf4k-39ay/explore/query/SELECT%0A%20%20%60health_service_area%60%2C%0A%20%20%60hospital_county%60%2C%0A%20%20%60operating_certificate_number%60%2C%0A%20%20%60permanent_facility_id%60%2C%0A%20%20%60facility_name%60%2C%0A%20%20%60age_group%60%2C%0A%20%20%60zip_code%60%2C%0A%20%20%60gender%60%2C%0A%20%20%60race%60%2C%0A%20%20%60ethnicity%60%2C%0A%20%20%60length_of_stay%60%2C%0A%20%20%60type_of_admission%60%2C%0A%20%20%60patient_disposition%60%2C%0A%20%20%60discharge_year%60%2C%0A%20%20%60ccsr_diagnosis_code%60%2C%0A%20%20%60ccsr_diagnosis_description%60%2C%0A%20%20%60ccsr_procedure_code%60%2C%0A%20%20%60ccsr_procedure_description%60%2C%0A%20%20%60apr_drg_code%60%2C%0A%20%20%60apr_drg_description%60%2C%0A%20%20%60apr_mdc_code%60%2C%0A%20%20%60apr_mdc_description%60%2C%0A%20%20%60apr_severity_of_illness_code%60%2C%0A%20%20%60apr_severity_of_illness%60%2C%0A%20%20%60apr_risk_of_mortality%60%2C%0A%20%20%60apr_medical_surgical%60%2C%0A%20%20%60payment_typology_1%60%2C%0A%20%20%60payment_typology_2%60%2C%0A%20%20%60payment_typology_3%60%2C%0A%20%20%60birth_weight%60%2C%0A%20%20%60emergency_department_indicator%60%2C%0A%20%20%60total_charges%60%2C%0A%20%20%60total_costs%60%0AWHERE%0A%20%20caseless_one_of%28%0A%20%20%20%20%60ccsr_diagnosis_description%60%2C%0A%20%20%20%20%22DIABETES%20MELLITUS%20WITHOUT%20COMPLICATION%22%2C%0A%20%20%20%20%22DIABETES%20MELLITUS%20WITH%20COMPLICATION%22%2C%0A%20%20%20%20%22PREDIABETES%22%2C%0A%20%20%20%20%22DIABETES%20OR%20ABNORMAL%20GLUCOSE%20TOLERANCE%20COMPLICATING%20PREGNANCY%3B%20CHILDBIRTH%3B%20OR%20THE%20PUERPERIUM%22%0A%20%20%29%0A%20%20AND%20caseless_one_of%28%0A%20%20%20%20%60hospital_county%60%2C%0A%20%20%20%20%22New%20York%22%2C%0A%20%20%20%20%22Kings%22%2C%0A%20%20%20%20%22Queens%22%2C%0A%20%20%20%20%22Richmond%22%2C%0A%20%20%20%20%22Bronx%22%0A%20%20%29%0A%20%20AND%20caseless_one_of%28%60age_group%60%2C%20%220-17%22%29/page/filter" id="sparcsOpenLink" style="margin-left:auto;display:inline-flex;align-items:center;gap:6px;background:var(--section-teal);color:white;padding:7px 16px;border-radius:8px;font-size:0.82rem;font-weight:700;text-decoration:none;" target="_self">
           Open in SPARCS ↗
         </a>
 </div>
 <!-- Current age label -->
-<div id="ageLabel" style="background:linear-gradient(135deg,var(--forest-pine),var(--deep-moss));color:white;border-radius:10px;padding:10px 18px;margin-bottom:1.5rem;font-size:0.9rem;font-weight:700;">
+<div id="ageLabel" style="background:linear-gradient(135deg,var(--deep-teal),var(--section-teal));color:white;border-radius:10px;padding:10px 18px;margin-bottom:1.5rem;font-size:0.9rem;font-weight:700;">
         📊 Currently viewing: <span id="ageLabelText">0–17 · Pediatric · 639 discharges · NYC 2024</span>
 </div>
 <!-- Upload notice for missing age groups -->
-<div class="nature-card" id="uploadNotice" style="display:none;border-left:4px solid var(--sunlit-amber);text-align:center;padding:2rem;margin-bottom:1.5rem;">
+<div class="info-card" id="uploadNotice" style="display:none;border-left:4px solid var(--gold-highlight);text-align:center;padding:2rem;margin-bottom:1.5rem;">
 <div style="font-size:2rem;margin-bottom:0.5rem;">📂</div>
 <h3 id="uploadNoticeText">Upload CSV to activate this age group</h3>
 <p style="font-size:0.85rem;color:#666;margin-top:0.5rem;">Download the CSV from the SPARCS link above and upload it here to see the full dashboard for this age group.</p>
@@ -7127,7 +7127,7 @@ Community Blog & Forum: personal notes and shared learning
 <div class="chart-wrapper" style="height:260px;"><canvas id="sparcs-scatter"></canvas></div>
 </div>
 <!-- Data table -->
-<h2 class="sparcs-section-heading sparcs-title-dark" style="font-family:var(--font-display);font-size:1.3rem;margin-bottom:1rem;color:var(--forest-pine);">📋 Borough Summary Table</h2>
+<h2 class="sparcs-section-heading sparcs-title-dark" style="font-family:var(--font-display);font-size:1.3rem;margin-bottom:1rem;color:var(--deep-teal);">📋 Borough Summary Table</h2>
 <div style="overflow-x:auto;margin-bottom:2rem;">
 <table class="data-table" id="sparcsTable">
 <thead>
@@ -8025,7 +8025,7 @@ const insideLabel = {
 };
 Chart.register(insideLabel);
 
-// Keep chart plot area sage green
+// Keep chart plot area soft green
 
 
 // ── JV point value labels for line and scatter charts ──
@@ -8995,7 +8995,7 @@ function renderSPARCSTable(d) {
   const emojis = { Bronx:'🏙️', Brooklyn:'🏘️', Manhattan:'🌆', Queens:'🌏', 'Staten Island':'🌳' };
   tbody.innerHTML = d.borough.labels.map((b,i) => `
     <tr>
-      <td style="font-weight:700;color:var(--forest-pine);">${emojis[b]||''} ${b}</td>
+      <td style="font-weight:700;color:var(--deep-teal);">${emojis[b]||''} ${b}</td>
       <td>${d.borough.discharges[i].toLocaleString()}</td>
       <td>${d.borough.avgLOS[i]} days</td>
       <td>$${d.borough.avgCharges[i].toLocaleString()}</td>
@@ -9262,7 +9262,7 @@ function renderDrugTable() {
   const tbody = document.getElementById('drugTableBody');
   tbody.innerHTML = FILTERED_DRUGS.map((d,i) => `
     <tr style="${i%2===0?'background:#C8E3CE':''}">
-      <td style="font-weight:700;color:var(--forest-pine)">${d.drug}</td>
+      <td style="font-weight:700;color:var(--deep-teal)">${d.drug}</td>
       <td><span class="badge ${d.payer==='MEDICARE'?'badge-blue':d.payer==='COMMERCIAL'?'badge-green':'badge-amber'}">${d.payer}</span></td>
       <td>${d.rx.toLocaleString()}</td>
       <td>${d.members.toLocaleString()}</td>
@@ -10549,22 +10549,22 @@ let BLOG_POSTS = [
 function renderPosts(posts) {
   const container = document.getElementById('blogPosts');
   if (posts.length === 0) {
-    container.innerHTML = '<div class="nature-card" style="text-align:center;padding:2rem;"><div style="font-size:2rem;">🌿</div><p style="margin-top:0.5rem;color:#666;">No posts in this category yet. Be the first!</p></div>';
+    container.innerHTML = '<div class="info-card" style="text-align:center;padding:2rem;"><div style="font-size:2rem;">🌿</div><p style="margin-top:0.5rem;color:#666;">No posts in this category yet. Be the first!</p></div>';
     return;
   }
   container.innerHTML = posts.map(p => `
-    <div class="nature-card" style="margin-bottom:1.25rem;border-left:4px solid var(--sage-leaf);">
+    <div class="info-card" style="margin-bottom:1.25rem;border-left:4px solid var(--teal-accent);">
       <div style="display:flex;align-items:center;gap:10px;margin-bottom:0.75rem;flex-wrap:wrap;">
         <span style="font-size:1.5rem;">${CATEGORY_ICONS[p.category]}</span>
         <div>
-          <strong style="color:var(--forest-pine);font-size:0.95rem;">${p.name}</strong>
+          <strong style="color:var(--deep-teal);font-size:0.95rem;">${p.name}</strong>
           <span class="badge badge-green" style="margin-left:8px;font-size:0.72rem;">${CATEGORY_LABELS[p.category]}</span>
         </div>
         <span style="margin-left:auto;font-size:0.8rem;color:#888;">${p.date}</span>
       </div>
       <p style="font-size:0.9rem;line-height:1.75;color:#444;margin-bottom:1rem;">${p.text}</p>
       <div style="display:flex;align-items:center;gap:1rem;">
-        <button onclick="likePost(${p.id})" style="background:none;border:1.5px solid var(--stone-gray);border-radius:20px;padding:4px 14px;cursor:pointer;font-size:0.82rem;font-family:var(--font-body);color:var(--deep-moss);">
+        <button onclick="likePost(${p.id})" style="background:none;border:1.5px solid var(--dark-border);border-radius:20px;padding:4px 14px;cursor:pointer;font-size:0.82rem;font-family:var(--font-body);color:var(--section-teal);">
           🌿 ${p.likes} helpful
         </button>
         <span style="font-size:0.8rem;color:#888;">${p.comments.length} replies</span>
@@ -10740,12 +10740,12 @@ if (document.readyState === 'loading') {
   window.initPRDRCharts = function() {
     if (typeof Chart === 'undefined') return;
 
-    const forestPine = '#0a2a2f';
-    const deepMoss = '#0D3D4A';
-    const sageLeaf = '#006064';
+    const deepTeal = '#0a2a2f';
+    const sectionTeal = '#0D3D4A';
+    const tealAccent = '#006064';
     const amber = '#C8960C';
-    const bark = '#4C315F';
-    const blueMist = '#0B4F5A';
+    const plumAccent = '#4C315F';
+    const goldAccent = '#0B4F5A';
     const pale = '#6A1B9A';
     const tan = '#C8960C';
 
@@ -10765,8 +10765,8 @@ if (document.readyState === 'loading') {
           datasets: [{
             label: 'Diabetes prevalence (%)',
             data: [10.2, 13.4, 17.7, 18.0, 18.0, 18.3],
-            backgroundColor: [blueMist, sageLeaf, bark, amber, amber, deepMoss],
-            borderColor: forestPine,
+            backgroundColor: [goldAccent, tealAccent, plumAccent, amber, amber, sectionTeal],
+            borderColor: deepTeal,
             borderWidth: 1.4,
             borderRadius: 10,
             barThickness: 46
@@ -10800,8 +10800,8 @@ if (document.readyState === 'loading') {
           datasets: [{
             label: 'Diagnosed diabetes (%)',
             data: [5.0, 16.1, 41.8],
-            backgroundColor: [sageLeaf, amber, deepMoss],
-            borderColor: forestPine,
+            backgroundColor: [tealAccent, amber, sectionTeal],
+            borderColor: deepTeal,
             borderWidth: 1.4,
             borderRadius: 10,
             barThickness: 48
@@ -10830,7 +10830,7 @@ if (document.readyState === 'loading') {
           datasets: [{
             label: 'Diagnosed diabetes prevalence (%)',
             data: [19.1, 17.2, 32.4, 18.8],
-            backgroundColor: [deepMoss, sageLeaf, amber, bark],
+            backgroundColor: [sectionTeal, tealAccent, amber, plumAccent],
             borderRadius: 10,
             barThickness: 34
           }]
@@ -10858,7 +10858,7 @@ if (document.readyState === 'loading') {
           labels: ['Total diabetes', 'Prediabetes', 'Normoglycemia'],
           datasets: [{
             data: [25.5, 47.4, 27.1],
-            backgroundColor: [deepMoss, amber, pale],
+            backgroundColor: [sectionTeal, amber, pale],
             borderColor: '#FFF1C7',
             borderWidth: 3
           }]
@@ -10884,9 +10884,9 @@ if (document.readyState === 'loading') {
             label: 'Risk profile intensity',
             data: [88, 86, 82, 72, 68, 75],
             backgroundColor: 'rgba(31,92,69,0.22)',
-            borderColor: deepMoss,
+            borderColor: sectionTeal,
             pointBackgroundColor: amber,
-            pointBorderColor: forestPine,
+            pointBorderColor: deepTeal,
             borderWidth: 2
           }]
         },
@@ -10903,7 +10903,7 @@ if (document.readyState === 'loading') {
               ticks: { display: false },
               grid: { color: 'rgba(11,61,46,0.15)' },
               angleLines: { color: 'rgba(11,61,46,0.18)' },
-              pointLabels: { color: forestPine, font: { weight: '700', size: 11 } }
+              pointLabels: { color: deepTeal, font: { weight: '700', size: 11 } }
             }
           }
         }
@@ -10919,7 +10919,7 @@ if (document.readyState === 'loading') {
             {
               label: 'Worse status at baseline OR',
               data: [1.16, 1.32, 1.51],
-              backgroundColor: sageLeaf,
+              backgroundColor: tealAccent,
               borderRadius: 8,
               barThickness: 26
             },
@@ -10933,7 +10933,7 @@ if (document.readyState === 'loading') {
             {
               label: 'Worsening status at 12 years OR',
               data: [1.23, 1.33, 1.32],
-              backgroundColor: deepMoss,
+              backgroundColor: sectionTeal,
               borderRadius: 8,
               barThickness: 26
             }
@@ -10967,7 +10967,7 @@ if (document.readyState === 'loading') {
           datasets: [{
             data: [9, 9, 9, 9, 9, 9, 9, 9, 9],
             backgroundColor: [
-              forestPine, deepMoss, sageLeaf, amber, bark, blueMist, tan, pale, '#006064'
+              deepTeal, sectionTeal, tealAccent, amber, plumAccent, goldAccent, tan, pale, '#006064'
             ],
             borderColor: '#FFF1C7',
             borderWidth: 2
@@ -10993,10 +10993,10 @@ if (document.readyState === 'loading') {
         data: {
           labels: ['2000','2001','2002','2003','2004','2005','2006','2007','2008','2009','2010','2011','2012','2013','2014'],
           datasets: [
-            { label: 'Diabetes', data: [40,44,46,48,50,51,53,55,58,60,62,63,61,62,66], borderColor: deepMoss, backgroundColor: deepMoss, tension: 0.35, pointRadius: 2, borderWidth: 3 },
-            { label: 'Cancer', data: [47,48,49,50,50,51,52,52,53,54,55,56,57,58,59], borderColor: bark, backgroundColor: bark, tension: 0.35, pointRadius: 1.8, borderWidth: 2 },
+            { label: 'Diabetes', data: [40,44,46,48,50,51,53,55,58,60,62,63,61,62,66], borderColor: sectionTeal, backgroundColor: sectionTeal, tension: 0.35, pointRadius: 2, borderWidth: 3 },
+            { label: 'Cancer', data: [47,48,49,50,50,51,52,52,53,54,55,56,57,58,59], borderColor: plumAccent, backgroundColor: plumAccent, tension: 0.35, pointRadius: 1.8, borderWidth: 2 },
             { label: 'Ischemic heart diseases', data: [46,45,44,43,42,42,41,42,43,44,45,46,48,49,50], borderColor: amber, backgroundColor: amber, tension: 0.35, pointRadius: 1.8, borderWidth: 2 },
-            { label: 'Respiratory diseases', data: [29,30,31,31,32,31,31,30,29,28,28,29,30,31,32], borderColor: sageLeaf, backgroundColor: sageLeaf, tension: 0.35, pointRadius: 1.5, borderWidth: 2 },
+            { label: 'Respiratory diseases', data: [29,30,31,31,32,31,31,30,29,28,28,29,30,31,32], borderColor: tealAccent, backgroundColor: tealAccent, tension: 0.35, pointRadius: 1.5, borderWidth: 2 },
             { label: 'Accidents', data: [19,19,20,21,22,23,24,24,23,22,21,21,22,24,25], borderColor: '#0B4F5A', backgroundColor: '#0B4F5A', tension: 0.35, pointRadius: 1.5, borderWidth: 2 },
             { label: 'Cerebrovascular diseases', data: [19,18,17,16,15,15,16,16,17,16,15,14,13,13,14], borderColor: '#9BB989', backgroundColor: '#9BB989', tension: 0.35, pointRadius: 1.5, borderWidth: 2 },
             { label: 'Infectious and parasitic diseases', data: [16,17,17,16,16,15,15,14,14,13,13,13,12,12,12], borderColor: '#B7C4B1', backgroundColor: '#B7C4B1', tension: 0.35, pointRadius: 1.5, borderWidth: 2 },
@@ -11067,8 +11067,8 @@ if (document.readyState === 'loading') {
           datasets: [{
             label: 'Type 1 diabetes prevalence (%)',
             data: [0.03, 0.06, 0.08, 0.15, 0.22, 0.23, 0.61],
-            backgroundColor: [pale, blueMist, sageLeaf, tan, amber, bark, deepMoss],
-            borderColor: forestPine,
+            backgroundColor: [pale, goldAccent, tealAccent, tan, amber, plumAccent, sectionTeal],
+            borderColor: deepTeal,
             borderWidth: 1,
             borderRadius: 8,
             barThickness: 32
@@ -11093,7 +11093,7 @@ if (document.readyState === 'loading') {
           datasets: [{
             label: 'Type 1 diabetes prevalence (%)',
             data: [0.19, 0.17],
-            backgroundColor: [deepMoss, amber],
+            backgroundColor: [sectionTeal, amber],
             borderRadius: 10,
             barThickness: 54
           }]
@@ -11117,7 +11117,7 @@ if (document.readyState === 'loading') {
           datasets: [{
             label: 'Type 1 diabetes prevalence (%)',
             data: [0.32, 0.13],
-            backgroundColor: [amber, deepMoss],
+            backgroundColor: [amber, sectionTeal],
             borderRadius: 10,
             barThickness: 54
           }]
@@ -11141,7 +11141,7 @@ if (document.readyState === 'loading') {
           datasets: [{
             label: 'Average HbA1c (%)',
             data: [8.22, 9.62, 11.52],
-            backgroundColor: [sageLeaf, amber, deepMoss],
+            backgroundColor: [tealAccent, amber, sectionTeal],
             borderRadius: 10,
             barThickness: 46
           }]
@@ -11165,7 +11165,7 @@ if (document.readyState === 'loading') {
           datasets: [{
             label: 'Percent of sample',
             data: [15.81, 34.35, 10.14, 39.70],
-            backgroundColor: [sageLeaf, amber, bark, deepMoss],
+            backgroundColor: [tealAccent, amber, plumAccent, sectionTeal],
             borderColor: '#FFF1C7',
             borderWidth: 3
           }]
@@ -11188,9 +11188,9 @@ if (document.readyState === 'loading') {
         data: {
           labels: ['Low adversity', 'Social/educational strengths', 'Acculturated and underresourced', 'High adversity'],
           datasets: [
-            { label: 'Normoglycemic', data: [62.31, 49.85, 60.39, 37.83], backgroundColor: sageLeaf, borderRadius: 6 },
+            { label: 'Normoglycemic', data: [62.31, 49.85, 60.39, 37.83], backgroundColor: tealAccent, borderRadius: 6 },
             { label: 'Prediabetes', data: [29.20, 36.95, 29.68, 40.31], backgroundColor: amber, borderRadius: 6 },
-            { label: 'Diabetes', data: [8.49, 13.19, 9.93, 21.86], backgroundColor: deepMoss, borderRadius: 6 }
+            { label: 'Diabetes', data: [8.49, 13.19, 9.93, 21.86], backgroundColor: sectionTeal, borderRadius: 6 }
           ]
         },
         options: {
@@ -11211,9 +11211,9 @@ if (document.readyState === 'loading') {
         data: {
           labels: ['Social/educational strengths', 'Acculturated and underresourced', 'High adversity'],
           datasets: [
-            { label: 'Baseline worse status OR', data: [1.16, 1.32, 1.51], backgroundColor: bark, borderRadius: 8 },
+            { label: 'Baseline worse status OR', data: [1.16, 1.32, 1.51], backgroundColor: plumAccent, borderRadius: 8 },
             { label: 'V2 worsening OR', data: [1.08, 1.16, 1.28], backgroundColor: amber, borderRadius: 8 },
-            { label: 'V3 worsening OR', data: [1.23, 1.33, 1.32], backgroundColor: deepMoss, borderRadius: 8 }
+            { label: 'V3 worsening OR', data: [1.23, 1.33, 1.32], backgroundColor: sectionTeal, borderRadius: 8 }
           ]
         },
         options: {
@@ -11236,7 +11236,7 @@ if (document.readyState === 'loading') {
           datasets: [{
             label: 'Baseline diabetes status OR',
             data: [0.92, 0.82, 0.83, 0.86, 0.92, 0.92, 0.90, 0.99, 0.99],
-            backgroundColor: [deepMoss, deepMoss, deepMoss, deepMoss, bark, bark, amber, sageLeaf, sageLeaf],
+            backgroundColor: [sectionTeal, sectionTeal, sectionTeal, sectionTeal, plumAccent, plumAccent, amber, tealAccent, tealAccent],
             borderRadius: 7,
             barThickness: 22
           }]
@@ -11263,8 +11263,8 @@ if (document.readyState === 'loading') {
           datasets: [{
             label: 'Diabetes prevalence (%)',
             data: [10.2, 13.4, 17.7, 18.1, 18.2, 18.3],
-            backgroundColor: [blueMist, sageLeaf, bark, amber, amber, deepMoss],
-            borderColor: forestPine,
+            backgroundColor: [goldAccent, tealAccent, plumAccent, amber, amber, sectionTeal],
+            borderColor: deepTeal,
             borderWidth: 1.4,
             borderRadius: 10,
             barThickness: 42
@@ -11293,8 +11293,8 @@ if (document.readyState === 'loading') {
           datasets: [{
             label: 'Percent (%)',
             data: [24.4, 14.9, 72.0, 93.3, 15.3, 35.6],
-            backgroundColor: [amber, sageLeaf, amber, sageLeaf, amber, sageLeaf],
-            borderColor: forestPine,
+            backgroundColor: [amber, tealAccent, amber, tealAccent, amber, tealAccent],
+            borderColor: deepTeal,
             borderWidth: 1.2,
             borderRadius: 9,
             barThickness: 34
@@ -11323,8 +11323,8 @@ if (document.readyState === 'loading') {
           datasets: [{
             label: 'Percent or ratio',
             data: [80, 71, 28.5, 1.5],
-            backgroundColor: [deepMoss, sageLeaf, amber, bark],
-            borderColor: forestPine,
+            backgroundColor: [sectionTeal, tealAccent, amber, plumAccent],
+            borderColor: deepTeal,
             borderWidth: 1.2,
             borderRadius: 9,
             barThickness: 38
@@ -11353,8 +11353,8 @@ if (document.readyState === 'loading') {
           datasets: [{
             label: 'Diabetes risk reduction (%)',
             data: [58, 71, 31, 43, 18],
-            backgroundColor: [deepMoss, forestPine, sageLeaf, amber, bark],
-            borderColor: forestPine,
+            backgroundColor: [sectionTeal, deepTeal, tealAccent, amber, plumAccent],
+            borderColor: deepTeal,
             borderWidth: 1.2,
             borderRadius: 9,
             barThickness: 42
@@ -11385,7 +11385,7 @@ if (document.readyState === 'loading') {
               label: 'Barriers, agreement count',
               data: [155, 147, 150],
               backgroundColor: amber,
-              borderColor: forestPine,
+              borderColor: deepTeal,
               borderWidth: 1.2,
               borderRadius: 9,
               barThickness: 34
@@ -11393,8 +11393,8 @@ if (document.readyState === 'loading') {
             {
               label: 'Facilitators, agreement count',
               data: [158, 151, 152],
-              backgroundColor: deepMoss,
-              borderColor: forestPine,
+              backgroundColor: sectionTeal,
+              borderColor: deepTeal,
               borderWidth: 1.2,
               borderRadius: 9,
               barThickness: 34
@@ -11421,8 +11421,8 @@ if (document.readyState === 'loading') {
           datasets: [{
             label: 'Theme frequency',
             data: [21, 21, 11, 9, 6],
-            backgroundColor: [forestPine, deepMoss, sageLeaf, amber, bark],
-            borderColor: forestPine,
+            backgroundColor: [deepTeal, sectionTeal, tealAccent, amber, plumAccent],
+            borderColor: deepTeal,
             borderWidth: 1.2,
             borderRadius: 9,
             barThickness: 36
@@ -11447,7 +11447,7 @@ if (document.readyState === 'loading') {
           labels: ['Obtained CGM', 'Did not obtain CGM'],
           datasets: [{
             data: [11, 5],
-            backgroundColor: [deepMoss, amber],
+            backgroundColor: [sectionTeal, amber],
             borderColor: '#C8960C',
             borderWidth: 3,
             hoverOffset: 6
@@ -11473,8 +11473,8 @@ if (document.readyState === 'loading') {
           datasets: [{
             label: 'Participants',
             data: [16, 11, 5, 10, 11],
-            backgroundColor: [forestPine, deepMoss, sageLeaf, amber, bark],
-            borderColor: forestPine,
+            backgroundColor: [deepTeal, sectionTeal, tealAccent, amber, plumAccent],
+            borderColor: deepTeal,
             borderWidth: 1.2,
             borderRadius: 9,
             barThickness: 38
@@ -11500,10 +11500,10 @@ if (document.readyState === 'loading') {
           datasets: [{
             label: 'Participants with CGM access/use',
             data: [0, 16, 11],
-            borderColor: forestPine,
+            borderColor: deepTeal,
             backgroundColor: 'rgba(0,96,100,0.16)',
             pointBackgroundColor: amber,
-            pointBorderColor: forestPine,
+            pointBorderColor: deepTeal,
             pointRadius: 7,
             tension: 0.38,
             fill: true
@@ -11549,10 +11549,10 @@ if (document.readyState === 'loading') {
   }
   window.initRenalCharts = function(){
     if (!window.Chart) return;
-    const dark = '#12334A', teal = '#006064', forest = '#1F5C45', gold = '#C8960C', purple = '#6A1B9A', plum = '#4C315F';
+    const dark = '#12334A', teal = '#006064', tealGreen = '#1F5C45', gold = '#C8960C', purple = '#6A1B9A', plum = '#4C315F';
     make('renalDKDBurdenChart', {
       type:'bar',
-      data:{ labels:['Overall diabetes population','Type 1 diabetes','Type 2 diabetes'], datasets:[{ label:'Estimated DKD share', data:[33,30,35], backgroundColor:[dark,gold,forest], borderRadius:10, barThickness:42 }] },
+      data:{ labels:['Overall diabetes population','Type 1 diabetes','Type 2 diabetes'], datasets:[{ label:'Estimated DKD share', data:[33,30,35], backgroundColor:[dark,gold,tealGreen], borderRadius:10, barThickness:42 }] },
       options:{ indexAxis:'y', responsive:true, maintainAspectRatio:false, _labelSuffix:'%', plugins:{ legend:{display:false}, insideLabel:{display:true}, tooltip:{callbacks:{label:function(ctx){return ctx.parsed.x + '% estimated DKD share';}}} }, scales:baseScales(45,'%') }
     });
     make('renalGlobalGrowthChart', {
@@ -11567,12 +11567,12 @@ if (document.readyState === 'loading') {
     });
     make('renalPreventionSignalsChart', {
       type:'bar',
-      data:{ labels:['UKPDS albuminuria reduction','CREDENCE renal outcome reduction','Aldosterone antagonist albuminuria reduction'], datasets:[{ label:'Reported reduction', data:[33,30,45], backgroundColor:[forest,dark,purple], borderRadius:10, barThickness:30 }] },
+      data:{ labels:['UKPDS albuminuria reduction','CREDENCE renal outcome reduction','Aldosterone antagonist albuminuria reduction'], datasets:[{ label:'Reported reduction', data:[33,30,45], backgroundColor:[tealGreen,dark,purple], borderRadius:10, barThickness:30 }] },
       options:{ indexAxis:'y', responsive:true, maintainAspectRatio:false, _labelSuffix:'%', plugins:{ legend:{display:false}, insideLabel:{display:true}, tooltip:{callbacks:{label:function(ctx){return ctx.parsed.x + '% reported reduction';}}} }, scales:baseScales(60,'%') }
     });
     make('renalProgressionPathwayChart', {
       type:'line',
-      data:{ labels:['Hyperfiltration','Albuminuria','Hypertension','Proteinuria','GFR loss','ESRD'], datasets:[{ label:'DKD progression stage', data:[1,2,3,4,5,6], borderColor:dark, backgroundColor:'rgba(0,96,100,0.16)', pointBackgroundColor:[gold,forest,teal,plum,purple,dark], pointBorderColor:dark, pointRadius:7, tension:0.30, fill:true }] },
+      data:{ labels:['Hyperfiltration','Albuminuria','Hypertension','Proteinuria','GFR loss','ESRD'], datasets:[{ label:'DKD progression stage', data:[1,2,3,4,5,6], borderColor:dark, backgroundColor:'rgba(0,96,100,0.16)', pointBackgroundColor:[gold,tealGreen,teal,plum,purple,dark], pointBorderColor:dark, pointRadius:7, tension:0.30, fill:true }] },
       options:{ responsive:true, maintainAspectRatio:false, plugins:{ legend:{display:false}, tooltip:{callbacks:{label:function(ctx){return 'Stage '+ctx.parsed.y;}}} }, scales:{ y:{beginAtZero:true,max:6.5,ticks:{display:false},grid:{color:'rgba(11,61,46,0.12)'}}, x:{ticks:{color:'#000000',font:{weight:'700'},maxRotation:0,minRotation:0},grid:{display:false}} } }
     });
   };
@@ -11597,12 +11597,12 @@ if (document.readyState === 'loading') {
   window.__amputationStatChartsAdded = true;
   const localLabelPlugin = { id:'amputationLocalValueLabels', afterDatasetsDraw(chart,args,opts){ if(!opts||opts.display===false)return; const ctx=chart.ctx; ctx.save(); ctx.font=opts.font||'800 11px Nunito, Arial, sans-serif'; ctx.textAlign='center'; ctx.textBaseline='middle'; const suffix=opts.suffix||''; const decimals=opts.decimals??null; chart.data.datasets.forEach((dataset,di)=>{ if(typeof chart.isDatasetVisible==='function' && !chart.isDatasetVisible(di))return; const meta=chart.getDatasetMeta(di); if(!meta||meta.hidden)return; meta.data.forEach((point,i)=>{ if(opts.onlyLast&&i!==dataset.data.length-1)return; const raw=dataset.data[i]; if(raw===null||raw===undefined)return; const val=decimals===null?raw:Number(raw).toFixed(decimals); let x=point.x,y=point.y,color=opts.color||'#000000'; if(chart.config.type==='bar'&&chart.options.indexAxis==='y'){ x=Math.max(point.x-26,32); y=point.y; color=opts.barColor||'#fff1c7'; } else if(chart.config.type==='bar'){ x=point.x; y=point.y+28; color=opts.barColor||'#fff1c7'; } else { const pointOx = Array.isArray(dataset.pointLabelOffsetX) ? (dataset.pointLabelOffsetX[i] || 0) : 0; const pointOy = Array.isArray(dataset.pointLabelOffsetY) ? (dataset.pointLabelOffsetY[i] || 0) : 0; const last=(i===dataset.data.length-1); const ox=pointOx + (last?(dataset.lastLabelOffsetX||0):0); const oy=pointOy + (last?(dataset.lastLabelOffsetY||0):0); x=point.x+ox; y=point.y-12+oy; color=opts.color||'#000000'; } ctx.fillStyle=color; if(opts.labelBg){ const metrics=ctx.measureText(val+suffix); const padX=5, padY=3; ctx.save(); ctx.fillStyle=opts.labelBg; ctx.fillRect(x-metrics.width/2-padX,y-8-padY,metrics.width+padX*2,16+padY*2); ctx.restore(); ctx.fillStyle=color; } ctx.fillText(val+suffix,x,y); }); }); ctx.restore(); } };
   const charts={}; function make(id,config){ const el=document.getElementById(id); if(!el||!window.Chart)return; if(charts[id])charts[id].destroy(); charts[id]=new Chart(el,config); }
-  window.initAmputationStoryCharts=function(){ if(!window.Chart)return; const dark='#12334A',teal='#006064',forest='#1F5C45',gold='#C8960C',purple='#6A1B9A',plum='#4C315F'; const paleGrid='rgba(11,61,46,0.12)'; const years=['2009','2010','2011','2012','2013','2014','2015','2016','2017'];
-    make('ampRateTrendChart',{ type:'line', data:{ labels:years, datasets:[ {label:'Bronx',data:[24.1,28.9,29.5,31.2,36.0,36.7,31.9,38.3,43.2],borderColor:dark,backgroundColor:dark,pointBackgroundColor:gold,pointBorderColor:dark,pointRadius:4,tension:0.28,pointLabelOffsetY:[-2,-2,-2,-2,-2,-2,-2,-2,-2]}, {label:'Brooklyn / Kings',data:[18.9,18.9,18.2,17.3,18.7,19.4,19.8,27.3,29.6],borderColor:teal,backgroundColor:teal,pointBackgroundColor:teal,pointRadius:4,tension:0.28,pointLabelOffsetY:[-2,-2,-2,-2,-2,-2,-2,-2,-2],pointLabelOffsetX:[0,0,0,0,0,0,0,0,6]}, {label:'Manhattan / New York',data:[12.3,11.2,14.6,13.2,15.1,16.2,15.7,19.9,24.2],borderColor:purple,backgroundColor:purple,pointBackgroundColor:purple,pointRadius:4,tension:0.28,pointLabelOffsetY:[18,18,18,18,18,18,18,18,18],pointLabelOffsetX:[-8,-8,-8,-8,-8,-8,-8,-8,-10]}, {label:'Queens',data:[12.3,10.5,11.4,12.8,10.5,13.8,13.6,19.0,25.7],borderColor:gold,backgroundColor:gold,pointBackgroundColor:gold,pointRadius:4,tension:0.28,pointLabelOffsetY:[8,18,8,12,-2,12,8,14,6],pointLabelOffsetX:[8,0,0,0,0,0,0,0,-8]}, {label:'Statewide',data:[14.5,14.1,14.5,14.5,15.3,15.8,15.7,21.4,25.7],borderColor:forest,backgroundColor:forest,pointBackgroundColor:forest,pointRadius:4,tension:0.28,pointLabelOffsetY:[0,8,-4,0,-6,-6,-4,-4,18],pointLabelOffsetX:[0,0,0,0,0,0,0,0,8]} ] }, plugins:[localLabelPlugin], options:{responsive:true,maintainAspectRatio:false,layout:{padding:{right:54,top:10,bottom:4,left:8}},plugins:{legend:{position:'bottom'},jvPointValueLabels:{display:false},amputationLocalValueLabels:{display:true,onlyLast:false},tooltip:{callbacks:{label:function(ctx){return ctx.dataset.label+': '+ctx.parsed.y+' per 100K';}}}},scales:{y:{beginAtZero:true,max:50,title:{display:true,text:'Rate per 100,000 adults'},ticks:{color:'#000000',font:{weight:'700'},stepSize:5},grid:{color:paleGrid}},x:{ticks:{color:'#000000',font:{weight:'700'}},grid:{display:false}}}} });
-    make('ampIncreaseChart',{type:'bar',data:{labels:['Nationwide','New York State','NYC Overall','Bronx','Manhattan','Queens'],datasets:[{label:'Increase',data:[47,84.1,92.4,96.7,113.9,122.5],backgroundColor:[plum,forest,dark,teal,purple,gold],borderRadius:10}]},plugins:[localLabelPlugin],options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},insideLabel:{display:false},amputationLocalValueLabels:{display:true,suffix:'%',barColor:'#fff1c7'},tooltip:{callbacks:{label:function(ctx){return ctx.parsed.y+'% increase';}}}},scales:{y:{beginAtZero:true,max:140,ticks:{color:'#000000',font:{weight:'700'},callback:function(v){return v+'%';}},grid:{color:paleGrid}},x:{ticks:{color:'#000000',font:{weight:'700'}},grid:{display:false}}}}});
+  window.initAmputationStoryCharts=function(){ if(!window.Chart)return; const dark='#12334A',teal='#006064',tealGreen='#1F5C45',gold='#C8960C',purple='#6A1B9A',plum='#4C315F'; const paleGrid='rgba(11,61,46,0.12)'; const years=['2009','2010','2011','2012','2013','2014','2015','2016','2017'];
+    make('ampRateTrendChart',{ type:'line', data:{ labels:years, datasets:[ {label:'Bronx',data:[24.1,28.9,29.5,31.2,36.0,36.7,31.9,38.3,43.2],borderColor:dark,backgroundColor:dark,pointBackgroundColor:gold,pointBorderColor:dark,pointRadius:4,tension:0.28,pointLabelOffsetY:[-2,-2,-2,-2,-2,-2,-2,-2,-2]}, {label:'Brooklyn / Kings',data:[18.9,18.9,18.2,17.3,18.7,19.4,19.8,27.3,29.6],borderColor:teal,backgroundColor:teal,pointBackgroundColor:teal,pointRadius:4,tension:0.28,pointLabelOffsetY:[-2,-2,-2,-2,-2,-2,-2,-2,-2],pointLabelOffsetX:[0,0,0,0,0,0,0,0,6]}, {label:'Manhattan / New York',data:[12.3,11.2,14.6,13.2,15.1,16.2,15.7,19.9,24.2],borderColor:purple,backgroundColor:purple,pointBackgroundColor:purple,pointRadius:4,tension:0.28,pointLabelOffsetY:[18,18,18,18,18,18,18,18,18],pointLabelOffsetX:[-8,-8,-8,-8,-8,-8,-8,-8,-10]}, {label:'Queens',data:[12.3,10.5,11.4,12.8,10.5,13.8,13.6,19.0,25.7],borderColor:gold,backgroundColor:gold,pointBackgroundColor:gold,pointRadius:4,tension:0.28,pointLabelOffsetY:[8,18,8,12,-2,12,8,14,6],pointLabelOffsetX:[8,0,0,0,0,0,0,0,-8]}, {label:'Statewide',data:[14.5,14.1,14.5,14.5,15.3,15.8,15.7,21.4,25.7],borderColor:tealGreen,backgroundColor:tealGreen,pointBackgroundColor:tealGreen,pointRadius:4,tension:0.28,pointLabelOffsetY:[0,8,-4,0,-6,-6,-4,-4,18],pointLabelOffsetX:[0,0,0,0,0,0,0,0,8]} ] }, plugins:[localLabelPlugin], options:{responsive:true,maintainAspectRatio:false,layout:{padding:{right:54,top:10,bottom:4,left:8}},plugins:{legend:{position:'bottom'},jvPointValueLabels:{display:false},amputationLocalValueLabels:{display:true,onlyLast:false},tooltip:{callbacks:{label:function(ctx){return ctx.dataset.label+': '+ctx.parsed.y+' per 100K';}}}},scales:{y:{beginAtZero:true,max:50,title:{display:true,text:'Rate per 100,000 adults'},ticks:{color:'#000000',font:{weight:'700'},stepSize:5},grid:{color:paleGrid}},x:{ticks:{color:'#000000',font:{weight:'700'}},grid:{display:false}}}} });
+    make('ampIncreaseChart',{type:'bar',data:{labels:['Nationwide','New York State','NYC Overall','Bronx','Manhattan','Queens'],datasets:[{label:'Increase',data:[47,84.1,92.4,96.7,113.9,122.5],backgroundColor:[plum,tealGreen,dark,teal,purple,gold],borderRadius:10}]},plugins:[localLabelPlugin],options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},insideLabel:{display:false},amputationLocalValueLabels:{display:true,suffix:'%',barColor:'#fff1c7'},tooltip:{callbacks:{label:function(ctx){return ctx.parsed.y+'% increase';}}}},scales:{y:{beginAtZero:true,max:140,ticks:{color:'#000000',font:{weight:'700'},callback:function(v){return v+'%';}},grid:{color:paleGrid}},x:{ticks:{color:'#000000',font:{weight:'700'}},grid:{display:false}}}}});
     make('ampCountSplitChart',{type:'doughnut',data:{labels:['Documented 2009–2017','Projected missing years 2018–2021'],datasets:[{data:[23370,25996],backgroundColor:[dark,gold],borderColor:'#e4f1e6',borderWidth:3}]},plugins:[localLabelPlugin],options:{responsive:true,maintainAspectRatio:false,cutout:'58%',plugins:{legend:{position:'bottom'},amputationLocalValueLabels:{display:false},tooltip:{callbacks:{label:function(ctx){return ctx.label+': '+ctx.parsed.toLocaleString()+' amputations';}}}}}});
     make('ampDeathRateChart',{type:'bar',data:{labels:['Minor amputation','Major amputation'],datasets:[{label:'Five-year death rate',data:[29,57],backgroundColor:[teal,purple],borderRadius:12,barThickness:62}]},plugins:[localLabelPlugin],options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},insideLabel:{display:false},amputationLocalValueLabels:{display:true,suffix:'%',barColor:'#fff1c7'},tooltip:{callbacks:{label:function(ctx){return ctx.parsed.y+'% five-year death rate';}}}},scales:{y:{beginAtZero:true,max:70,ticks:{color:'#000000',font:{weight:'700'},callback:function(v){return v+'%';}},grid:{color:paleGrid}},x:{ticks:{color:'#000000',font:{weight:'700'}},grid:{display:false}}}}});
-    make('ampPreventionChart',{type:'bar',data:{labels:['Mississippi county early care','Medicare annual wellness visit','Swiss hospital below-knee amputations'],datasets:[{label:'Reduction',data:[75,36,50],backgroundColor:[forest,gold,dark],borderRadius:10}]},plugins:[localLabelPlugin],options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},insideLabel:{display:false},amputationLocalValueLabels:{display:true,suffix:'%',barColor:'#fff1c7'},tooltip:{callbacks:{label:function(ctx){return ctx.parsed.x+'% reduction';}}}},scales:{x:{beginAtZero:true,max:90,ticks:{color:'#000000',font:{weight:'700'},callback:function(v){return v+'%';}},grid:{color:paleGrid}},y:{ticks:{color:'#000000',font:{weight:'700'}},grid:{display:false}}}}});
+    make('ampPreventionChart',{type:'bar',data:{labels:['Mississippi county early care','Medicare annual wellness visit','Swiss hospital below-knee amputations'],datasets:[{label:'Reduction',data:[75,36,50],backgroundColor:[tealGreen,gold,dark],borderRadius:10}]},plugins:[localLabelPlugin],options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},insideLabel:{display:false},amputationLocalValueLabels:{display:true,suffix:'%',barColor:'#fff1c7'},tooltip:{callbacks:{label:function(ctx){return ctx.parsed.x+'% reduction';}}}},scales:{x:{beginAtZero:true,max:90,ticks:{color:'#000000',font:{weight:'700'},callback:function(v){return v+'%';}},grid:{color:paleGrid}},y:{ticks:{color:'#000000',font:{weight:'700'}},grid:{display:false}}}}});
   };
   const oldShowPage=window.showPage; if(typeof oldShowPage==='function'&&!window.__amputationShowPagePatched){window.__amputationShowPagePatched=true;window.showPage=function(id){const result=oldShowPage.apply(this,arguments); if(id==='researchStory5-new-york-state-diabetes-related-amputation')setTimeout(window.initAmputationStoryCharts,80); return result;};}
   document.addEventListener('DOMContentLoaded',function(){setTimeout(window.initAmputationStoryCharts,180);});
@@ -11634,7 +11634,7 @@ if (document.readyState === 'loading') {
     }, extra || {});
   }
   function palette() {
-    return { dark:'#12334A', teal:'#006064', forest:'#1F5C45', gold:'#C8960C', purple:'#6A1B9A', plum:'#4C315F' };
+    return { dark:'#12334A', teal:'#006064', tealGreen:'#1F5C45', gold:'#C8960C', purple:'#6A1B9A', plum:'#4C315F' };
   }
   window.initIncidencePrevalenceCharts = function(){
     if (!window.Chart) return;
@@ -11646,17 +11646,17 @@ if (document.readyState === 'loading') {
     });
     make('cdcIncidencePatternChart', {
       type:'bar',
-      data:{ labels:['1997','2009 peak era','2019','2021'], datasets:[{ label:'New diagnosed cases, millions', data:[0.9,1.7,1.4,1.2], backgroundColor:[c.teal,c.purple,c.forest,c.gold], borderRadius:10 }] },
+      data:{ labels:['1997','2009 peak era','2019','2021'], datasets:[{ label:'New diagnosed cases, millions', data:[0.9,1.7,1.4,1.2], backgroundColor:[c.teal,c.purple,c.tealGreen,c.gold], borderRadius:10 }] },
       options:baseOptions({ plugins:{ legend:{display:false}, tooltip:{callbacks:{label:function(ctx){return ctx.parsed.y + 'M new diagnosed cases';}}} }, scales:{ x:{ticks:{color:'#000000',font:{weight:'700'}},grid:{display:false}}, y:{beginAtZero:true,max:2,ticks:{color:'#000000',font:{weight:'700'},callback:function(v){return v+'M';}},grid:{color:'rgba(11,61,46,0.12)'}} } })
     });
     make('cdcAgeGradientChart', {
       type:'bar',
-      data:{ labels:['18-44','45-64','65+'], datasets:[{ label:'Relative diagnosed diabetes burden', data:[4,14,25], backgroundColor:[c.forest,c.teal,c.dark], borderRadius:10 }] },
+      data:{ labels:['18-44','45-64','65+'], datasets:[{ label:'Relative diagnosed diabetes burden', data:[4,14,25], backgroundColor:[c.tealGreen,c.teal,c.dark], borderRadius:10 }] },
       options:baseOptions({ plugins:{ legend:{display:false}, tooltip:{callbacks:{label:function(ctx){return ctx.parsed.y + '% illustrative age-group burden';}}} }, scales:{ x:{ticks:{color:'#000000',font:{weight:'700'}},grid:{display:false}}, y:{beginAtZero:true,max:30,ticks:{color:'#000000',font:{weight:'700'},callback:function(v){return v+'%';}},grid:{color:'rgba(11,61,46,0.12)'}} } })
     });
     make('cdcStateTierChart', {
       type:'doughnut',
-      data:{ labels:['Lower burden states','Middle burden states','Higher burden states'], datasets:[{ data:[15,22,13], backgroundColor:[c.forest,c.gold,c.purple], borderColor:'#e4f1e6', borderWidth:3 }] },
+      data:{ labels:['Lower burden states','Middle burden states','Higher burden states'], datasets:[{ data:[15,22,13], backgroundColor:[c.tealGreen,c.gold,c.purple], borderColor:'#e4f1e6', borderWidth:3 }] },
       options:{ responsive:true, maintainAspectRatio:false, cutout:'56%', plugins:{ legend:{position:'bottom'}, tooltip:{callbacks:{label:function(ctx){return ctx.label + ': ' + ctx.parsed + ' states (tier view)';}}} } }
     });
   };
@@ -11675,12 +11675,12 @@ if (document.readyState === 'loading') {
     });
     make('epiPatternsAgeChart', {
       type:'bar',
-      data:{ labels:['Children/teens','Young adults','Middle adults','Older adults'], datasets:[{ label:'Relative burden index', data:[20,55,125,210], backgroundColor:[c.forest,c.teal,c.gold,c.purple], borderRadius:10 }] },
+      data:{ labels:['Children/teens','Young adults','Middle adults','Older adults'], datasets:[{ label:'Relative burden index', data:[20,55,125,210], backgroundColor:[c.tealGreen,c.teal,c.gold,c.purple], borderRadius:10 }] },
       options:baseOptions({ plugins:{ legend:{display:false}, tooltip:{callbacks:{label:function(ctx){return 'Relative index: ' + ctx.parsed.y;}}} }, scales:{ x:{ticks:{color:'#000000',font:{weight:'700'}},grid:{display:false}}, y:{beginAtZero:true,max:240,ticks:{color:'#000000',font:{weight:'700'}},grid:{color:'rgba(11,61,46,0.12)'}} } })
     });
     make('epiPatternsDisparityChart', {
       type:'bar',
-      data:{ labels:['White','Black','Hispanic','Asian/PI','AI/AN'], datasets:[{ label:'Relative disparity signal', data:[100,145,138,116,172], backgroundColor:[c.forest,c.dark,c.teal,c.gold,c.purple], borderRadius:10 }] },
+      data:{ labels:['White','Black','Hispanic','Asian/PI','AI/AN'], datasets:[{ label:'Relative disparity signal', data:[100,145,138,116,172], backgroundColor:[c.tealGreen,c.dark,c.teal,c.gold,c.purple], borderRadius:10 }] },
       options:baseOptions({ plugins:{ legend:{display:false}, tooltip:{callbacks:{label:function(ctx){return 'Relative index: ' + ctx.parsed.y;}}} }, scales:{ x:{ticks:{color:'#000000',font:{weight:'700'}},grid:{display:false}}, y:{beginAtZero:true,max:190,ticks:{color:'#000000',font:{weight:'700'}},grid:{color:'rgba(11,61,46,0.12)'}} } })
     });
   };
@@ -11951,9 +11951,9 @@ if (document.readyState === 'loading') {
 
   [id^="page-"] > section,
   [id^="page-"] > main > section,
-  [id^="page-"] .section-forest,
-  [id^="page-"] .section-meadow,
-  [id^="page-"] .section-woodland {
+  [id^="page-"] .section-dark,
+  [id^="page-"] .section-panel,
+  [id^="page-"] .section-tan {
     background: #0D3D4A !important;
     background-color: #0D3D4A !important;
     background-image: none !important;
@@ -11978,7 +11978,7 @@ if (document.readyState === 'loading') {
 
   /* Research article detail pages: remove the extra teal wrapper layer only. */
   .research-story-page > section:first-of-type > div:first-child,
-  .research-story-page .section-meadow > .container:first-child {
+  .research-story-page .section-panel > .container:first-child {
     background: transparent !important;
     background-color: transparent !important;
     background-image: none !important;
@@ -12343,7 +12343,7 @@ if (document.readyState === 'loading') {
   }
 </style>
 <style id="news-page-deep-purple-title-bars">
-  #page-news .nature-card h3,
+  #page-news .info-card h3,
   #page-news .story-body h3 {
     background: #2A1A40 !important;
     background-color: #2A1A40 !important;
@@ -12512,7 +12512,6 @@ if (document.readyState === 'loading') {
 </style>
 </body>
 </html>
-
 
 
 

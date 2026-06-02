@@ -1,4 +1,33 @@
+# Local Vercel project metadata
 .vercel/
-jv-diabetes-hub/setup/Vercel - Git Setup/*.png
-jv-diabetes-hub/setup/Vercel - Git Setup/*.jpg
-jv-diabetes-hub/setup/Vercel - Git Setup/*.jpeg
+
+# Private workflow and draft folders
+Deepnote/
+Power-Bi/
+Tableau/
+Hub-Build-Documentation/
+Backup-Index/
+Backups/
+Documentation/
+Notes/
+
+# Local backup files
+Backup-*.html
+Backup-*.docx
+backup-*.docx
+*.backup
+*.bak
+Update-jv-diabetes-hub-INDEX.txt
+
+# Operating system and editor noise
+.DS_Store
+Thumbs.db
+desktop.ini
+~$*
+*.tmp
+*.temp
+
+# Python / notebook scratch files
+__pycache__/
+.ipynb_checkpoints/
+
