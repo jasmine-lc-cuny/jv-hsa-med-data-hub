@@ -1,29 +1,29 @@
-# JV HSA Medical Data Hub Demo
+# jv-med-hub
 
-This is a safe split-file prototype generated from:
+This repository contains the public website files for the JV HSA Medical Data Hub.
+
+Live website:
 
 ```text
-D:/jv-diabetes-hub/index.html
+https://jv-hsa-med-data-hub.org
+https://www.jv-hsa-med-data-hub.org
 ```
 
-The live deploy folder is untouched. This demo is for testing whether the site can move from one large HTML file into a cleaner folder structure and grow into the broader JV HSA Medical Data Hub.
-
-For short, we are calling this folder the **demo** while it is still being tested and rebuilt. Its full folder name is:
+## Local Project Folder
 
 ```text
-D:/jv-domain-demo/
+D:\jv-hsa-med-data-hub.org\jv-med-hub
 ```
 
-## Demo Structure
+## Project Structure
 
 ```text
-D:/jv-domain-demo/
+jv-med-hub/
   index.html
-  assets/
-    images/
-    maps/
+  README.md
   articles/
-  csv/
+  assets/
+    maps/
   css/
     styles.css
     pages/
@@ -32,6 +32,7 @@ D:/jv-domain-demo/
       epi2025.css
       vision-loss.css
       amputation.css
+  csv/
   js/
     app.js
     data/
@@ -46,35 +47,33 @@ D:/jv-domain-demo/
       amputation-charts.js
 ```
 
-## What Works Now
+## What This Site Includes
 
-- `index.html` contains the page structure.
-- `index.html` now includes a Diabetes section homepage and a Diabetes dropdown that groups Dashboard, SPARCS 2024, A1C, EPI 2025, Research Articles, Hispanics, and Rx Data.
-- `css/styles.css` contains the extracted site CSS from the original HTML.
-- `js/app.js` contains the extracted site JavaScript from the original HTML.
-- `articles/` and `csv/` are copied into this demo so PDF and CSV links can work locally.
+- Public health dashboards and data storytelling.
+- Diabetes, A1C, SPARCS 2024, EPI 2025, Research Articles, Hispanic/Latino articles, CDC Demo, and related resource sections.
+- Local article PDFs stored in `articles/`.
+- CSV files stored in `csv/`.
+- Website styling stored in `css/`.
+- Website scripts and chart data stored in `js/`.
+- Map and image assets stored in `assets/`.
 
-## Future Split
+## Update Workflow
 
-The page-specific CSS, data, and chart files are currently placeholders. They are loaded by `index.html` so the structure is ready, but the working logic still lives in `css/styles.css` and `js/app.js`.
+Use this folder when editing the live website:
 
-Recommended next split:
-
-```text
-css/pages/a1c.css          -> A1C-only styles
-js/data/a1c-data.js        -> A1C data objects
-js/charts/a1c-charts.js    -> A1C chart functions
+```powershell
+cd D:\jv-hsa-med-data-hub.org\jv-med-hub
+git status
+git add index.html articles assets css csv js README.md .gitignore
+git status
+git commit -m "Update jv-med-hub"
+git push
 ```
 
-Then repeat for:
+After pushing to GitHub, Vercel should redeploy the live site automatically.
 
-```text
-SPARCS 2024
-EPI 2025
-Vision Loss
-Amputation
-```
+## Notes
 
-## Important
+The folder name for the active website is `jv-med-hub`.
 
-This folder is a workflow demo. Do not push this folder to GitHub/Vercel unless you intentionally decide to replace the current live site structure.
+Local backup files should stay outside this folder unless they are meant to be published.
