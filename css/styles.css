@@ -6002,3 +6002,13 @@ footer:empty { display: none !important; padding: 0 !important; margin: 0 !impor
     background-color: #232441 !important;
     border-color: rgba(242,197,124,0.58) !important;
   }
+
+ /* Fix: keep top navigation scrollable on narrow screens */
+ nav:hover {
+   overflow-x: auto;
+   overflow-y: hidden;
+ }
+
+ nav {
+   scrollbar-gutter: stable;
+ }
