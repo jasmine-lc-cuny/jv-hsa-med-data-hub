@@ -6111,3 +6111,55 @@ footer:empty { display: none !important; padding: 0 !important; margin: 0 !impor
   border-color: #F2C57C !important;
   transform: translateY(-2px);
 }
+
+/* Homepage card theme cleanup */
+#page-home .section-panel {
+  background: #0D3D4A !important;
+  padding: 2rem !important;
+}
+
+#page-home .section-panel > .container {
+  background: #0A2A2F !important;
+  border: 1.5px solid rgba(242,197,124,0.45) !important;
+  border-radius: 24px !important;
+  padding: 2rem !important;
+}
+
+#page-home .section-panel .chart-card,
+#page-home .section-panel .content-panel {
+  background: #232441 !important;
+  border: 1.5px solid rgba(242,197,124,0.58) !important;
+  border-radius: 18px !important;
+  color: #FFF1C7 !important;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.32) !important;
+}
+
+#page-home .section-panel h2,
+#page-home .section-panel h3 {
+  color: #F2C57C !important;
+}
+
+#page-home .section-panel p,
+#page-home .section-panel li {
+  color: #FFF1C7 !important;
+}
+
+#page-home .section-panel .btn {
+  background: linear-gradient(135deg, #4C315F, #006064) !important;
+  color: #F2C57C !important;
+  border: 1px solid rgba(242,197,124,0.75) !important;
+  border-radius: 12px !important;
+  font-weight: 800 !important;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.25) !important;
+}
+
+#page-home .section-panel .btn:hover {
+  background: linear-gradient(135deg, #006064, #4C315F) !important;
+  color: #FFF1C7 !important;
+}
+
+/* Fix homepage Why This Hub title color */
+#page-home .section-panel .chart-card h2.section-title {
+  color: #F2C57C !important;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.35) !important;
+}
