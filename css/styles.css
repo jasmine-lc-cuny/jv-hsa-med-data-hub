@@ -6012,3 +6012,102 @@ footer:empty { display: none !important; padding: 0 !important; margin: 0 !impor
  nav {
    scrollbar-gutter: stable;
  }
+
+/* About page theme cleanup */
+#page-about .section-panel {
+  background: #0D3D4A;
+}
+
+#page-about .section-panel .container {
+  background: #0A2A2F;
+  border: 1px solid rgba(242,197,124,0.28);
+  border-radius: 24px;
+  padding: 2rem;
+}
+
+#page-about .section-panel .container > div[style*="display: grid"] > div {
+  background: #C49A6C;
+  border: 1.5px solid rgba(242,197,124,0.65);
+  border-radius: 18px;
+  padding: 1.5rem;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.28);
+}
+
+#page-about .section-panel h2 {
+  color: #2A1A40 !important;
+}
+
+#page-about .section-panel p,
+#page-about .section-panel li {
+  color: #000000 !important;
+}
+
+#page-about .skills-list .skill-pill {
+  background: linear-gradient(135deg, #4C315F, #006064);
+  color: #F2C57C;
+  border: 1px solid rgba(242,197,124,0.65);
+}
+
+/* About page stronger theme override */
+#page-about section.section-panel {
+  background: #0D3D4A !important;
+}
+
+#page-about section.section-panel > .container {
+  background: #0A2A2F !important;
+  border: 1.5px solid rgba(242,197,124,0.35) !important;
+  border-radius: 24px !important;
+  padding: 2rem !important;
+}
+
+#page-about section.section-panel > .container > div:first-child > div {
+  background: #C49A6C !important;
+  border: 1.5px solid rgba(242,197,124,0.75) !important;
+  border-radius: 18px !important;
+  padding: 1.5rem !important;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.28) !important;
+}
+
+#page-about section.section-panel h2 {
+  color: #2A1A40 !important;
+}
+
+#page-about section.section-panel p,
+#page-about section.section-panel li {
+  color: #000000 !important;
+}
+
+#page-about section.section-panel .skill-pill {
+  background: linear-gradient(135deg, #4C315F, #006064) !important;
+  color: #F2C57C !important;
+  border: 1px solid rgba(242,197,124,0.75) !important;
+}
+
+/* About page title bar styling */
+#page-about section.section-panel h2 {
+  background: #2A1A40 !important;
+  color: #F2C57C !important;
+  border: 1px solid rgba(242,197,124,0.55) !important;
+  border-radius: 12px !important;
+  padding: 0.75rem 1rem !important;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.22) !important;
+}
+
+/* About page contact button cleanup */
+#page-about .btn {
+  background: linear-gradient(135deg, #4C315F, #006064) !important;
+  color: #F2C57C !important;
+  border: 1px solid rgba(242,197,124,0.75) !important;
+  border-radius: 12px !important;
+  padding: 0.75rem 1.25rem !important;
+  font-weight: 800 !important;
+  text-decoration: none !important;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.22) !important;
+}
+
+#page-about .btn:hover {
+  background: linear-gradient(135deg, #006064, #4C315F) !important;
+  color: #FFF1C7 !important;
+  border-color: #F2C57C !important;
+  transform: translateY(-2px);
+}
