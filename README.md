@@ -1,166 +1,80 @@
-# JV Diabetes Hub
+# JV HSA Medical Data Hub Demo
 
-Static public health analytics website for diabetes data, research articles, A1C evidence, SPARCS hospital data, EPI 2025 charts, Rx data, tools, and reference sources.
-
-## Site
-
-Site title:
+This is a safe split-file prototype generated from:
 
 ```text
-JV Diabetes Public Health Analytics Hub - Turning Diabetes Data Into Action
+D:/jv-diabetes-hub/index.html
 ```
 
-## Deploy Folder
+The live deploy folder is untouched. This demo is for testing whether the site can move from one large HTML file into a cleaner folder structure and grow into the broader JV HSA Medical Data Hub.
 
-This folder is the clean GitHub/Vercel deploy folder:
+For short, we are calling this folder the **demo** while it is still being tested and rebuilt. Its full folder name is:
 
 ```text
-D:/jv-diabetes-hub
+D:/jv-domain-demo/
 ```
 
-Keep this folder focused on files the live website needs:
+## Demo Structure
 
 ```text
-D:/jv-diabetes-hub/
+D:/jv-domain-demo/
   index.html
+  assets/
+    images/
+    maps/
   articles/
   csv/
-  .gitignore
-  README.md
+  css/
+    styles.css
+    pages/
+      dashboard.css
+      a1c.css
+      epi2025.css
+      vision-loss.css
+      amputation.css
+  js/
+    app.js
+    data/
+      a1c-data.js
+      epi2025-data.js
+      sparcs2024-data.js
+      vision-loss-data.js
+      amputation-data.js
+    charts/
+      a1c-charts.js
+      vision-loss-charts.js
+      amputation-charts.js
 ```
 
-Vercel serves `index.html` as the website homepage.
+## What Works Now
 
-## Workflow Folder
+- `index.html` contains the page structure.
+- `index.html` now includes a Diabetes section homepage and a Diabetes dropdown that groups Dashboard, SPARCS 2024, A1C, EPI 2025, Research Articles, Hispanics, and Rx Data.
+- `css/styles.css` contains the extracted site CSS from the original HTML.
+- `js/app.js` contains the extracted site JavaScript from the original HTML.
+- `articles/` and `csv/` are copied into this demo so PDF and CSV links can work locally.
 
-Drafts, backups, documentation, Deepnote work, Power BI files, Tableau files, and notes should stay outside the deploy folder:
+## Future Split
+
+The page-specific CSS, data, and chart files are currently placeholders. They are loaded by `index.html` so the structure is ready, but the working logic still lives in `css/styles.css` and `js/app.js`.
+
+Recommended next split:
 
 ```text
-D:/jv-diabetes-hub-workflow/
-  Backup-Index/
-  Deepnote/
-  Hub-Build-Documentation/
-  Power-Bi/
-  Tableau/
-  Update-jv-diabetes-hub-INDEX.txt
+css/pages/a1c.css          -> A1C-only styles
+js/data/a1c-data.js        -> A1C data objects
+js/charts/a1c-charts.js    -> A1C chart functions
 ```
 
-This keeps GitHub/Vercel from receiving private drafts or backup files by accident.
-
-## Main Website Files
-
-- `index.html` - live website page
-- `articles/` - local PDF article assets and article source-link text files
-- `csv/` - local CSV datasets and CSV source-link text files
-- `.gitignore` - prevents workflow/backups/local junk from being added to Git
-- `README.md` - this project note
-
-## Safe Git Commands
-
-Use this when only the website HTML changed:
-
-```powershell
-cd D:/jv-diabetes-hub/
-git add index.html
-git status
-git commit -m "Update site"
-git push
-```
-
-Use this when article PDFs, article folders, CSV files, or CSV folders changed:
-
-```powershell
-cd D:/jv-diabetes-hub/
-git add -A articles csv
-git status
-git commit -m "Update article and CSV assets"
-git push
-```
-
-Use this when both `index.html` and assets changed:
-
-```powershell
-cd D:/jv-diabetes-hub/
-git add index.html articles csv
-git status
-git commit -m "Update site assets"
-git push
-```
-
-Avoid plain `git add -A` unless you intentionally want to include every changed or untracked file.
-
-## Before Committing
-
-Check exactly what Git is about to commit:
-
-```powershell
-cd D:/jv-diabetes-hub/
-git status
-git diff --cached --name-only
-```
-
-Files listed under `Untracked files` are not committed unless they are added.
-
-## Deployment
-
-GitHub is connected to Vercel. After `git push`, Vercel should automatically deploy the latest `main` branch.
-
-Porkbun points the domain to Vercel. Porkbun usually does not need changes for normal website updates.
-
-## Vercel Deployment
-
-Deploy from PowerShell:
-
-```powershell
-cd D:/jv-diabetes-hub/
-vercel
-```
-
-Deploy to production from PowerShell:
-
-```powershell
-cd D:/jv-diabetes-hub/
-vercel --prod
-```
-
-No build command is required for this static HTML site.
-
-## Domain
-
-Domain:
+Then repeat for:
 
 ```text
-jv-hsa-med-data-hub.org
+SPARCS 2024
+EPI 2025
+Vision Loss
+Amputation
 ```
 
-Registrar/DNS:
+## Important
 
-```text
-Porkbun, DNS powered by Cloudflare
-```
-
-DNS records configured in Porkbun:
-
-```text
-A      @     76.76.21.21
-CNAME  www   cname.vercel-dns.com
-```
-
-Email forwarding records were kept:
-
-```text
-MX   fwd1.porkbun.com
-MX   fwd2.porkbun.com
-TXT  v=spf1 include:_spf.porkbun.com ~all
-```
-
-The old Porkbun parking records pointing to `pixie.porkbun.com` were removed.
-
-## Custom Domain Verification
-
-After Vercel setup is complete, add and verify the custom domain in Vercel for the deployed project:
-
-```text
-jv-hsa-med-data-hub.org
-www.jv-hsa-med-data-hub.org
-```
+This folder is a workflow demo. Do not push this folder to GitHub/Vercel unless you intentionally decide to replace the current live site structure.
