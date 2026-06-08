@@ -1516,12 +1516,12 @@ function updateDashboard() {
   if (edTitleEl) { edTitleEl.textContent = '🚨 Emergency Department Share % — ' + BOROUGH_DISPLAY[borough]; edTitleEl.style.color='#F2C57C'; edTitleEl.style.background='linear-gradient(135deg, #4C315F, #006064)'; edTitleEl.style.padding='0.6rem 1rem'; edTitleEl.style.borderRadius='8px'; edTitleEl.style.margin='-0.5rem -0.5rem 1rem -0.5rem'; }
 
   highlightTableRow(borough);
-  var t1=document.getElementById('chartTitle1'); t1.textContent='📊 '+indicatorLabel(ind)+' — '+BOROUGH_DISPLAY[borough]; t1.style.color='#F2C57C'; t1.style.background='#2a1a40'; t1.style.padding='0.6rem 1rem'; t1.style.borderRadius='8px'; t1.style.margin='-0.5rem -0.5rem 1rem -0.5rem';
+  var t1=document.getElementById('chartTitle1'); t1.textContent='📊 '+indicatorLabel(ind)+' — '+BOROUGH_DISPLAY[borough]; t1.style.color='#F2C57C'; t1.style.background='linear-gradient(135deg, #4C315F, #006064)'; t1.style.padding='0.6rem 1rem'; t1.style.borderRadius='8px'; t1.style.margin='-0.5rem -0.5rem 1rem -0.5rem';
   var t3=document.getElementById('chartTitle3'); t3.textContent='📈 '+trendTitle; t3.style.color='#FFF1C7';
   var t4=document.getElementById('chartTitle4'); t4.textContent='💵 Total Charges vs Total Costs — '+BOROUGH_DISPLAY[borough]+' Boroughs (2024)'; t4.style.color='#F2C57C'; t4.style.background='linear-gradient(135deg, #4C315F, #006064)'; t4.style.padding='0.6rem 1rem'; t4.style.borderRadius='8px'; t4.style.margin='-0.5rem -0.5rem 1rem -0.5rem';
 
   const raceTitleEl = document.querySelector('#a1cRaceChart')?.closest('.chart-card')?.querySelector('h3');
-  if (raceTitleEl) { raceTitleEl.textContent = raceTitle; raceTitleEl.style.color='#F2C57C'; raceTitleEl.style.background='#2a1a40'; raceTitleEl.style.padding='0.6rem 1rem'; raceTitleEl.style.borderRadius='8px'; raceTitleEl.style.margin='-0.5rem -0.5rem 1rem -0.5rem'; }
+  if (raceTitleEl) { raceTitleEl.textContent = raceTitle; raceTitleEl.style.color='#F2C57C'; raceTitleEl.style.background='linear-gradient(135deg, #4C315F, #006064)'; raceTitleEl.style.padding='0.6rem 1rem'; raceTitleEl.style.borderRadius='8px'; raceTitleEl.style.margin='-0.5rem -0.5rem 1rem -0.5rem'; }
   updateDashboardMap(borough, year, ind);
 }
 
@@ -2157,7 +2157,7 @@ function showPage(id) {
   window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
   document.documentElement.scrollTop = 0;
   document.body.scrollTop = 0;
-  targetPage.scrollIntoView({ block: 'start' });
+  // Removed scrollIntoView to prevent page jump after tab changes.
   if (id==='dashboard'   && !CHARTS['boroughPrevalenceChart']) { initDiabetisCharts(); }
   if (id==='dashboard') { setTimeout(updateDashboard, 180); }
   if (id==='a1c') { setTimeout(initA1CPage, 90); }
@@ -2317,6 +2317,11 @@ function syncDiabetesSubmenus(topic) {
       button.classList.remove('active');
     });
   }
+  if (topic !== 'epi2025') {
+    document.querySelectorAll('[data-epi-subsection]').forEach(button => {
+      button.classList.remove('active');
+    });
+  }
 }
 
 function setCdcSubtopic(subtopic) {
@@ -2331,6 +2336,40 @@ function setCdcSubtopic(subtopic) {
     }, 160);
   }
 }
+
+function setEpi2025Subsection(sectionId) {
+  setDiabetesTopic('epi2025');
+  document.querySelectorAll('[data-epi-subsection]').forEach(button => {
+    button.classList.toggle('active', button.dataset.epiSubsection === sectionId);
+  });
+
+  const targetMap = {
+    table1: 'epi2025-table1',
+    table2: 'epi2025-table2',
+    table3: 'epi2025-table3',
+    table4: 'epi2025-table4',
+    table5: 'epi2025-table5',
+    table6: 'epi2025-table6',
+    definitions: 'epi2025-definitions',
+    summary: 'epi2025-summary'
+  };
+
+  const targetId = targetMap[sectionId];
+  if (!targetId) return;
+
+  setTimeout(() => {
+    const liveHost = document.getElementById('diabetesLivePageHost');
+    const target =
+      (liveHost && liveHost.querySelector('#' + targetId)) ||
+      document.querySelector('#page-epi2025 #' + targetId) ||
+      document.getElementById(targetId);
+
+    if (target) {
+      target.scrollIntoView({ block: 'start', behavior: 'smooth' });
+    }
+  }, 180);
+}
+
 
 function embedDiabetesRealPage(topic, pageId) {
   const sourcePage = document.getElementById('page-' + pageId);
@@ -4935,21 +4974,21 @@ function renderPosts(posts) {
     return;
   }
   container.innerHTML = posts.map(p => `
-    <div class="info-card" style="margin-bottom:1.25rem;border-left:4px solid var(--teal-accent);">
+    <div class="info-card" style="margin-bottom:1.25rem;border-left:4px solid #006064;background:#C49A6C;border-color:rgba(242,197,124,0.65);color:#140023;">
       <div style="display:flex;align-items:center;gap:10px;margin-bottom:0.75rem;flex-wrap:wrap;">
         <span style="font-size:1.5rem;">${CATEGORY_ICONS[p.category]}</span>
         <div>
-          <strong style="color:var(--deep-teal);font-size:0.95rem;">${p.name}</strong>
+          <strong style="color:#140023;font-size:0.95rem;">${p.name}</strong>
           <span class="badge badge-green" style="margin-left:8px;font-size:0.72rem;">${CATEGORY_LABELS[p.category]}</span>
         </div>
-        <span style="margin-left:auto;font-size:0.8rem;color:#888;">${p.date}</span>
+        <span style="margin-left:auto;font-size:0.8rem;color:#140023;">${p.date}</span>
       </div>
-      <p style="font-size:0.9rem;line-height:1.75;color:#444;margin-bottom:1rem;">${p.text}</p>
+      <p style="font-size:0.9rem;line-height:1.75;color:#140023;margin-bottom:1rem;">${p.text}</p>
       <div style="display:flex;align-items:center;gap:1rem;">
-        <button onclick="likePost(${p.id})" style="background:none;border:1.5px solid var(--dark-border);border-radius:20px;padding:4px 14px;cursor:pointer;font-size:0.82rem;font-family:var(--font-body);color:var(--section-teal);">
+        <button onclick="likePost(${p.id})" style="background:linear-gradient(135deg, #4C315F, #006064);border:1.5px solid rgba(242,197,124,0.65);border-radius:20px;padding:4px 14px;cursor:pointer;font-size:0.82rem;font-family:var(--font-body);color:#F2C57C;font-weight:800;">
           🌿 ${p.likes} helpful
         </button>
-        <span style="font-size:0.8rem;color:#888;">${p.comments.length} replies</span>
+        <span style="font-size:0.8rem;color:#140023;">${p.comments.length} replies</span>
       </div>
     </div>`).join('');
   document.getElementById('postCount').textContent = posts.length + ' posts';

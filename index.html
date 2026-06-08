@@ -163,8 +163,8 @@ Landing page that introduces the portfolio project
 ========================================================= -->
 <div class="page active" id="page-home">
 <!-- ── HERO ── -->
-<section style="padding: 2.5rem 2rem; background: #0D3D4A !important;">
-  <div style="max-width: 1200px; margin: 0 auto; background: #0A2A2F !important; border: 1px solid rgba(242,197,124,0.28); border-radius: 24px; padding: 1rem; overflow: hidden; box-shadow: 0 18px 42px rgba(0,0,0,0.32);">
+<section style="padding: 2.5rem 2rem; background: #0D3D4A;">
+  <div style="max-width: 1200px; margin: 0 auto; background: #0A2A2F; border: 1px solid rgba(242,197,124,0.28); border-radius: 24px; padding: 1rem; overflow: hidden; box-shadow: 0 18px 42px rgba(0,0,0,0.32);">
     <img src="assets/images/Where-Public-Health-Data-Gets-Analyzed-Visualized-and-Heard.png" alt="Where Public Health Data Gets Analyzed, Visualized, and Heard" style="width:100%; height:auto; display:block; border-radius: 18px;">
   </div>
 </section>
@@ -173,19 +173,19 @@ Landing page that introduces the portfolio project
 <section class="section-panel">
 <div class="container" style="display:grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center;">
 <div class="chart-card" style="padding: 2rem;">
-<h2 class="section-title" style="color: #F2C57C !important; text-align: center; padding-right: 1.8rem;">📊 Why This Hub?</h2>
-<p style="font-size:0.95rem; line-height:1.75; color:#000; margin-top:1rem;">
+<h2 class="section-title" style="color: #F2C57C; text-align: center; padding-right: 1.8rem;">📊 Why This Hub?</h2>
+<p style="font-size:0.95rem; line-height:1.75; color:#FFF1C7; margin-top:1rem;">
           Chronic disease patterns are often hidden across PDFs, dashboards, raw datasets, and research articles. This hub brings those pieces together so public health patterns can be explored through clearer charts, evidence summaries, and data stories.
         </p>
-<p style="font-size:0.95rem; line-height:1.75; color:#000; margin-top:0.75rem;">
+<p style="font-size:0.95rem; line-height:1.75; color:#FFF1C7; margin-top:0.75rem;">
           Diabetes is the first complete topic area, and the larger structure is built to grow into heart and hypertension, cancer, kidney disease, vision loss, amputation, and other public health topics.
         </p>
 <div style="margin-top:1.5rem;">
-<button class="btn btn-outline" onclick="showPage('about')" style="background: var(--bg-purple) !important; color: #F2C57C !important; border: 1.5px solid var(--gold);">Learn About This Project</button>
+<button class="btn btn-outline" onclick="showPage('about')" style="background: var(--bg-purple); color: #F2C57C; border: 1.5px solid var(--gold);">Learn About This Project</button>
 </div>
 </div>
 <div class="content-panel">
-<h3 style="font-family: var(--font-display); font-size: 1.6rem; font-weight: 800; margin-bottom:1rem; color: var(--section-teal); text-align: center;">Key Focus Areas</h3>
+<h3 style="font-family: var(--font-display); font-size: 1.6rem; font-weight: 800; margin-bottom:1rem; color: #F2C57C; text-align: center;">Key Focus Areas</h3>
 <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px;">
 <li>🩸 Chronic Disease Prevalence &amp; Incidence</li>
 <li>🏥 Hospital Utilization Patterns</li>
@@ -221,6 +221,16 @@ front door for the diabetes dashboards, research, and data pages.
 <button data-diabetes-topic="sparcs2024" onclick="setDiabetesTopic('sparcs2024')"><span>🏥</span> SPARCS 2024</button>
 <button data-diabetes-topic="a1c" onclick="setDiabetesTopic('a1c')"><span>🧪</span> A1C</button>
 <button data-diabetes-topic="epi2025" onclick="setDiabetesTopic('epi2025')"><span>📈</span> EPI 2025</button>
+<div class="diabetes-submenu" data-diabetes-submenu="epi2025" hidden aria-label="EPI 2025 table sections">
+<button type="button" data-epi-subsection="table1" onclick="setEpi2025Subsection('table1')">Table 1 · Prevalence of Diabetes Among NYC 18+</button>
+<button type="button" data-epi-subsection="table2" onclick="setEpi2025Subsection('table2')">Table 2 · Diabetes Prevalence by Neighborhood</button>
+<button type="button" data-epi-subsection="table3" onclick="setEpi2025Subsection('table3')">Table 3 · Blood Sugar Control Receiving Care</button>
+<button type="button" data-epi-subsection="table4" onclick="setEpi2025Subsection('table4')">Table 4 · A1C Levels by Recieving Care</button>
+<button type="button" data-epi-subsection="table5" onclick="setEpi2025Subsection('table5')">Table 5 · Amputations Demographics</button>
+<button type="button" data-epi-subsection="table6" onclick="setEpi2025Subsection('table6')">Table 6 · Amputations by Neighborhood</button>
+<button type="button" data-epi-subsection="definitions" onclick="setEpi2025Subsection('definitions')">Definitions and Implications</button>
+<button type="button" data-epi-subsection="summary" onclick="setEpi2025Subsection('summary')">EPI 2025 Summary</button>
+</div>
 <button data-diabetes-topic="cdcDemo" onclick="setDiabetesTopic('cdcDemo')"><span>🗺️</span> CDC Demo</button>
 <div class="diabetes-submenu" data-diabetes-submenu="cdcDemo" hidden aria-label="CDC Demo subtopics">
 <button type="button" data-cdc-subtopic="diabetes-prevalence" onclick="setCdcSubtopic('diabetes-prevalence')">Diabetes Prevalence</button>
@@ -269,6 +279,9 @@ front door for the diabetes dashboards, research, and data pages.
 </section>
 
 <section class="diabetes-infographic-panel" id="diabetes-stats" aria-label="Diabetes section infographic">
+<div class="diabetes-home-hero" style="grid-column:1 / -1; margin-bottom:1.5rem; background:#0A2A2F; border:1.5px solid rgba(242,197,124,0.35); border-radius:20px; padding:0.9rem; box-shadow:0 16px 34px rgba(0,0,0,0.22);">
+<img src="assets/images/turning_diabetes_data_into_action.png" alt="Turning Diabetes Data Into Action" style="width:100%; height:auto; display:block; border-radius:14px;">
+</div>
 <div class="diabetes-infographic-copy" id="diabetes-pages">
 <p class="topic-kicker">Diabetes Public Health Analytics</p>
 <h2>Turning <span class="gold-word">Diabetes</span> Data Into Action</h2>
@@ -575,12 +588,12 @@ Interactive SPARCS summary with filters, KPIs, map, and charts
 ========================================================= -->
 <div class="page" id="page-dashboard" role="main">
 <main id="main-content">
-<section style="padding: 2rem 2rem 1.5rem; background: #0D3D4A !important; border-bottom: 2px solid rgba(242,197,124,0.3);">
+<section style="padding: 2rem 2rem 1.5rem; background: #0D3D4A; border-bottom: 2px solid rgba(242,197,124,0.3);">
 <div class="dashboard-shell dashboard-hero-frame">
 <div style="display:flex; align-items:center; gap:1rem; flex:1;">
 <span style="font-size:2rem;">📊</span>
 <div>
-<h1 style="font-family:'Lora',serif; font-size:clamp(1.4rem,3vw,2rem); color:#F2C57C !important; font-weight:700; line-height:1.1; margin:0;">Diabetes Analytics Dashboard</h1>
+<h1 style="font-family:'Lora',serif; font-size:clamp(1.4rem,3vw,2rem); color:#F2C57C; font-weight:700; line-height:1.1; margin:0;">Diabetes Analytics Dashboard</h1>
 <p style="font-size:0.82rem; color:#FFF1C7; font-weight:800; letter-spacing:0.12em; text-transform:uppercase; margin:0.3rem 0 0;">SPARCS 2024 Summary</p>
 </div>
 </div>
@@ -591,22 +604,22 @@ Interactive SPARCS summary with filters, KPIs, map, and charts
 </div>
 </section>
 <!-- ── DASHBOARD CONTENT ── -->
-<section class="section-panel" style="background:#0D3D4A !important; padding:2rem;">
+<section class="section-panel" style="background:#0D3D4A; padding:2rem;">
 <div class="container dashboard-shell">
 <div class="dashboard-intro-card">
 <h2>SPARCS 2024 Diabetes Inpatient Dashboard</h2>
 <p>Explore 2024 SPARCS inpatient discharge records for diabetes-related hospital use across New York City boroughs. The dashboard compares discharges, average length of stay, total inpatient costs, emergency department cases, race/ethnicity patterns, and borough-level map views.</p>
 </div>
 <!-- Filters -->
-<div class="filter-bar dashboard-filter-purple" style="width:100%; display:grid !important; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1rem; align-items:end; background:transparent !important; border:0 !important; box-shadow:none !important; padding:0 !important; margin:0 0 1.5rem 0 !important;">
+<div class="filter-bar dashboard-filter-purple" style="width:100%; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1rem; align-items:end; background:transparent; border:0; box-shadow:none; padding:0; margin:0 0 1.5rem 0;">
 <div>
-<label style="display:inline-block !important; background:transparent !important; color:#F2C57C !important; padding:0 !important; margin:0 0 0.35rem 0 !important; border:0 !important; border-radius:0 !important; font-weight:900 !important;">Borough</label><br>
+<label style="display:inline-block; background:transparent; color:#F2C57C; padding:0; margin:0 0 0.35rem 0; border:0; border-radius:0; font-weight:900;">Borough</label><br>
 <!-- =========================================================
 ✅ FILTERS (DROPDOWNS)
 Used to filter dashboard data dynamically. onchange means:
 "when the user changes this dropdown, run updateDashboard()."
 ========================================================= -->
-<select id="filterBorough" onchange="updateDashboard()" style="width:100% !important; min-height:50px !important; padding:0.85rem 1.15rem !important; background:linear-gradient(135deg, #4C315F, #006064) !important; background-color:#006064 !important; color:#F2C57C !important; border:1.5px solid #F2C57C !important; border-radius:8px !important; box-shadow:none !important; font-weight:900 !important;">
+<select id="filterBorough" onchange="updateDashboard()" style="width:100%; min-height:50px; padding:0.85rem 1.15rem; background:linear-gradient(135deg, #4C315F, #006064); background-color:#006064; color:#F2C57C; border:1.5px solid #F2C57C; border-radius:8px; box-shadow:none; font-weight:900;">
 <option value="all">All Boroughs</option>
 <option value="bronx">Bronx</option>
 <option value="brooklyn">Brooklyn</option>
@@ -616,14 +629,14 @@ Used to filter dashboard data dynamically. onchange means:
 </select>
 </br></div>
 <div>
-<label style="display:inline-block !important; background:transparent !important; color:#F2C57C !important; padding:0 !important; margin:0 0 0.35rem 0 !important; border:0 !important; border-radius:0 !important; font-weight:900 !important;">Year</label><br>
-<select id="filterYear" onchange="updateDashboard()" style="width:100% !important; min-height:50px !important; padding:0.85rem 1.15rem !important; background:linear-gradient(135deg, #4C315F, #006064) !important; background-color:#006064 !important; color:#F2C57C !important; border:1.5px solid #F2C57C !important; border-radius:8px !important; box-shadow:none !important; font-weight:900 !important;">
+<label style="display:inline-block; background:transparent; color:#F2C57C; padding:0; margin:0 0 0.35rem 0; border:0; border-radius:0; font-weight:900;">Year</label><br>
+<select id="filterYear" onchange="updateDashboard()" style="width:100%; min-height:50px; padding:0.85rem 1.15rem; background:linear-gradient(135deg, #4C315F, #006064); background-color:#006064; color:#F2C57C; border:1.5px solid #F2C57C; border-radius:8px; box-shadow:none; font-weight:900;">
 <option value="2024">2024</option>
 </select>
 </br></div>
 <div>
-<label style="display:inline-block !important; background:transparent !important; color:#F2C57C !important; padding:0 !important; margin:0 0 0.35rem 0 !important; border:0 !important; border-radius:0 !important; font-weight:900 !important;">Indicator</label><br/>
-<select id="filterIndicator" onchange="updateDashboard()" style="width:100% !important; min-height:50px !important; padding:0.85rem 1.15rem !important; background:linear-gradient(135deg, #4C315F, #006064) !important; background-color:#006064 !important; color:#F2C57C !important; border:1.5px solid #F2C57C !important; border-radius:8px !important; box-shadow:none !important; font-weight:900 !important;">
+<label style="display:inline-block; background:transparent; color:#F2C57C; padding:0; margin:0 0 0.35rem 0; border:0; border-radius:0; font-weight:900;">Indicator</label><br/>
+<select id="filterIndicator" onchange="updateDashboard()" style="width:100%; min-height:50px; padding:0.85rem 1.15rem; background:linear-gradient(135deg, #4C315F, #006064); background-color:#006064; color:#F2C57C; border:1.5px solid #F2C57C; border-radius:8px; box-shadow:none; font-weight:900;">
 <option value="prevalence">Diabetes Inpatient Discharges</option>
 <option value="a1c">Average Length of Stay</option>
 <option value="amputation">Total Costs ($M)</option>
@@ -664,7 +677,7 @@ Dashboard five-borough NYC reference map. The map shares the same
 Borough and Indicator dropdown logic as the charts.
 ========================================================= -->
 <div class="chart-card dashboard-map-card" style="margin-bottom:1.5rem;">
-<h3 id="dashboardMapTitle" style="background:linear-gradient(135deg, #4C315F, #006064); color:#F2C57C !important; padding:0.6rem 1rem; border-radius:8px; margin:-0.5rem -0.5rem 1rem -0.5rem;">🗺️ SPARCS 2024 Borough Map — Diabetes Inpatient Discharges</h3>
+<h3 id="dashboardMapTitle" style="background:linear-gradient(135deg, #4C315F, #006064); color:#F2C57C; padding:0.6rem 1rem; border-radius:8px; margin:-0.5rem -0.5rem 1rem -0.5rem;">🗺️ SPARCS 2024 Borough Map — Diabetes Inpatient Discharges</h3>
 <div id="dashboardLeafletMap" role="img" aria-label="Interactive map of New York City borough SPARCS diabetes indicators"></div>
 <div class="dashboard-map-legend" id="dashboardMapLegend">
 <span><i class="dashboard-map-dot" style="background:#5A3E66;"></i> Higher value</span>
@@ -679,37 +692,37 @@ Two-column layout for dashboard Chart.js visualizations
 ========================================================= -->
 <div class="dashboard-grid dashboard-grid-main">
 <div class="chart-card">
-<h3 id="chartTitle1" style="background:#2a1a40; color:#F2C57C !important; padding:0.6rem 1rem; border-radius:8px; margin:-0.5rem -0.5rem 1rem -0.5rem;">📊 Diabetes Inpatient Discharges — All NYC Boroughs (26,147)</h3>
+<h3 id="chartTitle1" style="background:linear-gradient(135deg, #4C315F, #006064); color:#F2C57C; padding:0.6rem 1rem; border-radius:8px; margin:-0.5rem -0.5rem 1rem -0.5rem;">📊 Diabetes Inpatient Discharges — All NYC Boroughs (26,147)</h3>
 <div class="chart-wrapper">
 <canvas id="boroughPrevalenceChart"></canvas>
 </div>
 </div>
 <div class="chart-card">
-<h3 id="chartTitle3" style="background:#2a1a40; color:#F2C57C !important; padding:0.6rem 1rem; border-radius:8px; margin:-0.5rem -0.5rem 1rem -0.5rem;">📈 2024 Diabetes Discharges by Age Group</h3>
+<h3 id="chartTitle3" style="background:linear-gradient(135deg, #4C315F, #006064); color:#F2C57C; padding:0.6rem 1rem; border-radius:8px; margin:-0.5rem -0.5rem 1rem -0.5rem;">📈 2024 Diabetes Discharges by Age Group</h3>
 <div class="chart-wrapper">
 <canvas id="trendChart"></canvas>
 </div>
 </div>
 <div class="chart-card">
-<h3 id="chartTitleLOS" style="background:linear-gradient(135deg, #4C315F, #006064); color:#F2C57C !important; padding:0.6rem 1rem; border-radius:8px; margin:-0.5rem -0.5rem 1rem -0.5rem;">🏥 Avg Length of Stay by Borough (days)</h3>
+<h3 id="chartTitleLOS" style="background:linear-gradient(135deg, #4C315F, #006064); color:#F2C57C; padding:0.6rem 1rem; border-radius:8px; margin:-0.5rem -0.5rem 1rem -0.5rem;">🏥 Avg Length of Stay by Borough (days)</h3>
 <div class="chart-wrapper">
 <canvas id="losChart"></canvas>
 </div>
 </div>
 <div class="chart-card">
-<h3 id="chartTitleED" style="background:linear-gradient(135deg, #4C315F, #006064); color:#F2C57C !important; padding:0.6rem 1rem; border-radius:8px; margin:-0.5rem -0.5rem 1rem -0.5rem;">🚨 Emergency Department Share % by Borough</h3>
+<h3 id="chartTitleED" style="background:linear-gradient(135deg, #4C315F, #006064); color:#F2C57C; padding:0.6rem 1rem; border-radius:8px; margin:-0.5rem -0.5rem 1rem -0.5rem;">🚨 Emergency Department Share % by Borough</h3>
 <div class="chart-wrapper">
 <canvas id="edShareChart"></canvas>
 </div>
 </div>
 <div class="chart-card chart-card-wide home-wide-chart">
-<h3 id="chartTitleRace" style="background:#2a1a40; color:#F2C57C !important; padding:0.6rem 1rem; border-radius:8px; margin:-0.5rem -0.5rem 1rem -0.5rem;">🧬 2024 Diabetes Discharges by Race/Ethnicity (Patient Count)</h3>
+<h3 id="chartTitleRace" style="background:linear-gradient(135deg, #4C315F, #006064); color:#F2C57C; padding:0.6rem 1rem; border-radius:8px; margin:-0.5rem -0.5rem 1rem -0.5rem;">🧬 2024 Diabetes Discharges by Race/Ethnicity (Patient Count)</h3>
 <div class="chart-wrapper">
 <canvas id="a1cRaceChart"></canvas>
 </div>
 </div>
 <div class="chart-card chart-card-wide home-wide-chart">
-<h3 id="chartTitle4" style="background:linear-gradient(135deg, #4C315F, #006064); color:#F2C57C !important; padding:0.6rem 1rem; border-radius:8px; margin:-0.5rem -0.5rem 1rem -0.5rem;">💵 2024 Total Inpatient Charges vs Costs by Borough (Diabetes, NYC)</h3>
+<h3 id="chartTitle4" style="background:linear-gradient(135deg, #4C315F, #006064); color:#F2C57C; padding:0.6rem 1rem; border-radius:8px; margin:-0.5rem -0.5rem 1rem -0.5rem;">💵 2024 Total Inpatient Charges vs Costs by Borough (Diabetes, NYC)</h3>
 <div class="chart-wrapper">
 <canvas id="ampDialysisChart"></canvas>
 </div>
@@ -717,7 +730,7 @@ Two-column layout for dashboard Chart.js visualizations
 </div>
 <!-- Data Table -->
 <div class="chart-card" style="margin-top:2rem;">
-<h2 style="font-family:var(--font-display); font-size:1.3rem; margin-bottom:1rem; background:#2a1a40; color:#F2C57C !important; padding:0.6rem 1rem; border-radius:8px; margin:-0.5rem -0.5rem 1rem -0.5rem;">📋 Borough Comparison Table</h2>
+<h2 style="font-family:var(--font-display); font-size:1.3rem; margin-bottom:1rem; background:linear-gradient(135deg, #4C315F, #006064); color:#F2C57C; padding:0.6rem 1rem; border-radius:8px; margin:-0.5rem -0.5rem 1rem -0.5rem;">📋 Borough Comparison Table</h2>
 <div style="overflow-x:auto;">
 <table class="data-table">
 <thead>
@@ -752,11 +765,11 @@ SPARCS amputation data, Bronx food-insecurity evidence, and
 national HbA1c trend research.
 ========================================================= -->
 <div class="page" id="page-a1c" role="main">
-<section style="padding: 2rem 2rem 1.5rem; background: #0D3D4A !important; border-bottom: 2px solid rgba(242,197,124,0.3);">
+<section style="padding: 2rem 2rem 1.5rem; background: #0D3D4A; border-bottom: 2px solid rgba(242,197,124,0.3);">
 <div class="a1c-shell a1c-hero-frame">
 <span style="font-size:2.4rem;">🧪</span>
 <div style="flex:1;">
-<h1 style="font-family:'Lora',serif; font-size:clamp(1.6rem,3vw,2.3rem); color:#F2C57C !important; margin:0;">A1C Blood Sugar Control</h1>
+<h1 style="font-family:'Lora',serif; font-size:clamp(1.6rem,3vw,2.3rem); color:#F2C57C; margin:0;">A1C Blood Sugar Control</h1>
 <p style="font-size:0.82rem; color:#FFF1C7; font-weight:800; letter-spacing:0.12em; text-transform:uppercase; line-height:1.65; margin:0.45rem 0 0;">A1C Control, Complications, and National HbA1c Trends</p>
 </div>
 <div style="height:40px; width:1px; background:rgba(242,197,124,0.35);"></div>
@@ -765,7 +778,7 @@ NYC A1C Registry 2022<br/>JAMA / Healio 2025
 </div>
 </div>
 </section>
-<section class="section-panel" style="background:#0D3D4A !important; padding:2rem;">
+<section class="section-panel" style="background:#0D3D4A; padding:2rem;">
 <div class="a1c-shell">
 <div class="a1c-intro-card">
 <h2>A1C Blood Sugar Control Across New York City</h2>
@@ -809,54 +822,54 @@ NYC A1C Registry 2022<br/>JAMA / Healio 2025
 
 <div class="a1c-chart-grid">
 <div class="chart-card">
-<h3 id="a1cBoroughTitle" style="background:linear-gradient(135deg, #4C315F, #006064); color:#F2C57C !important; padding:0.6rem 1rem; border-radius:8px; margin:-0.5rem -0.5rem 1rem -0.5rem;">🧪 A1C > 9% — All NYC Boroughs</h3>
+<h3 id="a1cBoroughTitle" style="background:linear-gradient(135deg, #4C315F, #006064); color:#F2C57C; padding:0.6rem 1rem; border-radius:8px; margin:-0.5rem -0.5rem 1rem -0.5rem;">🧪 A1C > 9% — All NYC Boroughs</h3>
 <div class="chart-wrapper"><canvas id="a1cBoroughChart"></canvas></div>
 <p class="a1c-note">A1C > 9% is treated as very high blood sugar in NYC DOHMH Epi Data Brief No. 146.</p>
 </div>
 <div class="chart-card">
-<h3 id="a1cDistributionTitle" style="background:linear-gradient(135deg, #4C315F, #006064); color:#F2C57C !important; padding:0.6rem 1rem; border-radius:8px; margin:-0.5rem -0.5rem 1rem -0.5rem;">📊 A1C Range Distribution</h3>
+<h3 id="a1cDistributionTitle" style="background:linear-gradient(135deg, #4C315F, #006064); color:#F2C57C; padding:0.6rem 1rem; border-radius:8px; margin:-0.5rem -0.5rem 1rem -0.5rem;">📊 A1C Range Distribution</h3>
 <div class="chart-wrapper"><canvas id="a1cDistributionChart"></canvas></div>
 <p class="a1c-note">Ranges show the latest A1C value among NYC adults with diabetes receiving medical care in 2022.</p>
 </div>
 <div class="chart-card">
-<h3 id="a1cTrendTitle" style="background:linear-gradient(135deg, #4C315F, #006064); color:#F2C57C !important; padding:0.6rem 1rem; border-radius:8px; margin:-0.5rem -0.5rem 1rem -0.5rem;">📈 A1C > 9% Trend — All NYC Boroughs</h3>
+<h3 id="a1cTrendTitle" style="background:linear-gradient(135deg, #4C315F, #006064); color:#F2C57C; padding:0.6rem 1rem; border-radius:8px; margin:-0.5rem -0.5rem 1rem -0.5rem;">📈 A1C > 9% Trend — All NYC Boroughs</h3>
 <div class="chart-wrapper" style="height:390px;"><canvas id="a1cTrendChart"></canvas></div>
 <p class="a1c-note">Trend uses the older dashboard baseline style for interactivity; 2022 is anchored to the NYC A1C Registry.</p>
 </div>
 <div class="chart-card a1c-wide">
-<h3 id="a1cComplicationTitle" style="background:#2a1a40; color:#F2C57C !important; padding:0.6rem 1rem; border-radius:8px; margin:-0.5rem -0.5rem 1rem -0.5rem;">🦵 Amputations vs Dialysis — All NYC Boroughs (2022)</h3>
+<h3 id="a1cComplicationTitle" style="background:linear-gradient(135deg, #4C315F, #006064); color:#F2C57C; padding:0.6rem 1rem; border-radius:8px; margin:-0.5rem -0.5rem 1rem -0.5rem;">🦵 Amputations vs Dialysis — All NYC Boroughs (2022)</h3>
 <div class="chart-wrapper"><canvas id="a1cComplicationChart"></canvas></div>
 <p class="a1c-note">Amputations come from SPARCS 2022 in the Epi Data Brief. Dialysis cases are included as a companion diabetes-burden indicator from the citywide reduction plan/dashboard draft.</p>
 </div>
 <div class="chart-card">
-<h3 style="background:#2a1a40; color:#F2C57C !important; padding:0.6rem 1rem; border-radius:8px; margin:-0.5rem -0.5rem 1rem -0.5rem;">👥 A1C by Age / National Control</h3>
+<h3 style="background:linear-gradient(135deg, #4C315F, #006064); color:#F2C57C; padding:0.6rem 1rem; border-radius:8px; margin:-0.5rem -0.5rem 1rem -0.5rem;">👥 A1C by Age / National Control</h3>
 <div class="chart-wrapper"><canvas id="a1cNationalAgeChart"></canvas></div>
 <p class="a1c-note">JAMA 2025 found control among adults ages 20-44 fell from 57.4% to 37.1% after 2020.</p>
 </div>
 <div class="chart-card">
-<h3 style="background:linear-gradient(135deg, #4C315F, #006064); color:#F2C57C !important; padding:0.6rem 1rem; border-radius:8px; margin:-0.5rem -0.5rem 1rem -0.5rem;">📌 CDC Key Estimates + 95% CI</h3>
+<h3 style="background:linear-gradient(135deg, #4C315F, #006064); color:#F2C57C; padding:0.6rem 1rem; border-radius:8px; margin:-0.5rem -0.5rem 1rem -0.5rem;">📌 CDC Key Estimates + 95% CI</h3>
 <div class="chart-wrapper"><canvas id="a1cCdcKeyChart"></canvas></div>
 <p class="a1c-note">CDC National Diabetes Statistics Report: age-adjusted diagnosed, undiagnosed, and total diabetes prevalence among U.S. adults, 2021-2023.</p>
 </div>
 <div class="chart-card">
-<h3 style="background:linear-gradient(135deg, #4C315F, #006064); color:#F2C57C !important; padding:0.6rem 1rem; border-radius:8px; margin:-0.5rem -0.5rem 1rem -0.5rem;">🗽 NY Prevalence vs Selected States</h3>
+<h3 style="background:linear-gradient(135deg, #4C315F, #006064); color:#F2C57C; padding:0.6rem 1rem; border-radius:8px; margin:-0.5rem -0.5rem 1rem -0.5rem;">🗽 NY Prevalence vs Selected States</h3>
 <div class="chart-wrapper"><canvas id="a1cStateCompareChart"></canvas></div>
 <p class="a1c-note">New York diagnosed diabetes prevalence is below the U.S. median in the CDC state table, but the trend is still increasing.</p>
 </div>
 <div class="chart-card">
-<h3 style="background:linear-gradient(135deg, #4C315F, #006064); color:#F2C57C !important; padding:0.6rem 1rem; border-radius:8px; margin:-0.5rem -0.5rem 1rem -0.5rem;">📈 Incidence Rate per 1,000</h3>
+<h3 style="background:linear-gradient(135deg, #4C315F, #006064); color:#F2C57C; padding:0.6rem 1rem; border-radius:8px; margin:-0.5rem -0.5rem 1rem -0.5rem;">📈 Incidence Rate per 1,000</h3>
 <div class="chart-wrapper"><canvas id="a1cIncidenceRateChart"></canvas></div>
 <p class="a1c-note">CDC incidence rates show newly diagnosed diabetes burden by race/ethnicity and place, measured per 1,000 adults.</p>
 </div>
 <div class="chart-card a1c-wide">
-<h3 id="a1cFoodTitle" style="background:#2a1a40; color:#F2C57C !important; padding:0.6rem 1rem; border-radius:8px; margin:-0.5rem -0.5rem 1rem -0.5rem;">🍽️ Bronx Food Insecurity + Poor A1C Evidence</h3>
+<h3 id="a1cFoodTitle" style="background:linear-gradient(135deg, #4C315F, #006064); color:#F2C57C; padding:0.6rem 1rem; border-radius:8px; margin:-0.5rem -0.5rem 1rem -0.5rem;">🍽️ Bronx Food Insecurity + Poor A1C Evidence</h3>
 <div class="chart-wrapper"><canvas id="a1cFoodChart"></canvas></div>
 <p class="a1c-note">Bronx article evidence: Hispanic patients and food-insecure patients carried higher poor-A1C burden in the study population.</p>
 </div>
 </div>
 
 <div class="chart-card" style="margin-top:1.5rem;">
-<h2 style="font-family:var(--font-display); font-size:1.3rem; margin-bottom:1rem; background:#2a1a40; color:#F2C57C !important; padding:0.6rem 1rem; border-radius:8px; margin:-0.5rem -0.5rem 1rem -0.5rem;">📋 A1C Borough Comparison Table</h2>
+<h2 style="font-family:var(--font-display); font-size:1.3rem; margin-bottom:1rem; background:linear-gradient(135deg, #4C315F, #006064); color:#F2C57C; padding:0.6rem 1rem; border-radius:8px; margin:-0.5rem -0.5rem 1rem -0.5rem;">📋 A1C Borough Comparison Table</h2>
 <div style="overflow-x:auto;">
 <table class="data-table">
 <thead><tr><th>Borough</th><th>Diabetes Prevalence</th><th>A1C &gt; 9%</th><th>A1C Results</th><th>Amputations</th><th>Amputation Rate</th><th>Dialysis Cases</th></tr></thead>
@@ -876,12 +889,12 @@ NYC A1C Registry 2022<br/>JAMA / Healio 2025
 </div>
 <!-- ════════════════════ EPI 2025 PAGE ════════════════════ -->
 <div class="page" id="page-epi2025" role="main">
-<section style="padding: 2rem 2rem 1.5rem; background: #0D3D4A !important; border-bottom: 2px solid rgba(242,197,124,0.3);">
-<div style="max-width:1200px; margin:0 auto; display:flex; align-items:center; gap:1.5rem; background: #0A2A2F !important;">
+<section style="padding: 2rem 2rem 1.5rem; background: #0D3D4A; border-bottom: 2px solid rgba(242,197,124,0.3);">
+<div style="max-width:1200px; margin:0 auto; display:flex; align-items:center; gap:1.5rem; background: #0A2A2F;">
 <div style="display:flex; align-items:center; gap:1rem; flex:1;">
 <span style="font-size:2rem;">📈</span>
 <div>
-<h1 style="font-family:'Lora',serif; font-size:clamp(1.4rem,3vw,2rem); color:#F2C57C !important; font-weight:700; line-height:1.1; margin:0;">EPI 2025: NYC Diabetes Inequities</h1>
+<h1 style="font-family:'Lora',serif; font-size:clamp(1.4rem,3vw,2rem); color:#F2C57C; font-weight:700; line-height:1.1; margin:0;">EPI 2025: NYC Diabetes Inequities</h1>
 <p style="font-size:0.82rem; color:rgba(242,197,124,0.6); font-weight:700; letter-spacing:0.12em; text-transform:uppercase; margin:0.3rem 0 0;">Diabetes Prevalence, A1C Control, and Amputations</p>
 </div>
 </div>
@@ -891,20 +904,12 @@ NYC A1C Registry 2022<br/>JAMA / Healio 2025
   </div>
 </div>
 </section>
-<section class="section-panel" style="background:#0D3D4A !important; padding:2.5rem 2rem 3.5rem;">
+<section class="section-panel" style="background:#0D3D4A; padding:2.5rem 2rem 3.5rem;">
 <div class="container" style="max-width:1200px;">
-<div class="chart-card" style="background:var(--bg-card) !important; border:var(--border-gold); margin-bottom:1.4rem;">
-<h2 style="background:#2a1a40; color:#F2C57C !important; padding:0.65rem 1rem; border-radius:8px; margin:0 0 1rem; font-family:var(--font-display);">Diabetes Prevalence Among New York City Adults</h2>
+<div class="chart-card" style="background:var(--bg-card); border:var(--border-gold); margin-bottom:1.4rem;">
+<h2 style="background:linear-gradient(135deg, #4C315F, #006064); color:#F2C57C; padding:0.65rem 1rem; border-radius:8px; margin:0 0 1rem; font-family:var(--font-display);">Diabetes Prevalence Among New York City Adults</h2>
 <p style="color:#140023; line-height:1.75; margin-bottom:0.75rem;">This page summarizes NYC DOHMH's 2025 Epi Data Brief on diabetes and health inequities. In 2022, more than 794,000 New York City adults had diabetes, representing 11.3% of adults citywide.</p>
 <p style="color:#140023; line-height:1.75; margin:0;">The strongest pattern is inequality: the Bronx had the highest borough prevalence, Latino and Black New Yorkers had nearly double the prevalence of white New Yorkers, and very high poverty neighborhoods had the highest amputation burden.</p>
-</div>
-<div class="epi2025-tab-row" role="tablist" aria-label="EPI 2025 chart categories">
-<button class="epi2025-tab active" type="button" data-epi-tab="borough" onclick="setEpi2025Topic('borough')">NYC Boroughs</button>
-<button class="epi2025-tab" type="button" data-epi-tab="race" onclick="setEpi2025Topic('race')">Race/Ethnicity</button>
-<button class="epi2025-tab" type="button" data-epi-tab="age" onclick="setEpi2025Topic('age')">Age</button>
-<button class="epi2025-tab" type="button" data-epi-tab="poverty" onclick="setEpi2025Topic('poverty')">Poverty</button>
-<button class="epi2025-tab" type="button" data-epi-tab="a1c" onclick="setEpi2025Topic('a1c')">A1C Control</button>
-<button class="epi2025-tab" type="button" data-epi-tab="amputation" onclick="setEpi2025Topic('amputation')">Amputations</button>
 </div>
 <div class="epi2025-highlight">
 <div class="epi2025-mini-card">NYC Adults with Diabetes<strong>794K+</strong><span>11.3% of adults in 2022</span></div>
@@ -913,13 +918,13 @@ NYC A1C Registry 2022<br/>JAMA / Healio 2025
 </div>
 <div class="dashboard-grid dashboard-grid-main">
 <div class="chart-card">
-<h3 id="epi2025TopicTitle" style="background:linear-gradient(135deg, #4C315F, #006064) !important; background-color:#006064 !important; color:#F2C57C !important; padding:0.6rem 1rem; border-radius:8px; margin:-0.5rem -0.5rem 1rem -0.5rem;">🏙️ Diabetes Prevalence by Borough — 2022</h3>
+<h3 id="epi2025TopicTitle" style="background:linear-gradient(135deg, #4C315F, #006064); background-color:#006064; color:#F2C57C; padding:0.6rem 1rem; border-radius:8px; margin:-0.5rem -0.5rem 1rem -0.5rem;">🏙️ Diabetes Prevalence by Borough — 2022</h3>
 <div class="chart-wrapper" style="height:330px;">
 <canvas id="epi2025TopicChart"></canvas>
 </div>
 </div>
 <div class="chart-card">
-<h3 id="epi2025TrendTitle" style="background:linear-gradient(135deg, #4C315F, #006064) !important; background-color:#006064 !important; color:#F2C57C !important; padding:0.6rem 1rem; border-radius:8px; margin:-0.5rem -0.5rem 1rem -0.5rem;">Topic Highlight</h3>
+<h3 id="epi2025TrendTitle" style="background:linear-gradient(135deg, #4C315F, #006064); background-color:#006064; color:#F2C57C; padding:0.6rem 1rem; border-radius:8px; margin:-0.5rem -0.5rem 1rem -0.5rem;">Topic Highlight</h3>
 <div style="text-align:center; padding:0.4rem 0 0.9rem;">
 <div id="epi2025HighlightValue" style="font-family:var(--font-display); font-size:2.3rem; color:#2a1a40; font-weight:900;">15.1%</div>
 <div id="epi2025HighlightText" style="color:#140023; font-weight:800;">Bronx had the highest borough prevalence.</div>
@@ -931,7 +936,7 @@ NYC A1C Registry 2022<br/>JAMA / Healio 2025
 </div>
 <div class="dashboard-grid dashboard-grid-main epi2025-detail-section" data-epi-detail="borough a1c" style="margin-top:1.4rem;">
 <div class="chart-card">
-<h3 style="background:#2a1a40; color:#F2C57C !important; padding:0.6rem 1rem; border-radius:8px; margin:-0.5rem -0.5rem 1rem -0.5rem;">🧪 A1C Blood Sugar Control by Borough</h3>
+<h3 style="background:linear-gradient(135deg, #4C315F, #006064); color:#F2C57C; padding:0.6rem 1rem; border-radius:8px; margin:-0.5rem -0.5rem 1rem -0.5rem;">🧪 A1C Blood Sugar Control by Borough</h3>
 <div class="chart-wrapper" style="height:330px;">
 <canvas id="epi2025A1CChart"></canvas>
 </div>
@@ -939,7 +944,7 @@ NYC A1C Registry 2022<br/>JAMA / Healio 2025
 </div>
 <div class="epi2025-detail-section epi2025-separated-section" data-epi-detail="borough race age poverty" style="margin-top:1.4rem;">
 <div class="chart-card epi2025-section-intro">
-<h2 class="epi2025-section-title">Table 1 · Prevalence of Diabetes Among New York City Adults Ages 18 and Older by Demographic Characteristics, 2022</h2>
+<h2 id="epi2025-table1" class="epi2025-section-title">Table 1 · Prevalence of Diabetes Among New York City Adults Ages 18 and Older by Demographic Characteristics, 2022</h2>
 <p class="epi2025-table-note">Source: Community Health Survey, 2022. CHS 2022 includes adults sampled from an address-based sampling / Web frame. Data are weighted to the adult residential population per the American Community Survey, 2021. Data are age-adjusted to the US 2000 Standard Population except those stratified by age group. Cases of gestational diabetes were considered not to have diabetes.</p>
 </div>
 <div class="dashboard-grid dashboard-grid-main" style="margin-top:1rem;">
@@ -962,7 +967,7 @@ NYC A1C Registry 2022<br/>JAMA / Healio 2025
 </div>
 <div class="epi2025-detail-section epi2025-separated-section" data-epi-detail="borough" style="margin-top:1.4rem;">
 <div class="chart-card epi2025-section-intro">
-<h2 class="epi2025-section-title">Table 2 · Diabetes Prevalence by UHF 34 Neighborhood</h2>
+<h2 id="epi2025-table2" class="epi2025-section-title">Table 2 · Diabetes Prevalence by UHF 34 Neighborhood</h2>
 <p class="epi2025-table-note">Community Health Survey 2022 estimates show adult diabetes prevalence by UHF 34 neighborhood. New York City overall: 794,000 adults, 11.3% (95% CI 10.4-12.3). Estimates are weighted to the adult residential population and age-adjusted to the US 2000 Standard Population.</p>
 </div>
 <div class="dashboard-grid dashboard-grid-main" style="margin-top:1rem;">
@@ -975,7 +980,7 @@ NYC A1C Registry 2022<br/>JAMA / Healio 2025
 </div>
 <div class="epi2025-detail-section epi2025-separated-section" data-epi-detail="a1c age poverty borough" style="margin-top:1.4rem;">
 <div class="chart-card epi2025-section-intro">
-<h2 class="epi2025-section-title">Table 3 · Blood Sugar Control Among Adults with Diabetes Receiving Medical Care</h2>
+<h2 id="epi2025-table3" class="epi2025-section-title">Table 3 · Blood Sugar Control Among Adults with Diabetes Receiving Medical Care</h2>
 <p class="epi2025-table-note">NYC A1C Registry 2022 data show the latest A1C distribution among adults with likely diabetes who received medical care. New York City overall: 622,518 adults with an A1C result; 86,768 had last A1C greater than 9%.</p>
 </div>
 <div class="dashboard-grid dashboard-grid-main" style="margin-top:1rem;">
@@ -988,7 +993,7 @@ NYC A1C Registry 2022<br/>JAMA / Healio 2025
 </div>
 <div class="epi2025-detail-section epi2025-separated-section" data-epi-detail="a1c borough" style="margin-top:1.4rem;">
 <div class="chart-card epi2025-section-intro">
-<h2 class="epi2025-section-title">Table 4 · Adults with Diabetes Receiving Medical Care with Last A1C &gt; 9%</h2>
+<h2 id="epi2025-table4" class="epi2025-section-title">Table 4 · Adults with Diabetes Receiving Medical Care with Last A1C &gt; 9%</h2>
 <p class="epi2025-table-note">NYC A1C Registry 2022 data show the number and percent of adults with diabetes whose last A1C was greater than 9%, by UHF 42 neighborhood. New York City overall: 86,768 of 622,518 adults, or 13.9%.</p>
 </div>
 <div class="dashboard-grid dashboard-grid-main" style="margin-top:1rem;">
@@ -1001,7 +1006,7 @@ NYC A1C Registry 2022<br/>JAMA / Healio 2025
 </div>
 <div class="epi2025-detail-section epi2025-separated-section" data-epi-detail="amputation race age poverty borough" style="margin-top:1.4rem;">
 <div class="chart-card epi2025-section-intro">
-<h2 class="epi2025-section-title">Table 5 · Diabetes-Related Lower Extremity Amputations by Demographics</h2>
+<h2 id="epi2025-table5" class="epi2025-section-title">Table 5 · Diabetes-Related Lower Extremity Amputations by Demographics</h2>
 <p class="epi2025-table-note">SPARCS 2022 shows 3,184 diabetes-related lower-extremity amputations among NYC adults. Rates are age-adjusted per 100,000 adults.</p>
 </div>
 <div class="dashboard-grid dashboard-grid-main" style="margin-top:1rem;">
@@ -1015,7 +1020,7 @@ NYC A1C Registry 2022<br/>JAMA / Healio 2025
 </div>
 <div class="epi2025-detail-section epi2025-separated-section" data-epi-detail="amputation borough" style="margin-top:1.4rem;">
 <div class="chart-card epi2025-section-intro">
-<h2 class="epi2025-section-title">Table 6 · Diabetes-Related Amputations by UHF 42 Neighborhood</h2>
+<h2 id="epi2025-table6" class="epi2025-section-title">Table 6 · Diabetes-Related Amputations by UHF 42 Neighborhood</h2>
 <p class="epi2025-table-note">SPARCS inpatient files 2022 show diabetes-related lower extremity amputation rates by UHF 42 neighborhood. New York City overall: 3,184 diabetes-related LEAs, 43.7 per 100,000 adults. Rates are age-adjusted to the US 2000 Standard Population.</p>
 </div>
 <div class="dashboard-grid dashboard-grid-main" style="margin-top:1rem;">
@@ -1027,7 +1032,7 @@ NYC A1C Registry 2022<br/>JAMA / Healio 2025
 </div>
 </div>
 <div class="chart-card" style="margin-top:1.4rem;">
-<h2 class="epi2025-section-title epi2025-title-light">Definitions and Implications</h2>
+<h2 id="epi2025-definitions" class="epi2025-section-title epi2025-title-light">Definitions and Implications</h2>
 <div class="dashboard-grid dashboard-grid-main">
 <div>
 <p class="epi2025-table-note"><strong>Diabetes:</strong> Includes adults who self-reported diagnosed diabetes, were recorded in hospitalization claims with diabetes diagnosis codes, or had a history of two or more A1C tests greater than 6.5%, regardless of diabetes type.</p>
@@ -1040,7 +1045,7 @@ NYC A1C Registry 2022<br/>JAMA / Healio 2025
 </div>
 </div>
 <div class="chart-card" style="margin-top:1.4rem;">
-<h2 style="font-family:var(--font-display); font-size:1.3rem; margin-bottom:1rem; background:#2a1a40; color:#F2C57C !important; padding:0.6rem 1rem; border-radius:8px; margin:-0.5rem -0.5rem 1rem -0.5rem;">📋 EPI 2025 Summary Table</h2>
+<h2 id="epi2025-summary" style="font-family:var(--font-display); font-size:1.3rem; margin-bottom:1rem; background:linear-gradient(135deg, #4C315F, #006064); color:#F2C57C; padding:0.6rem 1rem; border-radius:8px; margin:-0.5rem -0.5rem 1rem -0.5rem;">📋 EPI 2025 Summary Table</h2>
 <div style="overflow-x:auto;">
 <table class="data-table">
 <thead>
@@ -1065,12 +1070,12 @@ NYC A1C Registry 2022<br/>JAMA / Healio 2025
 Cards for article summaries and links to article chart pages
 ========================================================= -->
 <div class="page" id="page-stories">
-<section style="padding: 2rem 2rem 1.5rem; background: #0D3D4A !important; border-bottom: 2px solid rgba(242,197,124,0.3);">
-<div style="max-width:1200px; margin:0 auto; display:flex; align-items:center; gap:1.5rem; background: #0A2A2F !important;">
+<section style="padding: 2rem 2rem 1.5rem; background: #0D3D4A; border-bottom: 2px solid rgba(242,197,124,0.3);">
+<div style="max-width:1200px; margin:0 auto; display:flex; align-items:center; gap:1.5rem; background: #0A2A2F;">
 <div style="display:flex; align-items:center; gap:1rem; flex:1;">
 <span style="font-size:2rem;">📰</span>
 <div>
-<h1 style="font-family:'Lora',serif; font-size:clamp(1.4rem,3vw,2rem); color:#F2C57C !important; font-weight:700; line-height:1.1; margin:0;">Research Articles</h1>
+<h1 style="font-family:'Lora',serif; font-size:clamp(1.4rem,3vw,2rem); color:#F2C57C; font-weight:700; line-height:1.1; margin:0;">Research Articles</h1>
 <p style="font-size:0.82rem; color:rgba(242,197,124,0.6); font-weight:700; letter-spacing:0.12em; text-transform:uppercase; margin:0.3rem 0 0;">Peer-Reviewed Studies</p>
 </div>
 </div>
@@ -1096,23 +1101,23 @@ Cards for article summaries and links to article chart pages
 </label>
 <label>Year
 <select data-filter-year>
-<option value="">All Years</option>
-<option value="2025">2025</option>
-<option value="2024">2024</option>
-<option value="2023">2023</option>
-<option value="2022">2022</option>
+<option style="background:#ffffff;color:#140023;" value="">All Years</option>
+<option style="background:#ffffff;color:#140023;" value="2025">2025</option>
+<option style="background:#ffffff;color:#140023;" value="2024">2024</option>
+<option style="background:#ffffff;color:#140023;" value="2023">2023</option>
+<option style="background:#ffffff;color:#140023;" value="2022">2022</option>
 </select>
 </label>
 <label>Topic
 <select data-filter-topic>
-<option value="">All Topics</option>
-<option value="a1c">A1C / HbA1c</option>
-<option value="amputation">Amputation</option>
-<option value="cgm">CGM</option>
-<option value="food">Food Insecurity</option>
-<option value="incidence">Incidence / Prevalence</option>
-<option value="kidney renal">Kidney / Renal</option>
-<option value="sparcs">SPARCS</option>
+<option style="background:#ffffff;color:#140023;" value="">All Topics</option>
+<option style="background:#ffffff;color:#140023;" value="a1c">A1C / HbA1c</option>
+<option style="background:#ffffff;color:#140023;" value="amputation">Amputation</option>
+<option style="background:#ffffff;color:#140023;" value="cgm">CGM</option>
+<option style="background:#ffffff;color:#140023;" value="food">Food Insecurity</option>
+<option style="background:#ffffff;color:#140023;" value="incidence">Incidence / Prevalence</option>
+<option style="background:#ffffff;color:#140023;" value="kidney renal">Kidney / Renal</option>
+<option style="background:#ffffff;color:#140023;" value="sparcs">SPARCS</option>
 </select>
 </label>
 <button type="button" data-filter-reset>Reset</button>
@@ -1326,7 +1331,7 @@ Shows key findings from the selected article
 </div>
 <!-- Key insight box -->
 <div style="background:linear-gradient(135deg, #4C315F, #006064);border-left:5px solid rgba(242,197,124,0.8);border-radius:10px;padding:14px 18px;margin-bottom:1.5rem;border:2px solid rgba(242,197,124,0.38);">
-<p style="font-size:0.9rem;font-weight:700;color:#FFF1C7 !important;margin:0;">
+<p style="font-size:0.9rem;font-weight:700;color:#FFF1C7;margin:0;">
               🔍 <strong>Key Finding:</strong> Latino and Black New Yorkers have nearly double the diabetes prevalence of white New Yorkers (14.0% and 13.6% vs 7.0%). Males have 3.4× the amputation rate of females (70.5 vs 21 per 100,000). The Bronx has 74.5 amputations per 100,000 — the highest of any borough — driven by the intersection of high diabetes prevalence, poor A1C control, and extreme neighborhood poverty.
             </p>
 </div>
@@ -1379,7 +1384,7 @@ Shows key findings from the selected article
 <div class="chart-wrapper"><canvas id="epiAmpSex"></canvas></div>
 </div>
 </div>
-<p style="font-size:0.75rem;color:#FFF1C7 !important;margin-top:0.5rem;">Source: NYC Dept. of Health &amp; Mental Hygiene — Epi Data Brief No. 146, May 2025 · Tables 1, 3 &amp; 5 · Community Health Survey 2022 · NYC A1C Registry 2022 · SPARCS 2022</p>
+<p style="font-size:0.75rem;color:#FFF1C7;margin-top:0.5rem;">Source: NYC Dept. of Health &amp; Mental Hygiene — Epi Data Brief No. 146, May 2025 · Tables 1, 3 &amp; 5 · Community Health Survey 2022 · NYC A1C Registry 2022 · SPARCS 2022</p>
 <!-- end EPI data dashboard -->
 </div>
 <div class="research-story-toolbar" style="margin-top:1.5rem;">
@@ -1401,7 +1406,7 @@ Shows key findings from the selected article
 <div style="margin-bottom:2.5rem;">
 <div style="background:linear-gradient(135deg, #4C315F, #006064);border:2px solid rgba(242,197,124,0.38);border-radius:14px;padding:1rem 1.25rem;margin-bottom:1.25rem;">
 <h2 style="font-family:var(--font-display);font-size:1.4rem;color:#C8960C;margin:0 0 0.3rem;">📄 Research Article &amp; Data — Food Insecurity</h2>
-<p style="font-size:0.85rem;color:#FFF1C7 !important;font-weight:500;margin:0;">Full data breakdown from Chambers et al. 2024 — Albert Einstein College of Medicine · Bronx, NY</p>
+<p style="font-size:0.85rem;color:#FFF1C7;font-weight:500;margin:0;">Full data breakdown from Chambers et al. 2024 — Albert Einstein College of Medicine · Bronx, NY</p>
 </div>
 <!-- Article card -->
 <!-- Full data dashboard -->
@@ -1442,7 +1447,7 @@ Shows key findings from the selected article
 </div>
 <!-- Key insight box -->
 <div style="background:linear-gradient(135deg, #4C315F, #006064);border-left:5px solid rgba(242,197,124,0.8);border-radius:10px;padding:14px 18px;margin-bottom:1.5rem;border:2px solid rgba(242,197,124,0.38);">
-<p style="font-size:0.9rem;font-weight:700;color:#FFF1C7 !important;margin:0;">
+<p style="font-size:0.9rem;font-weight:700;color:#FFF1C7;margin:0;">
               🔍 <strong style="color:#C8960C;">Counterintuitive Finding:</strong> Patients with food insecurity living in food-SECURE neighborhoods had the HIGHEST odds of poor glycemic control (aOR 1.83) — even higher than those in food-insecure areas (aOR 1.72). Individual food need, not neighborhood food access, is the primary driver.
             </p>
 </div>
@@ -1623,7 +1628,7 @@ Chart.js visualizations based on the selected article
 <div class="chart-wrapper sparcs-all-boroughs-wide-chart"><canvas id="pqiAllBoroughsTrend"></canvas></div>
 </div>
 </div>
-<p style="font-size:0.75rem;color:#FFF1C7 !important;margin-top:0.5rem;">Source: NY State SPARCS De-Identified Adult PQI by County — dataset iqp6-vdi4 · Rates per 100,000 people · 2009–2023</p>
+<p style="font-size:0.75rem;color:#FFF1C7;margin-top:0.5rem;">Source: NY State SPARCS De-Identified Adult PQI by County — dataset iqp6-vdi4 · Rates per 100,000 people · 2009–2023</p>
 <!-- end SPARCS PQI data dashboard -->
 </div>
 <div class="research-story-toolbar" style="margin-top:1.5rem;">
@@ -1661,7 +1666,7 @@ Chart.js visualizations based on the selected article
 <div class="chart-card"><h3>🗺️ State Burden Tiers</h3><div class="chart-wrapper" style="height:320px;"><canvas id="cdcStateTierChart"></canvas></div><div class="article-chart-note"><strong>What this means:</strong> State-level differences matter. A national average can hide places that need stronger prevention, insurance access, food access, and primary care investment.</div></div>
 </div>
 
-<p style="font-size:0.75rem;color:#FFF1C7 !important;margin-top:0.5rem;">Source: CDC archive report, Diabetes Incidence and Prevalence. Charts are simplified dashboard visuals for portfolio storytelling.</p>
+<p style="font-size:0.75rem;color:#FFF1C7;margin-top:0.5rem;">Source: CDC archive report, Diabetes Incidence and Prevalence. Charts are simplified dashboard visuals for portfolio storytelling.</p>
 <div class="research-story-toolbar" style="margin-top:1.5rem;">
 <button class="prdr-action" onclick="showPage('stories')">Back to Research Articles</button>
 </div>
@@ -1697,7 +1702,7 @@ Chart.js visualizations based on the selected article
 <div class="chart-card"><h3>⚖️ Demographic Disparity Signals</h3><div class="chart-wrapper" style="height:320px;"><canvas id="epiPatternsDisparityChart"></canvas></div><div class="article-chart-note"><strong>What this means:</strong> The article’s stratified approach is important because averages can hide differences by race, sex, age, and diabetes type.</div></div>
 </div>
 
-<p style="font-size:0.75rem;color:#FFF1C7 !important;margin-top:0.5rem;">Source: Epidemiological Patterns of Diabetes Mellitus in the United States of America, 1990 to 2024. Charts are simplified dashboard visuals for portfolio storytelling.</p>
+<p style="font-size:0.75rem;color:#FFF1C7;margin-top:0.5rem;">Source: Epidemiological Patterns of Diabetes Mellitus in the United States of America, 1990 to 2024. Charts are simplified dashboard visuals for portfolio storytelling.</p>
 <div class="research-story-toolbar" style="margin-top:1.5rem;">
 <button class="prdr-action" onclick="showPage('stories')">Back to Research Articles</button>
 </div>
@@ -1711,8 +1716,8 @@ Hispanic Diabetes: Data, Culture, and Care.
 Research, Charts & Evidence section.
 ========================================================= -->
 <div class="page" id="page-prdr">
-<section class="section-dark hispanics-research-header" style="background: #0D3D4A !important;">
-<div class="container" style="background: #0A2A2F !important;">
+<section class="section-dark hispanics-research-header" style="background: #0D3D4A;">
+<div class="container" style="background: #0A2A2F;">
 <h1 class="section-title" style="color:white;">Hispanic Diabetes: Data, Culture, and Care</h1>
 <p class="section-sub">Research-backed charts and evidence about diabetes patterns, care access, social determinants, and prevention across Hispanic and Latino communities.</p>
 </div>
@@ -1751,29 +1756,29 @@ Research, Charts & Evidence section.
         </label>
         <label>Year
           <select data-filter-year>
-            <option value="">All Years</option>
-            <option value="2026">2026</option>
-            <option value="2025">2025</option>
-            <option value="2024">2024</option>
-            <option value="2023">2023</option>
-            <option value="2022">2022</option>
-            <option value="2020">2020</option>
-            <option value="2019">2019</option>
+            <option style="background:#ffffff;color:#140023;" value="">All Years</option>
+            <option style="background:#ffffff;color:#140023;" value="2026">2026</option>
+            <option style="background:#ffffff;color:#140023;" value="2025">2025</option>
+            <option style="background:#ffffff;color:#140023;" value="2024">2024</option>
+            <option style="background:#ffffff;color:#140023;" value="2023">2023</option>
+            <option style="background:#ffffff;color:#140023;" value="2022">2022</option>
+            <option style="background:#ffffff;color:#140023;" value="2020">2020</option>
+            <option style="background:#ffffff;color:#140023;" value="2019">2019</option>
           </select>
         </label>
         <label>Topic
           <select data-filter-topic>
-            <option value="">All Topics</option>
-            <option value="a1c|hba1c|glycemic control|blood sugar control">A1C / Control</option>
-            <option value="cgm|continuous glucose monitoring|technology">CGM / Technology</option>
-            <option value="hypertension|heart|blood pressure">Heart / Hypertension</option>
-            <option value="incidence">Incidence</option>
-            <option value="medicare">Medicare</option>
-            <option value="mortality">Mortality</option>
-            <option value="neighborhood|social determinants|sdoh|food access">Neighborhood / SDOH</option>
-            <option value="obesity">Obesity</option>
-            <option value="type 1">Type 1 Diabetes</option>
-            <option value="type 2">Type 2 Diabetes</option>
+            <option style="background:#ffffff;color:#140023;" value="">All Topics</option>
+            <option style="background:#ffffff;color:#140023;" value="a1c|hba1c|glycemic control|blood sugar control">A1C / Control</option>
+            <option style="background:#ffffff;color:#140023;" value="cgm|continuous glucose monitoring|technology">CGM / Technology</option>
+            <option style="background:#ffffff;color:#140023;" value="hypertension|heart|blood pressure">Heart / Hypertension</option>
+            <option style="background:#ffffff;color:#140023;" value="incidence">Incidence</option>
+            <option style="background:#ffffff;color:#140023;" value="medicare">Medicare</option>
+            <option style="background:#ffffff;color:#140023;" value="mortality">Mortality</option>
+            <option style="background:#ffffff;color:#140023;" value="neighborhood|social determinants|sdoh|food access">Neighborhood / SDOH</option>
+            <option style="background:#ffffff;color:#140023;" value="obesity">Obesity</option>
+            <option style="background:#ffffff;color:#140023;" value="type 1">Type 1 Diabetes</option>
+            <option style="background:#ffffff;color:#140023;" value="type 2">Type 2 Diabetes</option>
           </select>
         </label>
         <button type="button" data-filter-reset>Reset</button>
@@ -2534,12 +2539,12 @@ Research, Charts & Evidence section.
 Interactive Tools: reusable analytics utilities section
 ========================================================= -->
 <div class="page" id="page-tools">
-<section style="padding: 2rem 2rem 1.5rem; background: #0D3D4A !important; border-bottom: 2px solid rgba(242,197,124,0.3);">
-<div style="max-width:1200px; margin:0 auto; display:flex; align-items:center; gap:1.5rem; background: #0A2A2F !important;">
+<section style="padding: 2rem 2rem 1.5rem; background: #0D3D4A; border-bottom: 2px solid rgba(242,197,124,0.3);">
+<div style="max-width:1200px; margin:0 auto; display:flex; align-items:center; gap:1.5rem; background: #0A2A2F;">
 <div style="display:flex; align-items:center; gap:1rem; flex:1;">
 <span style="font-size:2rem;">🛠️</span>
 <div>
-<h1 style="font-family:'Lora',serif; font-size:clamp(1.4rem,3vw,2rem); color:#F2C57C !important; font-weight:700; line-height:1.1; margin:0;">Interactive Tools</h1>
+<h1 style="font-family:'Lora',serif; font-size:clamp(1.4rem,3vw,2rem); color:#F2C57C; font-weight:700; line-height:1.1; margin:0;">Interactive Tools</h1>
 <p style="font-size:0.82rem; color:rgba(242,197,124,0.6); font-weight:700; letter-spacing:0.12em; text-transform:uppercase; margin:0.3rem 0 0;">Reusable Analytics Utilities</p>
 </div>
 </div>
@@ -2598,12 +2603,12 @@ Interactive Tools: reusable analytics utilities section
 Reference & Data Sources: datasets, definitions, and methods
 ========================================================= -->
 <div class="page" id="page-reference">
-<section style="padding: 2rem 2rem 1.5rem; background: #0D3D4A !important; border-bottom: 2px solid rgba(242,197,124,0.3);">
-<div style="max-width:1200px; margin:0 auto; display:flex; align-items:center; gap:1.5rem; background: #0A2A2F !important;">
+<section style="padding: 2rem 2rem 1.5rem; background: #0D3D4A; border-bottom: 2px solid rgba(242,197,124,0.3);">
+<div style="max-width:1200px; margin:0 auto; display:flex; align-items:center; gap:1.5rem; background: #0A2A2F;">
 <div style="display:flex; align-items:center; gap:1rem; flex:1;">
 <span style="font-size:2rem;">📚</span>
 <div>
-<h1 style="font-family:'Lora',serif; font-size:clamp(1.4rem,3vw,2rem); color:#F2C57C !important; font-weight:700; line-height:1.1; margin:0;">Reference &amp; Data Sources</h1>
+<h1 style="font-family:'Lora',serif; font-size:clamp(1.4rem,3vw,2rem); color:#F2C57C; font-weight:700; line-height:1.1; margin:0;">Reference &amp; Data Sources</h1>
 <p style="font-size:0.82rem; color:rgba(242,197,124,0.6); font-weight:700; letter-spacing:0.12em; text-transform:uppercase; margin:0.3rem 0 0;">Datasets, Definitions, and Methods</p>
 </div>
 </div>
@@ -2643,7 +2648,7 @@ Reference & Data Sources: datasets, definitions, and methods
 <span class="badge badge-blue" style="font-size:0.82rem;">0 to 17 — Pediatric</span>
 </div>
 </div>
-<a href="https://health.data.ny.gov/Health/Hospital-Inpatient-Discharges-SPARCS-De-Identified/sf4k-39ay/explore/query/SELECT%0A%20%20%60health_service_area%60%2C%0A%20%20%60hospital_county%60%2C%0A%20%20%60operating_certificate_number%60%2C%0A%20%20%60permanent_facility_id%60%2C%0A%20%20%60facility_name%60%2C%0A%20%20%60age_group%60%2C%0A%20%20%60zip_code%60%2C%0A%20%20%60gender%60%2C%0A%20%20%60race%60%2C%0A%20%20%60ethnicity%60%2C%0A%20%20%60length_of_stay%60%2C%0A%20%20%60type_of_admission%60%2C%0A%20%20%60patient_disposition%60%2C%0A%20%20%60discharge_year%60%2C%0A%20%20%60ccsr_diagnosis_code%60%2C%0A%20%20%60ccsr_diagnosis_description%60%2C%0A%20%20%60ccsr_procedure_code%60%2C%0A%20%20%60ccsr_procedure_description%60%2C%0A%20%20%60apr_drg_code%60%2C%0A%20%20%60apr_drg_description%60%2C%0A%20%20%60apr_mdc_code%60%2C%0A%20%20%60apr_mdc_description%60%2C%0A%20%20%60apr_severity_of_illness_code%60%2C%0A%20%20%60apr_severity_of_illness%60%2C%0A%20%20%60apr_risk_of_mortality%60%2C%0A%20%20%60apr_medical_surgical%60%2C%0A%20%20%60payment_typology_1%60%2C%0A%20%20%60payment_typology_2%60%2C%0A%20%20%60payment_typology_3%60%2C%0A%20%20%60birth_weight%60%2C%0A%20%20%60emergency_department_indicator%60%2C%0A%20%20%60total_charges%60%2C%0A%20%20%60total_costs%60%0AWHERE%0A%20%20caseless_one_of%28%0A%20%20%20%20%60ccsr_diagnosis_description%60%2C%0A%20%20%20%20%22DIABETES%20MELLITUS%20WITHOUT%20COMPLICATION%22%2C%0A%20%20%20%20%22DIABETES%20MELLITUS%20WITH%20COMPLICATION%22%2C%0A%20%20%20%20%22PREDIABETES%22%2C%0A%20%20%20%20%22DIABETES%20OR%20ABNORMAL%20GLUCOSE%20TOLERANCE%20COMPLICATING%20PREGNANCY%3B%20CHILDBIRTH%3B%20OR%20THE%20PUERPERIUM%22%0A%20%20%29%0A%20%20AND%20caseless_one_of%28%0A%20%20%20%20%60hospital_county%60%2C%0A%20%20%20%20%22New%20York%22%2C%0A%20%20%20%20%22Kings%22%2C%0A%20%20%20%20%22Queens%22%2C%0A%20%20%20%20%22Richmond%22%2C%0A%20%20%20%20%22Bronx%22%0A%20%20%29%0A%20%20AND%20caseless_one_of%28%60age_group%60%2C%20%220-17%22%29/page/filter" class="sparcs-open-dataset-button" style="display:inline-flex;align-items:center;gap:6px;background:#0B4F5A !important;color:#FFF1C7 !important;padding:6px 14px;border-radius:8px;font-size:0.82rem;font-weight:700;text-decoration:none;font-family:var(--font-body);" target="_self">
+<a href="https://health.data.ny.gov/Health/Hospital-Inpatient-Discharges-SPARCS-De-Identified/sf4k-39ay/explore/query/SELECT%0A%20%20%60health_service_area%60%2C%0A%20%20%60hospital_county%60%2C%0A%20%20%60operating_certificate_number%60%2C%0A%20%20%60permanent_facility_id%60%2C%0A%20%20%60facility_name%60%2C%0A%20%20%60age_group%60%2C%0A%20%20%60zip_code%60%2C%0A%20%20%60gender%60%2C%0A%20%20%60race%60%2C%0A%20%20%60ethnicity%60%2C%0A%20%20%60length_of_stay%60%2C%0A%20%20%60type_of_admission%60%2C%0A%20%20%60patient_disposition%60%2C%0A%20%20%60discharge_year%60%2C%0A%20%20%60ccsr_diagnosis_code%60%2C%0A%20%20%60ccsr_diagnosis_description%60%2C%0A%20%20%60ccsr_procedure_code%60%2C%0A%20%20%60ccsr_procedure_description%60%2C%0A%20%20%60apr_drg_code%60%2C%0A%20%20%60apr_drg_description%60%2C%0A%20%20%60apr_mdc_code%60%2C%0A%20%20%60apr_mdc_description%60%2C%0A%20%20%60apr_severity_of_illness_code%60%2C%0A%20%20%60apr_severity_of_illness%60%2C%0A%20%20%60apr_risk_of_mortality%60%2C%0A%20%20%60apr_medical_surgical%60%2C%0A%20%20%60payment_typology_1%60%2C%0A%20%20%60payment_typology_2%60%2C%0A%20%20%60payment_typology_3%60%2C%0A%20%20%60birth_weight%60%2C%0A%20%20%60emergency_department_indicator%60%2C%0A%20%20%60total_charges%60%2C%0A%20%20%60total_costs%60%0AWHERE%0A%20%20caseless_one_of%28%0A%20%20%20%20%60ccsr_diagnosis_description%60%2C%0A%20%20%20%20%22DIABETES%20MELLITUS%20WITHOUT%20COMPLICATION%22%2C%0A%20%20%20%20%22DIABETES%20MELLITUS%20WITH%20COMPLICATION%22%2C%0A%20%20%20%20%22PREDIABETES%22%2C%0A%20%20%20%20%22DIABETES%20OR%20ABNORMAL%20GLUCOSE%20TOLERANCE%20COMPLICATING%20PREGNANCY%3B%20CHILDBIRTH%3B%20OR%20THE%20PUERPERIUM%22%0A%20%20%29%0A%20%20AND%20caseless_one_of%28%0A%20%20%20%20%60hospital_county%60%2C%0A%20%20%20%20%22New%20York%22%2C%0A%20%20%20%20%22Kings%22%2C%0A%20%20%20%20%22Queens%22%2C%0A%20%20%20%20%22Richmond%22%2C%0A%20%20%20%20%22Bronx%22%0A%20%20%29%0A%20%20AND%20caseless_one_of%28%60age_group%60%2C%20%220-17%22%29/page/filter" class="sparcs-open-dataset-button" style="display:inline-flex;align-items:center;gap:6px;background:#0B4F5A;color:#FFF1C7;padding:6px 14px;border-radius:8px;font-size:0.82rem;font-weight:700;text-decoration:none;font-family:var(--font-body);" target="_self">
             Open Dataset ↗
           </a>
 </div>
@@ -2654,7 +2659,7 @@ Reference & Data Sources: datasets, definitions, and methods
 <span class="badge badge-green" style="font-size:0.82rem;">18 to 29 — Young Adult</span>
 </div>
 </div>
-<a href="https://health.data.ny.gov/Health/Hospital-Inpatient-Discharges-SPARCS-De-Identified/sf4k-39ay/explore/query/SELECT%0A%20%20%60health_service_area%60%2C%0A%20%20%60hospital_county%60%2C%0A%20%20%60operating_certificate_number%60%2C%0A%20%20%60permanent_facility_id%60%2C%0A%20%20%60facility_name%60%2C%0A%20%20%60age_group%60%2C%0A%20%20%60zip_code%60%2C%0A%20%20%60gender%60%2C%0A%20%20%60race%60%2C%0A%20%20%60ethnicity%60%2C%0A%20%20%60length_of_stay%60%2C%0A%20%20%60type_of_admission%60%2C%0A%20%20%60patient_disposition%60%2C%0A%20%20%60discharge_year%60%2C%0A%20%20%60ccsr_diagnosis_code%60%2C%0A%20%20%60ccsr_diagnosis_description%60%2C%0A%20%20%60ccsr_procedure_code%60%2C%0A%20%20%60ccsr_procedure_description%60%2C%0A%20%20%60apr_drg_code%60%2C%0A%20%20%60apr_drg_description%60%2C%0A%20%20%60apr_mdc_code%60%2C%0A%20%20%60apr_mdc_description%60%2C%0A%20%20%60apr_severity_of_illness_code%60%2C%0A%20%20%60apr_severity_of_illness%60%2C%0A%20%20%60apr_risk_of_mortality%60%2C%0A%20%20%60apr_medical_surgical%60%2C%0A%20%20%60payment_typology_1%60%2C%0A%20%20%60payment_typology_2%60%2C%0A%20%20%60payment_typology_3%60%2C%0A%20%20%60birth_weight%60%2C%0A%20%20%60emergency_department_indicator%60%2C%0A%20%20%60total_charges%60%2C%0A%20%20%60total_costs%60%0AWHERE%0A%20%20caseless_one_of%28%0A%20%20%20%20%60ccsr_diagnosis_description%60%2C%0A%20%20%20%20%22DIABETES%20MELLITUS%20WITHOUT%20COMPLICATION%22%2C%0A%20%20%20%20%22DIABETES%20MELLITUS%20WITH%20COMPLICATION%22%2C%0A%20%20%20%20%22PREDIABETES%22%2C%0A%20%20%20%20%22DIABETES%20OR%20ABNORMAL%20GLUCOSE%20TOLERANCE%20COMPLICATING%20PREGNANCY%3B%20CHILDBIRTH%3B%20OR%20THE%20PUERPERIUM%22%0A%20%20%29%0A%20%20AND%20caseless_one_of%28%0A%20%20%20%20%60hospital_county%60%2C%0A%20%20%20%20%22New%20York%22%2C%0A%20%20%20%20%22Kings%22%2C%0A%20%20%20%20%22Queens%22%2C%0A%20%20%20%20%22Richmond%22%2C%0A%20%20%20%20%22Bronx%22%0A%20%20%29%0A%20%20AND%20caseless_one_of%28%60age_group%60%2C%20%2218-29%22%29/page/filter" class="sparcs-open-dataset-button" style="display:inline-flex;align-items:center;gap:6px;background:#0B4F5A !important;color:#FFF1C7 !important;padding:6px 14px;border-radius:8px;font-size:0.82rem;font-weight:700;text-decoration:none;font-family:var(--font-body);" target="_self">
+<a href="https://health.data.ny.gov/Health/Hospital-Inpatient-Discharges-SPARCS-De-Identified/sf4k-39ay/explore/query/SELECT%0A%20%20%60health_service_area%60%2C%0A%20%20%60hospital_county%60%2C%0A%20%20%60operating_certificate_number%60%2C%0A%20%20%60permanent_facility_id%60%2C%0A%20%20%60facility_name%60%2C%0A%20%20%60age_group%60%2C%0A%20%20%60zip_code%60%2C%0A%20%20%60gender%60%2C%0A%20%20%60race%60%2C%0A%20%20%60ethnicity%60%2C%0A%20%20%60length_of_stay%60%2C%0A%20%20%60type_of_admission%60%2C%0A%20%20%60patient_disposition%60%2C%0A%20%20%60discharge_year%60%2C%0A%20%20%60ccsr_diagnosis_code%60%2C%0A%20%20%60ccsr_diagnosis_description%60%2C%0A%20%20%60ccsr_procedure_code%60%2C%0A%20%20%60ccsr_procedure_description%60%2C%0A%20%20%60apr_drg_code%60%2C%0A%20%20%60apr_drg_description%60%2C%0A%20%20%60apr_mdc_code%60%2C%0A%20%20%60apr_mdc_description%60%2C%0A%20%20%60apr_severity_of_illness_code%60%2C%0A%20%20%60apr_severity_of_illness%60%2C%0A%20%20%60apr_risk_of_mortality%60%2C%0A%20%20%60apr_medical_surgical%60%2C%0A%20%20%60payment_typology_1%60%2C%0A%20%20%60payment_typology_2%60%2C%0A%20%20%60payment_typology_3%60%2C%0A%20%20%60birth_weight%60%2C%0A%20%20%60emergency_department_indicator%60%2C%0A%20%20%60total_charges%60%2C%0A%20%20%60total_costs%60%0AWHERE%0A%20%20caseless_one_of%28%0A%20%20%20%20%60ccsr_diagnosis_description%60%2C%0A%20%20%20%20%22DIABETES%20MELLITUS%20WITHOUT%20COMPLICATION%22%2C%0A%20%20%20%20%22DIABETES%20MELLITUS%20WITH%20COMPLICATION%22%2C%0A%20%20%20%20%22PREDIABETES%22%2C%0A%20%20%20%20%22DIABETES%20OR%20ABNORMAL%20GLUCOSE%20TOLERANCE%20COMPLICATING%20PREGNANCY%3B%20CHILDBIRTH%3B%20OR%20THE%20PUERPERIUM%22%0A%20%20%29%0A%20%20AND%20caseless_one_of%28%0A%20%20%20%20%60hospital_county%60%2C%0A%20%20%20%20%22New%20York%22%2C%0A%20%20%20%20%22Kings%22%2C%0A%20%20%20%20%22Queens%22%2C%0A%20%20%20%20%22Richmond%22%2C%0A%20%20%20%20%22Bronx%22%0A%20%20%29%0A%20%20AND%20caseless_one_of%28%60age_group%60%2C%20%2218-29%22%29/page/filter" class="sparcs-open-dataset-button" style="display:inline-flex;align-items:center;gap:6px;background:#0B4F5A;color:#FFF1C7;padding:6px 14px;border-radius:8px;font-size:0.82rem;font-weight:700;text-decoration:none;font-family:var(--font-body);" target="_self">
             Open Dataset ↗
           </a>
 </div>
@@ -2665,7 +2670,7 @@ Reference & Data Sources: datasets, definitions, and methods
 <span class="badge badge-amber" style="font-size:0.82rem;">30 to 49 — Adult</span>
 </div>
 </div>
-<a href="https://health.data.ny.gov/Health/Hospital-Inpatient-Discharges-SPARCS-De-Identified/sf4k-39ay/explore/query/SELECT%0A%20%20%60health_service_area%60%2C%0A%20%20%60hospital_county%60%2C%0A%20%20%60operating_certificate_number%60%2C%0A%20%20%60permanent_facility_id%60%2C%0A%20%20%60facility_name%60%2C%0A%20%20%60age_group%60%2C%0A%20%20%60zip_code%60%2C%0A%20%20%60gender%60%2C%0A%20%20%60race%60%2C%0A%20%20%60ethnicity%60%2C%0A%20%20%60length_of_stay%60%2C%0A%20%20%60type_of_admission%60%2C%0A%20%20%60patient_disposition%60%2C%0A%20%20%60discharge_year%60%2C%0A%20%20%60ccsr_diagnosis_code%60%2C%0A%20%20%60ccsr_diagnosis_description%60%2C%0A%20%20%60ccsr_procedure_code%60%2C%0A%20%20%60ccsr_procedure_description%60%2C%0A%20%20%60apr_drg_code%60%2C%0A%20%20%60apr_drg_description%60%2C%0A%20%20%60apr_mdc_code%60%2C%0A%20%20%60apr_mdc_description%60%2C%0A%20%20%60apr_severity_of_illness_code%60%2C%0A%20%20%60apr_severity_of_illness%60%2C%0A%20%20%60apr_risk_of_mortality%60%2C%0A%20%20%60apr_medical_surgical%60%2C%0A%20%20%60payment_typology_1%60%2C%0A%20%20%60payment_typology_2%60%2C%0A%20%20%60payment_typology_3%60%2C%0A%20%20%60birth_weight%60%2C%0A%20%20%60emergency_department_indicator%60%2C%0A%20%20%60total_charges%60%2C%0A%20%20%60total_costs%60%0AWHERE%0A%20%20caseless_one_of%28%0A%20%20%20%20%60ccsr_diagnosis_description%60%2C%0A%20%20%20%20%22DIABETES%20MELLITUS%20WITHOUT%20COMPLICATION%22%2C%0A%20%20%20%20%22DIABETES%20MELLITUS%20WITH%20COMPLICATION%22%2C%0A%20%20%20%20%22PREDIABETES%22%2C%0A%20%20%20%20%22DIABETES%20OR%20ABNORMAL%20GLUCOSE%20TOLERANCE%20COMPLICATING%20PREGNANCY%3B%20CHILDBIRTH%3B%20OR%20THE%20PUERPERIUM%22%0A%20%20%29%0A%20%20AND%20caseless_one_of%28%0A%20%20%20%20%60hospital_county%60%2C%0A%20%20%20%20%22New%20York%22%2C%0A%20%20%20%20%22Kings%22%2C%0A%20%20%20%20%22Queens%22%2C%0A%20%20%20%20%22Richmond%22%2C%0A%20%20%20%20%22Bronx%22%0A%20%20%29%0A%20%20AND%20caseless_one_of%28%60age_group%60%2C%20%2230-49%22%29/page/filter" class="sparcs-open-dataset-button" style="display:inline-flex;align-items:center;gap:6px;background:#0B4F5A !important;color:#FFF1C7 !important;padding:6px 14px;border-radius:8px;font-size:0.82rem;font-weight:700;text-decoration:none;font-family:var(--font-body);" target="_self">
+<a href="https://health.data.ny.gov/Health/Hospital-Inpatient-Discharges-SPARCS-De-Identified/sf4k-39ay/explore/query/SELECT%0A%20%20%60health_service_area%60%2C%0A%20%20%60hospital_county%60%2C%0A%20%20%60operating_certificate_number%60%2C%0A%20%20%60permanent_facility_id%60%2C%0A%20%20%60facility_name%60%2C%0A%20%20%60age_group%60%2C%0A%20%20%60zip_code%60%2C%0A%20%20%60gender%60%2C%0A%20%20%60race%60%2C%0A%20%20%60ethnicity%60%2C%0A%20%20%60length_of_stay%60%2C%0A%20%20%60type_of_admission%60%2C%0A%20%20%60patient_disposition%60%2C%0A%20%20%60discharge_year%60%2C%0A%20%20%60ccsr_diagnosis_code%60%2C%0A%20%20%60ccsr_diagnosis_description%60%2C%0A%20%20%60ccsr_procedure_code%60%2C%0A%20%20%60ccsr_procedure_description%60%2C%0A%20%20%60apr_drg_code%60%2C%0A%20%20%60apr_drg_description%60%2C%0A%20%20%60apr_mdc_code%60%2C%0A%20%20%60apr_mdc_description%60%2C%0A%20%20%60apr_severity_of_illness_code%60%2C%0A%20%20%60apr_severity_of_illness%60%2C%0A%20%20%60apr_risk_of_mortality%60%2C%0A%20%20%60apr_medical_surgical%60%2C%0A%20%20%60payment_typology_1%60%2C%0A%20%20%60payment_typology_2%60%2C%0A%20%20%60payment_typology_3%60%2C%0A%20%20%60birth_weight%60%2C%0A%20%20%60emergency_department_indicator%60%2C%0A%20%20%60total_charges%60%2C%0A%20%20%60total_costs%60%0AWHERE%0A%20%20caseless_one_of%28%0A%20%20%20%20%60ccsr_diagnosis_description%60%2C%0A%20%20%20%20%22DIABETES%20MELLITUS%20WITHOUT%20COMPLICATION%22%2C%0A%20%20%20%20%22DIABETES%20MELLITUS%20WITH%20COMPLICATION%22%2C%0A%20%20%20%20%22PREDIABETES%22%2C%0A%20%20%20%20%22DIABETES%20OR%20ABNORMAL%20GLUCOSE%20TOLERANCE%20COMPLICATING%20PREGNANCY%3B%20CHILDBIRTH%3B%20OR%20THE%20PUERPERIUM%22%0A%20%20%29%0A%20%20AND%20caseless_one_of%28%0A%20%20%20%20%60hospital_county%60%2C%0A%20%20%20%20%22New%20York%22%2C%0A%20%20%20%20%22Kings%22%2C%0A%20%20%20%20%22Queens%22%2C%0A%20%20%20%20%22Richmond%22%2C%0A%20%20%20%20%22Bronx%22%0A%20%20%29%0A%20%20AND%20caseless_one_of%28%60age_group%60%2C%20%2230-49%22%29/page/filter" class="sparcs-open-dataset-button" style="display:inline-flex;align-items:center;gap:6px;background:#0B4F5A;color:#FFF1C7;padding:6px 14px;border-radius:8px;font-size:0.82rem;font-weight:700;text-decoration:none;font-family:var(--font-body);" target="_self">
             Open Dataset ↗
           </a>
 </div>
@@ -2676,7 +2681,7 @@ Reference & Data Sources: datasets, definitions, and methods
 <span class="badge badge-accent" style="font-size:0.82rem;">50 to 69 — Middle-Older Adult</span>
 </div>
 </div>
-<a href="https://health.data.ny.gov/Health/Hospital-Inpatient-Discharges-SPARCS-De-Identified/sf4k-39ay/explore/query/SELECT%0A%20%20%60health_service_area%60%2C%0A%20%20%60hospital_county%60%2C%0A%20%20%60operating_certificate_number%60%2C%0A%20%20%60permanent_facility_id%60%2C%0A%20%20%60facility_name%60%2C%0A%20%20%60age_group%60%2C%0A%20%20%60zip_code%60%2C%0A%20%20%60gender%60%2C%0A%20%20%60race%60%2C%0A%20%20%60ethnicity%60%2C%0A%20%20%60length_of_stay%60%2C%0A%20%20%60type_of_admission%60%2C%0A%20%20%60patient_disposition%60%2C%0A%20%20%60discharge_year%60%2C%0A%20%20%60ccsr_diagnosis_code%60%2C%0A%20%20%60ccsr_diagnosis_description%60%2C%0A%20%20%60ccsr_procedure_code%60%2C%0A%20%20%60ccsr_procedure_description%60%2C%0A%20%20%60apr_drg_code%60%2C%0A%20%20%60apr_drg_description%60%2C%0A%20%20%60apr_mdc_code%60%2C%0A%20%20%60apr_mdc_description%60%2C%0A%20%20%60apr_severity_of_illness_code%60%2C%0A%20%20%60apr_severity_of_illness%60%2C%0A%20%20%60apr_risk_of_mortality%60%2C%0A%20%20%60apr_medical_surgical%60%2C%0A%20%20%60payment_typology_1%60%2C%0A%20%20%60payment_typology_2%60%2C%0A%20%20%60payment_typology_3%60%2C%0A%20%20%60birth_weight%60%2C%0A%20%20%60emergency_department_indicator%60%2C%0A%20%20%60total_charges%60%2C%0A%20%20%60total_costs%60%0AWHERE%0A%20%20caseless_one_of%28%0A%20%20%20%20%60ccsr_diagnosis_description%60%2C%0A%20%20%20%20%22DIABETES%20MELLITUS%20WITHOUT%20COMPLICATION%22%2C%0A%20%20%20%20%22DIABETES%20MELLITUS%20WITH%20COMPLICATION%22%2C%0A%20%20%20%20%22PREDIABETES%22%2C%0A%20%20%20%20%22DIABETES%20OR%20ABNORMAL%20GLUCOSE%20TOLERANCE%20COMPLICATING%20PREGNANCY%3B%20CHILDBIRTH%3B%20OR%20THE%20PUERPERIUM%22%0A%20%20%29%0A%20%20AND%20caseless_one_of%28%0A%20%20%20%20%60hospital_county%60%2C%0A%20%20%20%20%22New%20York%22%2C%0A%20%20%20%20%22Kings%22%2C%0A%20%20%20%20%22Queens%22%2C%0A%20%20%20%20%22Richmond%22%2C%0A%20%20%20%20%22Bronx%22%0A%20%20%29%0A%20%20AND%20caseless_one_of%28%60age_group%60%2C%20%2250-69%22%29/page/filter" class="sparcs-open-dataset-button" style="display:inline-flex;align-items:center;gap:6px;background:#0B4F5A !important;color:#FFF1C7 !important;padding:6px 14px;border-radius:8px;font-size:0.82rem;font-weight:700;text-decoration:none;font-family:var(--font-body);" target="_self">
+<a href="https://health.data.ny.gov/Health/Hospital-Inpatient-Discharges-SPARCS-De-Identified/sf4k-39ay/explore/query/SELECT%0A%20%20%60health_service_area%60%2C%0A%20%20%60hospital_county%60%2C%0A%20%20%60operating_certificate_number%60%2C%0A%20%20%60permanent_facility_id%60%2C%0A%20%20%60facility_name%60%2C%0A%20%20%60age_group%60%2C%0A%20%20%60zip_code%60%2C%0A%20%20%60gender%60%2C%0A%20%20%60race%60%2C%0A%20%20%60ethnicity%60%2C%0A%20%20%60length_of_stay%60%2C%0A%20%20%60type_of_admission%60%2C%0A%20%20%60patient_disposition%60%2C%0A%20%20%60discharge_year%60%2C%0A%20%20%60ccsr_diagnosis_code%60%2C%0A%20%20%60ccsr_diagnosis_description%60%2C%0A%20%20%60ccsr_procedure_code%60%2C%0A%20%20%60ccsr_procedure_description%60%2C%0A%20%20%60apr_drg_code%60%2C%0A%20%20%60apr_drg_description%60%2C%0A%20%20%60apr_mdc_code%60%2C%0A%20%20%60apr_mdc_description%60%2C%0A%20%20%60apr_severity_of_illness_code%60%2C%0A%20%20%60apr_severity_of_illness%60%2C%0A%20%20%60apr_risk_of_mortality%60%2C%0A%20%20%60apr_medical_surgical%60%2C%0A%20%20%60payment_typology_1%60%2C%0A%20%20%60payment_typology_2%60%2C%0A%20%20%60payment_typology_3%60%2C%0A%20%20%60birth_weight%60%2C%0A%20%20%60emergency_department_indicator%60%2C%0A%20%20%60total_charges%60%2C%0A%20%20%60total_costs%60%0AWHERE%0A%20%20caseless_one_of%28%0A%20%20%20%20%60ccsr_diagnosis_description%60%2C%0A%20%20%20%20%22DIABETES%20MELLITUS%20WITHOUT%20COMPLICATION%22%2C%0A%20%20%20%20%22DIABETES%20MELLITUS%20WITH%20COMPLICATION%22%2C%0A%20%20%20%20%22PREDIABETES%22%2C%0A%20%20%20%20%22DIABETES%20OR%20ABNORMAL%20GLUCOSE%20TOLERANCE%20COMPLICATING%20PREGNANCY%3B%20CHILDBIRTH%3B%20OR%20THE%20PUERPERIUM%22%0A%20%20%29%0A%20%20AND%20caseless_one_of%28%0A%20%20%20%20%60hospital_county%60%2C%0A%20%20%20%20%22New%20York%22%2C%0A%20%20%20%20%22Kings%22%2C%0A%20%20%20%20%22Queens%22%2C%0A%20%20%20%20%22Richmond%22%2C%0A%20%20%20%20%22Bronx%22%0A%20%20%29%0A%20%20AND%20caseless_one_of%28%60age_group%60%2C%20%2250-69%22%29/page/filter" class="sparcs-open-dataset-button" style="display:inline-flex;align-items:center;gap:6px;background:#0B4F5A;color:#FFF1C7;padding:6px 14px;border-radius:8px;font-size:0.82rem;font-weight:700;text-decoration:none;font-family:var(--font-body);" target="_self">
             Open Dataset ↗
           </a>
 </div>
@@ -2687,7 +2692,7 @@ Reference & Data Sources: datasets, definitions, and methods
 <span class="badge badge-blue" style="font-size:0.82rem;">70 or Older — Elderly</span>
 </div>
 </div>
-<a href="https://health.data.ny.gov/Health/Hospital-Inpatient-Discharges-SPARCS-De-Identified/sf4k-39ay/explore/query/SELECT%0A%20%20%60health_service_area%60%2C%0A%20%20%60hospital_county%60%2C%0A%20%20%60operating_certificate_number%60%2C%0A%20%20%60permanent_facility_id%60%2C%0A%20%20%60facility_name%60%2C%0A%20%20%60age_group%60%2C%0A%20%20%60zip_code%60%2C%0A%20%20%60gender%60%2C%0A%20%20%60race%60%2C%0A%20%20%60ethnicity%60%2C%0A%20%20%60length_of_stay%60%2C%0A%20%20%60type_of_admission%60%2C%0A%20%20%60patient_disposition%60%2C%0A%20%20%60discharge_year%60%2C%0A%20%20%60ccsr_diagnosis_code%60%2C%0A%20%20%60ccsr_diagnosis_description%60%2C%0A%20%20%60ccsr_procedure_code%60%2C%0A%20%20%60ccsr_procedure_description%60%2C%0A%20%20%60apr_drg_code%60%2C%0A%20%20%60apr_drg_description%60%2C%0A%20%20%60apr_mdc_code%60%2C%0A%20%20%60apr_mdc_description%60%2C%0A%20%20%60apr_severity_of_illness_code%60%2C%0A%20%20%60apr_severity_of_illness%60%2C%0A%20%20%60apr_risk_of_mortality%60%2C%0A%20%20%60apr_medical_surgical%60%2C%0A%20%20%60payment_typology_1%60%2C%0A%20%20%60payment_typology_2%60%2C%0A%20%20%60payment_typology_3%60%2C%0A%20%20%60birth_weight%60%2C%0A%20%20%60emergency_department_indicator%60%2C%0A%20%20%60total_charges%60%2C%0A%20%20%60total_costs%60%0AWHERE%0A%20%20caseless_one_of%28%0A%20%20%20%20%60ccsr_diagnosis_description%60%2C%0A%20%20%20%20%22DIABETES%20MELLITUS%20WITHOUT%20COMPLICATION%22%2C%0A%20%20%20%20%22DIABETES%20MELLITUS%20WITH%20COMPLICATION%22%2C%0A%20%20%20%20%22PREDIABETES%22%2C%0A%20%20%20%20%22DIABETES%20OR%20ABNORMAL%20GLUCOSE%20TOLERANCE%20COMPLICATING%20PREGNANCY%3B%20CHILDBIRTH%3B%20OR%20THE%20PUERPERIUM%22%0A%20%20%29%0A%20%20AND%20caseless_one_of%28%0A%20%20%20%20%60hospital_county%60%2C%0A%20%20%20%20%22New%20York%22%2C%0A%20%20%20%20%22Kings%22%2C%0A%20%20%20%20%22Queens%22%2C%0A%20%20%20%20%22Richmond%22%2C%0A%20%20%20%20%22Bronx%22%0A%20%20%29%0A%20%20AND%20caseless_one_of%28%60age_group%60%2C%20%2270%20or%20Older%22%29/page/filter" class="sparcs-open-dataset-button" style="display:inline-flex;align-items:center;gap:6px;background:#0B4F5A !important;color:#FFF1C7 !important;padding:6px 14px;border-radius:8px;font-size:0.82rem;font-weight:700;text-decoration:none;font-family:var(--font-body);" target="_self">
+<a href="https://health.data.ny.gov/Health/Hospital-Inpatient-Discharges-SPARCS-De-Identified/sf4k-39ay/explore/query/SELECT%0A%20%20%60health_service_area%60%2C%0A%20%20%60hospital_county%60%2C%0A%20%20%60operating_certificate_number%60%2C%0A%20%20%60permanent_facility_id%60%2C%0A%20%20%60facility_name%60%2C%0A%20%20%60age_group%60%2C%0A%20%20%60zip_code%60%2C%0A%20%20%60gender%60%2C%0A%20%20%60race%60%2C%0A%20%20%60ethnicity%60%2C%0A%20%20%60length_of_stay%60%2C%0A%20%20%60type_of_admission%60%2C%0A%20%20%60patient_disposition%60%2C%0A%20%20%60discharge_year%60%2C%0A%20%20%60ccsr_diagnosis_code%60%2C%0A%20%20%60ccsr_diagnosis_description%60%2C%0A%20%20%60ccsr_procedure_code%60%2C%0A%20%20%60ccsr_procedure_description%60%2C%0A%20%20%60apr_drg_code%60%2C%0A%20%20%60apr_drg_description%60%2C%0A%20%20%60apr_mdc_code%60%2C%0A%20%20%60apr_mdc_description%60%2C%0A%20%20%60apr_severity_of_illness_code%60%2C%0A%20%20%60apr_severity_of_illness%60%2C%0A%20%20%60apr_risk_of_mortality%60%2C%0A%20%20%60apr_medical_surgical%60%2C%0A%20%20%60payment_typology_1%60%2C%0A%20%20%60payment_typology_2%60%2C%0A%20%20%60payment_typology_3%60%2C%0A%20%20%60birth_weight%60%2C%0A%20%20%60emergency_department_indicator%60%2C%0A%20%20%60total_charges%60%2C%0A%20%20%60total_costs%60%0AWHERE%0A%20%20caseless_one_of%28%0A%20%20%20%20%60ccsr_diagnosis_description%60%2C%0A%20%20%20%20%22DIABETES%20MELLITUS%20WITHOUT%20COMPLICATION%22%2C%0A%20%20%20%20%22DIABETES%20MELLITUS%20WITH%20COMPLICATION%22%2C%0A%20%20%20%20%22PREDIABETES%22%2C%0A%20%20%20%20%22DIABETES%20OR%20ABNORMAL%20GLUCOSE%20TOLERANCE%20COMPLICATING%20PREGNANCY%3B%20CHILDBIRTH%3B%20OR%20THE%20PUERPERIUM%22%0A%20%20%29%0A%20%20AND%20caseless_one_of%28%0A%20%20%20%20%60hospital_county%60%2C%0A%20%20%20%20%22New%20York%22%2C%0A%20%20%20%20%22Kings%22%2C%0A%20%20%20%20%22Queens%22%2C%0A%20%20%20%20%22Richmond%22%2C%0A%20%20%20%20%22Bronx%22%0A%20%20%29%0A%20%20AND%20caseless_one_of%28%60age_group%60%2C%20%2270%20or%20Older%22%29/page/filter" class="sparcs-open-dataset-button" style="display:inline-flex;align-items:center;gap:6px;background:#0B4F5A;color:#FFF1C7;padding:6px 14px;border-radius:8px;font-size:0.82rem;font-weight:700;text-decoration:none;font-family:var(--font-body);" target="_self">
             Open Dataset ↗
           </a>
 </div>
@@ -2709,7 +2714,7 @@ Reference & Data Sources: datasets, definitions, and methods
 <span class="badge badge-blue" style="font-size:0.82rem;">0 to 17 — Pediatric</span>
 </div>
 </div>
-<a href="https://health.data.ny.gov/Health/Hospital-Inpatient-Discharges-SPARCS-De-Identified/46xm-urtu/explore/query/SELECT%0A%20%20%60hospital_service_area%60%2C%0A%20%20%60hospital_county%60%2C%0A%20%20%60operating_certificate_number%60%2C%0A%20%20%60permanent_facility_id%60%2C%0A%20%20%60facility_name%60%2C%0A%20%20%60age_group%60%2C%0A%20%20%60zip_code_3_digits%60%2C%0A%20%20%60gender%60%2C%0A%20%20%60race%60%2C%0A%20%20%60ethnicity%60%2C%0A%20%20%60length_of_stay%60%2C%0A%20%20%60type_of_admission%60%2C%0A%20%20%60patient_disposition%60%2C%0A%20%20%60discharge_year%60%2C%0A%20%20%60ccsr_diagnosis_code%60%2C%0A%20%20%60ccsr_diagnosis_description%60%2C%0A%20%20%60ccsr_procedure_code%60%2C%0A%20%20%60ccsr_procedure_description%60%2C%0A%20%20%60apr_drg_code%60%2C%0A%20%20%60apr_drg_description%60%2C%0A%20%20%60apr_mdc_code%60%2C%0A%20%20%60apr_mdc_description%60%2C%0A%20%20%60apr_severity_of_illness_code%60%2C%0A%20%20%60apr_severity_of_illness%60%2C%0A%20%20%60apr_risk_of_mortality%60%2C%0A%20%20%60apr_medical_surgical%60%2C%0A%20%20%60payment_typology_1%60%2C%0A%20%20%60payment_typology_2%60%2C%0A%20%20%60payment_typology_3%60%2C%0A%20%20%60birth_weight%60%2C%0A%20%20%60emergency_department_indicator%60%2C%0A%20%20%60total_charges%60%2C%0A%20%20%60total_costs%60%0AWHERE%0A%20%20caseless_one_of%28%0A%20%20%20%20%60ccsr_diagnosis_description%60%2C%0A%20%20%20%20%22Diabetes%20mellitus%20without%20complication%22%2C%0A%20%20%20%20%22Diabetes%20mellitus%20with%20complication%22%2C%0A%20%20%20%20%22Diabetes%20or%20abnormal%20glucose%20tolerance%20complicating%20pregnancy%3B%20childbirth%3B%20or%20the%20puerperium%22%2C%0A%20%20%20%20%22Prediabetes%22%0A%20%20%29%0A%20%20AND%20caseless_one_of%28%0A%20%20%20%20%60hospital_county%60%2C%0A%20%20%20%20%22Bronx%22%2C%0A%20%20%20%20%22Manhattan%22%2C%0A%20%20%20%20%22Kings%22%2C%0A%20%20%20%20%22Richmond%22%2C%0A%20%20%20%20%22Queens%22%0A%20%20%29%0A%20%20AND%20caseless_one_of%28%60age_group%60%2C%20%220%20to%2017%22%29/page/filter" class="sparcs-open-dataset-button" style="display:inline-flex;align-items:center;gap:6px;background:#0B4F5A !important;color:#FFF1C7 !important;padding:6px 14px;border-radius:8px;font-size:0.82rem;font-weight:700;text-decoration:none;font-family:var(--font-body);" target="_self">
+<a href="https://health.data.ny.gov/Health/Hospital-Inpatient-Discharges-SPARCS-De-Identified/46xm-urtu/explore/query/SELECT%0A%20%20%60hospital_service_area%60%2C%0A%20%20%60hospital_county%60%2C%0A%20%20%60operating_certificate_number%60%2C%0A%20%20%60permanent_facility_id%60%2C%0A%20%20%60facility_name%60%2C%0A%20%20%60age_group%60%2C%0A%20%20%60zip_code_3_digits%60%2C%0A%20%20%60gender%60%2C%0A%20%20%60race%60%2C%0A%20%20%60ethnicity%60%2C%0A%20%20%60length_of_stay%60%2C%0A%20%20%60type_of_admission%60%2C%0A%20%20%60patient_disposition%60%2C%0A%20%20%60discharge_year%60%2C%0A%20%20%60ccsr_diagnosis_code%60%2C%0A%20%20%60ccsr_diagnosis_description%60%2C%0A%20%20%60ccsr_procedure_code%60%2C%0A%20%20%60ccsr_procedure_description%60%2C%0A%20%20%60apr_drg_code%60%2C%0A%20%20%60apr_drg_description%60%2C%0A%20%20%60apr_mdc_code%60%2C%0A%20%20%60apr_mdc_description%60%2C%0A%20%20%60apr_severity_of_illness_code%60%2C%0A%20%20%60apr_severity_of_illness%60%2C%0A%20%20%60apr_risk_of_mortality%60%2C%0A%20%20%60apr_medical_surgical%60%2C%0A%20%20%60payment_typology_1%60%2C%0A%20%20%60payment_typology_2%60%2C%0A%20%20%60payment_typology_3%60%2C%0A%20%20%60birth_weight%60%2C%0A%20%20%60emergency_department_indicator%60%2C%0A%20%20%60total_charges%60%2C%0A%20%20%60total_costs%60%0AWHERE%0A%20%20caseless_one_of%28%0A%20%20%20%20%60ccsr_diagnosis_description%60%2C%0A%20%20%20%20%22Diabetes%20mellitus%20without%20complication%22%2C%0A%20%20%20%20%22Diabetes%20mellitus%20with%20complication%22%2C%0A%20%20%20%20%22Diabetes%20or%20abnormal%20glucose%20tolerance%20complicating%20pregnancy%3B%20childbirth%3B%20or%20the%20puerperium%22%2C%0A%20%20%20%20%22Prediabetes%22%0A%20%20%29%0A%20%20AND%20caseless_one_of%28%0A%20%20%20%20%60hospital_county%60%2C%0A%20%20%20%20%22Bronx%22%2C%0A%20%20%20%20%22Manhattan%22%2C%0A%20%20%20%20%22Kings%22%2C%0A%20%20%20%20%22Richmond%22%2C%0A%20%20%20%20%22Queens%22%0A%20%20%29%0A%20%20AND%20caseless_one_of%28%60age_group%60%2C%20%220%20to%2017%22%29/page/filter" class="sparcs-open-dataset-button" style="display:inline-flex;align-items:center;gap:6px;background:#0B4F5A;color:#FFF1C7;padding:6px 14px;border-radius:8px;font-size:0.82rem;font-weight:700;text-decoration:none;font-family:var(--font-body);" target="_self">
             Open Dataset ↗
           </a>
 </div>
@@ -2720,7 +2725,7 @@ Reference & Data Sources: datasets, definitions, and methods
 <span class="badge badge-green" style="font-size:0.82rem;">18 to 29 — Young Adult</span>
 </div>
 </div>
-<a href="https://health.data.ny.gov/Health/Hospital-Inpatient-Discharges-SPARCS-De-Identified/46xm-urtu/explore/query/SELECT%0A%20%20%60hospital_service_area%60%2C%0A%20%20%60hospital_county%60%2C%0A%20%20%60operating_certificate_number%60%2C%0A%20%20%60permanent_facility_id%60%2C%0A%20%20%60facility_name%60%2C%0A%20%20%60age_group%60%2C%0A%20%20%60zip_code_3_digits%60%2C%0A%20%20%60gender%60%2C%0A%20%20%60race%60%2C%0A%20%20%60ethnicity%60%2C%0A%20%20%60length_of_stay%60%2C%0A%20%20%60type_of_admission%60%2C%0A%20%20%60patient_disposition%60%2C%0A%20%20%60discharge_year%60%2C%0A%20%20%60ccsr_diagnosis_code%60%2C%0A%20%20%60ccsr_diagnosis_description%60%2C%0A%20%20%60ccsr_procedure_code%60%2C%0A%20%20%60ccsr_procedure_description%60%2C%0A%20%20%60apr_drg_code%60%2C%0A%20%20%60apr_drg_description%60%2C%0A%20%20%60apr_mdc_code%60%2C%0A%20%20%60apr_mdc_description%60%2C%0A%20%20%60apr_severity_of_illness_code%60%2C%0A%20%20%60apr_severity_of_illness%60%2C%0A%20%20%60apr_risk_of_mortality%60%2C%0A%20%20%60apr_medical_surgical%60%2C%0A%20%20%60payment_typology_1%60%2C%0A%20%20%60payment_typology_2%60%2C%0A%20%20%60payment_typology_3%60%2C%0A%20%20%60birth_weight%60%2C%0A%20%20%60emergency_department_indicator%60%2C%0A%20%20%60total_charges%60%2C%0A%20%20%60total_costs%60%0AWHERE%0A%20%20caseless_one_of%28%0A%20%20%20%20%60ccsr_diagnosis_description%60%2C%0A%20%20%20%20%22Diabetes%20mellitus%20without%20complication%22%2C%0A%20%20%20%20%22Diabetes%20mellitus%20with%20complication%22%2C%0A%20%20%20%20%22Diabetes%20or%20abnormal%20glucose%20tolerance%20complicating%20pregnancy%3B%20childbirth%3B%20or%20the%20puerperium%22%2C%0A%20%20%20%20%22Prediabetes%22%0A%20%20%29%0A%20%20AND%20caseless_one_of%28%0A%20%20%20%20%60hospital_county%60%2C%0A%20%20%20%20%22Bronx%22%2C%0A%20%20%20%20%22Manhattan%22%2C%0A%20%20%20%20%22Kings%22%2C%0A%20%20%20%20%22Richmond%22%2C%0A%20%20%20%20%22Queens%22%0A%20%20%29%0A%20%20AND%20caseless_one_of%28%60age_group%60%2C%20%2218%20to%2029%22%29/page/filter" class="sparcs-open-dataset-button" style="display:inline-flex;align-items:center;gap:6px;background:#0B4F5A !important;color:#FFF1C7 !important;padding:6px 14px;border-radius:8px;font-size:0.82rem;font-weight:700;text-decoration:none;font-family:var(--font-body);" target="_self">
+<a href="https://health.data.ny.gov/Health/Hospital-Inpatient-Discharges-SPARCS-De-Identified/46xm-urtu/explore/query/SELECT%0A%20%20%60hospital_service_area%60%2C%0A%20%20%60hospital_county%60%2C%0A%20%20%60operating_certificate_number%60%2C%0A%20%20%60permanent_facility_id%60%2C%0A%20%20%60facility_name%60%2C%0A%20%20%60age_group%60%2C%0A%20%20%60zip_code_3_digits%60%2C%0A%20%20%60gender%60%2C%0A%20%20%60race%60%2C%0A%20%20%60ethnicity%60%2C%0A%20%20%60length_of_stay%60%2C%0A%20%20%60type_of_admission%60%2C%0A%20%20%60patient_disposition%60%2C%0A%20%20%60discharge_year%60%2C%0A%20%20%60ccsr_diagnosis_code%60%2C%0A%20%20%60ccsr_diagnosis_description%60%2C%0A%20%20%60ccsr_procedure_code%60%2C%0A%20%20%60ccsr_procedure_description%60%2C%0A%20%20%60apr_drg_code%60%2C%0A%20%20%60apr_drg_description%60%2C%0A%20%20%60apr_mdc_code%60%2C%0A%20%20%60apr_mdc_description%60%2C%0A%20%20%60apr_severity_of_illness_code%60%2C%0A%20%20%60apr_severity_of_illness%60%2C%0A%20%20%60apr_risk_of_mortality%60%2C%0A%20%20%60apr_medical_surgical%60%2C%0A%20%20%60payment_typology_1%60%2C%0A%20%20%60payment_typology_2%60%2C%0A%20%20%60payment_typology_3%60%2C%0A%20%20%60birth_weight%60%2C%0A%20%20%60emergency_department_indicator%60%2C%0A%20%20%60total_charges%60%2C%0A%20%20%60total_costs%60%0AWHERE%0A%20%20caseless_one_of%28%0A%20%20%20%20%60ccsr_diagnosis_description%60%2C%0A%20%20%20%20%22Diabetes%20mellitus%20without%20complication%22%2C%0A%20%20%20%20%22Diabetes%20mellitus%20with%20complication%22%2C%0A%20%20%20%20%22Diabetes%20or%20abnormal%20glucose%20tolerance%20complicating%20pregnancy%3B%20childbirth%3B%20or%20the%20puerperium%22%2C%0A%20%20%20%20%22Prediabetes%22%0A%20%20%29%0A%20%20AND%20caseless_one_of%28%0A%20%20%20%20%60hospital_county%60%2C%0A%20%20%20%20%22Bronx%22%2C%0A%20%20%20%20%22Manhattan%22%2C%0A%20%20%20%20%22Kings%22%2C%0A%20%20%20%20%22Richmond%22%2C%0A%20%20%20%20%22Queens%22%0A%20%20%29%0A%20%20AND%20caseless_one_of%28%60age_group%60%2C%20%2218%20to%2029%22%29/page/filter" class="sparcs-open-dataset-button" style="display:inline-flex;align-items:center;gap:6px;background:#0B4F5A;color:#FFF1C7;padding:6px 14px;border-radius:8px;font-size:0.82rem;font-weight:700;text-decoration:none;font-family:var(--font-body);" target="_self">
             Open Dataset ↗
           </a>
 </div>
@@ -2731,7 +2736,7 @@ Reference & Data Sources: datasets, definitions, and methods
 <span class="badge badge-amber" style="font-size:0.82rem;">30 to 49 — Adult</span>
 </div>
 </div>
-<a href="https://health.data.ny.gov/Health/Hospital-Inpatient-Discharges-SPARCS-De-Identified/46xm-urtu/explore/query/SELECT%0A%20%20%60hospital_service_area%60%2C%0A%20%20%60hospital_county%60%2C%0A%20%20%60operating_certificate_number%60%2C%0A%20%20%60permanent_facility_id%60%2C%0A%20%20%60facility_name%60%2C%0A%20%20%60age_group%60%2C%0A%20%20%60zip_code_3_digits%60%2C%0A%20%20%60gender%60%2C%0A%20%20%60race%60%2C%0A%20%20%60ethnicity%60%2C%0A%20%20%60length_of_stay%60%2C%0A%20%20%60type_of_admission%60%2C%0A%20%20%60patient_disposition%60%2C%0A%20%20%60discharge_year%60%2C%0A%20%20%60ccsr_diagnosis_code%60%2C%0A%20%20%60ccsr_diagnosis_description%60%2C%0A%20%20%60ccsr_procedure_code%60%2C%0A%20%20%60ccsr_procedure_description%60%2C%0A%20%20%60apr_drg_code%60%2C%0A%20%20%60apr_drg_description%60%2C%0A%20%20%60apr_mdc_code%60%2C%0A%20%20%60apr_mdc_description%60%2C%0A%20%20%60apr_severity_of_illness_code%60%2C%0A%20%20%60apr_severity_of_illness%60%2C%0A%20%20%60apr_risk_of_mortality%60%2C%0A%20%20%60apr_medical_surgical%60%2C%0A%20%20%60payment_typology_1%60%2C%0A%20%20%60payment_typology_2%60%2C%0A%20%20%60payment_typology_3%60%2C%0A%20%20%60birth_weight%60%2C%0A%20%20%60emergency_department_indicator%60%2C%0A%20%20%60total_charges%60%2C%0A%20%20%60total_costs%60%0AWHERE%0A%20%20caseless_one_of%28%0A%20%20%20%20%60ccsr_diagnosis_description%60%2C%0A%20%20%20%20%22Diabetes%20mellitus%20without%20complication%22%2C%0A%20%20%20%20%22Diabetes%20mellitus%20with%20complication%22%2C%0A%20%20%20%20%22Diabetes%20or%20abnormal%20glucose%20tolerance%20complicating%20pregnancy%3B%20childbirth%3B%20or%20the%20puerperium%22%2C%0A%20%20%20%20%22Prediabetes%22%0A%20%20%29%0A%20%20AND%20caseless_one_of%28%0A%20%20%20%20%60hospital_county%60%2C%0A%20%20%20%20%22Bronx%22%2C%0A%20%20%20%20%22Manhattan%22%2C%0A%20%20%20%20%22Kings%22%2C%0A%20%20%20%20%22Richmond%22%2C%0A%20%20%20%20%22Queens%22%0A%20%20%29%0A%20%20AND%20caseless_one_of%28%60age_group%60%2C%20%2230%20to%2049%22%29/page/filter" class="sparcs-open-dataset-button" style="display:inline-flex;align-items:center;gap:6px;background:#0B4F5A !important;color:#FFF1C7 !important;padding:6px 14px;border-radius:8px;font-size:0.82rem;font-weight:700;text-decoration:none;font-family:var(--font-body);" target="_self">
+<a href="https://health.data.ny.gov/Health/Hospital-Inpatient-Discharges-SPARCS-De-Identified/46xm-urtu/explore/query/SELECT%0A%20%20%60hospital_service_area%60%2C%0A%20%20%60hospital_county%60%2C%0A%20%20%60operating_certificate_number%60%2C%0A%20%20%60permanent_facility_id%60%2C%0A%20%20%60facility_name%60%2C%0A%20%20%60age_group%60%2C%0A%20%20%60zip_code_3_digits%60%2C%0A%20%20%60gender%60%2C%0A%20%20%60race%60%2C%0A%20%20%60ethnicity%60%2C%0A%20%20%60length_of_stay%60%2C%0A%20%20%60type_of_admission%60%2C%0A%20%20%60patient_disposition%60%2C%0A%20%20%60discharge_year%60%2C%0A%20%20%60ccsr_diagnosis_code%60%2C%0A%20%20%60ccsr_diagnosis_description%60%2C%0A%20%20%60ccsr_procedure_code%60%2C%0A%20%20%60ccsr_procedure_description%60%2C%0A%20%20%60apr_drg_code%60%2C%0A%20%20%60apr_drg_description%60%2C%0A%20%20%60apr_mdc_code%60%2C%0A%20%20%60apr_mdc_description%60%2C%0A%20%20%60apr_severity_of_illness_code%60%2C%0A%20%20%60apr_severity_of_illness%60%2C%0A%20%20%60apr_risk_of_mortality%60%2C%0A%20%20%60apr_medical_surgical%60%2C%0A%20%20%60payment_typology_1%60%2C%0A%20%20%60payment_typology_2%60%2C%0A%20%20%60payment_typology_3%60%2C%0A%20%20%60birth_weight%60%2C%0A%20%20%60emergency_department_indicator%60%2C%0A%20%20%60total_charges%60%2C%0A%20%20%60total_costs%60%0AWHERE%0A%20%20caseless_one_of%28%0A%20%20%20%20%60ccsr_diagnosis_description%60%2C%0A%20%20%20%20%22Diabetes%20mellitus%20without%20complication%22%2C%0A%20%20%20%20%22Diabetes%20mellitus%20with%20complication%22%2C%0A%20%20%20%20%22Diabetes%20or%20abnormal%20glucose%20tolerance%20complicating%20pregnancy%3B%20childbirth%3B%20or%20the%20puerperium%22%2C%0A%20%20%20%20%22Prediabetes%22%0A%20%20%29%0A%20%20AND%20caseless_one_of%28%0A%20%20%20%20%60hospital_county%60%2C%0A%20%20%20%20%22Bronx%22%2C%0A%20%20%20%20%22Manhattan%22%2C%0A%20%20%20%20%22Kings%22%2C%0A%20%20%20%20%22Richmond%22%2C%0A%20%20%20%20%22Queens%22%0A%20%20%29%0A%20%20AND%20caseless_one_of%28%60age_group%60%2C%20%2230%20to%2049%22%29/page/filter" class="sparcs-open-dataset-button" style="display:inline-flex;align-items:center;gap:6px;background:#0B4F5A;color:#FFF1C7;padding:6px 14px;border-radius:8px;font-size:0.82rem;font-weight:700;text-decoration:none;font-family:var(--font-body);" target="_self">
             Open Dataset ↗
           </a>
 </div>
@@ -2742,7 +2747,7 @@ Reference & Data Sources: datasets, definitions, and methods
 <span class="badge badge-accent" style="font-size:0.82rem;">50 to 69 — Middle-Older Adult</span>
 </div>
 </div>
-<a href="https://health.data.ny.gov/Health/Hospital-Inpatient-Discharges-SPARCS-De-Identified/46xm-urtu/explore/query/SELECT%0A%20%20%60hospital_service_area%60%2C%0A%20%20%60hospital_county%60%2C%0A%20%20%60operating_certificate_number%60%2C%0A%20%20%60permanent_facility_id%60%2C%0A%20%20%60facility_name%60%2C%0A%20%20%60age_group%60%2C%0A%20%20%60zip_code_3_digits%60%2C%0A%20%20%60gender%60%2C%0A%20%20%60race%60%2C%0A%20%20%60ethnicity%60%2C%0A%20%20%60length_of_stay%60%2C%0A%20%20%60type_of_admission%60%2C%0A%20%20%60patient_disposition%60%2C%0A%20%20%60discharge_year%60%2C%0A%20%20%60ccsr_diagnosis_code%60%2C%0A%20%20%60ccsr_diagnosis_description%60%2C%0A%20%20%60ccsr_procedure_code%60%2C%0A%20%20%60ccsr_procedure_description%60%2C%0A%20%20%60apr_drg_code%60%2C%0A%20%20%60apr_drg_description%60%2C%0A%20%20%60apr_mdc_code%60%2C%0A%20%20%60apr_mdc_description%60%2C%0A%20%20%60apr_severity_of_illness_code%60%2C%0A%20%20%60apr_severity_of_illness%60%2C%0A%20%20%60apr_risk_of_mortality%60%2C%0A%20%20%60apr_medical_surgical%60%2C%0A%20%20%60payment_typology_1%60%2C%0A%20%20%60payment_typology_2%60%2C%0A%20%20%60payment_typology_3%60%2C%0A%20%20%60birth_weight%60%2C%0A%20%20%60emergency_department_indicator%60%2C%0A%20%20%60total_charges%60%2C%0A%20%20%60total_costs%60%0AWHERE%0A%20%20caseless_one_of%28%0A%20%20%20%20%60ccsr_diagnosis_description%60%2C%0A%20%20%20%20%22Diabetes%20mellitus%20without%20complication%22%2C%0A%20%20%20%20%22Diabetes%20mellitus%20with%20complication%22%2C%0A%20%20%20%20%22Diabetes%20or%20abnormal%20glucose%20tolerance%20complicating%20pregnancy%3B%20childbirth%3B%20or%20the%20puerperium%22%2C%0A%20%20%20%20%22Prediabetes%22%0A%20%20%29%0A%20%20AND%20caseless_one_of%28%0A%20%20%20%20%60hospital_county%60%2C%0A%20%20%20%20%22Bronx%22%2C%0A%20%20%20%20%22Manhattan%22%2C%0A%20%20%20%20%22Kings%22%2C%0A%20%20%20%20%22Richmond%22%2C%0A%20%20%20%20%22Queens%22%0A%20%20%29%0A%20%20AND%20caseless_one_of%28%60age_group%60%2C%20%2250%20to%2069%22%29/page/filter" class="sparcs-open-dataset-button" style="display:inline-flex;align-items:center;gap:6px;background:#0B4F5A !important;color:#FFF1C7 !important;padding:6px 14px;border-radius:8px;font-size:0.82rem;font-weight:700;text-decoration:none;font-family:var(--font-body);" target="_self">
+<a href="https://health.data.ny.gov/Health/Hospital-Inpatient-Discharges-SPARCS-De-Identified/46xm-urtu/explore/query/SELECT%0A%20%20%60hospital_service_area%60%2C%0A%20%20%60hospital_county%60%2C%0A%20%20%60operating_certificate_number%60%2C%0A%20%20%60permanent_facility_id%60%2C%0A%20%20%60facility_name%60%2C%0A%20%20%60age_group%60%2C%0A%20%20%60zip_code_3_digits%60%2C%0A%20%20%60gender%60%2C%0A%20%20%60race%60%2C%0A%20%20%60ethnicity%60%2C%0A%20%20%60length_of_stay%60%2C%0A%20%20%60type_of_admission%60%2C%0A%20%20%60patient_disposition%60%2C%0A%20%20%60discharge_year%60%2C%0A%20%20%60ccsr_diagnosis_code%60%2C%0A%20%20%60ccsr_diagnosis_description%60%2C%0A%20%20%60ccsr_procedure_code%60%2C%0A%20%20%60ccsr_procedure_description%60%2C%0A%20%20%60apr_drg_code%60%2C%0A%20%20%60apr_drg_description%60%2C%0A%20%20%60apr_mdc_code%60%2C%0A%20%20%60apr_mdc_description%60%2C%0A%20%20%60apr_severity_of_illness_code%60%2C%0A%20%20%60apr_severity_of_illness%60%2C%0A%20%20%60apr_risk_of_mortality%60%2C%0A%20%20%60apr_medical_surgical%60%2C%0A%20%20%60payment_typology_1%60%2C%0A%20%20%60payment_typology_2%60%2C%0A%20%20%60payment_typology_3%60%2C%0A%20%20%60birth_weight%60%2C%0A%20%20%60emergency_department_indicator%60%2C%0A%20%20%60total_charges%60%2C%0A%20%20%60total_costs%60%0AWHERE%0A%20%20caseless_one_of%28%0A%20%20%20%20%60ccsr_diagnosis_description%60%2C%0A%20%20%20%20%22Diabetes%20mellitus%20without%20complication%22%2C%0A%20%20%20%20%22Diabetes%20mellitus%20with%20complication%22%2C%0A%20%20%20%20%22Diabetes%20or%20abnormal%20glucose%20tolerance%20complicating%20pregnancy%3B%20childbirth%3B%20or%20the%20puerperium%22%2C%0A%20%20%20%20%22Prediabetes%22%0A%20%20%29%0A%20%20AND%20caseless_one_of%28%0A%20%20%20%20%60hospital_county%60%2C%0A%20%20%20%20%22Bronx%22%2C%0A%20%20%20%20%22Manhattan%22%2C%0A%20%20%20%20%22Kings%22%2C%0A%20%20%20%20%22Richmond%22%2C%0A%20%20%20%20%22Queens%22%0A%20%20%29%0A%20%20AND%20caseless_one_of%28%60age_group%60%2C%20%2250%20to%2069%22%29/page/filter" class="sparcs-open-dataset-button" style="display:inline-flex;align-items:center;gap:6px;background:#0B4F5A;color:#FFF1C7;padding:6px 14px;border-radius:8px;font-size:0.82rem;font-weight:700;text-decoration:none;font-family:var(--font-body);" target="_self">
             Open Dataset ↗
           </a>
 </div>
@@ -2753,7 +2758,7 @@ Reference & Data Sources: datasets, definitions, and methods
 <span class="badge badge-blue" style="font-size:0.82rem;">70 or Older — Elderly</span>
 </div>
 </div>
-<a href="https://health.data.ny.gov/Health/Hospital-Inpatient-Discharges-SPARCS-De-Identified/46xm-urtu/explore/query/SELECT%0A%20%20%60hospital_service_area%60%2C%0A%20%20%60hospital_county%60%2C%0A%20%20%60operating_certificate_number%60%2C%0A%20%20%60permanent_facility_id%60%2C%0A%20%20%60facility_name%60%2C%0A%20%20%60age_group%60%2C%0A%20%20%60zip_code_3_digits%60%2C%0A%20%20%60gender%60%2C%0A%20%20%60race%60%2C%0A%20%20%60ethnicity%60%2C%0A%20%20%60length_of_stay%60%2C%0A%20%20%60type_of_admission%60%2C%0A%20%20%60patient_disposition%60%2C%0A%20%20%60discharge_year%60%2C%0A%20%20%60ccsr_diagnosis_code%60%2C%0A%20%20%60ccsr_diagnosis_description%60%2C%0A%20%20%60ccsr_procedure_code%60%2C%0A%20%20%60ccsr_procedure_description%60%2C%0A%20%20%60apr_drg_code%60%2C%0A%20%20%60apr_drg_description%60%2C%0A%20%20%60apr_mdc_code%60%2C%0A%20%20%60apr_mdc_description%60%2C%0A%20%20%60apr_severity_of_illness_code%60%2C%0A%20%20%60apr_severity_of_illness%60%2C%0A%20%20%60apr_risk_of_mortality%60%2C%0A%20%20%60apr_medical_surgical%60%2C%0A%20%20%60payment_typology_1%60%2C%0A%20%20%60payment_typology_2%60%2C%0A%20%20%60payment_typology_3%60%2C%0A%20%20%60birth_weight%60%2C%0A%20%20%60emergency_department_indicator%60%2C%0A%20%20%60total_charges%60%2C%0A%20%20%60total_costs%60%0AWHERE%0A%20%20caseless_one_of%28%0A%20%20%20%20%60ccsr_diagnosis_description%60%2C%0A%20%20%20%20%22Diabetes%20mellitus%20without%20complication%22%2C%0A%20%20%20%20%22Diabetes%20mellitus%20with%20complication%22%2C%0A%20%20%20%20%22Diabetes%20or%20abnormal%20glucose%20tolerance%20complicating%20pregnancy%3B%20childbirth%3B%20or%20the%20puerperium%22%2C%0A%20%20%20%20%22Prediabetes%22%0A%20%20%29%0A%20%20AND%20caseless_one_of%28%0A%20%20%20%20%60hospital_county%60%2C%0A%20%20%20%20%22Bronx%22%2C%0A%20%20%20%20%22Manhattan%22%2C%0A%20%20%20%20%22Kings%22%2C%0A%20%20%20%20%22Richmond%22%2C%0A%20%20%20%20%22Queens%22%0A%20%20%29%0A%20%20AND%20caseless_one_of%28%60age_group%60%2C%20%2270%20or%20Older%22%29/page/filter" class="sparcs-open-dataset-button" style="display:inline-flex;align-items:center;gap:6px;background:#0B4F5A !important;color:#FFF1C7 !important;padding:6px 14px;border-radius:8px;font-size:0.82rem;font-weight:700;text-decoration:none;font-family:var(--font-body);" target="_self">
+<a href="https://health.data.ny.gov/Health/Hospital-Inpatient-Discharges-SPARCS-De-Identified/46xm-urtu/explore/query/SELECT%0A%20%20%60hospital_service_area%60%2C%0A%20%20%60hospital_county%60%2C%0A%20%20%60operating_certificate_number%60%2C%0A%20%20%60permanent_facility_id%60%2C%0A%20%20%60facility_name%60%2C%0A%20%20%60age_group%60%2C%0A%20%20%60zip_code_3_digits%60%2C%0A%20%20%60gender%60%2C%0A%20%20%60race%60%2C%0A%20%20%60ethnicity%60%2C%0A%20%20%60length_of_stay%60%2C%0A%20%20%60type_of_admission%60%2C%0A%20%20%60patient_disposition%60%2C%0A%20%20%60discharge_year%60%2C%0A%20%20%60ccsr_diagnosis_code%60%2C%0A%20%20%60ccsr_diagnosis_description%60%2C%0A%20%20%60ccsr_procedure_code%60%2C%0A%20%20%60ccsr_procedure_description%60%2C%0A%20%20%60apr_drg_code%60%2C%0A%20%20%60apr_drg_description%60%2C%0A%20%20%60apr_mdc_code%60%2C%0A%20%20%60apr_mdc_description%60%2C%0A%20%20%60apr_severity_of_illness_code%60%2C%0A%20%20%60apr_severity_of_illness%60%2C%0A%20%20%60apr_risk_of_mortality%60%2C%0A%20%20%60apr_medical_surgical%60%2C%0A%20%20%60payment_typology_1%60%2C%0A%20%20%60payment_typology_2%60%2C%0A%20%20%60payment_typology_3%60%2C%0A%20%20%60birth_weight%60%2C%0A%20%20%60emergency_department_indicator%60%2C%0A%20%20%60total_charges%60%2C%0A%20%20%60total_costs%60%0AWHERE%0A%20%20caseless_one_of%28%0A%20%20%20%20%60ccsr_diagnosis_description%60%2C%0A%20%20%20%20%22Diabetes%20mellitus%20without%20complication%22%2C%0A%20%20%20%20%22Diabetes%20mellitus%20with%20complication%22%2C%0A%20%20%20%20%22Diabetes%20or%20abnormal%20glucose%20tolerance%20complicating%20pregnancy%3B%20childbirth%3B%20or%20the%20puerperium%22%2C%0A%20%20%20%20%22Prediabetes%22%0A%20%20%29%0A%20%20AND%20caseless_one_of%28%0A%20%20%20%20%60hospital_county%60%2C%0A%20%20%20%20%22Bronx%22%2C%0A%20%20%20%20%22Manhattan%22%2C%0A%20%20%20%20%22Kings%22%2C%0A%20%20%20%20%22Richmond%22%2C%0A%20%20%20%20%22Queens%22%0A%20%20%29%0A%20%20AND%20caseless_one_of%28%60age_group%60%2C%20%2270%20or%20Older%22%29/page/filter" class="sparcs-open-dataset-button" style="display:inline-flex;align-items:center;gap:6px;background:#0B4F5A;color:#FFF1C7;padding:6px 14px;border-radius:8px;font-size:0.82rem;font-weight:700;text-decoration:none;font-family:var(--font-body);" target="_self">
             Open Dataset ↗
           </a>
 </div>
@@ -2822,38 +2827,7 @@ Reference & Data Sources: datasets, definitions, and methods
 </div>
 </div>
 </section>
-<!-- ── RESEARCH LITERATURE ── -->
-<h2 style="font-family:var(--font-display);font-size:1.2rem;margin:2rem 0 1rem;color:var(--deep-teal);">📚 Research Literature — Peer-Reviewed Sources</h2>
-<div class="ref-item">
-<h4>The Prevalence of Type 1 Diabetes in Hispanic/Latino Populations</h4>
-<a href="https://journals.lww.com/epidem/fulltext/2020/01000/the_prevalence_of_type_1_diabetes_in.25.aspx" target="_blank">journals.lww.com — Epidemiology Journal · 2020</a>
-<p>Dominicans have the highest Type 1 prevalence of all Hispanic subgroups at 6.1 per 1,000. Among Puerto Ricans with Type 1, average A1C was 11.52 — severely uncontrolled. Critical evidence for the misdiagnosis crisis in Caribbean communities.</p>
-<div style="margin-top:0.75rem;">
-<span class="badge badge-amber">Dominican Type 1: 6.1/1,000</span>
-<span class="badge badge-blue">Puerto Rican A1C: 11.52</span>
-<span class="badge badge-green">Epidemiology Journal · 2020</span>
-</div>
-</div>
-<div class="ref-item">
-<h4>Understanding the Growing Epidemic of Type 2 Diabetes in the Hispanic Population</h4>
-<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6953173/" target="_blank">pmc.ncbi.nlm.nih.gov — PMC/NIH · Free Full Text</a>
-<p>Diagnosed diabetes projected to increase 198% overall by 2050 — but 481% for Hispanic populations, more than double the national rate. Puerto Ricans and Dominicans at the highest current burden will drive this disproportionately.</p>
-<div style="margin-top:0.75rem;">
-<span class="badge badge-amber">481% Hispanic Projection</span>
-<span class="badge badge-blue">vs 198% Overall</span>
-<span class="badge badge-green">PMC/NIH · Free Full Text</span>
-</div>
-</div>
-<div class="ref-item">
-<h4>Profiles of Social Determinants of Health and Change in Diabetes Status — HCHS/SOL 2008–2024</h4>
-<a href="https://diabetesjournals.org/care/article-abstract/49/5/861/164640/Profiles-of-Social-Determinants-of-Health-and" target="_blank">diabetesjournals.org — Diabetes Care, ADA · 2025</a>
-<p>High-adversity profile had 51% greater odds of worse diabetes status at baseline and 32% greater odds of worsening 12 years later. Acculturation stress, limited education, low income, and psychosocial burden compound into a trajectory that medication alone cannot address.</p>
-<div style="margin-top:0.75rem;">
-<span class="badge badge-amber">51% Greater Odds Baseline</span>
-<span class="badge badge-blue">32% Worse at 12 Years</span>
-<span class="badge badge-green">HCHS/SOL 2008–2024</span>
-</div>
-</div>
+
 </div>
 <!-- ════════════════════ ABOUT PAGE ════════════════════ -->
 <!-- =========================================================
@@ -2861,12 +2835,12 @@ Reference & Data Sources: datasets, definitions, and methods
 Jasmine Vasquez. About the Creator.
 ========================================================= -->
 <div class="page" id="page-about">
-<section style="padding: 2rem 2rem 1.5rem; background: #0D3D4A !important; border-bottom: 2px solid rgba(242,197,124,0.3);">
-<div style="max-width:1200px; margin:0 auto; display:flex; align-items:center; gap:1.5rem; background: #0A2A2F !important;">
+<section style="padding: 2rem 2rem 1.5rem; background: #0D3D4A; border-bottom: 2px solid rgba(242,197,124,0.3);">
+<div style="max-width:1200px; margin:0 auto; display:flex; align-items:center; gap:1.5rem; background: #0A2A2F;">
 <div style="display:flex; align-items:center; gap:1rem; flex:1;">
 <img src="assets/images/jasmine.vasquez.png" alt="Jasmine Vasquez" style="width:120px;height:120px;border-radius:0;object-fit:cover;border:2px solid #F2C57C;box-shadow:0 0 0 4px rgba(242,197,124,0.18);">
 <div>
-<h1 style="font-family:'Lora',serif; font-size:clamp(1.4rem,3vw,2rem); color:#F2C57C !important; font-weight:700; line-height:1.1; margin:0;">Jasmine V.</h1>
+<h1 style="font-family:'Lora',serif; font-size:clamp(1.4rem,3vw,2rem); color:#F2C57C; font-weight:700; line-height:1.1; margin:0;">Jasmine V.</h1>
 <p style="font-size:0.82rem; color:rgba(242,197,124,0.6); font-weight:700; letter-spacing:0.12em; text-transform:uppercase; margin:0.3rem 0 0;">About the Creator</p>
 </div>
 </div>
@@ -2880,7 +2854,7 @@ Jasmine Vasquez. About the Creator.
 <div class="container">
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
 <div>
-<h2 style="font-family:var(--font-display); font-size:1.4rem; margin-bottom:1rem; color:var(--deep-teal);">🌿 Bio &amp; Mission</h2>
+<h2 style="font-family:var(--font-display); font-size:1.4rem; margin-bottom:1rem; color:#FFF1C7;">🌿 Bio &amp; Mission</h2>
 <p style="font-size:0.95rem; line-height:1.8; color:#444;">
             I'm a returning adult student at Lehman College pursuing dual degrees in Health Services Administration and Business Administration with a focus on Human Resource Management. My career goal is data analytics, with a focus on healthcare data — cleaning, analyzing, and visualizing information that can drive real public health decisions.
           </p>
@@ -2892,39 +2866,39 @@ Jasmine Vasquez. About the Creator.
           </p>
 </div>
 <div>
-<h2 style="font-family:var(--font-display); font-size:1.4rem; margin-bottom:1rem; color:var(--deep-teal);">🛠️ Skills &amp; Tools</h2>
+<h2 style="font-family:var(--font-display); font-size:1.4rem; margin-bottom:1rem; color:#FFF1C7;">🛠️ Skills &amp; Tools</h2>
 <div class="skills-list">
 <span class="skill-pill">Excel</span>
-<span class="skill-pill">Tableau</span>
-<span class="skill-pill">R</span>
+
+
 <span class="skill-pill">Jamovi</span>
-<span class="skill-pill">Python</span>
-<span class="skill-pill">SQL</span>
+
+
 <span class="skill-pill">HTML/CSS</span>
 <span class="skill-pill">Chart.js</span>
 <span class="skill-pill">Data Cleaning</span>
 <span class="skill-pill">SPARCS Analysis</span>
 <span class="skill-pill">Public Health Analytics</span>
-<span class="skill-pill">APA Writing</span>
+
 <span class="skill-pill">Epidemiology</span>
 <span class="skill-pill">Managed Care</span>
 </div>
 <div class="content-panel" style="margin-top:1.5rem;">
-<h3 style="color:var(--tan-heading); margin-bottom:0.75rem; font-family:var(--font-display);">&#128218; Coursework Highlights</h3>
+<h3 style="color:#4C315F; margin-bottom:0.75rem; font-family:var(--font-display);">&#128218; Coursework Highlights</h3>
 <ul style="list-style:none; display:flex; flex-direction:column; gap:8px; font-size:0.88rem;">
 <li>&#128300; HSD 269 — Epidemiology &amp; Biostatistics</li>
 <li>&#128202; HSA 304 — Health Care Finance</li>
 <li>&#127973; HSA 312 — Managed Health Care</li>
-<li>&#128218; DAT 181 — Intro to Data Analytics with R</li>
-<li>&#128218; BBA 190 — Data Management with Spreadsheets</li>
-<li>&#128218; DAT 184 — Intro to SQL</li>
+
+
+
 <li>&#128187; Computer Applications Minor</li>
 </ul>
 </div>
 </div>
 </div>
 <div style="margin-top:2rem; text-align:center;">
-<h2 style="font-family:var(--font-display); font-size:1.3rem; margin-bottom:1rem; color:var(--deep-teal);">📬 Contact</h2>
+<h2 style="font-family:var(--font-display); font-size:1.3rem; margin-bottom:1rem; color:#FFF1C7;">📬 Contact</h2>
 <p style="color:#555; margin-bottom:1rem;">Open to internship and entry-level data analyst opportunities in healthcare.</p>
 <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
 <a class="btn btn-outline" href="https://www.linkedin.com/in/jasmine-m-vasquez/" target="_blank" rel="noopener">LinkedIn</a>
@@ -2941,12 +2915,12 @@ Jasmine Vasquez. About the Creator.
 Prescription drug data section
 ========================================================= -->
 <div class="page" id="page-drugs">
-<section style="padding: 2rem 2rem 1.5rem; background: #0D3D4A !important; border-bottom: 2px solid rgba(242,197,124,0.3);">
-<div class="rx-shell rx-hero-frame" style="max-width:1200px; margin:0 auto; display:flex; align-items:center; gap:1.5rem; background: #0A2A2F !important;">
+<section style="padding: 2rem 2rem 1.5rem; background: #0D3D4A; border-bottom: 2px solid rgba(242,197,124,0.3);">
+<div class="rx-shell rx-hero-frame" style="max-width:1200px; margin:0 auto; display:flex; align-items:center; gap:1.5rem; background: #0A2A2F;">
 <div style="display:flex; align-items:center; gap:1rem; flex:1;">
 <span style="font-size:2rem;">💊</span>
 <div>
-<h1 style="font-family:'Lora',serif; font-size:clamp(1.4rem,3vw,2rem); color:#F2C57C !important; font-weight:700; line-height:1.1; margin:0;">Prescription Drug Data</h1>
+<h1 style="font-family:'Lora',serif; font-size:clamp(1.4rem,3vw,2rem); color:#F2C57C; font-weight:700; line-height:1.1; margin:0;">Prescription Drug Data</h1>
 <p style="font-size:0.82rem; color:#FFF1C7; font-weight:800; letter-spacing:0.12em; text-transform:uppercase; margin:0.3rem 0 0;">Diabetes Medications</p>
 </div>
 </div>
@@ -3030,7 +3004,7 @@ Prescription drug data section
 </div>
 <!-- Drug table -->
 <div class="chart-card" id="drugTableWrap" style="display:none; margin-top:2rem;">
-<h2 style="font-family:var(--font-display); font-size:1.3rem; margin-bottom:1rem; background:#2a1a40; color:#F2C57C !important; padding:0.6rem 1rem; border-radius:8px; margin:-0.5rem -0.5rem 1rem -0.5rem;">
+<h2 style="font-family:var(--font-display); font-size:1.3rem; margin-bottom:1rem; background:linear-gradient(135deg, #4C315F, #006064); color:#F2C57C; padding:0.6rem 1rem; border-radius:8px; margin:-0.5rem -0.5rem 1rem -0.5rem;">
           📋 Prescription Drug Detail Table
         </h2>
 <div style="overflow-x:auto;">
@@ -3073,12 +3047,12 @@ Prescription drug data section
 Diabetes News & Breakthroughs: latest diabetes updates section
 ========================================================= -->
 <div class="page" id="page-news">
-<section style="padding: 2rem 2rem 1.5rem; background: #0D3D4A !important; border-bottom: 2px solid rgba(242,197,124,0.3);">
-<div style="max-width:1200px; margin:0 auto; display:flex; align-items:center; gap:1.5rem; background: #0A2A2F !important;">
+<section style="padding: 2rem 2rem 1.5rem; background: #0D3D4A; border-bottom: 2px solid rgba(242,197,124,0.3);">
+<div style="max-width:1200px; margin:0 auto; display:flex; align-items:center; gap:1.5rem; background: #0A2A2F;">
 <div style="display:flex; align-items:center; gap:1rem; flex:1;">
 <span style="font-size:2rem;">📰</span>
 <div>
-<h1 style="font-family:'Lora',serif; font-size:clamp(1.4rem,3vw,2rem); color:#F2C57C !important; font-weight:700; line-height:1.1; margin:0;">Diabetes News &amp; Breakthroughs</h1>
+<h1 style="font-family:'Lora',serif; font-size:clamp(1.4rem,3vw,2rem); color:#F2C57C; font-weight:700; line-height:1.1; margin:0;">Diabetes News &amp; Breakthroughs</h1>
 <p style="font-size:0.82rem; color:rgba(242,197,124,0.6); font-weight:700; letter-spacing:0.12em; text-transform:uppercase; margin:0.3rem 0 0;">Latest Diabetes Updates</p>
 </div>
 </div>
@@ -3102,7 +3076,7 @@ Diabetes News & Breakthroughs: latest diabetes updates section
 <div style="display:flex;align-items:flex-start;gap:1rem;flex-wrap:wrap;">
 <div style="flex:1;min-width:250px;">
 <span class="badge badge-amber" style="margin-bottom:0.5rem;">🔥 Featured</span>
-<h3 style="font-family:var(--font-display);font-size:1.2rem;margin-bottom:0.75rem;color:var(--deep-teal);">
+<h3 style="font-family:var(--font-display);font-size:1.2rem;margin-bottom:0.75rem;color:#FFF1C7;">
                 GLP-1 Revolution: Semaglutide &amp; Tirzepatide Transform Diabetes Care
               </h3>
 <p style="font-size:0.9rem;line-height:1.75;color:#444;">
@@ -3200,12 +3174,12 @@ Diabetes News & Breakthroughs: latest diabetes updates section
 Evidence-based diabetes resources section
 ========================================================= -->
 <div class="page" id="page-recommended">
-<section style="padding: 2rem 2rem 1.5rem; background: #0D3D4A !important; border-bottom: 2px solid rgba(242,197,124,0.3);">
-<div style="max-width:1200px; margin:0 auto; display:flex; align-items:center; gap:1.5rem; background: #0A2A2F !important;">
+<section style="padding: 2rem 2rem 1.5rem; background: #0D3D4A; border-bottom: 2px solid rgba(242,197,124,0.3);">
+<div style="max-width:1200px; margin:0 auto; display:flex; align-items:center; gap:1.5rem; background: #0A2A2F;">
 <div style="display:flex; align-items:center; gap:1rem; flex:1;">
 <span style="font-size:2rem;">⭐</span>
 <div>
-<h1 style="font-family:'Lora',serif; font-size:clamp(1.4rem,3vw,2rem); color:#F2C57C !important; font-weight:700; line-height:1.1; margin:0;">Diabetic Recommended</h1>
+<h1 style="font-family:'Lora',serif; font-size:clamp(1.4rem,3vw,2rem); color:#F2C57C; font-weight:700; line-height:1.1; margin:0;">Diabetic Recommended</h1>
 <p style="font-size:0.82rem; color:rgba(242,197,124,0.6); font-weight:700; letter-spacing:0.12em; text-transform:uppercase; margin:0.3rem 0 0;">Evidence-Based Resources</p>
 </div>
 </div>
@@ -3343,12 +3317,12 @@ Evidence-based diabetes resources section
 Community Blog & Forum: personal notes and shared learning
 ========================================================= -->
 <div class="page" id="page-blog">
-<section style="padding: 2rem 2rem 1.5rem; background: #0D3D4A !important; border-bottom: 2px solid rgba(242,197,124,0.3);">
-<div style="max-width:1200px; margin:0 auto; display:flex; align-items:center; gap:1.5rem; background: #0A2A2F !important;">
+<section style="padding: 2rem 2rem 1.5rem; background: #0D3D4A; border-bottom: 2px solid rgba(242,197,124,0.3);">
+<div style="max-width:1200px; margin:0 auto; display:flex; align-items:center; gap:1.5rem; background: #0A2A2F;">
 <div style="display:flex; align-items:center; gap:1rem; flex:1;">
 <span style="font-size:2rem;">💬</span>
 <div>
-<h1 style="font-family:'Lora',serif; font-size:clamp(1.4rem,3vw,2rem); color:#F2C57C !important; font-weight:700; line-height:1.1; margin:0;">Community Blog &amp; Forum</h1>
+<h1 style="font-family:'Lora',serif; font-size:clamp(1.4rem,3vw,2rem); color:#F2C57C; font-weight:700; line-height:1.1; margin:0;">Community Blog &amp; Forum</h1>
 <p style="font-size:0.82rem; color:rgba(242,197,124,0.6); font-weight:700; letter-spacing:0.12em; text-transform:uppercase; margin:0.3rem 0 0;">Personal Notes and Shared Learning</p>
 </div>
 </div>
@@ -3364,16 +3338,16 @@ Community Blog & Forum: personal notes and shared learning
 <div class="chart-card" style="margin-bottom:2rem;">
 <h3>✍️ Share Your Thoughts</h3>
 <div style="display:flex;flex-direction:column;gap:0.75rem;margin-top:0.5rem;">
-<input id="blogName" placeholder="Your name (or anonymous)" style="padding:10px 14px;border:1.5px solid rgba(242,197,124,0.7);border-radius:8px;font-family:var(--font-body);font-size:0.9rem;outline:none;background:#cfe8d4;color:#2b1740;box-shadow:inset 0 1px 3px rgba(0,0,0,0.08);" type="text"/>
+<input id="blogName" placeholder="Your name (or anonymous)" style="padding:10px 14px;border:1.5px solid rgba(242,197,124,0.7);border-radius:8px;font-family:var(--font-body);font-size:0.9rem;outline:none;background:#cfe8d4;color:#FFF1C7;box-shadow:inset 0 1px 3px rgba(0,0,0,0.08);" type="text"/>
 <select id="blogCategory" style="padding:10px 14px;border:1.5px solid rgba(242,197,124,0.7);border-radius:8px;font-family:var(--font-body);font-size:0.9rem;outline:none;background:#cfe8d4;color:#2b1740;box-shadow:inset 0 1px 3px rgba(0,0,0,0.08);">
-<option value="data">📊 Data Insight</option>
-<option value="medication">💊 Medication Question</option>
-<option value="lifestyle">🥗 Lifestyle &amp; Nutrition</option>
-<option value="nyc">🗽 NYC Resources</option>
-<option value="research">🔬 Research &amp; News</option>
-<option value="general">💬 General Discussion</option>
+<option style="background:#ffffff;color:#140023;" value="data">📊 Data Insight</option>
+<option style="background:#ffffff;color:#140023;" value="medication">💊 Medication Question</option>
+<option style="background:#ffffff;color:#140023;" value="lifestyle">🥗 Lifestyle &amp; Nutrition</option>
+<option style="background:#ffffff;color:#140023;" value="nyc">🗽 NYC Resources</option>
+<option style="background:#ffffff;color:#140023;" value="research">🔬 Research &amp; News</option>
+<option style="background:#ffffff;color:#140023;" value="general">💬 General Discussion</option>
 </select>
-<textarea id="blogPost" placeholder="Share a data insight, ask a question, or discuss anything diabetes-related..." rows="4" style="padding:10px 14px;border:1.5px solid rgba(242,197,124,0.7);border-radius:8px;font-family:var(--font-body);font-size:0.9rem;outline:none;resize:vertical;background:#cfe8d4;color:#2b1740;box-shadow:inset 0 1px 3px rgba(0,0,0,0.08);"></textarea>
+<textarea id="blogPost" placeholder="Share a data insight, ask a question, or discuss anything diabetes-related..." rows="4" style="padding:10px 14px;border:1.5px solid rgba(242,197,124,0.7);border-radius:8px;font-family:var(--font-body);font-size:0.9rem;outline:none;resize:vertical;background:#cfe8d4;color:#FFF1C7;box-shadow:inset 0 1px 3px rgba(0,0,0,0.08);"></textarea>
 <button class="btn btn-outline" onclick="submitPost()" style="align-self:flex-start;">Post to Community 🌿</button>
 </div>
 </div>
@@ -3382,13 +3356,13 @@ Community Blog & Forum: personal notes and shared learning
 <div>
 <label>Filter by Category</label><br/>
 <select id="blogFilter" onchange="filterPosts()">
-<option value="all">All Posts</option>
-<option value="data">📊 Data Insights</option>
-<option value="medication">💊 Medications</option>
-<option value="lifestyle">🥗 Lifestyle</option>
-<option value="nyc">🗽 NYC Resources</option>
-<option value="research">🔬 Research</option>
-<option value="general">💬 General</option>
+<option style="background:#ffffff;color:#140023;" value="all">All Posts</option>
+<option style="background:#ffffff;color:#140023;" value="data">📊 Data Insights</option>
+<option style="background:#ffffff;color:#140023;" value="medication">💊 Medications</option>
+<option style="background:#ffffff;color:#140023;" value="lifestyle">🥗 Lifestyle</option>
+<option style="background:#ffffff;color:#140023;" value="nyc">🗽 NYC Resources</option>
+<option style="background:#ffffff;color:#140023;" value="research">🔬 Research</option>
+<option style="background:#ffffff;color:#140023;" value="general">💬 General</option>
 </select>
 </div>
 <div style="align-self:flex-end;">
@@ -3406,12 +3380,12 @@ Community Blog & Forum: personal notes and shared learning
 2024 SPARCS Data: Diabetes and NYC hospital data section
 ========================================================= -->
 <div class="page" id="page-sparcs2024">
-<section style="padding: 2rem 2rem 1.5rem; background: #0D3D4A !important; border-bottom: 2px solid rgba(242,197,124,0.3);">
-<div style="max-width:1200px; margin:0 auto; display:flex; align-items:center; gap:1.5rem; background: #0A2A2F !important;">
+<section style="padding: 2rem 2rem 1.5rem; background: #0D3D4A; border-bottom: 2px solid rgba(242,197,124,0.3);">
+<div style="max-width:1200px; margin:0 auto; display:flex; align-items:center; gap:1.5rem; background: #0A2A2F;">
 <div style="display:flex; align-items:center; gap:1rem; flex:1;">
 <span style="font-size:2rem;">🏥</span>
 <div>
-<h1 style="font-family:'Lora',serif; font-size:clamp(1.4rem,3vw,2rem); color:#F2C57C !important; font-weight:700; line-height:1.1; margin:0;">2024 SPARCS Data</h1>
+<h1 style="font-family:'Lora',serif; font-size:clamp(1.4rem,3vw,2rem); color:#F2C57C; font-weight:700; line-height:1.1; margin:0;">2024 SPARCS Data</h1>
 <p style="font-size:0.82rem; color:rgba(242,197,124,0.6); font-weight:700; letter-spacing:0.12em; text-transform:uppercase; margin:0.3rem 0 0;">Diabetes · NYC Hospital Data</p>
 </div>
 </div>
@@ -3428,8 +3402,8 @@ Community Blog & Forum: personal notes and shared learning
 <p>Explore 2024 SPARCS inpatient discharge records for diabetes-related hospitalizations across New York City boroughs and age groups. This page compares discharges, length of stay, charges, payer mix, severity, risk of mortality, admissions, facilities, and borough summary patterns.</p>
 </div>
 <!-- Age Group Tab Selector -->
-<div class="sparcs-age-filter" style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:1.5rem;align-items:center;background:#0A2A2F !important;padding:12px 14px;border-radius:14px;">
-<span style="font-size:0.9rem;font-weight:800;color:#F2C57C !important;margin-right:8px;white-space:nowrap;">Age Group:</span>
+<div class="sparcs-age-filter" style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:1.5rem;align-items:center;background:#0A2A2F;padding:12px 14px;border-radius:14px;">
+<span style="font-size:0.9rem;font-weight:800;color:#F2C57C;margin-right:8px;white-space:nowrap;">Age Group:</span>
 <button class="age-tab active-tab" id="tab-0-17" onclick="switchAge('0-17')"><span class="age-emoji">👶</span><span class="age-text">0–17 Pediatric</span></button>
 <button class="age-tab" id="tab-18-29" onclick="switchAge('18-29')"><span class="age-emoji">🧑</span><span class="age-text">18–29 Young Adult</span></button>
 <button class="age-tab" id="tab-30-49" onclick="switchAge('30-49')"><span class="age-emoji">🧍</span><span class="age-text">30–49 Adult</span></button>
@@ -3485,8 +3459,8 @@ Community Blog & Forum: personal notes and shared learning
 </div>
 </div>
 <!-- Key insight banner -->
-<div class="sparcs-keyfinding-card" style="background:linear-gradient(135deg, #4C315F, #006064) !important;border:1px solid rgba(242,197,124,0.65) !important;border-radius:10px !important;box-shadow:var(--shadow) !important;padding:1rem 1.15rem !important;margin:1.25rem 0 1.7rem !important;">
-<p id="keyInsight" style="font-size:0.9rem;font-weight:600;color:#FFF1C7 !important;margin:0;line-height:1.6 !important;">
+<div class="sparcs-keyfinding-card" style="background:linear-gradient(135deg, #4C315F, #006064);border:1px solid rgba(242,197,124,0.65);border-radius:10px;box-shadow:var(--shadow);padding:1rem 1.15rem;margin:1.25rem 0 1.7rem;">
+<p id="keyInsight" style="font-size:0.9rem;font-weight:600;color:#FFF1C7;margin:0;line-height:1.6;">
             🔍 <strong>Key Finding:</strong> 98% of pediatric diabetes hospitalizations in NYC (2024) involved complications — suggesting children are often not reaching care until their diabetes is already serious. 87% arrived through the Emergency Department rather than planned admissions.
           </p>
 </div>
@@ -3547,6 +3521,7 @@ Community Blog & Forum: personal notes and shared learning
 <div class="chart-wrapper" style="height:260px;"><canvas id="sparcs-scatter"></canvas></div>
 </div>
 <!-- Data table -->
+<div class="table-card-shell sparcs-table-card">
 <h2 class="sparcs-section-heading sparcs-title-dark" style="font-family:var(--font-display);font-size:1.3rem;margin-bottom:1rem;color:var(--deep-teal);">📋 Borough Summary Table</h2>
 <div style="overflow-x:auto;margin-bottom:2rem;">
 <table class="data-table" id="sparcsTable">
@@ -3561,6 +3536,7 @@ Community Blog & Forum: personal notes and shared learning
 </thead>
 <tbody id="sparcsTableBody"></tbody>
 </table>
+</div>
 </div>
 </div><!-- end sparcsDashboard -->
 </div>
@@ -3608,6 +3584,7 @@ Creates and updates Chart.js charts
 <script src="js/charts/vision-loss-charts.js"></script>
 <script src="js/charts/amputation-charts.js"></script>
 <script src="js/app.js"></script>
+<script src="js/theme-polish.js"></script>
 </body>
 </html>
 
