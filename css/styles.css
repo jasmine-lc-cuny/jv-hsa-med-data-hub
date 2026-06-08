@@ -7359,3 +7359,15 @@ a.btn {
   background: #ffffff;
   color: #140023;
 }
+
+/* Home page Key Focus Areas title polish */
+#page-home .content-panel h3 {
+  background: linear-gradient(135deg, #4C315F, #006064);
+  color: #F2C57C;
+  border: 1px solid rgba(242,197,124,0.55);
+  border-radius: 10px;
+  padding: 0.72rem 1rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  box-shadow: 0 10px 22px rgba(0,0,0,0.28);
+}
