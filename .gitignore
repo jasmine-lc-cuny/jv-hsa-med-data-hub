@@ -6,3 +6,5 @@ old stuff/
 *.bak
 .DS_Store
 Thumbs.db
+
+.vercel/
